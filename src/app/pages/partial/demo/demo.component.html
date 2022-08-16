@@ -1,0 +1,11 @@
+<h1>Partial Demo</h1>
+
+<app-partial
+  [src]="partialSrc"
+  [inputBindings]="partialInputBindings"
+  [outputBindings]="partialOutputBindings"
+></app-partial>
+
+<p *ngIf="reply">
+  Forrest replied "{{reply}}"
+</p>

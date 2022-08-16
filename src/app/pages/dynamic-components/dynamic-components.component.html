@@ -1,0 +1,8 @@
+<h1>Dynamic Templates</h1>
+
+<input #name placeholder="Enter a name">
+<button (click)="loadComponent(name.value)">Load Template</button>
+
+<section class="template-wrapper">
+  <div class="container" appDynamicComponent></div>
+</section>
