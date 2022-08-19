@@ -1,0 +1,4001 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "AccountRequest",
+            "id": "interface-AccountRequest-e82139a62dc1d5d3ad3dfa22c379dc1b0eb7cb70be5a603f3b965493e4a837590c2a8a089819e60ef31073b4ca04b5a611c1328a001483a37b258193861b2d76",
+            "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Action, createReducer, on } from '@ngrx/store';\nimport {patchAccountRequest} from './account-request.actions';\n\nexport const accountRequestFeatureKey = 'accountRequest';\n\nexport enum AccountRequestStatus {\n  pristine = 'pristine',\n  dirty = 'dirty',\n  done = 'done'\n}\n\nexport interface State {\n  accountRequest?: AccountRequest;\n  steps: {[key: string]: AccountRequestStep}\n}\n\nexport interface AccountRequest {\n  firstName?: string;\n}\n\nexport interface AccountRequestStep {\n  index: number;\n  active: boolean;\n  status: AccountRequestStatus;\n}\n\nexport const initialState: State = {\n  steps: {}\n};\n\nexport const reducer = createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n);\n",
+            "properties": [
+                {
+                    "name": "firstName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "AccountRequestStep",
+            "id": "interface-AccountRequestStep-e82139a62dc1d5d3ad3dfa22c379dc1b0eb7cb70be5a603f3b965493e4a837590c2a8a089819e60ef31073b4ca04b5a611c1328a001483a37b258193861b2d76",
+            "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Action, createReducer, on } from '@ngrx/store';\nimport {patchAccountRequest} from './account-request.actions';\n\nexport const accountRequestFeatureKey = 'accountRequest';\n\nexport enum AccountRequestStatus {\n  pristine = 'pristine',\n  dirty = 'dirty',\n  done = 'done'\n}\n\nexport interface State {\n  accountRequest?: AccountRequest;\n  steps: {[key: string]: AccountRequestStep}\n}\n\nexport interface AccountRequest {\n  firstName?: string;\n}\n\nexport interface AccountRequestStep {\n  index: number;\n  active: boolean;\n  status: AccountRequestStatus;\n}\n\nexport const initialState: State = {\n  steps: {}\n};\n\nexport const reducer = createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n);\n",
+            "properties": [
+                {
+                    "name": "active",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "index",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "status",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "AccountRequestStatus",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "PartialConfig",
+            "id": "interface-PartialConfig-aa9e63a7c2cd7812a6d3218e349546b5aaffc1ce78ba6c94bc462998df792563ff1e3ff932c05c43c7c027d4c6763da82f309be61acc4c0de370002f9fde2b2a",
+            "file": "src/app/pages/partial/lib/partial.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export type PartialLoader = () => any;\n\nexport interface PartialConfig {\n  moduleName: string;\n}\nexport interface PartialOptions {\n  moduleName?: string;\n}\n\nexport const partial = (loader: PartialLoader, props: any = {}, config: PartialOptions = {}): any => {\n  const partialConfig = Object.assign({\n    moduleName: 'PartialModule'\n  }, config);\n  return () => {\n    const moduleName: string = partialConfig.moduleName;\n    return loader().then((m: any) => {\n      const module = m[moduleName];\n      return module.partial;\n    }).catch(console.error);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "moduleName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "PartialOptions",
+            "id": "interface-PartialOptions-aa9e63a7c2cd7812a6d3218e349546b5aaffc1ce78ba6c94bc462998df792563ff1e3ff932c05c43c7c027d4c6763da82f309be61acc4c0de370002f9fde2b2a",
+            "file": "src/app/pages/partial/lib/partial.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export type PartialLoader = () => any;\n\nexport interface PartialConfig {\n  moduleName: string;\n}\nexport interface PartialOptions {\n  moduleName?: string;\n}\n\nexport const partial = (loader: PartialLoader, props: any = {}, config: PartialOptions = {}): any => {\n  const partialConfig = Object.assign({\n    moduleName: 'PartialModule'\n  }, config);\n  return () => {\n    const moduleName: string = partialConfig.moduleName;\n    return loader().then((m: any) => {\n      const module = m[moduleName];\n      return module.partial;\n    }).catch(console.error);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "moduleName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "State",
+            "id": "interface-State-e82139a62dc1d5d3ad3dfa22c379dc1b0eb7cb70be5a603f3b965493e4a837590c2a8a089819e60ef31073b4ca04b5a611c1328a001483a37b258193861b2d76",
+            "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Action, createReducer, on } from '@ngrx/store';\nimport {patchAccountRequest} from './account-request.actions';\n\nexport const accountRequestFeatureKey = 'accountRequest';\n\nexport enum AccountRequestStatus {\n  pristine = 'pristine',\n  dirty = 'dirty',\n  done = 'done'\n}\n\nexport interface State {\n  accountRequest?: AccountRequest;\n  steps: {[key: string]: AccountRequestStep}\n}\n\nexport interface AccountRequest {\n  firstName?: string;\n}\n\nexport interface AccountRequestStep {\n  index: number;\n  active: boolean;\n  status: AccountRequestStatus;\n}\n\nexport const initialState: State = {\n  steps: {}\n};\n\nexport const reducer = createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n);\n",
+            "properties": [
+                {
+                    "name": "accountRequest",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "AccountRequest",
+                    "optional": true,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "steps",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "AccountRequestEffects",
+            "id": "injectable-AccountRequestEffects-21a6b92942f9e2291777b7be639f1b5c20121343b0c73275f4d211ed31fcb32e1738e7b8b71593d6152efff4594ef485b01ad7b4dd8741b8cd66ea7fea73d784",
+            "file": "src/app/phoenix/open/pages/account-request/store/account-request.effects.ts",
+            "properties": [],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Actions, createEffect, ofType } from '@ngrx/effects';\n\nimport { concatMap } from 'rxjs/operators';\nimport { Observable, EMPTY } from 'rxjs';\nimport * as AccountRequestActions from './account-request.actions';\n\n@Injectable()\nexport class AccountRequestEffects {\n\n  constructor(private actions$: Actions) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [
+        {
+            "name": "AccountRequestStepDirective",
+            "id": "directive-AccountRequestStepDirective-ae3b4867078868bddfc3746d94a1b5980c0cfe0093f079775a3b3b2da4b8c3dab7aeccb36a49fe72e103cb8efdd8388a41995d5b6fab78fee0c63f7d36f0524e",
+            "file": "src/app/phoenix/open/pages/account-request/directives/account-request-step.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, Input} from '@angular/core';\n\n@Directive({\n  selector: '[appAccountRequestStep]'\n})\nexport class AccountRequestStepDirective {\n  @Input() title = 'step';\n\n  constructor() { }\n\n}\n",
+            "selector": "[appAccountRequestStep]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'step'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 7,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 7
+            }
+        },
+        {
+            "name": "DynamicComponentDirective",
+            "id": "directive-DynamicComponentDirective-2c3b4fa13727091f17309d3d4803ece19fd01208d9dbda59af74aa685de3b664b2bfb1e4f18f86975c128dc8d43b7cda2348aaa30c43c4cff85ed7a76f347f14",
+            "file": "src/app/pages/dynamic-components/dynamic-component.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, ViewContainerRef} from '@angular/core';\n\n@Directive({\n  selector: '[appDynamicComponent]'\n})\nexport class DynamicComponentDirective {\n  constructor(public viewContainerRef: ViewContainerRef) {\n  }\n}\n",
+            "selector": "[appDynamicComponent]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "viewContainerRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ViewContainerRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 7,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "AccessFormComponent",
+            "id": "component-AccessFormComponent-7fee1537634e305d54ff5c4d52c65b7f05466aece5501898198bb5de92159a24539acaf2ab08d07f78fb28a8b25a172e4cf041d1fc525d57ea6eb1d253f74612",
+            "file": "src/app/phoenix/open/pages/account-request/components/forms/access-form/access-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-access-form",
+            "styleUrls": [
+                "./access-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./access-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-access-form',\n  templateUrl: './access-form.component.html',\n  styleUrls: ['./access-form.component.scss']\n})\nexport class AccessFormComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./access-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>access-form works!</p>\n"
+        },
+        {
+            "name": "AccountRequestComponent",
+            "id": "component-AccountRequestComponent-7c7469b2d7d3f3c1fbaaa22672e632a7d4ac78fc9b3d1a96916ac706928229a345192edea442444df533cacc5dbfd3a8aad9bea43952707dca04aa516ea24034",
+            "file": "src/app/phoenix/open/pages/account-request/account-request.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-account-request",
+            "styleUrls": [
+                "./account-request.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./account-request.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "account$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "firstFormGroup",
+                    "defaultValue": "this._formBuilder.group({\n    firstCtrl: ['', Validators.required],\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "isLinear",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "secondFormGroup",
+                    "defaultValue": "this._formBuilder.group({\n    secondCtrl: ['', Validators.required],\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {Store} from '@ngrx/store';\nimport {patchAccountRequest} from './store/account-request.actions';\nimport {Observable} from 'rxjs';\nimport {selectAccountRequest} from './store/account-request.selectors';\nimport {FormBuilder, Validators} from '@angular/forms';\n\n@Component({\n  selector: 'app-account-request',\n  templateUrl: './account-request.component.html',\n  styleUrls: ['./account-request.component.scss']\n})\nexport class AccountRequestComponent implements OnInit {\n  public account$: Observable<any>;\n  firstFormGroup = this._formBuilder.group({\n    firstCtrl: ['', Validators.required],\n  });\n  secondFormGroup = this._formBuilder.group({\n    secondCtrl: ['', Validators.required],\n  });\n  isLinear = false;\n\n  constructor(private _formBuilder: FormBuilder, private store: Store) {\n    this.account$ = store.select(selectAccountRequest);\n  }\n\n  ngOnInit(): void {\n    this.store.dispatch(patchAccountRequest({patch: {firstName: 'forrest'}}))\n    this.account$.subscribe(console.log);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/** custom CSS as per your :required */\n::ng-deep .mat-horizontal-stepper-header {\n  box-sizing: border-box;\n  padding: 24px;\n  background: transparent;\n}\n::ng-deep .mat-horizontal-stepper-header .mat-step-label {\n  padding: 0px 0px 16px !important;\n  color: #fff;\n}\n\n::ng-deep .mat-horizontal-stepper-header-container {\n  display: none !important;\n}\n",
+                    "styleUrl": "./account-request.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "_formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "_formBuilder",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-header-bar></app-header-bar>\n<app-step-indicator></app-step-indicator>\n<app-form-header></app-form-header>\n<app-forms></app-forms>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-706da46b667914098128adfc969ae3ab0216c9bb99d96accef2196da2c729d35bcc50ae366ef19b12aca1ee7261e486e25f911bf5a6fb3c53734961940757e47",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'sony-sandbox'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'sony-sandbox';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 711,
+                            "end": 724,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 712,
+                                "end": 720,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 40,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 48
+                    }
+                }
+            }
+        },
+        {
+            "name": "ConfirmationComponent",
+            "id": "component-ConfirmationComponent-48bd91947fb3c69112cc5465e89bdd6076abcfea6404ce5000144736a68a872036a3c14342d53c426d2ff4fefbfb07135f54bafb663758ac63d6e735b1f7c776",
+            "file": "src/app/phoenix/open/pages/account-request/components/forms/confirmation/confirmation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-confirmation",
+            "styleUrls": [
+                "./confirmation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./confirmation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-confirmation',\n  templateUrl: './confirmation.component.html',\n  styleUrls: ['./confirmation.component.scss']\n})\nexport class ConfirmationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./confirmation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>confirmation works!</p>\n"
+        },
+        {
+            "name": "DemoComponent",
+            "id": "component-DemoComponent-915b67db407dd3c221aad36a5055322b1bfb164309f4818c630c3347f691b7f49d6b9725f504feab6b7e8285ecf4651a2978e90899597a0752dfe7dfab080a14",
+            "file": "src/app/pages/partial/demo/demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-demo",
+            "styleUrls": [
+                "./demo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./demo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "partialInputBindings",
+                    "defaultValue": "{\n    name: 'Forrest'\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "partialOutputBindings",
+                    "defaultValue": "{\n    reply: (reply: string) => this.reply = reply\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "partialSrc",
+                    "defaultValue": "partial(() => import('./partials/sample.partial'))",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "reply",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {partial} from '../lib/partial';\n\n@Component({\n  selector: 'app-demo',\n  templateUrl: './demo.component.html',\n  styleUrls: ['./demo.component.scss']\n})\nexport class DemoComponent {\n  public readonly partialSrc = partial(() => import('./partials/sample.partial'));\n  public readonly partialInputBindings = {\n    name: 'Forrest'\n  };\n  public readonly partialOutputBindings = {\n    reply: (reply: string) => this.reply = reply\n  }\n\n  public reply: string | undefined;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./demo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<h1>Partial Demo</h1>\n\n<app-partial\n  [src]=\"partialSrc\"\n  [inputBindings]=\"partialInputBindings\"\n  [outputBindings]=\"partialOutputBindings\"\n></app-partial>\n\n<p *ngIf=\"reply\">\n  Forrest replied \"{{reply}}\"\n</p>\n"
+        },
+        {
+            "name": "DynamicComponentsComponent",
+            "id": "component-DynamicComponentsComponent-f4dd0633bb95acc45f03cc912edb34c8d82b07807ea59170fff6695c4c3a6e6119ff63a231034034022f8e9f31fe4e409d78517dadf941da83660d5e4532b408",
+            "file": "src/app/pages/dynamic-components/dynamic-components.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dynamic-components",
+            "styleUrls": [
+                "./dynamic-components.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-components.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dynamicComponent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DynamicComponentDirective",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "DynamicComponentDirective, {static: true}"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "loadComponent",
+                    "args": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        131
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, OnInit, ViewChild} from '@angular/core';\nimport {DynamicComponentDirective} from './dynamic-component.directive';\n\n@Component({\n  selector: 'app-dynamic-components',\n  templateUrl: './dynamic-components.component.html',\n  styleUrls: ['./dynamic-components.component.scss']\n})\nexport class DynamicComponentsComponent {\n  // you apply the DynamicComponentDirective to the wrapper so you can access it's viewContainer\n  @ViewChild(DynamicComponentDirective, {static: true}) dynamicComponent!: DynamicComponentDirective;\n\n  async loadComponent(name: string) {\n    // first get the viewContainer reference\n    const viewContainerRef = this.dynamicComponent?.viewContainerRef;\n\n    // clear the container if it has already been loaded\n    viewContainerRef?.clear();\n\n    // lazy load the module\n    const componentLoader = () => import('./greeting/greeting.module').then(module => module.GreetingModule);\n    const greetingModule = await componentLoader();\n\n    // the greeting module exposes a static embed property, which enables us to access the\n    // GreetingComponent reference from the lazy loaded instance\n    const greetingComponent = greetingModule.embed;\n\n    // create the component instance in the view container\n    const componentRef: {instance: any} = viewContainerRef.createComponent(greetingComponent);\n\n    // now you can interact with the instance\n    // setting input values\n    componentRef.instance.name = name;\n    // subscribe to output events\n    componentRef.instance.replied.subscribe((reply: string) => {\n      // todo do something with the reply\n    })\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dynamic-components.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<h1>Dynamic Templates</h1>\n\n<input #name placeholder=\"Enter a name\">\n<button (click)=\"loadComponent(name.value)\">Load Template</button>\n\n<section class=\"template-wrapper\">\n  <div class=\"container\" appDynamicComponent></div>\n</section>\n"
+        },
+        {
+            "name": "FormHeaderComponent",
+            "id": "component-FormHeaderComponent-c58caa0257e0cd64d26446c0d41daad8f3392b439ff9ede467aa7cb863028599855f122a95f2964a6903fa1543c59b049e3db6227d67a40b53e44170f1d1daec",
+            "file": "src/app/phoenix/open/pages/account-request/components/form-header/form-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-header",
+            "styleUrls": [
+                "./form-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-header',\n  templateUrl: './form-header.component.html',\n  styleUrls: ['./form-header.component.scss']\n})\nexport class FormHeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./form-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"form-header\">\n  <div class=\"content\">\n    <h1>Request Access to Runner</h1>\n    <p>Please select the content you would like to access. An approver will review your request.</p>\n  </div>\n  <div class=\"actions\">\n    <button mat-button>Previous</button>\n    <button mat-button>Next</button>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "FormsComponent",
+            "id": "component-FormsComponent-9e25b1c2594663c0bd94d10308001ea09d2cfbf9745bd4a280c3156c6bba73062aec18bb582fc884819e75630c36fb39111741c6f000599e0d286733f4a4b26a",
+            "file": "src/app/phoenix/open/pages/account-request/components/forms/forms.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-forms",
+            "styleUrls": [
+                "./forms.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./forms.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-forms',\n  templateUrl: './forms.component.html',\n  styleUrls: ['./forms.component.scss']\n})\nexport class FormsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./forms.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-stepper [linear]=\"true\" #stepper>\n  <mat-step label=\"Registration\" [completed]=\"false\">\n    <app-registration></app-registration>\n  </mat-step>\n  <mat-step label=\"Access Form\" [completed]=\"false\">\n    <app-access-form></app-access-form>\n  </mat-step>\n  <mat-step label=\"Confirmation\" [completed]=\"false\">\n    <app-confirmation></app-confirmation>\n  </mat-step>\n</mat-stepper>\n"
+        },
+        {
+            "name": "GreetingComponent",
+            "id": "component-GreetingComponent-8fe001ca6aa69329a5109a6f293fc163a10525374e354b2a9e7d990f8cbf2c36c43a2690bf3c487fc96e8c6b5fda4b5460dafc37aa2619caca3d30df811ba10c",
+            "file": "src/app/pages/dynamic-components/greeting/greeting.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-greeting",
+            "styleUrls": [
+                "./greeting.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./greeting.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "name",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "replied",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reply",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';\n\n@Component({\n  selector: 'app-greeting',\n  templateUrl: './greeting.component.html',\n  styleUrls: ['./greeting.component.scss']\n})\nexport class GreetingComponent implements OnInit {\n  @Input() name: string = '';\n  @Output() replied: EventEmitter<string> = new EventEmitter<string>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  reply() {\n    this.replied.emit('Hi!');\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./greeting.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>Hello {{name}}</p>\n<button (click)=\"reply()\">Reply</button>\n"
+        },
+        {
+            "name": "HeaderBarComponent",
+            "id": "component-HeaderBarComponent-a1fb7eb0c3622d37a11ddf9c352ee6d3b152a554d7de2a433e4007af1964bf11836aa9327ba7f093edae5b6d2bfee0c664f0a9f2a93287101934f44f771ebb53",
+            "file": "src/app/phoenix/open/components/header-bar/header-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header-bar",
+            "styleUrls": [
+                "./header-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {MatToolbarModule} from '@angular/material/toolbar';\nimport {MatButtonModule} from '@angular/material/button';\n\n@Component({\n  selector: 'app-header-bar',\n  standalone: true,\n  imports: [CommonModule, MatToolbarModule, MatButtonModule],\n  templateUrl: './header-bar.component.html',\n  styleUrls: ['./header-bar.component.scss']\n})\nexport class HeaderBarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-toolbar{\n  background: #032444;\n  color: #fff;\n}\n",
+                    "styleUrl": "./header-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-toolbar color=\"dark\">\n  <span>Runner Logo</span>\n</mat-toolbar>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-6a1f8a3ca6cc7eed44a0ba506eea3ed24de8cb2e45fd2a9ae3207035c43fdd5c56e6bdff9da407ef8884933b065c19fb967d30a5c40fd8a3472ca2eec39123cd",
+            "file": "src/app/pages/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>Sony Sandbox</h1>\n\n<ul>\n  <li><a routerLink=\"/dynamic-components\">Lazy Loaded Dynamic Components</a></li>\n  <li><a routerLink=\"/partial\">Partials</a></li>\n  <li><a routerLink=\"/modular-components\">Modular Components</a></li>\n</ul>\n\n<h2>Phoenix</h2>\n<h3>Open App</h3>\n<ul>\n  <li><a routerLink=\"/phoenix/open/account-request\">Account Request</a></li>\n</ul>\n"
+        },
+        {
+            "name": "ModularComponentsComponent",
+            "id": "component-ModularComponentsComponent-7ddcc624a759e19ca0ae254ae9b93c8b619bc7d828cf483a8778f02b7268dd5cfd2d956d4f4a83bb15bb2643f1f2fa913bcc49470a64775b7281c1df8639ed17",
+            "file": "src/app/pages/modular-components/modular-components.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modular-components",
+            "styleUrls": [
+                "./modular-components.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modular-components.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-modular-components',\n  templateUrl: './modular-components.component.html',\n  styleUrls: ['./modular-components.component.scss']\n})\nexport class ModularComponentsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./modular-components.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>modular-components works!</p>\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 64
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "PartialComponent",
+            "id": "component-PartialComponent-d258709412132013d3d0f9fb83b2a3e4c9d270b6ceda4166705e7d3a764b4641478f21554acfd119582fe6f6b7e84661d037b96ac50bdd86669587ae025342c3",
+            "file": "src/app/pages/partial/lib/partial/partial.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-partial",
+            "styleUrls": [
+                "./partial.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "inputBindings",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "outputBindings",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "src",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "viewContainerRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ViewContainerRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "loadPartial",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        131
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<void>",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';\n\n@Component({\n  selector: 'app-partial',\n  template: '<ng-content></ng-content>',\n  styleUrls: ['./partial.component.scss']\n})\nexport class PartialComponent implements OnInit{\n  @Input() src: any;\n  @Input() inputBindings: any;\n  @Input() outputBindings: any;\n  constructor(public viewContainerRef: ViewContainerRef) {\n  }\n\n  async loadPartial() {\n    if ( typeof this.src === undefined) {\n      throw new Error('required src attribute not set')\n      return;\n    }\n    const partial = await this.src();\n    const componentRef: {instance: any} = this.viewContainerRef.createComponent(partial);\n    const {instance} = componentRef;\n    if (this.inputBindings) {\n      Object.keys(this.inputBindings).forEach(k => {\n        instance[k] = this.inputBindings[k];\n      });\n    }\n    if (this.outputBindings) {\n      Object.keys(this.outputBindings).forEach(k => {\n        // todo handle unsubscribing\n        instance[k].subscribe(this.outputBindings[k]);\n      });\n    }\n  }\n\n  ngOnInit(): Promise<void> {\n    return this.loadPartial();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./partial.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ]
+        },
+        {
+            "name": "ProgressComponent",
+            "id": "component-ProgressComponent-79b68d045d2d31d865b485bdb630f0505ec43d1a7a0ab1724ba2ca4e0e65dc83fb298115d362e1e028b8181f9b95b25447502f7f33605454abb262daf36f1bcf",
+            "file": "src/app/phoenix/open/pages/account-request/components/progress/progress.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-progress",
+            "styleUrls": [
+                "./progress.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./progress.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-progress',\n  templateUrl: './progress.component.html',\n  styleUrls: ['./progress.component.scss']\n})\nexport class ProgressComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./progress.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>progress works!</p>\n"
+        },
+        {
+            "name": "RegistrationComponent",
+            "id": "component-RegistrationComponent-47454ab859cb867c70ff4f0185b733c6a370a3226a460c2b94441cd9dbb04da4fd8d083fa6b2af0007c4297eba463e0d2ab1aa928502d7e544b630bfbed7606d",
+            "file": "src/app/phoenix/open/pages/account-request/components/forms/registration/registration.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-registration",
+            "styleUrls": [
+                "./registration.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./registration.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-registration',\n  templateUrl: './registration.component.html',\n  styleUrls: ['./registration.component.scss']\n})\nexport class RegistrationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./registration.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>registration works!</p>\n"
+        },
+        {
+            "name": "SampleComponent",
+            "id": "component-SampleComponent-2fac9fe6785213813d37ba24ae0f95c7dfc011def42d9119872d8dfddee82c3fb9cac2bc8509cec2c4dc2f763f1b29e4bb70f18bd59c5c430b9fb6e7b80b8088",
+            "file": "src/app/pages/partial/demo/partials/sample.partial.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [],
+            "styles": [],
+            "template": "<span>Hello {{name}}</span> <button (click)=\"reply.emit('Look, this works!')\">Reply</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "reply",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, NgModule, Output, ViewContainerRef} from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  template: `<span>Hello {{name}}</span> <button (click)=\"reply.emit('Look, this works!')\">Reply</button>`,\n})\nexport class SampleComponent {\n  @Input() name: string | undefined;\n  @Output() reply: EventEmitter<string> = new EventEmitter<string>();\n\n  constructor() {}\n}\n\n@NgModule({\n  declarations: [\n    SampleComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class PartialModule {\n  static partial = SampleComponent;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            }
+        }
+    ],
+    "modules": [
+        {
+            "name": "AccountRequestModule",
+            "id": "module-AccountRequestModule-d437d31f3e274a0d6e9f4f1fd5f728647f63a94e6aa9fef3ab96882554ca40d5a09b93d42392af3faeb9d696bdff96d7f8e8c3b571de012adc0019fb3819ba96",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/open/pages/account-request/account-request.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { AccountRequestComponent } from './account-request.component';\nimport {HeaderBarComponent} from '../../components/header-bar/header-bar.component';\nimport { EffectsModule } from '@ngrx/effects';\nimport * as fromAccountRequest from './store/account-request.reducer';\nimport { AccountRequestEffects } from './store/account-request.effects';\nimport {StoreModule} from '@ngrx/store';\nimport { RegistrationComponent } from './components/forms/registration/registration.component';\nimport { AccessFormComponent } from './components/forms/access-form/access-form.component';\nimport { ConfirmationComponent } from './components/forms/confirmation/confirmation.component';\nimport {MatStepperModule} from '@angular/material/stepper';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatIconModule} from '@angular/material/icon';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {MatInputModule} from '@angular/material/input';\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\nimport {FormHeaderComponent} from './components/form-header/form-header.component';\nimport { AccountRequestStepDirective } from './directives/account-request-step.directive';\nimport { FormsComponent } from './components/forms/forms.component';\nimport { ProgressComponent } from './components/progress/progress.component';\n\n\n\n@NgModule({\n  declarations: [\n    AccountRequestComponent,\n    RegistrationComponent,\n    AccessFormComponent,\n    ConfirmationComponent,\n    FormHeaderComponent,\n    AccountRequestStepDirective,\n    FormsComponent,\n    ProgressComponent\n  ],\n  exports: [\n    AccountRequestComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    HeaderBarComponent,\n    MatIconModule,\n    MatStepperModule,\n    MatButtonModule,\n    MatInputModule,\n    MatFormFieldModule,\n    ReactiveFormsModule,\n    StoreModule.forFeature(fromAccountRequest.accountRequestFeatureKey, fromAccountRequest.reducer),\n    EffectsModule.forFeature([AccountRequestEffects])\n  ]\n})\nexport class AccountRequestModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AccessFormComponent"
+                        },
+                        {
+                            "name": "AccountRequestComponent"
+                        },
+                        {
+                            "name": "AccountRequestStepDirective"
+                        },
+                        {
+                            "name": "ConfirmationComponent"
+                        },
+                        {
+                            "name": "FormHeaderComponent"
+                        },
+                        {
+                            "name": "FormsComponent"
+                        },
+                        {
+                            "name": "ProgressComponent"
+                        },
+                        {
+                            "name": "RegistrationComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "HeaderBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AccountRequestComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-e5d7a34fd2e75bc5fbb20f341b9ea659a87b6ae3f6405f426da3f045c8c451802a22f911df25e30fd73d4672e6aa29d2a5affd72c92fdb0a00b954b51cd96c45",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport {HttpClientModule} from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { EffectsModule } from '@ngrx/effects';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { environment } from '../environments/environment';\nimport { StoreModule } from '@ngrx/store';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    BrowserAnimationsModule,\n    EffectsModule.forRoot([]),\n    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),\n    StoreModule.forRoot({}, {}),\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-d4c25dc7c8e52306692f8375002e0ec909cc3af14ec39a263dfc0468def9e298cd157ac411e9e31ed2efac5af16e0bc526d0b18003b2c361038f6f3560883a28",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {AccountRequestComponent} from './phoenix/open/account-request/components/account-request/account-request.component';\n\nconst routes: Routes = [\n  {\n    path: 'home',\n    loadChildren: () => \"import('./pages/home/home.module').then( m => m.HomeModule)\"\n  },\n  {\n    path: '',\n    redirectTo: 'home',\n    pathMatch: 'full'\n  },\n  {\n    path: 'dynamic-components',\n    loadChildren: () => \"import('./pages/dynamic-components/dynamic-components.module').then( m => m.DynamicComponentsModule)\"\n  },\n  {\n    path: 'partial',\n    loadChildren: () => \"import('./pages/partial/partial.module').then( m => m.PartialModule)\"\n  },\n  {\n    path: 'modular-components',\n    loadChildren: () => \"import('./pages/modular-components/modular-components.module').then( m => m.ModularComponentsModule)\"\n  },\n  {\n    path: 'phoenix',\n    loadChildren: () => \"import('./phoenix/phoenix.module').then(m => m.PhoenixModule)\"\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DynamicComponentsModule",
+            "id": "module-DynamicComponentsModule-8e0e7eaa16995d85373ef2337b9312956c738baac0f6e898c5614e21a797abf88869d82f44801298daa1c7d596ee71320bc0d58a0246b826243368af3a6ca6b2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/dynamic-components/dynamic-components.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { DynamicComponentsRoutingModule } from './dynamic-components-routing.module';\nimport {DynamicComponentsComponent} from './dynamic-components.component';\nimport { DynamicComponentDirective } from './dynamic-component.directive';\n\n\n@NgModule({\n  declarations: [\n    DynamicComponentsComponent,\n    DynamicComponentDirective\n  ],\n  imports: [\n    CommonModule,\n    DynamicComponentsRoutingModule\n  ]\n})\nexport class DynamicComponentsModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DynamicComponentDirective"
+                        },
+                        {
+                            "name": "DynamicComponentsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DynamicComponentsRoutingModule",
+            "id": "module-DynamicComponentsRoutingModule-8aaa97e85eeceb44de83972d4000ff725f623867f725b13a2a754f2fecbe582c00c1f3b8d86f81a0e8b3a9b9f7c207c70a4840fb72721a47f9197cf713783147",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/dynamic-components/dynamic-components-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {DynamicComponentsComponent} from './dynamic-components.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: DynamicComponentsComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class DynamicComponentsRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "GreetingModule",
+            "id": "module-GreetingModule-7da921c951d1535c66d44113fb0d48d46194c5222efd5a89183d3e7cf61b5118f7c35df7a1591006fd3583286ac8216cafe8c0373383f65f218bed6869538658",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/dynamic-components/greeting/greeting.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { GreetingComponent } from './greeting.component';\n\n\n\n@NgModule({\n  declarations: [\n    GreetingComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class GreetingModule {\n  static embed = GreetingComponent;\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "GreetingComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HomeModule",
+            "id": "module-HomeModule-a916b5b5d0ec2248c490b347c7b94095c1b74414364ec62e33c7a8d3a9ecba31d3738abd1778dc430da9f1f4f349018301076a368dd3a7ae3d01c299c2eac594",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/home/home.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HomeRoutingModule } from './home-routing.module';\nimport {HomeComponent} from './home.component';\n\n\n@NgModule({\n  declarations: [\n    HomeComponent\n  ],\n  imports: [\n    CommonModule,\n    HomeRoutingModule\n  ]\n})\nexport class HomeModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "HomeRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HomeRoutingModule",
+            "id": "module-HomeRoutingModule-548a8cde8683fd513208012d88cd89bbf021ec68a4e0a645da817012d8cfbdd6211b060fd67aa3ca0c6adcb679ba67821db7375587731005771790b23f0f0219",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/home/home-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {HomeComponent} from './home.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: HomeComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class HomeRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ModularComponentsModule",
+            "id": "module-ModularComponentsModule-1a46c94e93d3c68d257d5ad8b08ac8ca741a63f4b908bfa8592ba2ebe0073674f6c0e47b14cce472b40435b888d8aab15aa99a688195ec5d5a9bd1daf9ba3416",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/modular-components/modular-components.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ModularComponentsRoutingModule } from './modular-components-routing.module';\nimport { ModularComponentsComponent } from './modular-components.component';\n\n\n@NgModule({\n  declarations: [\n    ModularComponentsComponent\n  ],\n  imports: [\n    CommonModule,\n    ModularComponentsRoutingModule\n  ]\n})\nexport class ModularComponentsModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ModularComponentsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ModularComponentsRoutingModule",
+            "id": "module-ModularComponentsRoutingModule-ca1f28330339d7a3dc5a6dd5c9fd6b9cce9b740870f3e2e844f0d16d2a7bf86069af0ef010ba6cef4a1a054b52d9f1e8a664b4e78c2a055f73b6e4c2abee54ac",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/modular-components/modular-components-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {ModularComponentsComponent} from './modular-components.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: ModularComponentsComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class ModularComponentsRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "OpenModule",
+            "id": "module-OpenModule-f73c524500a23f176941faba7580ac6c10b8a825a7b4b264fd1a0ddc995142c1277c2668aee546d525779d46dd39d3aff261c1bbb2312035e76c915debabf218",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/open/open.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { OpenRoutingModule } from './open-routing.module';\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    OpenRoutingModule\n  ]\n})\nexport class OpenModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "OpenRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "OpenRoutingModule",
+            "id": "module-OpenRoutingModule-1e622e0e1b5ff20337e7278e4124c90d06c477d710547b14a6c65cbd946bbbc41aedd20c2af634036c5290dbc4cd680521fa97e75b430cdda2c987aaccdf936b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/open/open-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class OpenRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PartialModule",
+            "id": "module-PartialModule-09e5ee177aa53335840fbbe6b58da4af77fb77cc1b5b2e0584a3e00d65c6f03ea52ebe1fd85db0a0a934d2347f734c4cc3b1fed1d079208ad33ecacedc0cfb2f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/partial/partial.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { PartialRoutingModule } from './partial-routing.module';\nimport { DemoComponent } from './demo/demo.component';\nimport { PartialComponent } from './lib/partial/partial.component';\n\n@NgModule({\n  declarations: [\n    DemoComponent,\n    PartialComponent\n  ],\n  imports: [\n    CommonModule,\n    PartialRoutingModule\n  ]\n})\nexport class PartialModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DemoComponent"
+                        },
+                        {
+                            "name": "PartialComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "PartialRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PartialModule",
+            "id": "module-PartialModule-2fac9fe6785213813d37ba24ae0f95c7dfc011def42d9119872d8dfddee82c3fb9cac2bc8509cec2c4dc2f763f1b29e4bb70f18bd59c5c430b9fb6e7b80b8088-1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/partial/demo/partials/sample.partial.ts",
+            "methods": [],
+            "sourceCode": "import {Component, EventEmitter, Input, NgModule, Output, ViewContainerRef} from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  template: `<span>Hello {{name}}</span> <button (click)=\"reply.emit('Look, this works!')\">Reply</button>`,\n})\nexport class SampleComponent {\n  @Input() name: string | undefined;\n  @Output() reply: EventEmitter<string> = new EventEmitter<string>();\n\n  constructor() {}\n}\n\n@NgModule({\n  declarations: [\n    SampleComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class PartialModule {\n  static partial = SampleComponent;\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SampleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PartialRoutingModule",
+            "id": "module-PartialRoutingModule-c7d537ab35456387d75c2f83e6cdde69fed87852350a08a1f5d786b8ac02e9ae425ed9e872f56a170001c2544385992a8bad44200af3fbb915ea1edef7e65301",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/partial/partial-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {DemoComponent} from './demo/demo.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: DemoComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class PartialRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PhoenixModule",
+            "id": "module-PhoenixModule-3cc7247371012463e1ceb8814eea667d88cf9e5a5dd79f19ff597075cae0f3b10cbb62ec379055fe135363ba711bcc8c66f91bd043ddd9231c622e2063a40d29",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/phoenix.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { PhoenixRoutingModule } from './phoenix-routing.module';\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    PhoenixRoutingModule\n  ]\n})\nexport class PhoenixModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "PhoenixRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PhoenixRoutingModule",
+            "id": "module-PhoenixRoutingModule-94c86c321c73e3e0f6ceb2fd88f140ff985765e82024e6444564f4732a1396446776ac5e3fc2db001d891ec42cdff976b37df1cc257c640fdb39c411098a0d9e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/phoenix-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'open',\n\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class PhoenixRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "accountRequestFeatureKey",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'accountRequest'"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "State",
+                "defaultValue": "{\n  steps: {}\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "nextStep",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest'\n)"
+            },
+            {
+                "name": "partial",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/pages/partial/lib/partial.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(loader: PartialLoader, props: any = {}, config: PartialOptions = {}): any => {\n  const partialConfig = Object.assign({\n    moduleName: 'PartialModule'\n  }, config);\n  return () => {\n    const moduleName: string = partialConfig.moduleName;\n    return loader().then((m: any) => {\n      const module = m[moduleName];\n      return module.partial;\n    }).catch(console.error);\n  }\n}"
+            },
+            {
+                "name": "patchAccountRequest",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest',\n  props<{patch: any}>()\n)"
+            },
+            {
+                "name": "previousStep",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest'\n)"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/components/HeaderBar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/pages/account-request/Progress.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "reducer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n)"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "selectAccountRequest",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createSelector(\n  selectAccountRequestState,\n  (state) => state.accountRequest ? {...state.accountRequest} : null\n)"
+            },
+            {
+                "name": "selectAccountRequestState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createFeatureSelector<fromAccountRequest.State>(\n  fromAccountRequest.accountRequestFeatureKey\n)"
+            },
+            {
+                "name": "setActiveStep",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Set Active Step',\n  props<{index: number}>()\n)"
+            },
+            {
+                "name": "setSteps",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Set Steps',\n  props<{steps: AccountRequestStep[]}>()\n)"
+            },
+            {
+                "name": "setStepStatus",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[AccountRequest] Set Step Status',\n  props<{index: number, status: AccountRequestStatus}>()\n)"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/components/HeaderBar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeaderBarComponent>",
+                "defaultValue": "(args: HeaderBarComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AccountRequestComponent>",
+                "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/open/pages/account-request/Progress.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<AccountRequestComponent>",
+                "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "PartialLoader",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "function",
+                "file": "src/app/pages/partial/lib/partial.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 178
+            }
+        ],
+        "enumerations": [
+            {
+                "name": "AccountRequestStatus",
+                "childs": [
+                    {
+                        "name": "pristine",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "pristine"
+                    },
+                    {
+                        "name": "dirty",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "dirty"
+                    },
+                    {
+                        "name": "done",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "done"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts": [
+                {
+                    "name": "accountRequestFeatureKey",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'accountRequest'"
+                },
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "State",
+                    "defaultValue": "{\n  steps: {}\n}"
+                },
+                {
+                    "name": "reducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n)"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts": [
+                {
+                    "name": "nextStep",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest'\n)"
+                },
+                {
+                    "name": "patchAccountRequest",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest',\n  props<{patch: any}>()\n)"
+                },
+                {
+                    "name": "previousStep",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest'\n)"
+                },
+                {
+                    "name": "setActiveStep",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Set Active Step',\n  props<{index: number}>()\n)"
+                },
+                {
+                    "name": "setSteps",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Set Steps',\n  props<{steps: AccountRequestStep[]}>()\n)"
+                },
+                {
+                    "name": "setStepStatus",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[AccountRequest] Set Step Status',\n  props<{index: number, status: AccountRequestStatus}>()\n)"
+                }
+            ],
+            "src/app/pages/partial/lib/partial.ts": [
+                {
+                    "name": "partial",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/pages/partial/lib/partial.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(loader: PartialLoader, props: any = {}, config: PartialOptions = {}): any => {\n  const partialConfig = Object.assign({\n    moduleName: 'PartialModule'\n  }, config);\n  return () => {\n    const moduleName: string = partialConfig.moduleName;\n    return loader().then((m: any) => {\n      const module = m[moduleName];\n      return module.partial;\n    }).catch(console.error);\n  }\n}"
+                }
+            ],
+            "src/stories/open/components/HeaderBar.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/components/HeaderBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/components/HeaderBar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeaderBarComponent>",
+                    "defaultValue": "(args: HeaderBarComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/open/pages/account-request/AccountRequest.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AccountRequestComponent>",
+                    "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/open/pages/account-request/Progress.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/pages/account-request/Progress.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/open/pages/account-request/Progress.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AccountRequestComponent>",
+                    "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts": [
+                {
+                    "name": "selectAccountRequest",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createSelector(\n  selectAccountRequestState,\n  (state) => state.accountRequest ? {...state.accountRequest} : null\n)"
+                },
+                {
+                    "name": "selectAccountRequestState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createFeatureSelector<fromAccountRequest.State>(\n  fromAccountRequest.accountRequestFeatureKey\n)"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {
+            "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts": [
+                {
+                    "name": "AccountRequestStatus",
+                    "childs": [
+                        {
+                            "name": "pristine",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "pristine"
+                        },
+                        {
+                            "name": "dirty",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "dirty"
+                        },
+                        {
+                            "name": "done",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "done"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {
+            "src/app/pages/partial/lib/partial.ts": [
+                {
+                    "name": "PartialLoader",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "function",
+                    "file": "src/app/pages/partial/lib/partial.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 178
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "home",
+                        "loadChildren": "./pages/home/home.module#HomeModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/pages/home/home-routing.module.ts",
+                                        "module": "HomeRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "HomeComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "HomeModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "redirectTo": "home",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "dynamic-components",
+                        "loadChildren": "./pages/dynamic-components/dynamic-components.module#DynamicComponentsModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/pages/dynamic-components/dynamic-components-routing.module.ts",
+                                        "module": "DynamicComponentsRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "DynamicComponentsComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "DynamicComponentsModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "partial",
+                        "loadChildren": "./pages/partial/partial.module#PartialModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/pages/partial/partial-routing.module.ts",
+                                        "module": "PartialRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "DemoComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "PartialModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "modular-components",
+                        "loadChildren": "./pages/modular-components/modular-components.module#ModularComponentsModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/pages/modular-components/modular-components-routing.module.ts",
+                                        "module": "ModularComponentsRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "ModularComponentsComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "ModularComponentsModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "phoenix",
+                        "loadChildren": "./phoenix/phoenix.module#PhoenixModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/phoenix/phoenix-routing.module.ts",
+                                        "module": "PhoenixRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "open"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "PhoenixModule"
+                            }
+                        ]
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 1,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/dynamic-components/dynamic-component.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "DynamicComponentDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/dynamic-components/dynamic-components.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynamicComponentsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/dynamic-components/greeting/greeting.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GreetingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/modular-components/modular-components.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModularComponentsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/demo/demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/demo/partials/sample.partial.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/lib/partial.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PartialConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/lib/partial.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PartialOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/lib/partial.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "partial",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/partial/lib/partial/partial.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PartialComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/components/header-bar/header-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/account-request.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccountRequestComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/form-header/form-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/access-form/access-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccessFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/confirmation/confirmation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ConfirmationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/forms.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/registration/registration.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegistrationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/components/progress/progress.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgressComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/directives/account-request-step.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "AccountRequestStepDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextStep",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "patchAccountRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "previousStep",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setActiveStep",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setSteps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setStepStatus",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.effects.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AccountRequestEffects",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AccountRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AccountRequestStep",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "State",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "accountRequestFeatureKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "reducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectAccountRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectAccountRequestState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/components/HeaderBar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/components/HeaderBar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/pages/account-request/Progress.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/open/pages/account-request/Progress.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

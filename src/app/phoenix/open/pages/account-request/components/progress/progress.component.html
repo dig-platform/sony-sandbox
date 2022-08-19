@@ -1,0 +1,7 @@
+<div class="progress">
+  <div class="step-wrapper"*ngFor="let step of steps" >
+    <div class="step" [class.active]="step.active" [class.disabled]="step.disabled">
+      <label>{{step.label}}</label>
+    </div>
+  </div>
+</div>

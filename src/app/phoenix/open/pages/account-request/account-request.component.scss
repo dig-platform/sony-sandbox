@@ -1,0 +1,31 @@
+.junkyard{
+  /** custom CSS as per your :required */
+  ::ng-deep .mat-horizontal-stepper-header {
+    box-sizing: border-box;
+    padding: 24px;
+    background: transparent;
+  }
+  ::ng-deep .mat-horizontal-stepper-header .mat-step-label {
+    padding: 0px 0px 16px !important;
+    color: #fff;
+  }
+
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    display: none !important;
+  }
+
+}
+/** custom CSS as per your :required */
+::ng-deep .mat-horizontal-stepper-header {
+  box-sizing: border-box;
+  padding: 24px;
+  background: transparent;
+}
+::ng-deep .mat-horizontal-stepper-header .mat-step-label {
+  padding: 0px 0px 16px !important;
+  color: #fff;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}

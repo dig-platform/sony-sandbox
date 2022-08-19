@@ -1,0 +1,11 @@
+<mat-stepper [linear]="true" #stepper>
+  <mat-step label="Registration" [completed]="false">
+    <app-registration></app-registration>
+  </mat-step>
+  <mat-step label="Access Form" [completed]="false">
+    <app-access-form></app-access-form>
+  </mat-step>
+  <mat-step label="Confirmation" [completed]="false">
+    <app-confirmation></app-confirmation>
+  </mat-step>
+</mat-stepper>

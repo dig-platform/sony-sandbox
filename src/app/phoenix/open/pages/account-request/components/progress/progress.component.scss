@@ -1,0 +1,27 @@
+.progress{
+  display: flex;
+  padding: 2px;
+  align-items: center;
+}
+
+.step-wrapper{
+  flex: 1;
+}
+
+.step{
+  flex: 1;
+  margin: 2px;
+  background: #ccc;
+  text-align: center;
+  padding: 8px;
+  text-transform: uppercase;
+  color: #fff;
+  &.active{
+    background: #1467b8;
+  }
+  &.disabled{
+    label{
+      opacity: .5;
+    }
+  }
+}
