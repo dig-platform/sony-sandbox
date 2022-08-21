@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   Component,
   ContentChildren,
-  ElementRef,
+  ElementRef, Input, OnDestroy,
   OnInit,
   QueryList
 } from '@angular/core';
@@ -11,6 +11,7 @@ import {NgrxFormDirective} from './ngrx-form.directive';
 import {ControlledForm} from './store/ngrx-form';
 import {Store} from '@ngrx/store';
 import {registerForm, setForm} from './store/ngrx-form.actions';
+import {Subscription} from 'rxjs';
 
 
 
@@ -19,14 +20,17 @@ import {registerForm, setForm} from './store/ngrx-form.actions';
   templateUrl: './ngrx-form.component.html',
   styleUrls: ['./ngrx-form.component.scss']
 })
-export class NgrxFormComponent implements OnInit, AfterViewInit {
+export class NgrxFormComponent implements OnInit, AfterViewInit, OnDestroy {
   public template: string = 'loading';
 
   private forms: ControlledForm[] = [];
+  private subs: Subscription[] = [];
 
   constructor(private store: Store) { }
 
   @ContentChildren(NgrxFormDirective) formElements!: QueryList<NgrxFormDirective>;
+
+  @Input() group!: string;
 
   ngOnInit(): void {
   }
@@ -46,21 +50,12 @@ export class NgrxFormComponent implements OnInit, AfterViewInit {
       }
     })
     this.forms = forms;
-    let formRef: ControlledForm;
-    // if (forms.length > 1) {
-    //   formRef = new FormGroup(forms.reduce((a, b) => {
-    //     const group: any = a;
-    //     group[b.instanceId] = b.formGroup;
-    //     return group;
-    //   }, {}))
-    // } else {
-    //   formRef =
-    // }
-    formRef = forms[0];
-    // todo unsubscribe from valueChanges
-    formRef.formGroup.valueChanges.subscribe(value => this.store.dispatch(setForm({
-      data: this.serializeForm(formRef)
-    })))
+    forms.forEach(formRef => {
+      const sub = formRef.formGroup.valueChanges.subscribe(value => this.store.dispatch(setForm({
+        data: this.serializeForm(formRef)
+      })));
+      this.subs.push(sub);
+    });
   }
 
   initializeForm(id: string, form: FormGroup): FormGroup {
@@ -70,7 +65,6 @@ export class NgrxFormComponent implements OnInit, AfterViewInit {
   }
 
   serializeForm(ref: ControlledForm) {
-    console.log(ref.formGroup.errors);
     const data = {
       instanceId: ref.instanceId,
       value: ref.formGroup.value,
@@ -85,9 +79,13 @@ export class NgrxFormComponent implements OnInit, AfterViewInit {
   serializeErrors(form: FormGroup) {
     const errors: {[key: string]: any} = {};
     return Object.keys(form.controls).reduce((errors, key) => {
-      const controlErrors: ValidationErrors | undefined | null = form.get(key)?.errors;
+      const control = form.get(key);
+      if (! control) {
+        // stop ts from complaining
+        return errors;
+      }
+      const controlErrors: ValidationErrors | undefined | null = control.errors;
       if (!! controlErrors) {
-        // const errorArray: any[] = controlErrors as Array<any>;
         errors[key] = Object.keys(controlErrors).map(validator => ({
           validator,
           value: controlErrors[validator]
@@ -95,6 +93,12 @@ export class NgrxFormComponent implements OnInit, AfterViewInit {
       }
       return errors;
     }, errors);
+  }
+
+  ngOnDestroy(): void {
+    if (this.subs) {
+      this.subs.forEach(s => s.unsubscribe());
+    }
   }
 
 }

@@ -1,8 +1,30 @@
 <h1>Ngrx Form Component</h1>
 <p>This component wraps a form and pushes its state to the ngrx store.</p>
 
-<h2>Single Form</h2>
+<section>
+  <h2>Single Form</h2>
+
+  <div class="demo">
+    <div class="form">
+      <h3>Account Info</h3>
+      <app-ngrx-form>
+        <app-form-one #registration [appNgrxForm]="registration" instanceId="registration"></app-form-one>
+      </app-ngrx-form>
+    </div>
+    <app-form-state-inspector [state]="singleFormState$ | async"></app-form-state-inspector>
+  </div>
+
+</section>
+
+<section>
+  <h2>Form Group</h2>
+
+  <app-ngrx-form group="signupForm">
+    <app-form-one #groupRegistration [appNgrxForm]="groupRegistration" instanceId="registrationFromGroup"></app-form-one>
+    <app-form-one #groupPreferences [appNgrxForm]="groupPreferences" instanceId="preferencesFromGroup"></app-form-one>
+  </app-ngrx-form>
+</section>
 
 <app-ngrx-form>
-  <app-form-one #registration [appNgrxForm]="registration" instanceId="test_this"></app-form-one>
+  <app-form-one #registration [appNgrxForm]="registration" instanceId="registration"></app-form-one>
 </app-ngrx-form>
