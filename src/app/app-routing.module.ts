@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AccountRequestComponent} from './phoenix/open/account-request/components/account-request/account-request.component';
 
 const routes: Routes = [
   {
@@ -27,6 +26,15 @@ const routes: Routes = [
   {
     path: 'phoenix',
     loadChildren: () => import('./phoenix/phoenix.module').then(m => m.PhoenixModule)
+  },
+  {
+    path: 'demos',
+    children: [
+      {
+        path: 'ngrx-forms',
+        loadChildren: () => import('./phoenix/lib/components/ngrx-form/demo/demo.module').then(m => m.DemoModule)
+      }
+    ]
   }
 ];
 

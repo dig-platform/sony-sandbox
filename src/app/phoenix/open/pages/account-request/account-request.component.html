@@ -1,4 +1,12 @@
 <app-header-bar></app-header-bar>
-<app-progress></app-progress>
-<app-form-header></app-form-header>
-<app-forms></app-forms>
+<mat-stepper [linear]="true">
+  <mat-step label="Register">
+    register
+  </mat-step>
+  <mat-step label="Access Form" >
+    access
+  </mat-step>
+  <mat-step label="Confirmation">
+    confirm
+  </mat-step>
+</mat-stepper>

@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {patchAccountRequest} from './store/account-request.actions';
-import {Observable} from 'rxjs';
-import {selectAccountRequest} from './store/account-request.selectors';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-account-request',
@@ -11,22 +7,21 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./account-request.component.scss']
 })
 export class AccountRequestComponent implements OnInit {
-  public account$: Observable<any>;
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+  public readonly registrationForm = new FormGroup({
+    firstName: new FormControl()
+  })
+  public readonly accessForm = new FormGroup({
+    firstName: new FormControl()
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isLinear = false;
+  public readonly form = new FormGroup({
+    access: this.accessForm,
+    registration: this.registrationForm,
+  })
+  constructor() {
 
-  constructor(private _formBuilder: FormBuilder, private store: Store) {
-    this.account$ = store.select(selectAccountRequest);
   }
 
   ngOnInit(): void {
-    this.store.dispatch(patchAccountRequest({patch: {firstName: 'forrest'}}))
-    this.account$.subscribe(console.log);
   }
 
 }
