@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {selectForm, selectFormGroup} from '../../ngrx-form-store';
+import {selectForm, selectFormGroup} from '../../store/ngrx-form.selectors';
 
 @Component({
   selector: 'app-ngrx-form-demo',

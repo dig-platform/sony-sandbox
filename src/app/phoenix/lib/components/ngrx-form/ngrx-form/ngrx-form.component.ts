@@ -4,13 +4,12 @@ import {
   ContentChildren,
   ElementRef, Input, OnDestroy,
   OnInit,
-  QueryList
+  QueryList, TemplateRef
 } from '@angular/core';
 import {FormGroup, ValidationErrors} from '@angular/forms';
 import {NgrxFormDirective} from './ngrx-form.directive';
-import {ControlledForm} from './store/ngrx-form';
 import {Store} from '@ngrx/store';
-import {registerForm, setForm} from './store/ngrx-form.actions';
+import {registerForm, registerFormGroup, setForm, ControlledForm} from '../ngrx-form-store';
 import {Subscription} from 'rxjs';
 
 
@@ -30,6 +29,7 @@ export class NgrxFormComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ContentChildren(NgrxFormDirective) formElements!: QueryList<NgrxFormDirective>;
 
+  // optional group id, only required for form groups
   @Input() group!: string;
 
   ngOnInit(): void {
@@ -50,6 +50,9 @@ export class NgrxFormComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     })
     this.forms = forms;
+    if (this.group) {
+      this.store.dispatch(registerFormGroup({groupId: this.group, instanceIds: forms.map(f => f.instanceId)}));
+    }
     forms.forEach(formRef => {
       const sub = formRef.formGroup.valueChanges.subscribe(value => this.store.dispatch(setForm({
         data: this.serializeForm(formRef)

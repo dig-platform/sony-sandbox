@@ -7,17 +7,25 @@ import { NgrxFormDirective } from './ngrx-form.directive';
 import {ReactiveFormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import * as fromForm from './store/ngrx-form.reducer';
+import { NgrxFormStepperComponent } from './ngrx-form-stepper/ngrx-form-stepper.component';
+import { NgrxFormStepDirective } from './ngrx-form-step.directive';
+import { NgrxFormStepperFormDirective } from './ngrx-form-stepper-form.directive';
 
 
 
 @NgModule({
   declarations: [
     NgrxFormComponent,
-    NgrxFormDirective
+    NgrxFormDirective,
+    NgrxFormStepperComponent,
+    NgrxFormStepDirective,
+    NgrxFormStepperFormDirective
   ],
   exports: [
     NgrxFormComponent,
-    NgrxFormDirective
+    NgrxFormDirective,
+    NgrxFormStepperComponent,
+    NgrxFormStepDirective
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,7 @@
+<div class="steps" *ngIf="steps && steps.length > 0">
+  <div *ngFor="let form of steps" appNgrxFormStepperForm [form]="form"></div>
+</div>
+
+<ng-content></ng-content>
+
+

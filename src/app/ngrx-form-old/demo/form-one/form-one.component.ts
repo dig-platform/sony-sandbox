@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgrxFormAccessor} from '../../ngrx-form-store';
+import {NgrxFormAccessor} from '../../store/ngrx-form';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({

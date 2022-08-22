@@ -28,7 +28,11 @@ export interface ControlledFormData {
   instanceId: string;
   value: any
   dirty: boolean;
-  pristine: boolean;
+  pristine?: boolean;
   valid: boolean;
   errors: any;
+}
+
+export interface ControlledFormGroupData extends ControlledFormData {
+  forms: string[];
 }

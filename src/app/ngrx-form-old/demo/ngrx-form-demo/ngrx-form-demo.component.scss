@@ -1,0 +1,12 @@
+:host{
+  display: block;
+  padding: 2.5rem;
+}
+
+.demo{
+  display: flex;
+  .form {
+    width: 320px;
+    margin-right: 2.5rem;
+  }
+}
