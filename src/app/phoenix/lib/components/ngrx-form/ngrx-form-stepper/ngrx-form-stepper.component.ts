@@ -10,8 +10,9 @@ import {Store} from '@ngrx/store';
 import {NgrxFormComponent} from '../ngrx-form/ngrx-form.component';
 import {NgrxFormStepDirective} from './ngrx-form-step.directive';
 import {NgrxFormDirective} from '../ngrx-form';
-import {Observable} from 'rxjs';
-import {selectFormGroup} from '../ngrx-form-store';
+import {Observable, of} from 'rxjs';
+import {selectForm, selectFormGroup} from '../ngrx-form-store';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-ngrx-form-stepper',
@@ -26,6 +27,35 @@ export class NgrxFormStepperComponent implements OnInit, AfterViewInit {
   ) { }
   @ContentChild(NgrxFormComponent) form!: NgrxFormComponent;
 
+  disablePrevious(index: number): Observable<boolean> {
+    if (index === 0 || ! this.formState$) {
+      return of(true);
+    }
+    return of(false);
+  }
+
+  disableNext(index: number): Observable<boolean> {
+    if (index >= this.steps.length - 1) {
+      return of(true);
+    }
+    return of(false);
+  }
+
+  stepIsValid(index: number): Observable<boolean> {
+    const controlledForm = this.getControlledFormId(index);
+    if (! controlledForm) {
+      return of(true);
+    }
+    return this.store.select(selectForm(controlledForm)).pipe(
+      map(f => f ? f.valid : false)
+    )
+  }
+
+  getControlledFormId(index: number) {
+    const step = this.steps[index];
+    return step.controlledForm;
+  }
+
   ngOnInit(): void {
   }
 
@@ -34,6 +64,7 @@ export class NgrxFormStepperComponent implements OnInit, AfterViewInit {
       this.steps.push(template);
     });
     this.formState$ = this.store.select(selectFormGroup(this.form.group));
+    this.stepIsValid(0).subscribe(console.warn);
   }
 
 }

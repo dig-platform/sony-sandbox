@@ -1,1 +1,11 @@
-<p>form-two works!</p>
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput formControlName="name" placeholder="Enter your name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" placeholder="me@email.com">
+  </mat-form-field>
+</form>
+

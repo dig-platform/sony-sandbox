@@ -1,11 +1,11 @@
 <div class="ngrx-form-stepper" *ngIf="steps">
   <mat-stepper>
-    <mat-step *ngFor="let step of steps" [label]="step.label">
+    <mat-step *ngFor="let step of steps; let i = index" [label]="step.label">
       <mat-card>
         <mat-toolbar>
-          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperPrevious [disabled]="disablePrevious(i) | async">Back</button>
           <mat-card-title>{{step.title}}</mat-card-title>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext [disabled]="disableNext(i) | async">Next</button>
         </mat-toolbar>
         <mat-card-content>
           <p>{{step.description}}</p>
