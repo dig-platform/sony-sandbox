@@ -1,3 +1,21 @@
+<div class="ngrx-form-stepper" *ngIf="steps">
+  <mat-stepper>
+    <mat-step *ngFor="let step of steps" [label]="step.label">
+      <mat-card>
+        <mat-toolbar>
+          <button mat-button matStepperPrevious>Back</button>
+          <mat-card-title>{{step.title}}</mat-card-title>
+          <button mat-button matStepperNext>Next</button>
+        </mat-toolbar>
+        <mat-card-content>
+          <p>{{step.description}}</p>
+        </mat-card-content>
+      </mat-card>
+      <div appNgrxFormStepperForm [form]="step.template"></div>
+    </mat-step>
+  </mat-stepper>
+</div>
+
 
 
 <ng-content></ng-content>

@@ -11,6 +11,7 @@ import {NgrxFormDirective} from './ngrx-form.directive';
 import {Store} from '@ngrx/store';
 import {registerForm, registerFormGroup, setForm, ControlledForm} from '../ngrx-form-store';
 import {Subscription} from 'rxjs';
+import {NgrxFormStepDirective} from '../ngrx-form-stepper/ngrx-form-step.directive';
 
 
 
@@ -28,6 +29,8 @@ export class NgrxFormComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private store: Store) { }
 
   @ContentChildren(NgrxFormDirective) formElements!: QueryList<NgrxFormDirective>;
+  // todo refactor, the form should not be coupled with the stepper
+  @ContentChildren(NgrxFormStepDirective) formTemplates!: QueryList<NgrxFormDirective>;
 
   // optional group id, only required for form groups
   @Input() group!: string;

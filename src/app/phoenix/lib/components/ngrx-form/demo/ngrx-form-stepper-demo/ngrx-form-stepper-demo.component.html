@@ -1,1 +1,16 @@
-
+<app-ngrx-form-stepper>
+  <app-ngrx-form group="signupForm">
+    <ng-template appNgrxFormStep
+    label="Register"
+    title="Please create an account"
+    description="Complete this form and click next">
+      <app-form-one #groupRegistration [appNgrxForm]="groupRegistration" instanceId="registrationFromGroup"></app-form-one>
+    </ng-template>
+    <ng-template appNgrxFormStep
+                 label="Preferences"
+                 title="Account Preferences"
+                 description="Please let us know how you would like us to stay in touch">
+      <app-form-two #groupPreferences [appNgrxForm]="groupPreferences" instanceId="preferencesFromGroup"></app-form-two>
+    </ng-template>
+  </app-ngrx-form>
+</app-ngrx-form-stepper>
