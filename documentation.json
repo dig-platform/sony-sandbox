@@ -1,5 +1,66 @@
 {
-    "pipes": [],
+    "pipes": [
+        {
+            "name": "MapObjectPipe",
+            "id": "pipe-MapObjectPipe-6699661a7ca9c1616d77dc94cbed2df7e249c5bd81e0724299e22429d1239ce1d293838d3afdbd5860ad98bdb5c90636cdace5188890e7123de44f067f5a29a2",
+            "file": "src/app/phoenix/lib/pipes/map-object.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "literal type[]",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "args",
+                            "type": "[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "mapObject",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'mapObject',\n  standalone: true\n})\nexport class MapObjectPipe implements PipeTransform {\n\n  transform(value: any, ...args: unknown[]): {key: string, value: any}[] {\n    if (typeof value !== 'object') {\n      throw new Error('Value is not an object');\n    }\n    return Object.keys(value).map(key => ({\n      key,\n      value: value[key] ? value[key] : null\n    }));\n  }\n\n}\n"
+        }
+    ],
     "interfaces": [
         {
             "name": "AccountRequest",
@@ -102,6 +163,245 @@
             "methods": []
         },
         {
+            "name": "ControlledForm",
+            "id": "interface-ControlledForm-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [
+                {
+                    "name": "formGroup",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "ControlledFormData",
+            "id": "interface-ControlledFormData-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [
+                {
+                    "name": "dirty",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "errors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "pristine",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "valid",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "ControlledFormGroupData",
+            "id": "interface-ControlledFormGroupData-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [
+                {
+                    "name": "forms",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": [],
+            "extends": "ControlledFormData"
+        },
+        {
+            "name": "NgrxForm",
+            "id": "interface-NgrxForm-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "errors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "pristine",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "valid",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "NgrxFormAccessor",
+            "id": "interface-NgrxFormAccessor-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "kind": 167,
+            "methods": [
+                {
+                    "name": "getForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "FormGroup",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ]
+        },
+        {
+            "name": "NgrxFormGroup",
+            "id": "interface-NgrxFormGroup-d43bde695a77613b5c4400e8bd73a29dd939fbb379a20206dcef931140745d2dc043d80679e54c9ec503b80569561d7a69037773a2c7d231364212c6f1915f52",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {FormGroup} from '@angular/forms';\n\nexport interface NgrxForm {\n  instanceId: string;\n  valid?: boolean;\n  pristine?: boolean;\n  // todo type the errors\n  errors?: any;\n  // todo only allow serializable data types\n  data: {[key: string]: any};\n}\n\nexport interface NgrxFormGroup {\n  instanceId: string;\n  forms: NgrxForm[];\n}\n\nexport interface NgrxFormAccessor {\n  getForm(): FormGroup\n}\n\nexport interface ControlledForm {\n  instanceId: string;\n  formGroup: FormGroup;\n}\n\nexport interface ControlledFormData {\n  instanceId: string;\n  value: any\n  dirty: boolean;\n  pristine?: boolean;\n  valid: boolean;\n  errors: any;\n}\n\nexport interface ControlledFormGroupData extends ControlledFormData {\n  forms: string[];\n}\n",
+            "properties": [
+                {
+                    "name": "forms",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NgrxForm[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "PartialConfig",
             "id": "interface-PartialConfig-aa9e63a7c2cd7812a6d3218e349546b5aaffc1ce78ba6c94bc462998df792563ff1e3ff932c05c43c7c027d4c6763da82f309be61acc4c0de370002f9fde2b2a",
             "file": "src/app/pages/partial/lib/partial.ts",
@@ -149,7 +449,39 @@
         },
         {
             "name": "State",
-            "id": "interface-State-18738d406b7fb66ad2a89658f8ccbedcedfad7914bd55e5318c9d0cd2a324536f9e62c271c9a187766c5046f7b689ef7089387d117c2627939c36e8e15263bc0",
+            "id": "interface-State-f199124ab1cb084736620c21a7f2149e9af20198fa4db905da2a0ee2b4babbb397922e9782b45921dc13aff8876e1c9b5ae174971ac6f5ccf256c5d963139bf1",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Action, createReducer, on } from '@ngrx/store';\nimport {ControlledFormData} from './ngrx-form';\nimport {markAsClean, registerFormGroup, setForm} from './ngrx-form.actions';\nimport {patchAccountRequest} from '../../../../open/pages/account-request/store/account-request.actions';\nimport {group} from '@angular/animations';\n\nexport const ngrxFormFeatureKey = 'ngrxForm';\n\nexport interface State {\n  forms: {[key: string]: ControlledFormData},\n  groups: {[key: string]: string[]}\n}\n\nexport const initialState: State = {\n  forms: {},\n  groups: {}\n};\n\nexport const reducer = createReducer(\n  initialState,\n  on(setForm, (state, {data}) => ({...state, forms: {...state.forms, ...{[data.instanceId]: {...data}}}})),\n  on(registerFormGroup, (state, {groupId, instanceIds}) => {\n    const groups = {...state.groups};\n    groups[groupId] = instanceIds;\n    return {...state, groups};\n  })\n);\n",
+            "properties": [
+                {
+                    "name": "forms",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "groups",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "State",
+            "id": "interface-State-18738d406b7fb66ad2a89658f8ccbedcedfad7914bd55e5318c9d0cd2a324536f9e62c271c9a187766c5046f7b689ef7089387d117c2627939c36e8e15263bc0-1",
             "file": "src/app/phoenix/open/pages/account-request/store/account-request.reducer.ts",
             "deprecated": false,
             "deprecationMessage": "",
@@ -177,7 +509,10 @@
             ],
             "indexSignatures": [],
             "kind": 165,
-            "methods": []
+            "methods": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "State-1"
         }
     ],
     "injectables": [
@@ -219,49 +554,62 @@
                 ]
             },
             "type": "injectable"
+        },
+        {
+            "name": "NgrxFormEffects",
+            "id": "injectable-NgrxFormEffects-3057f999524be0604f0187abd3fcac1cca674fcb2f8f458320518e5497a4914639299beb2bb41ad8a7dec0b8881b95cf0e0f4490475dcee7a3e970e832485381",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.effects.ts",
+            "properties": [
+                {
+                    "name": "registerForm$",
+                    "defaultValue": "createEffect(() => {\n    return this.actions$.pipe(\n      ofType(NgrxFormActions.registerForm),\n      /** An EMPTY observable only emits completion. Replace with your own observable API request */\n      switchMap(({instance}) => instance.formGroup.valueChanges.pipe(\n        first(),\n        tap(console.log),\n        map(value => {\n          console.log(value);\n          return setForm({\n            data: {\n              instanceId: instance.instanceId,\n              value,\n              dirty: instance.formGroup.dirty,\n              valid: instance.formGroup.valid,\n              pristine: instance.formGroup.pristine,\n              errors: null\n              // errors: instance.formGroup.errors\n            }\n          })\n        })\n      ))\n    );\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Actions, createEffect, ofType } from '@ngrx/effects';\n\nimport {concatMap, first, map, switchMap, tap} from 'rxjs/operators';\nimport { Observable, EMPTY } from 'rxjs';\nimport * as NgrxFormActions from './ngrx-form.actions';\nimport {setForm} from './ngrx-form.actions';\n\n@Injectable()\nexport class NgrxFormEffects {\n\n\n  registerForm$ = createEffect(() => {\n    return this.actions$.pipe(\n      ofType(NgrxFormActions.registerForm),\n      /** An EMPTY observable only emits completion. Replace with your own observable API request */\n      switchMap(({instance}) => instance.formGroup.valueChanges.pipe(\n        first(),\n        tap(console.log),\n        map(value => {\n          console.log(value);\n          return setForm({\n            data: {\n              instanceId: instance.instanceId,\n              value,\n              dirty: instance.formGroup.dirty,\n              valid: instance.formGroup.valid,\n              pristine: instance.formGroup.pristine,\n              errors: null\n              // errors: instance.formGroup.errors\n            }\n          })\n        })\n      ))\n    );\n  });\n\n  constructor(private actions$: Actions) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 36,
+                "jsdoctags": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
         }
     ],
     "guards": [],
     "interceptors": [],
     "classes": [],
     "directives": [
-        {
-            "name": "AccountRequestStepDirective",
-            "id": "directive-AccountRequestStepDirective-ae3b4867078868bddfc3746d94a1b5980c0cfe0093f079775a3b3b2da4b8c3dab7aeccb36a49fe72e103cb8efdd8388a41995d5b6fab78fee0c63f7d36f0524e",
-            "file": "src/app/phoenix/open/pages/account-request/directives/account-request-step.directive.ts",
-            "type": "directive",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import {Directive, Input} from '@angular/core';\n\n@Directive({\n  selector: '[appAccountRequestStep]'\n})\nexport class AccountRequestStepDirective {\n  @Input() title = 'step';\n\n  constructor() { }\n\n}\n",
-            "selector": "[appAccountRequestStep]",
-            "providers": [],
-            "inputsClass": [
-                {
-                    "name": "title",
-                    "defaultValue": "'step'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 7,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 7
-            }
-        },
         {
             "name": "DynamicComponentDirective",
             "id": "directive-DynamicComponentDirective-2c3b4fa13727091f17309d3d4803ece19fd01208d9dbda59af74aa685de3b664b2bfb1e4f18f86975c128dc8d43b7cda2348aaa30c43c4cff85ed7a76f347f14",
@@ -319,74 +667,342 @@
                     }
                 ]
             }
-        }
-    ],
-    "components": [
+        },
         {
-            "name": "AccessFormComponent",
-            "id": "component-AccessFormComponent-7fee1537634e305d54ff5c4d52c65b7f05466aece5501898198bb5de92159a24539acaf2ab08d07f78fb28a8b25a172e4cf041d1fc525d57ea6eb1d253f74612",
-            "file": "src/app/phoenix/open/pages/account-request/components/forms/access-form/access-form.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
+            "name": "NgrxFormDirective",
+            "id": "directive-NgrxFormDirective-e2beff9416368453674f2462f3a7749752fa0e1a1b12cce068f4e5d88a3039c90a00091908046e0fd6e35ef72bde18cc0a6769d276826edeee787424f39af680",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form/ngrx-form.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, ElementRef, Input, TemplateRef, ViewContainerRef, ViewRef} from '@angular/core';\nimport {ControlledForm} from '../ngrx-form-store/ngrx-form';\n\n@Directive({\n  selector: '[appNgrxForm]'\n})\nexport class NgrxFormDirective  {\n  private id!: string;\n  public controlledFormInstance!: ControlledForm;\n\n  constructor(\n    public element: ElementRef) {\n  }\n\n  @Input() appNgrxForm!: any;\n  @Input() set instanceId(id) {\n    this.id = id;\n  };\n\n  get instanceId(): string {\n    return this.id ? this.id : this.appNgrxForm.constructor.name;\n  }\n}\n",
+            "selector": "[appNgrxForm]",
             "providers": [],
-            "selector": "app-access-form",
-            "styleUrls": [
-                "./access-form.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./access-form.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "inputsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
+                    "name": "appNgrxForm",
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "instanceId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-access-form',\n  templateUrl: './access-form.component.html',\n  styleUrls: ['./access-form.component.scss']\n})\nexport class AccessFormComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
+            "propertiesClass": [
                 {
-                    "data": "",
-                    "styleUrl": "./access-form.component.scss"
+                    "name": "controlledFormInstance",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ControlledForm",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "element",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        121
+                    ]
                 }
             ],
-            "stylesData": "",
+            "methodsClass": [],
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 8
+                "args": [
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>access-form works!</p>\n"
+            "accessors": {
+                "instanceId": {
+                    "name": "instanceId",
+                    "setSignature": {
+                        "name": "instanceId",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "id",
+                                "type": "",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 16,
+                        "jsdoctags": [
+                            {
+                                "name": "id",
+                                "type": "",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "instanceId",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 20
+                    }
+                }
+            }
         },
         {
+            "name": "NgrxFormStepDirective",
+            "id": "directive-NgrxFormStepDirective-5f006c8fe3784b14c6738630750825ed81e169c0288e37f35eaa173eedf3c8614c00d005ad4d232f6fbc2ffe6f259c67585adf8a89fedfcefdd9f1b191c938e4",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-step.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, Input, TemplateRef} from '@angular/core';\n\n@Directive({\n  selector: '[appNgrxFormStep]'\n})\nexport class NgrxFormStepDirective {\n  @Input() label!: string;\n  @Input() title!: string;\n  @Input() description!: string;\n  @Input() controlledForm!: string;\n  constructor(public template: TemplateRef<any>) { }\n}\n",
+            "selector": "[appNgrxFormStep]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "controlledForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 7,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "template",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "template",
+                        "type": "TemplateRef<any>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "template",
+                        "type": "TemplateRef<any>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "NgrxFormStepperFormDirective",
+            "id": "directive-NgrxFormStepperFormDirective-8734e70dc5af5526daf51d4448e2f50d2ba52feec0150901c0d28a4044b541416c20652c087d4e3f981c04a1481d2001a4ed12af74dcf81777e1b8c12f434b9c",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-stepper-form.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';\n\n@Directive({\n  selector: '[appNgrxFormStepperForm]'\n})\nexport class NgrxFormStepperFormDirective {\n  @Input() label!: string;\n  @Input() description!: string;\n\n  @Input()\n  set form(form: TemplateRef<any>) {\n    this.viewContainerRef.createEmbeddedView(form);\n  }\n\n  constructor(\n    private viewContainerRef: ViewContainerRef\n  ) { }\n\n}\n",
+            "selector": "[appNgrxFormStepperForm]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "form",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "TemplateRef<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 7,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "form": {
+                    "name": "form",
+                    "setSignature": {
+                        "name": "form",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "form",
+                                "type": "TemplateRef<any>",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 11,
+                        "jsdoctags": [
+                            {
+                                "name": "form",
+                                "type": "TemplateRef<any>",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "components": [
+        {
             "name": "AccountRequestComponent",
-            "id": "component-AccountRequestComponent-7c7469b2d7d3f3c1fbaaa22672e632a7d4ac78fc9b3d1a96916ac706928229a345192edea442444df533cacc5dbfd3a8aad9bea43952707dca04aa516ea24034",
+            "id": "component-AccountRequestComponent-5b525d98331acf9ee6c98946b8a02a40a8dc13eccbae65ebac1a32f3d2f946bbd928b1f31a221da99c2c3015aa2fb81e65821b673f5957d85aa55436b98b1e57",
             "file": "src/app/phoenix/open/pages/account-request/account-request.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -406,46 +1022,46 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "account$",
+                    "name": "accessForm",
+                    "defaultValue": "new FormGroup({\n    firstName: new FormControl()\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Observable<any>",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 13,
                     "modifierKind": [
-                        123
+                        123,
+                        144
                     ]
                 },
                 {
-                    "name": "firstFormGroup",
-                    "defaultValue": "this._formBuilder.group({\n    firstCtrl: ['', Validators.required],\n  })",
+                    "name": "form",
+                    "defaultValue": "new FormGroup({\n    access: this.accessForm,\n    registration: this.registrationForm,\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 16,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
                 },
                 {
-                    "name": "isLinear",
-                    "defaultValue": "false",
+                    "name": "registrationForm",
+                    "defaultValue": "new FormGroup({\n    firstName: new FormControl()\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 21
-                },
-                {
-                    "name": "secondFormGroup",
-                    "defaultValue": "this._formBuilder.group({\n    secondCtrl: ['', Validators.required],\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
+                    "line": 10,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
                 }
             ],
             "methodsClass": [
@@ -455,7 +1071,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -467,11 +1083,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {Store} from '@ngrx/store';\nimport {patchAccountRequest} from './store/account-request.actions';\nimport {Observable} from 'rxjs';\nimport {selectAccountRequest} from './store/account-request.selectors';\nimport {FormBuilder, Validators} from '@angular/forms';\n\n@Component({\n  selector: 'app-account-request',\n  templateUrl: './account-request.component.html',\n  styleUrls: ['./account-request.component.scss']\n})\nexport class AccountRequestComponent implements OnInit {\n  public account$: Observable<any>;\n  firstFormGroup = this._formBuilder.group({\n    firstCtrl: ['', Validators.required],\n  });\n  secondFormGroup = this._formBuilder.group({\n    secondCtrl: ['', Validators.required],\n  });\n  isLinear = false;\n\n  constructor(private _formBuilder: FormBuilder, private store: Store) {\n    this.account$ = store.select(selectAccountRequest);\n  }\n\n  ngOnInit(): void {\n    this.store.dispatch(patchAccountRequest({patch: {firstName: 'forrest'}}))\n    this.account$.subscribe(console.log);\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {FormControl, FormGroup} from '@angular/forms';\n\n@Component({\n  selector: 'app-account-request',\n  templateUrl: './account-request.component.html',\n  styleUrls: ['./account-request.component.scss']\n})\nexport class AccountRequestComponent implements OnInit {\n  public readonly registrationForm = new FormGroup({\n    firstName: new FormControl()\n  })\n  public readonly accessForm = new FormGroup({\n    firstName: new FormControl()\n  });\n  public readonly form = new FormGroup({\n    access: this.accessForm,\n    registration: this.registrationForm,\n  })\n  constructor() {\n\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".junkyard{\n  /** custom CSS as per your :required */\n  ::ng-deep .mat-horizontal-stepper-header {\n    box-sizing: border-box;\n    padding: 24px;\n    background: transparent;\n  }\n  ::ng-deep .mat-horizontal-stepper-header .mat-step-label {\n    padding: 0px 0px 16px !important;\n    color: #fff;\n  }\n\n  ::ng-deep .mat-horizontal-stepper-header-container {\n    display: none !important;\n  }\n\n}\n/** custom CSS as per your :required */\n::ng-deep .mat-horizontal-stepper-header {\n  box-sizing: border-box;\n  padding: 24px;\n  background: transparent;\n}\n::ng-deep .mat-horizontal-stepper-header .mat-step-label {\n  padding: 0px 0px 16px !important;\n  color: #fff;\n}\n\n::ng-deep .mat-horizontal-stepper-header-container {\n  display: none !important;\n}\n",
+                    "data": "",
                     "styleUrl": "./account-request.component.scss"
                 }
             ],
@@ -481,46 +1097,13 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "_formBuilder",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "store",
-                        "type": "Store",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 21,
-                "jsdoctags": [
-                    {
-                        "name": "_formBuilder",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "store",
-                        "type": "Store",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 19
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-header-bar></app-header-bar>\n"
+            "templateData": "<app-header-bar></app-header-bar>\n<mat-stepper [linear]=\"true\">\n  <mat-step label=\"Register\">\n    register\n  </mat-step>\n  <mat-step label=\"Access Form\" >\n    access\n  </mat-step>\n  <mat-step label=\"Confirmation\">\n    confirm\n  </mat-step>\n</mat-stepper>\n"
         },
         {
             "name": "AppComponent",
@@ -583,68 +1166,6 @@
             ],
             "stylesData": "",
             "templateData": "<router-outlet></router-outlet>\n"
-        },
-        {
-            "name": "ConfirmationComponent",
-            "id": "component-ConfirmationComponent-48bd91947fb3c69112cc5465e89bdd6076abcfea6404ce5000144736a68a872036a3c14342d53c426d2ff4fefbfb07135f54bafb663758ac63d6e735b1f7c776",
-            "file": "src/app/phoenix/open/pages/account-request/components/forms/confirmation/confirmation.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-confirmation",
-            "styleUrls": [
-                "./confirmation.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./confirmation.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-confirmation',\n  templateUrl: './confirmation.component.html',\n  styleUrls: ['./confirmation.component.scss']\n})\nexport class ConfirmationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./confirmation.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>confirmation works!</p>\n"
         },
         {
             "name": "DemoComponent",
@@ -830,43 +1351,35 @@
             "templateData": "<h1>Dynamic Templates</h1>\n\n<input #name placeholder=\"Enter a name\">\n<button (click)=\"loadComponent(name.value)\">Load Template</button>\n\n<section class=\"template-wrapper\">\n  <div class=\"container\" appDynamicComponent></div>\n</section>\n"
         },
         {
-            "name": "FormHeaderComponent",
-            "id": "component-FormHeaderComponent-e364f09a530de0080155c5d41a4899befef1de01edb9da4853f438d2c780f885c03e6d6fe5ae4c0d766ff47f8d261d38fed9a043802d0aef4bdefec818ce3254",
-            "file": "src/app/phoenix/open/pages/account-request/components/form-header/form-header.component.ts",
+            "name": "FormOneComponent",
+            "id": "component-FormOneComponent-d022779cac8c044c266e30944385b44c9833790584e086b23876786476e0d820fe99c1a1b605257ae21db7fe1788241d29680bca2c748593aedb99817380161e",
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/form-one/form-one.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-form-header",
+            "selector": "app-form-one",
             "styleUrls": [
-                "./form-header.component.scss"
+                "./form-one.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./form-header.component.html"
+                "./form-one.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "step",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "AccountRequestStep | undefined",
-                    "decorators": []
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "store",
+                    "name": "form",
+                    "defaultValue": "new FormGroup({\n    name: new FormControl(null, [Validators.required]),\n    phone: new FormControl(null, [Validators.required]),\n    email: new FormControl(null, [Validators.required, Validators.email])\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Store",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 11,
                     "modifierKind": [
                         123,
                         144
@@ -875,12 +1388,22 @@
             ],
             "methodsClass": [
                 {
+                    "name": "getForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "FormGroup",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -892,92 +1415,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport {AccountRequestStep} from '../../store/account-request.reducer';\nimport {Store} from '@ngrx/store';\nimport {selectSteps} from '../../store/account-request.selectors';\nimport {setActiveStep} from '../../store/account-request.actions';\n\n@Component({\n  selector: 'app-form-header',\n  templateUrl: './form-header.component.html',\n  styleUrls: ['./form-header.component.scss']\n})\nexport class FormHeaderComponent implements OnInit {\n  @Input() step: AccountRequestStep | undefined;\n  constructor(public readonly store: Store) { }\n\n  ngOnInit(): void {\n    this.store.dispatch(setActiveStep({index: 0}));\n    this.store.select(selectSteps).subscribe(steps => {\n      console.log(steps);\n    });\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {NgrxFormAccessor} from '../../ngrx-form-store';\nimport {FormControl, FormGroup, Validators} from '@angular/forms';\n\n@Component({\n  selector: 'app-form-one',\n  templateUrl: './form-one.component.html',\n  styleUrls: ['./form-one.component.scss']\n})\nexport class FormOneComponent implements OnInit, NgrxFormAccessor {\n  public readonly form = new FormGroup({\n    name: new FormControl(null, [Validators.required]),\n    phone: new FormControl(null, [Validators.required]),\n    email: new FormControl(null, [Validators.required, Validators.email])\n  })\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getForm(): FormGroup {\n    return this.form;\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
-                    "styleUrl": "./form-header.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "store",
-                        "type": "Store",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 13,
-                "jsdoctags": [
-                    {
-                        "name": "store",
-                        "type": "Store",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"form-header\" *ngIf=\"step\">\n  <div class=\"content\">\n    <h1>{{step.title}}</h1>\n    <p>{{step.description}}</p>\n  </div>\n  <div class=\"actions\">\n    <button mat-button>Previous</button>\n    <button mat-button>Next</button>\n  </div>\n</div>\nhi\n"
-        },
-        {
-            "name": "FormsComponent",
-            "id": "component-FormsComponent-9e25b1c2594663c0bd94d10308001ea09d2cfbf9745bd4a280c3156c6bba73062aec18bb582fc884819e75630c36fb39111741c6f000599e0d286733f4a4b26a",
-            "file": "src/app/phoenix/open/pages/account-request/components/forms/forms.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-forms",
-            "styleUrls": [
-                "./forms.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./forms.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-forms',\n  templateUrl: './forms.component.html',\n  styleUrls: ['./forms.component.scss']\n})\nexport class FormsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./forms.component.scss"
+                    "data": "\n\nmat-form-field{\n  display: block;\n}\n",
+                    "styleUrl": "./form-one.component.scss"
                 }
             ],
             "stylesData": "",
@@ -987,12 +1430,172 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 15
+            },
+            "implements": [
+                "OnInit",
+                "NgrxFormAccessor"
+            ],
+            "templateData": "<form [formGroup]=\"form\">\n  <mat-form-field>\n    <mat-label>Full Name</mat-label>\n    <input matInput formControlName=\"name\" placeholder=\"Enter your name\">\n  </mat-form-field>\n  <mat-form-field>\n    <mat-label>Email</mat-label>\n    <input matInput formControlName=\"email\" type=\"email\" placeholder=\"me@email.com\">\n  </mat-form-field>\n  <mat-form-field>\n    <mat-label>Phone Number</mat-label>\n    <input matInput formControlName=\"phone\" type=\"text\" placeholder=\"123-456-7890\">\n  </mat-form-field>\n</form>\n"
+        },
+        {
+            "name": "FormStateInspectorComponent",
+            "id": "component-FormStateInspectorComponent-eb46fdc8b118bb13efeb9ceb94550764f76147ad77e443188a59ddd7ff6ad3d7044ab4c948d921e7f61bc38e6d882045ce0cf4fd5d449ee7b13fea21025c57e2",
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/form-state-inspector/form-state-inspector.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-state-inspector",
+            "styleUrls": [
+                "./form-state-inspector.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-state-inspector.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "state",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-form-state-inspector',\n  templateUrl: './form-state-inspector.component.html',\n  styleUrls: ['./form-state-inspector.component.scss']\n})\nexport class FormStateInspectorComponent implements OnInit {\n  @Input() state: any;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-list-item{\n  strong{\n    margin-right: 8px;\n  }\n}\n",
+                    "styleUrl": "./form-state-inspector.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-stepper [linear]=\"true\" #stepper>\n  <mat-step label=\"Registration\" [completed]=\"false\">\n    <app-registration></app-registration>\n  </mat-step>\n  <mat-step label=\"Access Form\" [completed]=\"false\">\n    <app-access-form></app-access-form>\n  </mat-step>\n  <mat-step label=\"Confirmation\" [completed]=\"false\">\n    <app-confirmation></app-confirmation>\n  </mat-step>\n</mat-stepper>\n"
+            "templateData": "<mat-card>\n  <mat-tab-group *ngIf=\"state; else loading\">\n    <mat-tab label=\"Form State\">\n      <mat-list>\n        <mat-list-item>\n          <strong>Instance ID</strong>\n          {{state.instanceId}}\n        </mat-list-item>\n        <mat-list-item>\n          <strong>Pristine</strong>\n          {{state.pristine}}\n        </mat-list-item>\n        <mat-list-item>\n          <strong>Dirty</strong>\n          {{state.dirty}}\n        </mat-list-item>\n        <mat-list-item>\n          <strong>Valid</strong>\n          {{state.valid}}\n        </mat-list-item>\n      </mat-list>\n    </mat-tab>\n    <mat-tab label=\"Data\">\n      <mat-list>\n        <mat-list-item *ngFor=\"let val of state.value | mapObject\">\n          <strong>{{val.key}}</strong>\n          {{val.value}}\n        </mat-list-item>\n      </mat-list>\n    </mat-tab>\n    <mat-tab label=\"Errors ({{(state.errors  | mapObject).length}})\">\n      <mat-list *ngIf=\"state.errors\">\n        <mat-list-item *ngFor=\"let field of state.errors | mapObject\">\n          <strong>{{field.key}}</strong>\n          <span *ngFor=\"let validator of field.value\">\n            validator: {{validator.validator}}\n          </span>\n        </mat-list-item>\n      </mat-list>\n    </mat-tab>\n  </mat-tab-group>\n  <ng-template #loading>\n    <mat-card-content>The form instance has not been loaded yet</mat-card-content>\n  </ng-template>\n</mat-card>\n\n\n"
+        },
+        {
+            "name": "FormTwoComponent",
+            "id": "component-FormTwoComponent-96a18176b9a81ac1d86e63cd2dd33c46a79fcb4f14359a8c64f31784d1be24d6fa0e5fca3823813fb0f3a78c476996cebdd3212749a1cc5a004832a8d9cb61a4",
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/form-two/form-two.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-two",
+            "styleUrls": [
+                "./form-two.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-two.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "form",
+                    "defaultValue": "new FormGroup({\n    name: new FormControl(),\n    email: new FormControl(null, [Validators.required, Validators.email])\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "FormGroup",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {NgrxFormAccessor} from '../../ngrx-form-store';\nimport {FormControl, FormGroup, Validators} from '@angular/forms';\n\n@Component({\n  selector: 'app-form-two',\n  templateUrl: './form-two.component.html',\n  styleUrls: ['./form-two.component.scss']\n})\nexport class FormTwoComponent implements OnInit, NgrxFormAccessor {\npublic readonly form = new FormGroup({\n    name: new FormControl(),\n    email: new FormControl(null, [Validators.required, Validators.email])\n  })\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getForm(): FormGroup {\n    return this.form;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./form-two.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit",
+                "NgrxFormAccessor"
+            ],
+            "templateData": "<form [formGroup]=\"form\">\n  <mat-form-field>\n    <mat-label>Full Name</mat-label>\n    <input matInput formControlName=\"name\" placeholder=\"Enter your name\">\n  </mat-form-field>\n  <mat-form-field>\n    <mat-label>Email</mat-label>\n    <input matInput formControlName=\"email\" type=\"email\" placeholder=\"me@email.com\">\n  </mat-form-field>\n</form>\n\n"
         },
         {
             "name": "GreetingComponent",
@@ -1207,7 +1810,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h1>Sony Sandbox</h1>\n\n<ul>\n  <li><a routerLink=\"/dynamic-components\">Lazy Loaded Dynamic Components</a></li>\n  <li><a routerLink=\"/partial\">Partials</a></li>\n  <li><a routerLink=\"/modular-components\">Modular Components</a></li>\n</ul>\n\n<h2>Phoenix</h2>\n<h3>Open App</h3>\n<ul>\n  <li><a routerLink=\"/phoenix/open/account-request\">Account Request</a></li>\n</ul>\n"
+            "templateData": "<h1>Sony Sandbox</h1>\n\n<ul>\n  <li><a routerLink=\"/dynamic-components\">Lazy Loaded Dynamic Components</a></li>\n  <li><a routerLink=\"/partial\">Partials</a></li>\n  <li><a routerLink=\"/modular-components\">Modular Components</a></li>\n</ul>\n\n<h2>Phoenix</h2>\n<h3>Components</h3>\n<ul>\n  <li><a routerLink=\"/demos/ngrx-forms\">Ngrx Forms</a></li>\n</ul>\n\n<h3>Open App</h3>\n<ul>\n  <li><a routerLink=\"/phoenix/open/account-request\">Account Request</a></li>\n</ul>\n"
         },
         {
             "name": "ModularComponentsComponent",
@@ -1270,6 +1873,697 @@
                 "OnInit"
             ],
             "templateData": "<p>modular-components works!</p>\n"
+        },
+        {
+            "name": "NgrxFormComponent",
+            "id": "component-NgrxFormComponent-be7f972d1c15c871e833a6d6eeaa90286ff243d68077a794953251e242419f27af6cb89561112c52e2ee03cb453f6342e46b628a5fb6b1e3254d40cf08f68df5",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form/ngrx-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ngrx-form",
+            "styleUrls": [
+                "./ngrx-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngrx-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "group",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formElements",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueryList<NgrxFormDirective>",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "decorators": [
+                        {
+                            "name": "ContentChildren",
+                            "stringifiedArguments": "NgrxFormDirective"
+                        }
+                    ]
+                },
+                {
+                    "name": "forms",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ControlledForm[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "formTemplates",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueryList<NgrxFormDirective>",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "decorators": [
+                        {
+                            "name": "ContentChildren",
+                            "stringifiedArguments": "NgrxFormStepDirective"
+                        }
+                    ]
+                },
+                {
+                    "name": "subs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "template",
+                    "defaultValue": "'loading'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "initializeForm",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroup",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "FormGroup",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "form",
+                            "type": "FormGroup",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 104,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "serializeErrors",
+                    "args": [
+                        {
+                            "name": "form",
+                            "type": "FormGroup",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 85,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "form",
+                            "type": "FormGroup",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "serializeForm",
+                    "args": [
+                        {
+                            "name": "ref",
+                            "type": "ControlledForm",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{ instanceId: any; value: any; dirty: any; valid: any; pristine: any; errors: any; }",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "ref",
+                            "type": "ControlledForm",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  AfterViewInit,\n  Component,\n  ContentChildren,\n  ElementRef, Input, OnDestroy,\n  OnInit,\n  QueryList, TemplateRef\n} from '@angular/core';\nimport {FormGroup, ValidationErrors} from '@angular/forms';\nimport {NgrxFormDirective} from './ngrx-form.directive';\nimport {Store} from '@ngrx/store';\nimport {registerForm, registerFormGroup, setForm, ControlledForm} from '../ngrx-form-store';\nimport {Subscription} from 'rxjs';\nimport {NgrxFormStepDirective} from '../ngrx-form-stepper/ngrx-form-step.directive';\n\n\n\n@Component({\n  selector: 'app-ngrx-form',\n  templateUrl: './ngrx-form.component.html',\n  styleUrls: ['./ngrx-form.component.scss']\n})\nexport class NgrxFormComponent implements OnInit, AfterViewInit, OnDestroy {\n  public template: string = 'loading';\n\n  private forms: ControlledForm[] = [];\n  private subs: Subscription[] = [];\n\n  constructor(private store: Store) { }\n\n  @ContentChildren(NgrxFormDirective) formElements!: QueryList<NgrxFormDirective>;\n  // todo refactor, the form should not be coupled with the stepper\n  @ContentChildren(NgrxFormStepDirective) formTemplates!: QueryList<NgrxFormDirective>;\n\n  // optional group id, only required for form groups\n  @Input() group!: string;\n\n  ngOnInit(): void {\n  }\n\n  ngAfterViewInit(): void {\n    const forms: ControlledForm[] = [];\n    this.formElements.forEach(f => {\n      const component = f.appNgrxForm;\n      if (typeof component.getForm === 'function') {\n        const {instanceId} = f;\n        const controlledFormInstance = {\n          formGroup: this.initializeForm(instanceId, component.getForm()),\n          instanceId: f.instanceId\n        }\n        forms.push(controlledFormInstance);\n        f.controlledFormInstance = controlledFormInstance;\n      }\n    })\n    this.forms = forms;\n    if (this.group) {\n      this.store.dispatch(registerFormGroup({groupId: this.group, instanceIds: forms.map(f => f.instanceId)}));\n    }\n    forms.forEach(formRef => {\n      const sub = formRef.formGroup.valueChanges.subscribe(value => this.store.dispatch(setForm({\n        data: this.serializeForm(formRef)\n      })));\n      this.subs.push(sub);\n    });\n  }\n\n  initializeForm(id: string, form: FormGroup): FormGroup {\n    const controls = form.controls;\n    const newForm = new FormGroup(controls, {updateOn: 'blur'});\n    return newForm;\n  }\n\n  serializeForm(ref: ControlledForm) {\n    const data = {\n      instanceId: ref.instanceId,\n      value: ref.formGroup.value,\n      dirty: ref.formGroup.dirty,\n      valid: ref.formGroup.valid,\n      pristine: ref.formGroup.pristine,\n      errors: this.serializeErrors(ref.formGroup)\n    };\n    return data;\n  }\n\n  serializeErrors(form: FormGroup) {\n    const errors: {[key: string]: any} = {};\n    return Object.keys(form.controls).reduce((errors, key) => {\n      const control = form.get(key);\n      if (! control) {\n        // stop ts from complaining\n        return errors;\n      }\n      const controlErrors: ValidationErrors | undefined | null = control.errors;\n      if (!! controlErrors) {\n        errors[key] = Object.keys(controlErrors).map(validator => ({\n          validator,\n          value: controlErrors[validator]\n        }));\n      }\n      return errors;\n    }, errors);\n  }\n\n  ngOnDestroy(): void {\n    if (this.subs) {\n      this.subs.forEach(s => s.unsubscribe());\n    }\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\n",
+                    "styleUrl": "./ngrx-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "AfterViewInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"ngrx-form\">\n  <ng-content></ng-content>\n</div>\n"
+        },
+        {
+            "name": "NgrxFormDemoComponent",
+            "id": "component-NgrxFormDemoComponent-139f63e6b042b4e3e21651dff4c93648e802d66698d24b0f7930c5e6de50bf2fd1ded65823a266706edf8f4913c898b76091982a59408229968bf2b13b3ea0a2",
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/ngrx-form-demo/ngrx-form-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ngrx-form-demo",
+            "styleUrls": [
+                "./ngrx-form-demo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngrx-form-demo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "groupFormState$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "singleFormState$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {Store} from '@ngrx/store';\nimport {Observable} from 'rxjs';\nimport {selectForm, selectFormGroup} from '../../ngrx-form-store';\n\n@Component({\n  selector: 'app-ngrx-form-demo',\n  templateUrl: './ngrx-form-demo.component.html',\n  styleUrls: ['./ngrx-form-demo.component.scss']\n})\nexport class NgrxFormDemoComponent implements OnInit {\n  public singleFormState$!: Observable<any>;\n  public groupFormState$!: Observable<any>;\n\n  constructor(private store: Store) {\n    this.singleFormState$ = store.select(selectForm('registration'));\n    this.groupFormState$ = store.select(selectFormGroup('signupForm'));\n    this.groupFormState$.subscribe(console.log);\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host{\n  display: block;\n  padding: 2.5rem;\n}\n\n.demo{\n  display: flex;\n  .form {\n    width: 320px;\n    margin-right: 2.5rem;\n  }\n}\n",
+                    "styleUrl": "./ngrx-form-demo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>Ngrx Form Component</h1>\n<p>This component wraps a form and pushes its state to the ngrx store.</p>\n\n<section>\n  <h2>Single Form</h2>\n\n  <div class=\"demo\">\n    <div class=\"form\">\n      <h3>Account Info</h3>\n      <app-ngrx-form>\n        <app-form-one #registration [appNgrxForm]=\"registration\" instanceId=\"registration\"></app-form-one>\n      </app-ngrx-form>\n    </div>\n    <app-form-state-inspector [state]=\"singleFormState$ | async\"></app-form-state-inspector>\n  </div>\n\n</section>\n\n<section>\n  <h2>Form Group</h2>\n\n  <app-ngrx-form group=\"signupForm\">\n    <app-form-one #groupRegistration [appNgrxForm]=\"groupRegistration\" instanceId=\"registrationFromGroup\"></app-form-one>\n    <app-form-one #groupPreferences [appNgrxForm]=\"groupPreferences\" instanceId=\"preferencesFromGroup\"></app-form-one>\n  </app-ngrx-form>\n\n  <a routerLink=\"stepper\">View Form Stepper demo</a>\n</section>\n"
+        },
+        {
+            "name": "NgrxFormStepperComponent",
+            "id": "component-NgrxFormStepperComponent-2a929453fc3b571ca66134fbcf7c74467bdffa5461e5997b90a87d90c9d4c797545dbf266d711cd7da615f4cb4bfa15ab451f6517f546aa8b260164ac31dd25c",
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-stepper.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ngrx-form-stepper",
+            "styleUrls": [
+                "./ngrx-form-stepper.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngrx-form-stepper.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "form",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NgrxFormComponent",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "decorators": [
+                        {
+                            "name": "ContentChild",
+                            "stringifiedArguments": "NgrxFormComponent"
+                        }
+                    ]
+                },
+                {
+                    "name": "formState$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "steps",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "disableNext",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<boolean>",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "disablePrevious",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<boolean>",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getControlledFormId",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 62,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "stepIsValid",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<boolean>",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  AfterViewInit,\n  Component, ContentChild,\n  ContentChildren,\n  OnInit,\n  QueryList, TemplateRef,\n  ViewChild\n} from '@angular/core';\nimport {Store} from '@ngrx/store';\nimport {NgrxFormComponent} from '../ngrx-form/ngrx-form.component';\nimport {NgrxFormStepDirective} from './ngrx-form-step.directive';\nimport {NgrxFormDirective} from '../ngrx-form';\nimport {Observable, of} from 'rxjs';\nimport {selectForm, selectFormGroup} from '../ngrx-form-store';\nimport {map} from 'rxjs/operators';\n\n@Component({\n  selector: 'app-ngrx-form-stepper',\n  templateUrl: './ngrx-form-stepper.component.html',\n  styleUrls: ['./ngrx-form-stepper.component.scss']\n})\nexport class NgrxFormStepperComponent implements OnInit, AfterViewInit {\n  public steps: any[] = [];\n  public formState$!: Observable<any>;\n  constructor(\n    private store: Store\n  ) { }\n  @ContentChild(NgrxFormComponent) form!: NgrxFormComponent;\n\n  disablePrevious(index: number): Observable<boolean> {\n    if (index === 0 || ! this.formState$) {\n      return of(true);\n    }\n    return of(false);\n  }\n\n  disableNext(index: number): Observable<boolean> {\n    if (index >= this.steps.length - 1) {\n      return of(true);\n    }\n    return of(false);\n  }\n\n  stepIsValid(index: number): Observable<boolean> {\n    const controlledForm = this.getControlledFormId(index);\n    if (! controlledForm) {\n      return of(true);\n    }\n    return this.store.select(selectForm(controlledForm)).pipe(\n      map(f => f ? f.valid : false)\n    )\n  }\n\n  getControlledFormId(index: number) {\n    const step = this.steps[index];\n    return step.controlledForm;\n  }\n\n  ngOnInit(): void {\n  }\n\n  ngAfterViewInit(): void {\n    this.form.formTemplates.forEach(template => {\n      this.steps.push(template);\n    });\n    this.formState$ = this.store.select(selectFormGroup(this.form.group));\n    this.stepIsValid(0).subscribe(console.warn);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-toolbar{\n  background: none;\n}\n\nmat-card-title{\n  flex: 1;\n  text-align: center;\n}\n\np{\n  text-align: center;\n}\n",
+                    "styleUrl": "./ngrx-form-stepper.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "AfterViewInit"
+            ],
+            "templateData": "<div class=\"ngrx-form-stepper\" *ngIf=\"steps\">\n  <mat-stepper>\n    <mat-step *ngFor=\"let step of steps; let i = index\" [label]=\"step.label\">\n      <mat-card>\n        <mat-toolbar>\n          <button mat-button matStepperPrevious [disabled]=\"disablePrevious(i) | async\">Back</button>\n          <mat-card-title>{{step.title}}</mat-card-title>\n          <button mat-button matStepperNext [disabled]=\"disableNext(i) | async\">Next</button>\n        </mat-toolbar>\n        <mat-card-content>\n          <p>{{step.description}}</p>\n        </mat-card-content>\n      </mat-card>\n      <div appNgrxFormStepperForm [form]=\"step.template\"></div>\n    </mat-step>\n  </mat-stepper>\n</div>\n\n\n\n<ng-content></ng-content>\n\n\n"
+        },
+        {
+            "name": "NgrxFormStepperDemoComponent",
+            "id": "component-NgrxFormStepperDemoComponent-67f3ab132dfc1f4d186eec8f06826f627cb1d8d941daeeafb0cc76cc7a3b839b3b3c415cab161ea47716516c50a71d93bd2adb550c9ea37d397fa3345a8ff660",
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/ngrx-form-stepper-demo/ngrx-form-stepper-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-ngrx-form-stepper-demo",
+            "styleUrls": [
+                "./ngrx-form-stepper-demo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ngrx-form-stepper-demo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-ngrx-form-stepper-demo',\n  templateUrl: './ngrx-form-stepper-demo.component.html',\n  styleUrls: ['./ngrx-form-stepper-demo.component.scss']\n})\nexport class NgrxFormStepperDemoComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./ngrx-form-stepper-demo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-ngrx-form-stepper>\n  <app-ngrx-form group=\"signupForm\">\n    <ng-template appNgrxFormStep\n                 controlledForm=\"registrationFromGroup\"\n                 label=\"Register\"\n                 title=\"Please create an account\"\n                 description=\"Complete this form and click next\">\n      <app-form-one #groupRegistration [appNgrxForm]=\"groupRegistration\" instanceId=\"registrationFromGroup\"></app-form-one>\n    </ng-template>\n\n    <ng-template appNgrxFormStep\n                 controlledForm=\"preferencesFromGroup\"\n                 label=\"Preferences\"\n                 title=\"Account Preferences\"\n                 description=\"Please let us know how you would like us to stay in touch\">\n      <app-form-two #groupPreferences [appNgrxForm]=\"groupPreferences\" instanceId=\"preferencesFromGroup\"></app-form-two>\n    </ng-template>\n  </app-ngrx-form>\n</app-ngrx-form-stepper>\n"
         },
         {
             "name": "PartialComponent",
@@ -1401,140 +2695,6 @@
             ]
         },
         {
-            "name": "ProgressComponent",
-            "id": "component-ProgressComponent-30c4740edc0eefc42c5a95208bec28f0ac268217eefbde1e851ac101c70afaa4fcc59934c7dd58b2541a73c2e2257c8549792af15ce42934c193488670ed9a53",
-            "file": "src/app/phoenix/open/pages/account-request/components/progress/progress.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-progress",
-            "styleUrls": [
-                "./progress.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./progress.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "steps",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "AccountRequestStep[]",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport {AccountRequestStep} from '../../store/account-request.reducer';\n\n@Component({\n  selector: 'app-progress',\n  templateUrl: './progress.component.html',\n  styleUrls: ['./progress.component.scss']\n})\nexport class ProgressComponent implements OnInit {\n  @Input() steps: AccountRequestStep[] = [];\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".progress{\n  display: flex;\n  padding: 2px;\n  align-items: center;\n}\n\n.step-wrapper{\n  flex: 1;\n}\n\n.step{\n  flex: 1;\n  margin: 2px;\n  background: #ccc;\n  text-align: center;\n  padding: 8px;\n  text-transform: uppercase;\n  color: #fff;\n  &.active{\n    background: #1467b8;\n  }\n  &.disabled{\n    label{\n      opacity: .5;\n    }\n  }\n}\n",
-                    "styleUrl": "./progress.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"progress\">\n  <div class=\"step-wrapper\"*ngFor=\"let step of steps\" >\n    <div class=\"step\" [class.active]=\"step.active\" [class.disabled]=\"step.disabled\">\n      <label>{{step.label}}</label>\n    </div>\n  </div>\n</div>\n"
-        },
-        {
-            "name": "RegistrationComponent",
-            "id": "component-RegistrationComponent-47454ab859cb867c70ff4f0185b733c6a370a3226a460c2b94441cd9dbb04da4fd8d083fa6b2af0007c4297eba463e0d2ab1aa928502d7e544b630bfbed7606d",
-            "file": "src/app/phoenix/open/pages/account-request/components/forms/registration/registration.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-registration",
-            "styleUrls": [
-                "./registration.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./registration.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-registration',\n  templateUrl: './registration.component.html',\n  styleUrls: ['./registration.component.scss']\n})\nexport class RegistrationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./registration.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>registration works!</p>\n"
-        },
-        {
             "name": "SampleComponent",
             "id": "component-SampleComponent-2fac9fe6785213813d37ba24ae0f95c7dfc011def42d9119872d8dfddee82c3fb9cac2bc8509cec2c4dc2f763f1b29e4bb70f18bd59c5c430b9fb6e7b80b8088",
             "file": "src/app/pages/partial/demo/partials/sample.partial.ts",
@@ -1594,13 +2754,13 @@
     "modules": [
         {
             "name": "AccountRequestModule",
-            "id": "module-AccountRequestModule-d437d31f3e274a0d6e9f4f1fd5f728647f63a94e6aa9fef3ab96882554ca40d5a09b93d42392af3faeb9d696bdff96d7f8e8c3b571de012adc0019fb3819ba96",
+            "id": "module-AccountRequestModule-3a5ec5bf5f44d0f00f3d49a0d7bfe59842b3c77c975514c823d3692814151cdd51fa26d650bc3347fb9c5fa3a9eece431cde76607739ed140c3b458fdf1fef10",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/phoenix/open/pages/account-request/account-request.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { AccountRequestComponent } from './account-request.component';\nimport {HeaderBarComponent} from '../../components/header-bar/header-bar.component';\nimport { EffectsModule } from '@ngrx/effects';\nimport * as fromAccountRequest from './store/account-request.reducer';\nimport { AccountRequestEffects } from './store/account-request.effects';\nimport {StoreModule} from '@ngrx/store';\nimport { RegistrationComponent } from './components/forms/registration/registration.component';\nimport { AccessFormComponent } from './components/forms/access-form/access-form.component';\nimport { ConfirmationComponent } from './components/forms/confirmation/confirmation.component';\nimport {MatStepperModule} from '@angular/material/stepper';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatIconModule} from '@angular/material/icon';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {MatInputModule} from '@angular/material/input';\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\nimport {FormHeaderComponent} from './components/form-header/form-header.component';\nimport { AccountRequestStepDirective } from './directives/account-request-step.directive';\nimport { FormsComponent } from './components/forms/forms.component';\nimport { ProgressComponent } from './components/progress/progress.component';\n\n\n\n@NgModule({\n  declarations: [\n    AccountRequestComponent,\n    RegistrationComponent,\n    AccessFormComponent,\n    ConfirmationComponent,\n    FormHeaderComponent,\n    AccountRequestStepDirective,\n    FormsComponent,\n    ProgressComponent\n  ],\n  exports: [\n    AccountRequestComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    HeaderBarComponent,\n    MatIconModule,\n    MatStepperModule,\n    MatButtonModule,\n    MatInputModule,\n    MatFormFieldModule,\n    ReactiveFormsModule,\n    StoreModule.forFeature(fromAccountRequest.accountRequestFeatureKey, fromAccountRequest.reducer),\n    EffectsModule.forFeature([AccountRequestEffects])\n  ]\n})\nexport class AccountRequestModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { AccountRequestComponent } from './account-request.component';\nimport {HeaderBarComponent} from '../../components/header-bar/header-bar.component';\nimport { EffectsModule } from '@ngrx/effects';\nimport * as fromAccountRequest from './store/account-request.reducer';\nimport { AccountRequestEffects } from './store/account-request.effects';\nimport {StoreModule} from '@ngrx/store';\nimport {MatStepperModule} from '@angular/material/stepper';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatIconModule} from '@angular/material/icon';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {MatInputModule} from '@angular/material/input';\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\n\n\n\n@NgModule({\n  declarations: [\n    AccountRequestComponent,\n  ],\n  exports: [\n    AccountRequestComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    MatIconModule,\n    MatStepperModule,\n    MatButtonModule,\n    MatInputModule,\n    MatFormFieldModule,\n    ReactiveFormsModule,\n    StoreModule.forFeature(fromAccountRequest.accountRequestFeatureKey, fromAccountRequest.reducer),\n    EffectsModule.forFeature([AccountRequestEffects])\n  ]\n})\nexport class AccountRequestModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1610,38 +2770,13 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "AccessFormComponent"
-                        },
-                        {
                             "name": "AccountRequestComponent"
-                        },
-                        {
-                            "name": "AccountRequestStepDirective"
-                        },
-                        {
-                            "name": "ConfirmationComponent"
-                        },
-                        {
-                            "name": "FormHeaderComponent"
-                        },
-                        {
-                            "name": "FormsComponent"
-                        },
-                        {
-                            "name": "ProgressComponent"
-                        },
-                        {
-                            "name": "RegistrationComponent"
                         }
                     ]
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "HeaderBarComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
@@ -1663,13 +2798,13 @@
         },
         {
             "name": "AppModule",
-            "id": "module-AppModule-e5d7a34fd2e75bc5fbb20f341b9ea659a87b6ae3f6405f426da3f045c8c451802a22f911df25e30fd73d4672e6aa29d2a5affd72c92fdb0a00b954b51cd96c45",
+            "id": "module-AppModule-1991874f20ea6236bd97d1c49ddc010a89656f5f6b3cfae80417608732e3ece950fc8a7812ceec672e0a12bd4a59a346e221f59eab2c8e43f282230ac5ba5813",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport {HttpClientModule} from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { EffectsModule } from '@ngrx/effects';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { environment } from '../environments/environment';\nimport { StoreModule } from '@ngrx/store';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    BrowserAnimationsModule,\n    EffectsModule.forRoot([]),\n    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),\n    StoreModule.forRoot({}, {}),\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport {HttpClientModule} from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { EffectsModule } from '@ngrx/effects';\nimport { StoreDevtoolsModule } from '@ngrx/store-devtools';\nimport { environment } from '../environments/environment';\nimport { StoreModule } from '@ngrx/store';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    BrowserAnimationsModule,\n    StoreModule.forRoot({}, {}),\n    EffectsModule.forRoot([]),\n    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1711,13 +2846,114 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-d4c25dc7c8e52306692f8375002e0ec909cc3af14ec39a263dfc0468def9e298cd157ac411e9e31ed2efac5af16e0bc526d0b18003b2c361038f6f3560883a28",
+            "id": "module-AppRoutingModule-5a26a2f93dc126fa1ee50c5b3d61452df36ac8419d1d4a631c14a9d4fbf7f72d659e04c896b482adbabcb72a18a09536492410a156e50327f805bc8e792820ea",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {AccountRequestComponent} from './phoenix/open/account-request/components/account-request/account-request.component';\n\nconst routes: Routes = [\n  {\n    path: 'home',\n    loadChildren: () => \"import('./pages/home/home.module').then( m => m.HomeModule)\"\n  },\n  {\n    path: '',\n    redirectTo: 'home',\n    pathMatch: 'full'\n  },\n  {\n    path: 'dynamic-components',\n    loadChildren: () => \"import('./pages/dynamic-components/dynamic-components.module').then( m => m.DynamicComponentsModule)\"\n  },\n  {\n    path: 'partial',\n    loadChildren: () => \"import('./pages/partial/partial.module').then( m => m.PartialModule)\"\n  },\n  {\n    path: 'modular-components',\n    loadChildren: () => \"import('./pages/modular-components/modular-components.module').then( m => m.ModularComponentsModule)\"\n  },\n  {\n    path: 'phoenix',\n    loadChildren: () => \"import('./phoenix/phoenix.module').then(m => m.PhoenixModule)\"\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path: 'home',\n    loadChildren: () => \"import('./pages/home/home.module').then( m => m.HomeModule)\"\n  },\n  {\n    path: '',\n    redirectTo: 'home',\n    pathMatch: 'full'\n  },\n  {\n    path: 'dynamic-components',\n    loadChildren: () => \"import('./pages/dynamic-components/dynamic-components.module').then( m => m.DynamicComponentsModule)\"\n  },\n  {\n    path: 'partial',\n    loadChildren: () => \"import('./pages/partial/partial.module').then( m => m.PartialModule)\"\n  },\n  {\n    path: 'modular-components',\n    loadChildren: () => \"import('./pages/modular-components/modular-components.module').then( m => m.ModularComponentsModule)\"\n  },\n  {\n    path: 'phoenix',\n    loadChildren: () => \"import('./phoenix/phoenix.module').then(m => m.PhoenixModule)\"\n  },\n  {\n    path: 'demos',\n    children: [\n      {\n        path: 'ngrx-forms',\n        loadChildren: () => \"import('./phoenix/lib/components/ngrx-form/demo/demo.module').then(m => m.DemoModule)\"\n      }\n    ]\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DemoModule",
+            "id": "module-DemoModule-c28482f9a19d5145721ccca25a4fe2a461ffb9e321f002a31975a1590f854ee0307172dd86b3bf4a13d7253c4010b9c3cae47655ddf640c9ba776f520da5b5ab",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/demo.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { DemoRoutingModule } from './demo-routing.module';\nimport { NgrxFormDemoComponent } from './ngrx-form-demo/ngrx-form-demo.component';\nimport { FormOneComponent } from './form-one/form-one.component';\nimport { FormTwoComponent } from './form-two/form-two.component';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {MatFormFieldModule} from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport {MatCardModule} from '@angular/material/card';\nimport {MatListModule} from '@angular/material/list';\nimport {MapObjectPipe} from '../../../pipes/map-object.pipe';\nimport { FormStateInspectorComponent } from './form-state-inspector/form-state-inspector.component';\nimport {MatTabsModule} from '@angular/material/tabs';\nimport {NgrxFormModule} from '../ngrx-form/ngrx-form.module';\nimport {NgrxFormStepperModule} from '../ngrx-form-stepper/ngrx-form-stepper.module';\nimport { NgrxFormStepperDemoComponent } from './ngrx-form-stepper-demo/ngrx-form-stepper-demo.component';\n\n\n\n@NgModule({\n  declarations: [\n    NgrxFormDemoComponent,\n    FormOneComponent,\n    FormTwoComponent,\n    FormStateInspectorComponent,\n    NgrxFormStepperDemoComponent\n  ],\n  imports: [\n    CommonModule,\n    DemoRoutingModule,\n    MapObjectPipe,\n    MatCardModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatListModule,\n    MatTabsModule,\n    NgrxFormModule,\n    NgrxFormStepperModule,\n    ReactiveFormsModule\n  ]\n})\nexport class DemoModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FormOneComponent"
+                        },
+                        {
+                            "name": "FormStateInspectorComponent"
+                        },
+                        {
+                            "name": "FormTwoComponent"
+                        },
+                        {
+                            "name": "NgrxFormDemoComponent"
+                        },
+                        {
+                            "name": "NgrxFormStepperDemoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "DemoRoutingModule"
+                        },
+                        {
+                            "name": "MapObjectPipe"
+                        },
+                        {
+                            "name": "NgrxFormModule"
+                        },
+                        {
+                            "name": "NgrxFormStepperModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DemoRoutingModule",
+            "id": "module-DemoRoutingModule-e393b0a3d3546d996b82158703785bd20089322cc5e953bd86d52c34186bfbb522902cbae904a0cd28aeb9e291925be06c80f27348c5147fd81193ad3dfc2616",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/lib/components/ngrx-form/demo/demo-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport {NgrxFormDemoComponent} from './ngrx-form-demo/ngrx-form-demo.component';\nimport {NgrxFormStepperDemoComponent} from './ngrx-form-stepper-demo/ngrx-form-stepper-demo.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: NgrxFormDemoComponent\n  },\n  {\n    path: 'stepper',\n    component: NgrxFormStepperDemoComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class DemoRoutingModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2021,14 +3257,164 @@
             ]
         },
         {
+            "name": "NgrxFormModule",
+            "id": "module-NgrxFormModule-e299c0a29be87a81e1251feae3b6eeb18db2224cb48f13fb5a97ef69e55023dcf797107333f23158ec48cbef0282d7690a277803e2d5e777a6b9333bbeabc087",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form/ngrx-form.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {NgrxFormComponent} from './ngrx-form.component';\nimport {NgrxFormDirective} from './ngrx-form.directive';\nimport {ReactiveFormsModule} from '@angular/forms';\nimport {NgrxFormStoreModule} from '../ngrx-form-store';\n\n\n\n@NgModule({\n  declarations: [\n    NgrxFormComponent,\n    NgrxFormDirective\n  ],\n  exports: [\n    NgrxFormComponent,\n    NgrxFormDirective\n  ],\n  imports: [\n    CommonModule,\n    NgrxFormStoreModule,\n    ReactiveFormsModule\n  ]\n})\nexport class NgrxFormModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NgrxFormComponent"
+                        },
+                        {
+                            "name": "NgrxFormDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NgrxFormStoreModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NgrxFormComponent"
+                        },
+                        {
+                            "name": "NgrxFormDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NgrxFormStepperModule",
+            "id": "module-NgrxFormStepperModule-e89433ea0f7cdb724287c8e75b6f27515cb327701838a023874359d8d066e3210c80c2be19103c949a7b07d6fd17f08122eefeca2a38b7df2c354bf346effb8b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-stepper.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {NgrxFormStepDirective} from './ngrx-form-step.directive';\nimport {NgrxFormStepperComponent} from './ngrx-form-stepper.component';\nimport {NgrxFormStoreModule} from '../ngrx-form-store';\nimport {NgrxFormModule} from '../ngrx-form';\nimport {NgrxFormStepperFormDirective} from './ngrx-form-stepper-form.directive';\nimport {MatStepperModule} from '@angular/material/stepper';\nimport {MatIconModule} from '@angular/material/icon';\nimport {MatButtonModule} from '@angular/material/button';\nimport {MatCardModule} from '@angular/material/card';\nimport {MatToolbarModule} from '@angular/material/toolbar';\n\n\n\n@NgModule({\n  declarations: [\n    NgrxFormStepDirective,\n    NgrxFormStepperComponent,\n    NgrxFormStepperFormDirective\n  ],\n  exports: [\n    NgrxFormStepDirective,\n    NgrxFormStepperComponent\n  ],\n  imports: [\n    CommonModule,\n    NgrxFormStoreModule,\n    NgrxFormModule,\n    MatStepperModule,\n    MatIconModule,\n    MatButtonModule,\n    MatCardModule,\n    MatToolbarModule\n  ]\n})\nexport class NgrxFormStepperModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NgrxFormStepDirective"
+                        },
+                        {
+                            "name": "NgrxFormStepperComponent"
+                        },
+                        {
+                            "name": "NgrxFormStepperFormDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NgrxFormModule"
+                        },
+                        {
+                            "name": "NgrxFormStoreModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NgrxFormStepDirective"
+                        },
+                        {
+                            "name": "NgrxFormStepperComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NgrxFormStoreModule",
+            "id": "module-NgrxFormStoreModule-2462cc9d452c8f1377466d0fc8eecddd7f9a22f56071b914fa418459f17aa730bd2a615825ac666aa7b1eb22391e349461c63568808f09785632c55140ed8cde",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form-store.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {StoreModule} from '@ngrx/store';\nimport * as fromForm from './ngrx-form.reducer';\nimport {EffectsModule} from '@ngrx/effects';\nimport {NgrxFormEffects} from './ngrx-form.effects';\n\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    StoreModule.forFeature(fromForm.ngrxFormFeatureKey, fromForm.reducer),\n    EffectsModule.forFeature([NgrxFormEffects])\n  ]\n})\nexport class NgrxFormStoreModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "OpenModule",
-            "id": "module-OpenModule-f73c524500a23f176941faba7580ac6c10b8a825a7b4b264fd1a0ddc995142c1277c2668aee546d525779d46dd39d3aff261c1bbb2312035e76c915debabf218",
+            "id": "module-OpenModule-31c1bb7e4fe5515d6cf5e8373c907cc29444159a6e7946904f57ff06cca2bb913a51aaaf3b11b71874fb6a17671dd75aa513c4f978b4538b704515daf3fd8a7c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/phoenix/open/open.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { OpenRoutingModule } from './open-routing.module';\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    OpenRoutingModule\n  ]\n})\nexport class OpenModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { OpenRoutingModule } from './open-routing.module';\n\n@NgModule({\n  declarations: [\n  ],\n  imports: [\n    CommonModule,\n    OpenRoutingModule\n  ]\n})\nexport class OpenModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2342,11 +3728,11 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  [fromAccountRequest.accountRequestFeatureKey]: {\n    steps: [...steps]\n  }\n}"
+                "type": "State",
+                "defaultValue": "{\n  forms: {},\n  groups: {}\n}"
             },
             {
                 "name": "initialState",
@@ -2359,6 +3745,16 @@
                 "defaultValue": "{\n  steps: []\n}"
             },
             {
+                "name": "markAsClean",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[NgrxForm] Mark As Clean',\n  props<{groupId?: string, formId?: string}>()\n)"
+            },
+            {
                 "name": "nextStep",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2367,6 +3763,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createAction(\n  '[AccountRequest] Patch AccountRequest'\n)"
+            },
+            {
+                "name": "ngrxFormFeatureKey",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'ngrxForm'"
             },
             {
                 "name": "partial",
@@ -2419,24 +3825,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
+                "name": "reducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "createReducer(\n  initialState,\n  on(setForm, (state, {data}) => ({...state, forms: {...state.forms, ...{[data.instanceId]: {...data}}}})),\n  on(registerFormGroup, (state, {groupId, instanceIds}) => {\n    const groups = {...state.groups};\n    groups[groupId] = instanceIds;\n    return {...state, groups};\n  })\n)"
             },
             {
                 "name": "reducer",
@@ -2449,6 +3845,26 @@
                 "defaultValue": "createReducer(\n  initialState,\n  on(patchAccountRequest, (state, {patch}) => ({...state, accountRequest: {...state.accountRequest, ...patch}}))\n)"
             },
             {
+                "name": "registerForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[NgrxForm] Register Form',\n  props<{instance: ControlledForm}>()\n)"
+            },
+            {
+                "name": "registerFormGroup",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[NgrxForm] Register Form Group',\n  props<{groupId: string, instanceIds: string[]}>()\n)"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2456,26 +3872,6 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "TabTwo.bind({})"
-            },
-            {
-                "name": "SecondTab",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "selectAccountRequest",
@@ -2508,6 +3904,36 @@
                 "defaultValue": "createSelector(\n  selectAccountRequestState,\n  (state) => {\n    if (state.steps) {\n      return [...state.steps]\n    }\n    return [];\n  }\n)"
             },
             {
+                "name": "selectForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(instanceId: string) => createSelector(\n  selectNgrxFormState,\n  (state) => {\n    return state.forms[instanceId] ? {...state.forms[instanceId]} : undefined;\n  }\n)"
+            },
+            {
+                "name": "selectFormGroup",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(groupId: string) => createSelector(\n  selectNgrxFormState,\n  (state) => {\n    const group = state.groups[groupId];\n    if (group) {\n      const res: ControlledFormGroupData = {\n        forms: [...group],\n        instanceId: groupId,\n        dirty: false,\n        valid: true,\n        errors: {},\n        value: {}\n      };\n      group.forEach(f => {\n          const form = state.forms[f];\n          if (! form) {\n            return undefined;\n          }\n          if (form.dirty) {\n            res.dirty = true;\n          }\n          if (! form.valid) {\n            res.valid = false;\n            res.errors[f] = {...form.errors}\n          }\n          res.value[f] = {...form.value};\n          return;\n      });\n      // const controls = group.map(f => {\n      //   const form = state.forms[f];\n      //   if (! form) {\n      //     return undefined;\n      //   }\n      //   res.value[f] = {...form.value};\n      // }).filter(f => !! f);\n      return res;\n    }\n    return undefined;\n  }\n)"
+            },
+            {
+                "name": "selectNgrxFormState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createFeatureSelector<fromNgrxForm.State>(\n  fromNgrxForm.ngrxFormFeatureKey\n)"
+            },
+            {
                 "name": "selectSteps",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2526,6 +3952,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createAction(\n  '[AccountRequest] Set Active Step',\n  props<{index: number}>()\n)"
+            },
+            {
+                "name": "setForm",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "createAction(\n  '[NgrxForm] Set Form',\n  props<{data: ControlledFormData}>()\n)"
             },
             {
                 "name": "setSteps",
@@ -2548,35 +3984,6 @@
                 "defaultValue": "createAction(\n  '[AccountRequest] Set Step Status',\n  props<{index: number, status: AccountRequestStatus}>()\n)"
             },
             {
-                "name": "steps",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  {\n    label: 'Register',\n    title: 'Request Access to Runner',\n    description: 'Please fill out all fields.',\n    active: true\n  },\n  {\n    label: 'Access Form',\n    title: '',\n    description: ''\n  }\n]"
-            },
-            {
-                "name": "storeInstance",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": ""
-            },
-            {
-                "name": "TabTwo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FormHeaderComponent>",
-                "defaultValue": "(args: FormHeaderComponent) => {\n  const {store} = args;\n  store.dispatch(setActiveStep({index: 1}));\n  return {\n    props: args,\n  }\n}"
-            },
-            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2595,26 +4002,6 @@
                 "deprecationMessage": "",
                 "type": "Story<AccountRequestComponent>",
                 "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FormHeaderComponent>",
-                "defaultValue": "(args: FormHeaderComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ProgressComponent>",
-                "defaultValue": "(args: ProgressComponent) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -2740,75 +4127,78 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "src/stories/open/pages/account-request/components/FormHeader.stories.ts": [
+            "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts": [
                 {
                     "name": "initialState",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  [fromAccountRequest.accountRequestFeatureKey]: {\n    steps: [...steps]\n  }\n}"
+                    "type": "State",
+                    "defaultValue": "{\n  forms: {},\n  groups: {}\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "ngrxFormFeatureKey",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'ngrxForm'"
+                },
+                {
+                    "name": "reducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
+                    "defaultValue": "createReducer(\n  initialState,\n  on(setForm, (state, {data}) => ({...state, forms: {...state.forms, ...{[data.instanceId]: {...data}}}})),\n  on(registerFormGroup, (state, {groupId, instanceIds}) => {\n    const groups = {...state.groups};\n    groups[groupId] = instanceIds;\n    return {...state, groups};\n  })\n)"
+                }
+            ],
+            "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts": [
                 {
-                    "name": "Secondary",
+                    "name": "markAsClean",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "TabTwo.bind({})"
+                    "defaultValue": "createAction(\n  '[NgrxForm] Mark As Clean',\n  props<{groupId?: string, formId?: string}>()\n)"
                 },
                 {
-                    "name": "steps",
+                    "name": "registerForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    label: 'Register',\n    title: 'Request Access to Runner',\n    description: 'Please fill out all fields.',\n    active: true\n  },\n  {\n    label: 'Access Form',\n    title: '',\n    description: ''\n  }\n]"
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[NgrxForm] Register Form',\n  props<{instance: ControlledForm}>()\n)"
                 },
                 {
-                    "name": "storeInstance",
+                    "name": "registerFormGroup",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": ""
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[NgrxForm] Register Form Group',\n  props<{groupId: string, instanceIds: string[]}>()\n)"
                 },
                 {
-                    "name": "TabTwo",
+                    "name": "setForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<FormHeaderComponent>",
-                    "defaultValue": "(args: FormHeaderComponent) => {\n  const {store} = args;\n  store.dispatch(setActiveStep({index: 1}));\n  return {\n    props: args,\n  }\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<FormHeaderComponent>",
-                    "defaultValue": "(args: FormHeaderComponent) => ({\n  props: args,\n})"
+                    "type": "",
+                    "defaultValue": "createAction(\n  '[NgrxForm] Set Form',\n  props<{data: ControlledFormData}>()\n)"
                 }
             ],
             "src/app/phoenix/open/pages/account-request/store/account-request.actions.ts": [
@@ -2929,38 +4319,6 @@
                     "defaultValue": "(args: AccountRequestComponent) => ({\n  props: args,\n})"
                 }
             ],
-            "src/stories/open/pages/account-request/components/Progress.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "SecondTab",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ProgressComponent>",
-                    "defaultValue": "(args: ProgressComponent) => ({\n  props: args,\n})"
-                }
-            ],
             "src/app/phoenix/open/pages/account-request/store/account-request.selectors.ts": [
                 {
                     "name": "selectAccountRequest",
@@ -3001,6 +4359,38 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "createSelector(\n  selectAccountRequestState,\n  (state) => {\n    if (state.steps) {\n      return [...state.steps]\n    }\n    return [];\n  }\n)"
+                }
+            ],
+            "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts": [
+                {
+                    "name": "selectForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(instanceId: string) => createSelector(\n  selectNgrxFormState,\n  (state) => {\n    return state.forms[instanceId] ? {...state.forms[instanceId]} : undefined;\n  }\n)"
+                },
+                {
+                    "name": "selectFormGroup",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(groupId: string) => createSelector(\n  selectNgrxFormState,\n  (state) => {\n    const group = state.groups[groupId];\n    if (group) {\n      const res: ControlledFormGroupData = {\n        forms: [...group],\n        instanceId: groupId,\n        dirty: false,\n        valid: true,\n        errors: {},\n        value: {}\n      };\n      group.forEach(f => {\n          const form = state.forms[f];\n          if (! form) {\n            return undefined;\n          }\n          if (form.dirty) {\n            res.dirty = true;\n          }\n          if (! form.valid) {\n            res.valid = false;\n            res.errors[f] = {...form.errors}\n          }\n          res.value[f] = {...form.value};\n          return;\n      });\n      // const controls = group.map(f => {\n      //   const form = state.forms[f];\n      //   if (! form) {\n      //     return undefined;\n      //   }\n      //   res.value[f] = {...form.value};\n      // }).filter(f => !! f);\n      return res;\n    }\n    return undefined;\n  }\n)"
+                },
+                {
+                    "name": "selectNgrxFormState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "createFeatureSelector<fromNgrxForm.State>(\n  fromNgrxForm.ngrxFormFeatureKey\n)"
                 }
             ]
         },
@@ -3187,6 +4577,39 @@
                                 "module": "PhoenixModule"
                             }
                         ]
+                    },
+                    {
+                        "path": "demos",
+                        "children": [
+                            {
+                                "path": "ngrx-forms",
+                                "loadChildren": "./phoenix/lib/components/ngrx-form/demo/demo.module#DemoModule",
+                                "children": [
+                                    {
+                                        "kind": "module",
+                                        "children": [
+                                            {
+                                                "name": "routes",
+                                                "filename": "src/app/phoenix/lib/components/ngrx-form/demo/demo-routing.module.ts",
+                                                "module": "DemoRoutingModule",
+                                                "children": [
+                                                    {
+                                                        "path": "",
+                                                        "component": "NgrxFormDemoComponent"
+                                                    },
+                                                    {
+                                                        "path": "stepper",
+                                                        "component": "NgrxFormStepperDemoComponent"
+                                                    }
+                                                ],
+                                                "kind": "module"
+                                            }
+                                        ],
+                                        "module": "DemoModule"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
                 "kind": "module"
@@ -3307,6 +4730,277 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/demo/form-one/form-one.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormOneComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/demo/form-state-inspector/form-state-inspector.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormStateInspectorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/demo/form-two/form-two.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormTwoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/demo/ngrx-form-demo/ngrx-form-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NgrxFormDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/demo/ngrx-form-stepper-demo/ngrx-form-stepper-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NgrxFormStepperDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-step.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NgrxFormStepDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-stepper-form.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NgrxFormStepperFormDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-stepper/ngrx-form-stepper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NgrxFormStepperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "markAsClean",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "registerForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "registerFormGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "setForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.effects.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "NgrxFormEffects",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "State",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ngrxFormFeatureKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "reducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectFormGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.selectors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "selectNgrxFormState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ControlledForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ControlledFormData",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ControlledFormGroupData",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NgrxForm",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NgrxFormAccessor",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form-store/ngrx-form.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NgrxFormGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form/ngrx-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NgrxFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/components/ngrx-form/ngrx-form/ngrx-form.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NgrxFormDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/phoenix/lib/pipes/map-object.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "MapObjectPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/phoenix/open/components/header-bar/header-bar.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3321,70 +5015,7 @@
                 "linktype": "component",
                 "name": "AccountRequestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/form-header/form-header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FormHeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/access-form/access-form.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AccessFormComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/confirmation/confirmation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ConfirmationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/forms.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FormsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/forms/registration/registration.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "RegistrationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/components/progress/progress.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProgressComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/phoenix/open/pages/account-request/directives/account-request-step.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "AccountRequestStepDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -3605,106 +5236,6 @@
             },
             {
                 "filePath": "src/stories/open/pages/account-request/AccountRequest.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "initialState",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "steps",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "storeInstance",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TabTwo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/FormHeader.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/Progress.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SecondTab",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/open/pages/account-request/components/Progress.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

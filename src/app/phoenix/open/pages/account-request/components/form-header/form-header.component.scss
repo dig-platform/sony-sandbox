@@ -1,0 +1,15 @@
+.form-header{
+  display: flex;
+}
+
+.form-header-content{
+  flex: 1;
+}
+
+.form-header-actions{
+  display: flex;
+  flex-direction: column;
+  button{
+    margin-bottom: 4px;
+  }
+}

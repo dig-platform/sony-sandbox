@@ -1,12 +1,8 @@
-<app-header-bar></app-header-bar>
-<mat-stepper [linear]="true">
-  <mat-step label="Register">
-    register
+<mat-stepper #stepper [ngrxStepper]="stepper" ngrxId="accountRequest" [linear]="true">
+  <mat-step [stepControl]="registration.form" label="Registration">
+    <app-registration #registration></app-registration>
   </mat-step>
-  <mat-step label="Access Form" >
-    access
-  </mat-step>
-  <mat-step label="Confirmation">
-    confirm
+  <mat-step [stepControl]="access.form" label="register">
+    <app-access #access></app-access>
   </mat-step>
 </mat-stepper>

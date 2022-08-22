@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AccountRequestComponent} from './account-request.component';
 
 const routes: Routes = [
   {
-    path: 'account-request',
-    loadChildren: () => import('./pages/account-request/account-request.module').then( m => m.AccountRequestModule)
+    path: '',
+    component: AccountRequestComponent
   }
 ];
 
@@ -12,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class OpenRoutingModule { }
+export class AccountRequestRoutingModule { }

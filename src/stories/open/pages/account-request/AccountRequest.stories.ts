@@ -6,6 +6,7 @@ import {CommonModule} from '@angular/common';
 import {AccountRequestModule} from 'src/app/phoenix/open/pages/account-request/account-request.module';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
+import {ReactiveFormsModule} from '@angular/forms';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -18,6 +19,7 @@ export default {
         StoreModule.forRoot({}),
         EffectsModule.forRoot(),
         AccountRequestModule,
+        ReactiveFormsModule
       ]
     })
   ],

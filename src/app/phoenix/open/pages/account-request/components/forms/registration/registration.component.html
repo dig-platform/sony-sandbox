@@ -1,1 +1,8 @@
-<p>registration works!</p>
+<app-form-header [next]="form.valid ? 'active' : 'disable'" previous="hide">
+  <h1>Request access to Runner</h1>
+  <p>Please fill out all of the fields</p>
+</app-form-header>
+<form [formGroup]="form">
+  <input matInput formControlName="firstName">
+</form>
+

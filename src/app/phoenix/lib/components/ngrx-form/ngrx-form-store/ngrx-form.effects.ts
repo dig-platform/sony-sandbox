@@ -8,8 +8,6 @@ import {setForm} from './ngrx-form.actions';
 
 @Injectable()
 export class NgrxFormEffects {
-
-
   registerForm$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(NgrxFormActions.registerForm),

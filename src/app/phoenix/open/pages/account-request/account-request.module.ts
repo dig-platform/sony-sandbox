@@ -1,54 +1,41 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccountRequestComponent } from './account-request.component';
-import {HeaderBarComponent} from '../../components/header-bar/header-bar.component';
-import { EffectsModule } from '@ngrx/effects';
-import * as fromAccountRequest from './store/account-request.reducer';
-import { AccountRequestEffects } from './store/account-request.effects';
-import {StoreModule} from '@ngrx/store';
-import { RegistrationComponent } from './components/forms/registration/registration.component';
-import { AccessFormComponent } from './components/forms/access-form/access-form.component';
-import { ConfirmationComponent } from './components/forms/confirmation/confirmation.component';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormHeaderComponent} from './components/form-header/form-header.component';
-import { AccountRequestStepDirective } from './directives/account-request-step.directive';
-import { FormsComponent } from './components/forms/forms.component';
-import { ProgressComponent } from './components/progress/progress.component';
 
+import { AccountRequestRoutingModule } from './account-request-routing.module';
+import {AccountRequestComponent} from './account-request.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { RegistrationComponent } from './components/forms/registration/registration.component';
+import {MatCardModule} from '@angular/material/card';
+import {NgrxFormModule} from '../../../lib/components/ngrx-form/ngrx-form';
+import {NgrxFormStoreModule} from '../../../lib/components/ngrx-form/ngrx-form-store';
+import { FormHeaderComponent } from './components/form-header/form-header.component';
+import { AccessComponent } from './components/forms/access/access.component';
+import {NgrxStepperModule} from '../../../lib/modules/ngrx-stepper/ngrx-stepper.module';
 
 
 @NgModule({
   declarations: [
     AccountRequestComponent,
     RegistrationComponent,
-    AccessFormComponent,
-    ConfirmationComponent,
     FormHeaderComponent,
-    AccountRequestStepDirective,
-    FormsComponent,
-    ProgressComponent
-  ],
-  exports: [
-    AccountRequestComponent
+    AccessComponent
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    HeaderBarComponent,
-    MatIconModule,
-    MatStepperModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
+    AccountRequestRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(fromAccountRequest.accountRequestFeatureKey, fromAccountRequest.reducer),
-    EffectsModule.forFeature([AccountRequestEffects])
+    MatStepperModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    NgrxFormModule,
+    NgrxFormStoreModule,
+    NgrxStepperModule
   ]
 })
 export class AccountRequestModule { }
