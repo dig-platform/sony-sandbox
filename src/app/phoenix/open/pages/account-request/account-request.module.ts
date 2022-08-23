@@ -15,6 +15,8 @@ import {NgrxFormStoreModule} from '../../../lib/components/ngrx-form/ngrx-form-s
 import { FormHeaderComponent } from './components/form-header/form-header.component';
 import { AccessComponent } from './components/forms/access/access.component';
 import {NgrxStepperModule} from '../../../lib/modules/ngrx-stepper/ngrx-stepper.module';
+import { ConfirmationComponent } from './components/forms/confirmation/confirmation.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {NgrxStepperModule} from '../../../lib/modules/ngrx-stepper/ngrx-stepper.
     AccountRequestComponent,
     RegistrationComponent,
     FormHeaderComponent,
-    AccessComponent
+    AccessComponent,
+    ConfirmationComponent
   ],
   imports: [
     CommonModule,
@@ -33,8 +36,7 @@ import {NgrxStepperModule} from '../../../lib/modules/ngrx-stepper/ngrx-stepper.
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    NgrxFormModule,
-    NgrxFormStoreModule,
+    MatRadioModule,
     NgrxStepperModule
   ]
 })

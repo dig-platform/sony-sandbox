@@ -17,7 +17,6 @@ export class AccountRequestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.accountRequest$.subscribe(console.warn);
   }
 
 }

@@ -1,8 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import {ControlledFormData} from './ngrx-form';
 import {markAsClean, registerFormGroup, setForm} from './ngrx-form.actions';
-import {patchAccountRequest} from '../../../../open/pages/account-request/store/account-request.actions';
-import {group} from '@angular/animations';
 
 export const ngrxFormFeatureKey = 'ngrxForm';
 

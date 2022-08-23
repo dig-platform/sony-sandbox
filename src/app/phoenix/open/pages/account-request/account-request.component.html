@@ -2,7 +2,10 @@
   <mat-step [stepControl]="registration.form" label="Registration">
     <app-registration #registration></app-registration>
   </mat-step>
-  <mat-step [stepControl]="access.form" label="register">
+  <mat-step [stepControl]="access.form" label="Access Form">
     <app-access #access></app-access>
+  </mat-step>
+  <mat-step label="Confirmation">
+    <app-confirmation></app-confirmation>
   </mat-step>
 </mat-stepper>
