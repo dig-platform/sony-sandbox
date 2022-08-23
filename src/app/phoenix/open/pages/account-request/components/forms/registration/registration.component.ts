@@ -13,31 +13,6 @@ import {selectConfig} from '../../../../../../lib/modules/config/config.selector
 
 // todo fix tab index on form controls
 
-export const formValidator: ValidatorFn = (form: AbstractControl): ValidationErrors | null => {
-  const company: string = form.get('company')?.value;
-  const requiredFields: {[key: string]: string[]} = {
-    other: ['companyName', 'sonyContact'],
-    sony: ['department', 'division']
-  };
-
-  const allFields = [...requiredFields['other'], ...requiredFields['sony']];
-
-  const errors = allFields.map(field => {
-    const control = form.get(field);
-    if (! control || ! company) {
-      return undefined;
-    }
-    if (requiredFields[company].indexOf(field) > -1 && ! control.value) {
-      control.setErrors({required: true, companyDetails: true});
-      return false;
-    } else {
-      control.setErrors(null);
-      return true;
-    }
-  }).filter(f => f === true);
-  return errors.length > 0 ? {companyDetails: company} : null;
-};
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -57,7 +32,7 @@ export class RegistrationComponent implements OnInit {
     division: new FormControl(null),
     businessJustification: new FormControl(null, [Validators.required]),
     jobTitle: new FormControl(null, [Validators.required]),
-  }, formValidator);
+  });
 
   public reportingGroups$: Observable<string[]> = of([
       'Asset Management',
@@ -83,7 +58,6 @@ export class RegistrationComponent implements OnInit {
   );
 
   constructor(private store: Store) {
-    this.reportingGroups$ = store.select(selectConfig('reporting_groups'));
   }
 
   get currentCompany() {
@@ -95,13 +69,25 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe(value => {
-      Object.keys(this.form.controls).map(k => {
-        const c = this.form.get(k);
-        console.log(k, c?.valid, c?.errors);
-      })
-      console.error(this.form.valid);
-    })
+  }
+
+  validateCompanyDetails(company: string) {
+    if (company === 'sony') {
+      this.form.get('companyName')?.removeValidators(Validators.required);
+      this.form.get('companyName')?.removeValidators(Validators.required);
+      this.form.get('sonyContact')?.setErrors(null);
+      this.form.get('sonyContact')?.setErrors(null);
+      this.form.get('department')?.addValidators(Validators.required);
+      this.form.get('division')?.addValidators(Validators.required);
+    } else if (company === 'other') {
+      this.form.get('companyName')?.addValidators(Validators.required);
+      this.form.get('sonyContact')?.addValidators(Validators.required);
+      this.form.get('department')?.removeValidators(Validators.required);
+      this.form.get('department')?.setErrors(null)
+      this.form.get('division')?.removeValidators(Validators.required);
+      this.form.get('division')?.setErrors(null)
+    }
+    this.form.updateValueAndValidity();
   }
 
 }

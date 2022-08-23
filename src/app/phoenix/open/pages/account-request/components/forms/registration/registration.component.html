@@ -41,7 +41,7 @@
   <div class="row" tabindex="5">
     <section>
       <mat-label>Your Company:</mat-label>
-      <mat-radio-group formControlName="company">
+      <mat-radio-group formControlName="company" (change)="validateCompanyDetails($event.value)">
         <mat-radio-button value="sony">Sony Pictures Entertainment</mat-radio-button>
         <mat-radio-button value="other">Other</mat-radio-button>
       </mat-radio-group>
