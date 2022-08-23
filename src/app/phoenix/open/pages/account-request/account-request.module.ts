@@ -17,6 +17,8 @@ import { AccessComponent } from './components/forms/access/access.component';
 import {NgrxStepperModule} from '../../../lib/modules/ngrx-stepper/ngrx-stepper.module';
 import { ConfirmationComponent } from './components/forms/confirmation/confirmation.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {ConfigModule} from '../../../lib/modules/config/config.module';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import {MatRadioModule} from '@angular/material/radio';
   ],
   imports: [
     CommonModule,
+    ConfigModule,
     AccountRequestRoutingModule,
     ReactiveFormsModule,
     MatStepperModule,
@@ -37,6 +40,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
+    MatSelectModule,
     NgrxStepperModule
   ]
 })

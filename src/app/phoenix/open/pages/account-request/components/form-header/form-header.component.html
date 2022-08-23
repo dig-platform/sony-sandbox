@@ -1,21 +1,19 @@
-<mat-card>
-  <div class="form-header">
-    <div class="form-header-content">
-      <ng-content></ng-content>
-    </div>
-    <div class="form-header-actions">
-      <button
-        color="primary"
-        mat-flat-button
-        [disabled]="previous === 'disable'"
-        matStepperPrevious *ngIf="previous !== 'hide'">Previous</button>
-      <button
-        color="primary"
-        mat-flat-button
-        [disabled]="next === 'disable'"
-        *ngIf="next !== 'hide'"
-        matStepperNext>Next</button>
-      <ng-content select="[form-header-action]"></ng-content>
-    </div>
+<div class="form-header">
+  <div class="form-header-content">
+    <ng-content></ng-content>
   </div>
-</mat-card>
+  <div class="form-header-actions">
+    <button
+      color="primary"
+      mat-flat-button
+      [disabled]="previous === 'disable'"
+      matStepperPrevious *ngIf="previous !== 'hide'">Previous</button>
+    <button
+      color="primary"
+      mat-flat-button
+      [disabled]="next === 'disable'"
+      *ngIf="next !== 'hide'"
+      matStepperNext>Next</button>
+    <ng-content select="[form-header-action]"></ng-content>
+  </div>
+</div>

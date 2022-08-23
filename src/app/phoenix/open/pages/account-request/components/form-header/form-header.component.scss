@@ -1,5 +1,10 @@
 .form-header{
   display: flex;
+  background: #f5f5f5;
+  padding: 2.5rem;
+  ::ng-deep h1{
+    margin: 0;
+  }
 }
 
 .form-header-content{

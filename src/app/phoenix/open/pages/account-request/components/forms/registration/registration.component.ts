@@ -1,28 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Directive, OnInit} from '@angular/core';
 import {
-  AbstractControl,
+  AbstractControl, AsyncValidator,
   FormControl,
-  FormGroup,
-  ValidationErrors,
+  FormGroup, NG_ASYNC_VALIDATORS,
+  ValidationErrors, Validator,
   ValidatorFn,
   Validators
 } from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {Observable, of} from 'rxjs';
+import {selectConfig} from '../../../../../../lib/modules/config/config.selectors';
 
 // todo fix tab index on form controls
 
-export const requiredIfCompany: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
-  return null;
-  const company = group.get('company')?.value;
-  if (! company) {
-    return {missingCompany: true};
-  }
-   const companyName = group.get('companyName');
-  if (company === 'other') {
-    companyName?.addValidators(Validators.required);
-  } else {
-    companyName?.removeValidators(Validators.required);
-  }
-  return null;
+export const formValidator: ValidatorFn = (form: AbstractControl): ValidationErrors | null => {
+  const company: string = form.get('company')?.value;
+  const requiredFields: {[key: string]: string[]} = {
+    other: ['companyName', 'sonyContact'],
+    sony: ['department', 'division']
+  };
+
+  const allFields = [...requiredFields['other'], ...requiredFields['sony']];
+
+  const errors = allFields.map(field => {
+    const control = form.get(field);
+    if (! control || ! company) {
+      return undefined;
+    }
+    if (requiredFields[company].indexOf(field) > -1 && ! control.value) {
+      control.setErrors({required: true, companyDetails: true});
+      return false;
+    } else {
+      control.setErrors(null);
+      return true;
+    }
+  }).filter(f => f === true);
+  return errors.length > 0 ? {companyDetails: company} : null;
 };
 
 @Component({
@@ -37,15 +50,41 @@ export class RegistrationComponent implements OnInit {
     email: new FormControl(null, [Validators.required, Validators.email]),
     company: new FormControl(null, [Validators.required]),
     territory: new FormControl(null, [Validators.required]),
-    companyName: new FormControl(),
-    reportingGroup: new FormControl(),
-    sonyContact: new FormControl(),
+    reportingGroup: new FormControl(null, [Validators.required]),
+    companyName: new FormControl(null),
+    sonyContact: new FormControl(null),
+    department: new FormControl(null),
+    division: new FormControl(null),
     businessJustification: new FormControl(null, [Validators.required]),
     jobTitle: new FormControl(null, [Validators.required]),
-    department: new FormControl(),
-    division: new FormControl(),
-  }, {validators: requiredIfCompany})
-  constructor() { }
+  }, formValidator);
+
+  public reportingGroups$: Observable<string[]> = of([
+      'Asset Management',
+      'Corporate',
+      'Corporate Technology Development',
+      'Content Management and Distribution Group',
+      'Funimation',
+      'Motion Picture Group',
+      'SPDP Colorworks',
+      'SPDP Imageworks',
+      'SPDP Post Media Center',
+      'SPDP Sony Pictures Animation',
+      'SPDP Sound',
+      'SPDP Stock Footage',
+      'SPT Crackle',
+      'SPT Crackle Latin America',
+      'SPT Networks',
+      'SPT Prod Domestic',
+      'SPT Prod Intl',
+      'SPT Sales',
+      'Sony Pictures Home Entertainment'
+    ]
+  );
+
+  constructor(private store: Store) {
+    this.reportingGroups$ = store.select(selectConfig('reporting_groups'));
+  }
 
   get currentCompany() {
     const company = this.form.get('company')?.value;
@@ -56,25 +95,13 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const company = this.form.get('company');
-    this.form.get('company')?.valueChanges.subscribe(company => {
-      console.log(company);
-      if (company === 'other') {
-        this.form.get('companyName')?.addValidators(Validators.required);
-        this.form.get('sonyContact')?.addValidators(Validators.required);
-        this.form.get('department')?.removeValidators(Validators.required);
-        this.form.get('division')?.removeValidators(Validators.required);
-      } else {
-        this.form.get('companyName')?.removeValidators(Validators.required);
-        this.form.get('sonyContact')?.removeValidators(Validators.required);
-        this.form.get('department')?.addValidators(Validators.required);
-        this.form.get('division')?.addValidators(Validators.required);
-      }
+    this.form.valueChanges.subscribe(value => {
+      Object.keys(this.form.controls).map(k => {
+        const c = this.form.get(k);
+        console.log(k, c?.valid, c?.errors);
+      })
+      console.error(this.form.valid);
     })
-    this.form.valueChanges.subscribe(() => {
-      console.log(this.form.valid);
-      console.log(this.form.errors);
-    });
   }
 
 }
