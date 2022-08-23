@@ -1,0 +1,268 @@
+en:
+  modals:
+    default:
+      cancel_text: "CANCEL"
+      close_text: "CLOSE"
+      confirm_text: "CONFIRM"
+      continue_text: "CONTINUE"
+      max_length: "%{charMax} characters max"
+      message: ""
+      title: ""
+      hold_on: &hold_on HOLD ON…
+    add_to_cart:
+      heading: "ADD TO CART"
+      message: "Please choose one or more carts to add your selected assets to. \n Each cart is limited to 500 assets."
+      errors:
+        no_name: 'Please name your new cart'
+        duplicate_name: 'New carts cannot have the same name'
+        limit_exceeded: 'Cart cannot have more than 500 assets'
+    advanced_title_search:
+      title: "ADVANCED TITLE SEARCH"
+      release_year: "Year"
+      season_number: "Season"
+      episode_number: "Episode"
+      product_type: "Product Type"
+      made_for_media: "Made For Media"
+      full_name: 'Title'
+      titles_added: "Titles Added:"
+      walker_id: 'Walker ID'
+      results: "Results:"
+      matches: "matches"
+      close: "CLOSE"
+      no_matches: "Sorry, no results were found. Try using different or more general terms"
+    cancel_scheduled_actions:
+      heading: "Confirm Cancellation"
+      message: "Which scheduled action would you like to cancel for this asset?"
+      cancel_text: "Cancel"
+      close_text: "Close"
+      confirm_text: "Confirm"
+      types:
+        move_from_single: 'Move from Folder'
+        copy_from_single: 'Copy from Folder'
+        move_single: 'Move to Folder'
+        copy_single: 'Copy to Folder'
+        move_multiple: 'Move to Folders'
+        copy_multiple: 'Copy to Folders'
+        delete_single: 'Delete from Folder'
+        delete_multiple: 'Delete from Folders'
+      scheduled_for: 'Scheduled For'
+      scheduled_by: 'Scheduled By'
+    delete_cart:
+      heading: CONFIRM CART DELETION
+      message: The assets contained in this cart will remain on Runner. Are you sure you want to delete this cart?
+    download:
+      heading: "DOWNLOAD"
+      message: "Please choose a download option."
+      asset_count: "%{assetCount} Assets Selected"
+      asset_name: "Asset Name"
+      method_label: "Download Method"
+      http_note: "*Aspera is recommended for files larger than 100MB."
+      proxy_tooltip: "Video proxies are in MP4 format and may be in one of the following sizes:<br>720x404<br>960x540<br>Audio proxies are in MP3 format. If the default proxy size is not available, the next highest available proxy will be downloaded."
+      buttons:
+        cancel: "CANCEL"
+        download: "DOWNLOAD"
+      proxies:
+        original: "Original"
+        proxy: 'Proxy'
+        name:
+          document_pdf: "PDF"
+          video_hd_1080_plus: "HD 1080p"
+          video_hd_1080: "HD 1080p"
+          video_hd_720: "HD 720p"
+          video_sd_plus: "SD 540p"
+          video_sd: "SD 360p"
+          video_mobile: "Mobile SD"
+          video_mpeg1_qvga_tc: "Timecode Proxy"
+          video_mp4_qvga_tc: "Timecode Proxy"
+          video_sd_tc: "Timecode Proxy"
+          video_hd_720_tc: "Timecode Proxy"
+          pix_spec_hd_720: "Pix Spec HD 720"
+          standard_video: "SD"
+          standard_audio: "MP3"
+          extra_large_thumbnail: "Thumbnail"
+          thumbnail_xlarge: "Thumbnail"
+          large_thumbnail: "Thumbnail"
+          medium_thumbnail: "Thumbnail"
+          small_thumbnail: "Thumbnail"
+          standard_thumbnail: "Thumbnail"
+          watermarked: "Watermarked"
+          original: 'Original'
+          best_available_proxy: 'Proxy'
+        audio_info: "48 kHz, 96 kbps / %{size_in_bytes}"
+        full_info: "%{width}x%{height} / %{extension} / %{size_in_bytes}"
+        info_without_dimensions: "%{extension} / %{size_in_bytes}"
+        full_binary_or_package_info: "%{asset_class} / %{size_in_bytes}"
+        limited_binary_or_package_info: "%{asset_class}"
+        info_without_dimensions_or_size: "%{extension}"
+        info_without_size: "%{width}x%{height} / %{extension}"
+        display_states:
+          archived: 'Archived'
+          restoring: "Restoring ~%{timeRemaining}"
+    edit_asset_metadata_modal:
+      heading: "Metadata Template"
+      message: "Please choose a template."
+    email_share_download_proxies_validation_modal:
+      heading: *hold_on
+      some_proxies_unavailable: The following assets do not have proxies available.
+      all_proxies_unavailable: None of the selected assets have proxies available.
+      please_adjust_permissions: Please adjust the share permissions before continuing.
+      do_you_want_to_continue: Do you want to continue without the following assets?
+    file_request:
+      heading: "REQUEST HISTORY"
+      message: "This request was created on "
+      recipients_label: "To"
+      subject_label: "Subject"
+      message_label: "Message"
+      destination_folder: "Destination Folder"
+      request_link_expiration: "Request Link Expiration"
+      resend_link: "Resend File Request Link?"
+      kill_link: "Kill File Request Link?"
+      resend: "RESEND"
+      kill: "KILL"
+    folder_standard_archive_policy_modal:
+      heading: "Folder Glacier Archive Policy"
+      message: "Do you want to apply this glacier archive policy to both this folder and its sub-folders?"
+      this_folder_only: "This folder only"
+      all_folders: "All folders and sub-folders"
+    folder_deep_archive_policy_modal:
+      heading: "Folder Deep Glacier Archive Policy"
+      message: "Do you want to apply this deep glacier archive policy to both this folder and its sub-folders?"
+      this_folder_only: "This folder only"
+      all_folders: "All folders and sub-folders"
+    folder_delete_policy_modal:
+      heading: "Folder Delete Policy"
+      message: "Do you want to apply this folder delete policy to both this folder and its sub-folders?"
+      this_folder_only: "This folder only"
+      all_folders: "All folders and sub-folders"
+    manage_modal:
+      activity_label: "UPLOAD STATUS"
+      add_to_cart_label: "ADD TO CART"
+      heading: "MANAGE"
+      message: "While your assets are uploading,\n what would you like to do?"
+      metadata_label: "ADD METADATA"
+      share_label: "EMAIL SHARE"
+      update_thumbnail_label: "UPDATE THUMBNAIL"
+      view_label: "VIEW ASSETS"
+    metadata_dictionary_modal:
+      heading: "Metadata Dictionary"
+    metadata:
+      validation_modal:
+        heading: *hold_on
+        selected_assets_message: "There is metadata that has NOT been applied to the selected assets. Do you want to proceed?"
+        leave_state_message: "There is metadata that has NOT been applied.\n Do you want to leave?"
+        applied_message: "There is metadata that has NOT been applied.\n Do you still want to close?"
+        no_permissions_message: "You don't have permissions to add metadata to this asset. Do you want to continue?"
+        some_permissions_message: "You don't have permissions to add metadata to these assets."
+        note_message: "*Contact your Delegated Admin if you need this issue resolved."
+        leave_text: "YES, LEAVE"
+        stay_text: "STAY"
+        confirm_text: "CONFIRM"
+        cancel_text: "CANCEL"
+      replace_warning_modal:
+        heading: "HOLD ON..."
+        message: "This will replace the existing metadata in this field\n with any new metadata that has been entered.\n Are you sure that you want to continue?"
+    modify_search_subscription:
+      heading: "Modify Search Subscription"
+      message: "Rename your subscription, adjust the email frequency or unsubscribe below"
+      buttons:
+        unsubscribe: "Unsubscribe"
+    overlay_info:
+      heading: VISIBLE WATERMARK
+      definitions:
+        - term: Visible Watermark
+          definition: "Text provided will be added as on overlay to the media
+          player on the share page."
+        - term: Eligible Access
+          definition: "Visible watermarks can be added for image and video assets and are
+          only available for Preview Only shares."
+        - term: Process
+          definition: "When your share recipient(s) preview a video from the
+          share page, Runner will add a text overlay to the video player."
+    preferences:
+      cart_info:
+        heading: CART INFORMATION
+        definitions:
+          - term: Preferred Cart
+            definition: "A preferred cart allows you to automatically add assets to a specified cart."
+          - term: No Preferred Cart
+            definition: "By selecting 'No Preferred Cart,' you choose to manually select a cart everytime you wish to add assets to a cart."
+    rename_cart:
+      heading: RENAME CART
+      message: Please enter a new name for the cart.
+      errors:
+        name: Duplicate cart name.
+    search_subscriptions:
+      heading: SUBSCRIBE TO SEARCH
+      message: Create an email subscription for your selected search terms and filters. Review the details below, select an email frequency and confirm.
+      query: Search Terms
+      filters: Selected Filters
+      name: Subscription Name
+      frequency: Email Frequency
+    search_subscriptions_unsubscribe:
+      heading: UNSUBSCRIBED
+      message: You have successfully unsubscribed from
+    session_warning:
+      heading: SESSION TIMEOUT
+      note: Due to inactivity, your session will expire in
+      message: 'To remain signed in, click "continue session". Otherwise, you will be logged out.'
+      continue: CONTINUE SESSION
+    share:
+      archive_warning:
+        heading: 'JUST SO YOU KNOW...'
+        message: 'This Email Share will be sent after all archived assets are retrieved.'
+        deep_glacier_info: "Deep Glacier archived assets require 12 or more hours to be retrieved."
+        glacier_info: "Glacier archived assets require up to 6 hours to be retrieved."
+        single_item_message: 'Your Email Share will be sent after this asset is retrieved from archive.'
+      generate_link:
+        archived_assets: '*Archived assets can not be downloaded'
+        assets_label: "Assets to Share: %{assetCount}"
+        auto_preview: "Auto- Preview"
+        copy: 'COPY'
+        download: "Download"
+        generate: "GENERATE LINK"
+        heading: "Share URL"
+        no_option: 'No'
+        note: "As a note, detailed tracking is not available for this share."
+        permissions: "Permissions"
+        preview: "Preview Only"
+        yes_option: 'Yes'
+    share_history_modal:
+      heading: "Share History"
+      subheading: "This share was created on"
+      assets_label: "Assets"
+      recipients_label: "To"
+      subject_label: "Subject"
+      message_label: "Message"
+      expire:
+        label: "Expire on"
+        example: "(mm-dd-yyyy)"
+      links:
+        share_info: Share Info
+        stats: Stats
+      kill_label: "Do you want to kill the share link for these assets?"
+      view_assets_button_text: 'View Assets'
+      kill_button_text: 'Kill Share'
+    thumbnail:
+      validation_modal:
+        heading: *hold_on
+        no_permissions_message: "At the moment, you are unable to update the thumbnails for some of the selected assets. Do you want to continue?"
+    upload_type:
+      heading: UPLOAD TYPE INFORMATION
+      standard:
+        label: HTTP
+        definition: HTTP Upload utilizes Multipart HTTP technology to segment your files into multiple parts and upload those parts simultaneously through your browser session. We recommend using HTTP Upload if your network connection is stable and robust.
+      aspera:
+        label: Aspera Connect
+        definition: Aspera Connect specializes in secure, SSL-Encrypted transfers, and excels in achieving no packet loss over low bandwidth, high latency connections. We recommend using Aspera if your network connection is unreliable or limited in bandwidth.
+    burn_in_info:
+      heading: BURN-IN WATERMARK
+      definitions:
+        - term: Burn-in Watermark
+          definition: Text provided will be burned-in to the asset for download.
+        - term: Eligible Access
+          definition: Burn-in watermarks can be added for video, image, and PDF assets available for streaming and download.
+        - term: Process
+          definition: When a share is submitted, Runner will create a new asset with the text burned in.
+    watermark_warning:
+      accept: 'ACCEPT'
+      decline: 'DECLINE'

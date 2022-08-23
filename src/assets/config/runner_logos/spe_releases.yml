@@ -1,0 +1,368 @@
+---
+#############################################################################
+#       SPE FILM & TELEVISON RELEASES                                       #
+#############################################################################
+
+spe_releases:
+  morbius:
+    login:        morbius_login.gif
+    header:       morbius.svg
+    header_hover: morbius_hover.svg
+    tooltip:      Morbius
+    dates:
+      default:
+        - start: 2022-03-24
+          end:   2022-04-04
+
+  ###
+  # INACTIVE LOGOS
+  #
+  # spiderman:
+  #   start:
+  #     month: 6
+  #     day: 28
+  #   end:
+  #     month: 7
+  #     day: 16
+  #   login: runner_logo_spiderman.png
+  #
+  # emoji:
+  #   start:
+  #     month: 7
+  #     day: 24
+  #   end:
+  #     month: 8
+  #     day: 7
+  #   login: emoji_movie.svg
+  #   tooltip: "The Em\U0001F612ji M\U0001F601vie"
+  #
+  # tick:
+  #   start:
+  #     month: 8
+  #     day: 21
+  #   end:
+  #     month: 8
+  #     day: 31
+  #   login: tick.svg
+  #   tooltip: The Tick
+  #
+  # blade_runner:
+  #   start:
+  #     month: 9
+  #     day: 29
+  #   end:
+  #     month: 10
+  #     day: 9
+  #   login: blade_runner.svg
+  #   tooltip: BLADE RUNNER 2049
+  #
+  # jumanji:
+  #   start:
+  #     month: 12
+  #     day: 18
+  #     year: 2017
+  #   end:
+  #     month: 12
+  #     day: 22
+  #     year: 2017
+  #   login: jumanji.svg
+  #   tooltip: 'Jumanji: Welcome to the Jungle'
+  #     header: jumanji.svg
+  #     header_hover: jumanji_hover.svg
+  #     strict_height: true
+  #
+  # # The Equalizer 2: US Release 7/20/18
+  # equalizer_2:
+  #   start:
+  #     month: 7
+  #     day: 20
+  #     year: 2018
+  #   end:
+  #     month: 7
+  #     day: 23
+  #     year: 2018
+  #   login: equalizer_2.svg
+  #     header: equalizer_2.svg
+  #     header_hover: equalizer_2_hover.svg
+  #     strict_height: false
+  #   tooltip: THE EQUALIZER 2
+  #
+  # # Hotel Transylvania 3: US Release 7/13/18
+  # hotel_transylvania_3:
+  #   start:
+  #     month: 7
+  #     day: 13
+  #     year: 2018
+  #   end:
+  #     month: 7
+  #     day: 17
+  #     year: 2018
+  #   login: hotel_transylvania.svg
+  #   tooltip: 'Hotel Transylvania 3: Summer Vacation'
+  #     header: hotel_transylvania.svg
+  #     header_hover: hotel_transylvania_hover.svg
+  #
+  # # Better Call Saul: S4
+  # better_call_saul:
+  #   start:
+  #     month: 8
+  #     day: 3
+  #     year: 2018
+  #   end:
+  #     month: 8
+  #     day: 6
+  #     year: 2018
+  #   login: better_call_saul.svg
+  #     header: better_call_saul.svg
+  #     header_hover: better_call_saul_hover.svg
+  #     strict_height: false
+  #   tooltip: Better Call Saul
+  #
+  # # Slender Man: US Release 8/24/18
+  # slenderman:
+  #   start:
+  #     month: 8
+  #     day: 24
+  #     year: 2018
+  #   end:
+  #     month: 8
+  #     day: 25
+  #     year: 2018
+  #   login: slenderman_login.svg
+  #     header: slenderman.svg
+  #     header_hover: slenderman_hover.svg
+  #     strict_height: false
+  #   tooltip: SLENDER MAN
+  #
+  # Deadly Class: US Premiere 2019
+  #deadly_class:
+  #  start:
+  #    month: 1
+  #    day: 14
+  #    year: 2019
+  #  end:
+  #    month: 1
+  #    day: 16
+  #    year: 2019
+  #  login: deadly_class.svg
+  #    header: deadly_class.svg
+  #    header_hover: deadly_class_hover.svg
+  #    strict_height: false
+  #  tooltip: DEADLY CLASS
+  #
+  # Holmes and Watson: US Release 12/20/18
+  #holmes_and_watson:
+  #  start:
+  #    month: 12
+  #    day: 20
+  #    year: 2018
+  #  end:
+  #    month: 12
+  #    day: 24
+  #    year: 2018
+  #  login: holmes_and_watson_login.gif
+  #    header: holmes_and_watson.svg
+  #    header_hover: holmes_and_watson_hover.svg
+  #    strict_height: true
+  #  tooltip: HOLMES AND WATSON
+  #
+  # Spider-Man: Into the Spider-Verse: US Release 12/14/18
+  #spiderman_spiderverse:
+  #  start:
+  #    month: 12
+  #    day: 13
+  #    year: 2018
+  #  end:
+  #    month: 12
+  #    day: 17
+  #    year: 2018
+  #  login: spiderman_spiderverse.svg
+  #    header: spiderman_spiderverse.svg
+  #    header_hover: spiderman_spiderverse_hover.svg
+  #    strict_height: false
+  #  tooltip: 'SPIDER-MAN: INTO THE SPIDER-VERSE'
+  #
+  # Shark Tank: 2018 Premiere
+  #shark_tank:
+  #  start:
+  #    month: 10
+  #    day: 4
+  #    year: 2018
+  #  end:
+  #    month: 10
+  #    day: 7
+  #    year: 2018
+  #  login: shark_tank.svg
+  #    header: shark_tank.svg
+  #    header_hover: shark_tank_hover.svg
+  #    strict_height: false
+  #  tooltip: SHARK TANK
+  # The Good Doctor: S2
+  #good_doctor:
+  #  start:
+  #    month: 9
+  #    day: 21
+  #    year: 2018
+  #  end:
+  #    month: 8
+  #    day: 24
+  #    year: 2018
+  #  login: good_doctor.svg
+  #    header: good_doctor.svg
+  #    header_hover: good_doctor_hover.svg
+  #    strict_height: false
+  #  tooltip: The Good Doctor
+
+  # Venom: US Release 10/5/18
+  #venom:
+  #  start:
+  #    month: 10
+  #    day: 3
+  #    year: 2018
+  #  end:
+  #    month: 10
+  #    day: 7
+  #    year: 2018
+  #  login: venom.svg
+  #    header: venom.svg
+  #    header_hover: venom_hover.svg
+  #    strict_height: false
+  #  tooltip: VENOM
+
+  #seven_days_out:
+  #  start:
+  #    month: 12
+  #    day: 20
+  #    year: 2018
+  #  end:
+  #    month: 12
+  #    day: 21
+  #    year: 2018
+  #  login: 7_days_out.gif
+  #  tooltip: 7 Days Out
+  #    header: 7_days_out.svg
+  #    header_hover: 7_days_out_hover.svg
+  #    strict_height: false
+  #
+  # Cobra Kai Season 2
+  # cobra_kai:
+  #   start:
+  #     month: 4
+  #     day: 23
+  #     year: 2019
+  #   end:
+  #     month: 4
+  #     day: 24
+  #     year: 2019
+  #   login: cobra_kai.svg
+  #   header: cobra_kai.svg
+  #   header_hover: cobra_kai_hover.svg
+  #   tooltip: Cobra Kai Season 2
+  #   #
+  # # Men In Black International
+  # mib_international:
+  #   start:
+  #     month: 6
+  #     day: 12
+  #     year: 2019
+  #   end:
+  #     month: 6
+  #     day: 14
+  #     year: 2019
+  #   login: mib_international_login.svg
+  #   header: mib_international.svg
+  #   header_hover: mib_international_hover.svg
+  #   tooltip: Men in Black International
+  #
+  # # Spider-Man Far From Home
+  # spiderman_far_from_home:
+  #   start:
+  #     month: 7
+  #     day: 1
+  #     year: 2019
+  #   end:
+  #     month: 7
+  #     day: 5
+  #     year: 2019
+  #   login: spider_man_far_from_home.svg
+  #   header: spider_man_far_from_home.svg
+  #   header_hover: spider_man_far_from_home_hover.svg
+  #   tooltip: Spider-Man Far From Home
+  #
+  # Once Upon A Time In Hollywood
+  # once_upon_a_time:
+  #   login:        once_upon_a_time.svg
+  #   header:       once_upon_a_time.svg
+  #   header_hover: once_upon_a_time_hover.svg
+  #   tooltip:      Once Upon A Time In Hollywood
+  #   dates:
+  #     default:
+  #       - start: 2019-07-24
+  #         end:   2019-07-29
+
+  # Charlie's Angels
+  # charlies_angels:
+  #   login:        charlies_angels.svg
+  #   header:       charlies_angels.svg
+  #   header_hover: charlies_angels_hover.svg
+  #   tooltip:      Charlie's Angels
+  #   dates:
+  #     default:
+  #       - start: 2019-11-13
+  #         end:   2019-11-18
+
+  # bloodshot:
+  #   login:        bloodshot_login.gif
+  #   header:       bloodshot.svg
+  #   header_hover: bloodshot_hover.svg
+  #   tooltip:      BLOODSHOT
+  #   dates:
+  #     default:
+  #       - start: 2020-03-12
+  #         end:   2020-03-16
+  #
+
+  # peter_rabbit_2:
+  #   login:        peter_rabbit_2_login.gif
+  #   header:       peter_rabbit_2.svg
+  #   header_hover: peter_rabbit_2_hover.svg
+  #   tooltip:      'Peter Rabbit 2: The Runaway'
+  #   dates:
+  #     default:
+  #       - start: 2021-03-31
+  #         end:   2021-04-06
+  #
+  # shark_tank:
+  #   login: shark_tank.svg
+  #   header: shark_tank.svg
+  #   header_hover: shark_tank_hover.svg
+  #   strict_height: false
+  #   tooltip: "SHARK TANK \nSeason Premiere Friday October 8 8/7c on ABC"
+  #   dates:
+  #     default:
+  #       - start: 2021-10-08T00:00:00-07:00
+  #         end:   2021-10-09T00:00:00-07:00
+  #
+  # venom_2:
+  #   login: venom_2_login.png
+  #   header: venom_2.png
+  #   header_hover: venom_2_hover.png
+  #   strict_height: false
+  #   tooltip: 'VENOM: LET THERE BE CARNAGE'
+  #   dates:
+  #     default:
+  #       - start: 2021-10-06
+  #         end:   2021-10-08T00:00:00-07:00
+  #       - start: 2021-10-09T00:00:00-07:00
+  #         end:   2021-10-15
+  #
+  # ghostbusters_afterlife:
+  #   login:        ghostbusters_login.gif
+  #   header:       ghostbusters.svg
+  #   header_hover: ghostbusters_hover.svg
+  #   tooltip:      'Ghostbusters: Afterlife'
+  #   dates:
+  #     default:
+  #       - start: 2021-11-17
+  #         end:   2021-11-24
+  #

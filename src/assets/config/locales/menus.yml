@@ -1,0 +1,78 @@
+en:
+  menu:
+    export_contact_sheet:
+      toggle_button: "Export Contact Sheet"
+      basic_contact_sheet: "Basic Contact Sheet"
+      photo_request_report: "Photo Request Report"
+      photo_metadata_report: "Photo Metadata Report"
+    tools:
+      add_asset: "Add Asset"
+      add_note: "Add Note"
+      add_to_cart: "Add To Cart"
+      add_selected_to_cart: "Add Selected to Cart"
+      already_in_cart: "Already In Cart"
+      cancel_scheduled_actions: "Cancel Scheduled Actions"
+      copy_to_folders: "Copy To Folders"
+      create_folder: "Create Folder"
+      delete: "Delete"
+      delete_selected: "Delete Selected"
+      download: "Download"
+      download_all: "Download"
+      download_proxies: "Download Proxy"
+      download_restoring: "Download Original: ~%{timeRemaining}"
+      download_selected: 'Download Selected'
+      edit_metadata: "Edit Metadata"
+      favorite: "Add To Favorites"
+      link_assets: 'Link Assets'
+      move_to_cart: "Move To Cart"
+      move_to_folders: "Move To Folders"
+      qc_reports: "QC Results"
+      remove_selected: 'Remove Selected'
+      rename_asset: "Rename Asset"
+      rename_folder: "Rename Folder"
+      replace_asset: "Replace Asset"
+      request_files: "Request Files"
+      restore: "Retrieve From Archive"
+      restore_selected: 'Retrieve Selected'
+      share: "Share"
+      share_cart: "Share Cart"
+      share_email: "Email Share"
+      share_folder: "Share Folder"
+      share_link: "Share Link"
+      share_selected: 'Share Selected'
+      share_url: "Share URL"
+      stitch_video: "Stitch Video"
+      subscribe: "Subscribe to Folder"
+      trim_video: "Trim Video"
+      unarchive: "Retrieve from archive"
+      unfavorite: "Remove From Favorites"
+      unlink_assets: 'Unlink Assets'
+      unsubscribe: "Unsubscribe from Folder"
+      user_admin: "User Admin"
+      user_subscription: "User Subscription"
+      update_thumbnail: "Update Thumbnail"
+      upload_asset: "Upload Files"
+      upload_with_existing_metadata: "Upload with existing metadata"
+    navigation:
+      admin: "Admin"
+      create: "Create"
+      feedback: "Feedback"
+      howto: "How To..."
+      launchpad: "Launchpad"
+      logout: "logout"
+      product_updates: "Product Updates"
+      runner: "Runner"
+    top_level_buttons:
+      add_to_cart: 'Add to Cart'
+      context_menu: 'More Actions'
+      download: "Download"
+      grid_view: 'Grid View'
+      hybrid_view: 'Hybrid View'
+      list_view: 'List View'
+      list_view_toggle: 'View'
+      generate_report:
+        default: 'Generate Report'
+        disabled: 'Search result set is too large. Please contact Customer Support.'
+      share: 'Share'
+      sort: 'Sort'
+      upload: 'Upload'

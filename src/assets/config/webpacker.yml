@@ -1,0 +1,85 @@
+# Note: You must restart bin/webpack-dev-server for changes to take effect
+
+default: &default
+  source_path: app/javascript
+  source_entry_path: entrypoints
+  public_root_path: public
+  public_output_path: packs
+  cache_path: tmp/webpacker
+  webpack_compile_output: false
+
+  # Additional paths webpack should look up modules
+  # ['app/assets', 'engine/foo/app/assets']
+  additional_paths:
+    - app/templates
+    - app/javascript/stylesheets
+    - vendor/assets/javascripts
+    - vendor/assets/stylesheets
+    - vendor/assets/images
+    - spec/javascripts/support
+    - spec/features/support/javascript_overrides
+
+  # Reload manifest.json on all requests so we reload latest compiled packs
+  cache_manifest: false
+
+  static_assets_extensions:
+    - .jpg
+    - .jpeg
+    - .png
+    - .gif
+    - .tiff
+    - .ico
+    - .svg
+    - .eot
+    - .otf
+    - .ttf
+    - .woff
+    - .woff2
+
+development:
+  <<: *default
+  compile: true
+
+  # Reference: https://webpack.js.org/configuration/dev-server/
+  dev_server:
+    https: false
+    host: localhost
+    port: 3035
+    hmr: false
+    live_reload: false
+    client:
+      overlay: true
+    compress: true
+    allowed_hosts:
+      - all
+    headers:
+      'Access-Control-Allow-Origin': '*'
+    static:
+      watch:
+        ignored: '**/node_modules/**'
+
+test: &test
+  <<: *default
+  compile: true
+  cache_manifest: true
+
+  # Compile test packs to a separate directory
+  public_output_path: packs-test
+
+karma:
+  <<: *test
+
+production: &production
+  <<: *default
+
+  # Production depends on precompilation of packs prior to booting for performance.
+  compile: false
+
+  # Cache manifest.json for performance
+  cache_manifest: true
+
+staging:
+  <<: *production
+
+integration:
+  <<: *production

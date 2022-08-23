@@ -1,0 +1,31 @@
+---
+#=============================================================================
+# Logos are in one of six categories, listed in order of precedence:
+#   * 'spe_releases' (spe_releases.yml) - Logos celebrating a release, e.g. MIB International
+#   * 'special_events' (special_events.yml) - Events like the Oscars or the World Cup
+#   * 'holidays' (holidays.yml) - Annual recurring holidays, e.g. Christmas and Easter
+#   * 'observances' (observances.yml) - Annual recurring observances that are less
+#     official, e.g. National Donut Day
+#   * 'seasonal' (seasonal.yml) - Summer, Winter, etc.
+#   * 'default' (this file) - Logos to display when no other logos are active
+#
+#   Please keep logo definitions sorted by date within their respective
+#   categories.
+#
+#   New logos should be uploaded to the `runner_logos` folder in the
+#   `runner_public` S3 bucket
+#
+#   NOTE: Year must be incremented in the `start` and `end` properties for logos
+#   that recur. Please double-check that all logo dates are current when editing
+#   these files.
+#=============================================================================
+default:
+  runner:
+    login:        runner_logo.svg
+    header:       runner_logo.svg
+    header_hover: runner_logo_hover.svg
+    tooltip:      Runner
+    dates:
+      default:
+        - start: 2000-01-01
+          end:   2038-01-01

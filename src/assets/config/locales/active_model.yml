@@ -1,0 +1,58 @@
+en:
+  activemodel:
+    errors:
+      models:
+        download_config:
+          attributes: &download_config_attributes
+            user:
+              no_access: 'Asset item is not downloadable'
+            transfer_config:
+              mcs_failure: 'Failed to get download config from MCS'
+        share_download_config:
+          attributes:
+            <<: *download_config_attributes
+            share:
+              expired: 'Share has expired'
+              asset_item_not_found: 'Asset Item is not part of share'
+              not_found: 'Share not found'
+              not_downloadable: 'Share is not downloadable'
+              not_shareable: 'Share contains unshareable assets'
+            share_recipient:
+              invalid: 'UUID is not valid'
+        share_creation_result:
+          one_collection: 'Only one of "items" or "asset_item_ids" may be specified'
+          service_accounts_only: 'BCC and CC attributes may only be used by service accounts'
+          attributes:
+            asset_items:
+              not_available: 'Not all assets are downloadable'
+              not_accessible: 'Not all assets are shareable'
+              missing: 'No asset items specified'
+            permissions:
+              invalid: 'Provided Share Permissions are invalid.'
+        idm_search_result:
+          attributes:
+            base:
+              fields_blank: 'Search fields cannot be blank.'
+              fields_too_short: 'You should put at least two characters in search fields.'
+        user_create_result:
+          attributes:
+            base:
+              runner_account_save_failed: "Could not save user in Runner"
+              idm_account_creation_failed: "Could not create user in IDM"
+              gigya_account_creation_failed: "Could not create user in Gigya"
+              existing_gigya_accounts_found: "Duplicate accounts found in Gigya"
+              existing_idm_accounts_found: "Duplicate accounts found in IDM"
+              existing_runner_user: "Duplicate accounts found in Runner"
+              idm_user_not_found: "Could not find user in IDM"
+              multiple_idm_users_found: "Found more than one user in IDM"
+              runner_account_creation_failed: "Could not create user in Runner"
+              gigya_add_site_access_failed: "Could not add site access to user in Gigya"
+              invalid_idm_attributes: "The attributes given do not match those in IDM"
+        reset_password_result:
+          attributes:
+            base:
+              expired: 'This password reset has expired.'
+            password:
+              invalid_password_format: 'Double check your password is at least 12 characters long and contain: one uppercase, lowercase, numeral, and a special character.'
+            password_confirmation:
+              match: 'The passwords do not match.'

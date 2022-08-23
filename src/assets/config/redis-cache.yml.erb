@@ -1,0 +1,23 @@
+default: &default
+  host: <%= ENV['REDIS_HOST'] || 'localhost' %>
+  port: 6379
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+integration:
+  <<: *default
+  host: rer96vxtgxqxkp5.reblvy.ng.0001.use1.cache.amazonaws.com
+  timeout: 10
+
+staging:
+  <<: *default
+  host: rer96vxtgxqxkp5.reblvy.ng.0001.use1.cache.amazonaws.com
+  timeout: 10
+
+production:
+  host: rerbnxlf2023q2l.reblvy.ng.0001.use1.cache.amazonaws.com
+  port: 6379

@@ -1,0 +1,1100 @@
+---
+# Define all YAML aliases in this hash, for use in the mappings below.
+types:
+  sortable_40_chars: &sortable_40_chars
+    sortable:
+      ignore_above: 40
+      type: keyword
+  text_properties_40_chars: &text_properties_40_chars
+    type: text
+    fields: *sortable_40_chars
+    copy_to:
+      - all
+  text_properties: &text_properties
+    type: text
+    fields:
+      sortable:
+        type: keyword
+    copy_to:
+      - all
+  date_properties: &date_properties
+    type: date
+    ignore_malformed: true
+    copy_to:
+      - all
+  file_part_properties: &file_part_properties
+      <<: *text_properties
+      fields:
+        sortable:
+          type: keyword
+        parts:
+          type: text
+          analyzer: file_parts
+  keyword_properties: &keyword_properties
+    type: keyword
+    copy_to:
+      - all
+  long_properties: &long_properties
+    type: long
+    copy_to:
+      - all
+  text_properties_unsortable: &text_properties_unsortable
+    type: text
+    copy_to:
+    - all
+
+mappings:
+  dynamic_templates:
+    - not_analyzed:
+        match: "*"
+        match_mapping_type: string
+        mapping:
+          copy_to: all
+          fields: *sortable_40_chars
+          type: text
+  properties:
+    all:
+      type: text
+      fields:
+        english:
+          type: text
+          analyzer: english
+    archive_status: *keyword_properties
+    asset_class: *keyword_properties
+    asset_owner: *keyword_properties
+    asset_subtype: *keyword_properties
+    asset_type: *keyword_properties
+    asset_type_or_class:
+      <<: *keyword_properties
+      normalizer: lowercase
+    checksum: *text_properties_40_chars
+    class_name:
+      <<: *keyword_properties
+      store: true
+    created_at: *date_properties
+    custom_metadata:
+      properties:
+        architectural_services:
+          properties:
+            building_floor: *text_properties_40_chars
+            building_number_and_name: *text_properties_40_chars
+            building_year: *text_properties_40_chars
+            plan_type: *text_properties_40_chars
+            project_type: *text_properties_40_chars
+        asset_management:
+          properties:
+            am_vendor: *text_properties_40_chars
+            audio_source_barcode: *text_properties_40_chars
+            picture_reference_barcode: *text_properties_40_chars
+            picture_source_barcode: *text_properties_40_chars
+        asset_type:
+          properties:
+            asset_sub_type: *text_properties_40_chars
+            asset_type: *text_properties_40_chars
+            revision_number: *text_properties_40_chars
+            usage_type: *text_properties_40_chars
+            version: *text_properties_40_chars
+            version_number: *text_properties_40_chars
+        audio:
+          properties:
+            audio_bit_depth: *text_properties_40_chars
+            audio_bit_rate: *text_properties_40_chars
+            audio_channels_configuration: *text_properties_40_chars
+            audio_codec: *text_properties_40_chars
+            audio_sample_rate: *text_properties_40_chars
+            audio_type: *text_properties_40_chars
+        content_details:
+          properties:
+            angle: *text_properties_40_chars
+            artwork_file_type: *text_properties_40_chars
+            audio_element: *text_properties_40_chars
+            billboard_size: *text_properties_40_chars
+            billboard_subtype: *text_properties_40_chars
+            billing_block_date_approved: *date_properties
+            billing_block_subtype: *text_properties_40_chars
+            call_to_action: *text_properties_40_chars
+            city: *text_properties_40_chars
+            closed_caption: *text_properties_40_chars
+            continuity_list: *text_properties_40_chars
+            creation_date: *date_properties
+            creative_vendor: *text_properties_40_chars
+            curation_group: *text_properties_40_chars
+            description: *text_properties_40_chars
+            forced_subtitles: *text_properties_40_chars
+            format: *text_properties_40_chars
+            keywords: *text_properties_40_chars
+            language_audio: *text_properties_40_chars
+            language_dubbed: *text_properties_40_chars
+            language_original: *text_properties_40_chars
+            language_subtitled: *text_properties_40_chars
+            language_text: *text_properties_40_chars
+            legal_notes: *text_properties_40_chars
+            media_type: *text_properties_40_chars
+            orientation: *text_properties_40_chars
+            newspaper_subtype: *text_properties_40_chars
+            one_sheet_version: *text_properties_40_chars
+            package_type: *text_properties_40_chars
+            picture_version: *text_properties_40_chars
+            print_rating: *text_properties_40_chars
+            prism_territory: *text_properties_40_chars
+            promotional_product_subtype: *text_properties_40_chars
+            region: *text_properties_40_chars
+            revision_number: *text_properties_40_chars
+            setting: *text_properties_40_chars
+            source_media: *text_properties_40_chars
+            sphe_added_value: *text_properties_40_chars
+            spot_length: *text_properties_40_chars
+            spot_name: *text_properties_40_chars
+            setting: *text_properties_40_chars
+            subtitle_asset_item_ids: *long_properties
+            territory: *text_properties_40_chars
+            trailer_subtype: *text_properties_40_chars
+            version: *text_properties_40_chars
+            video_content: *text_properties_40_chars
+            video_asset_item_ids: *long_properties
+            year: *text_properties_40_chars
+        dbb:
+          properties:
+            assembly: *text_properties_40_chars
+            dbb_spec_id: *text_properties_40_chars
+            kit_id: *text_properties_40_chars
+        digital_video_asset_information:
+          properties:
+            aspect_ratio: *text_properties_40_chars
+            audio: *text_properties_40_chars
+            audio_bit_depth: *text_properties_40_chars
+            audio_channel_configuration: *text_properties_40_chars
+            audio_channel_content: *text_properties_40_chars
+            audio_codec: *text_properties_40_chars
+            audio_sample_rate: *text_properties_40_chars
+            audio_type: *text_properties_40_chars
+            broadcast_standard: *text_properties_40_chars
+            creation_date: *text_properties_40_chars
+            creation_vendor: *text_properties_40_chars
+            encode_rate: *text_properties_40_chars
+            language_audio: *text_properties_40_chars
+            language_original: *text_properties_40_chars
+            language_text: *text_properties_40_chars
+            notes_comments: *text_properties_40_chars
+            received_date: *text_properties_40_chars
+            recommended_episode_flag: *text_properties_40_chars
+            source_department: *text_properties_40_chars
+            start_time: *text_properties_40_chars
+            trt_frames: *text_properties_40_chars
+            trt_hours: *text_properties_40_chars
+            trt_minutes: *text_properties_40_chars
+            trt_seconds: *text_properties_40_chars
+            video_codec: *text_properties_40_chars
+        exhibitor_relations:
+          properties:
+            username: *text_properties_40_chars
+        file:
+          properties:
+            wrapper: *text_properties_40_chars
+        format_details:
+          properties:
+            3_d_attribute: *text_properties_40_chars
+            application_info: *text_properties_40_chars
+            aspect_ratio_type: *text_properties_40_chars
+            audio_configuration: *text_properties_40_chars
+            audio_element: *text_properties_40_chars
+            audio_stream_content: *text_properties_40_chars
+            bit_depth: *text_properties_40_chars
+            broadcast_standard: *text_properties_40_chars
+            color: *text_properties_40_chars
+            color_space: *text_properties_40_chars
+            conform_type: *text_properties_40_chars
+            content_aspect_ratio: *text_properties_40_chars
+            format: *text_properties_40_chars
+            number_of_reels_parts: *text_properties_40_chars
+            passes: *text_properties_40_chars
+            presentation_aspect_ratio: *text_properties_40_chars
+            scan_type: *text_properties_40_chars
+            tape_id: *text_properties_40_chars
+            timecode: *text_properties_40_chars
+            uhd_dynamic_range: *text_properties_40_chars
+            version: *text_properties_40_chars
+            video_content: *text_properties_40_chars
+        dcs:
+          properties:
+            dcs_vendor: *text_properties_40_chars
+            source_identifier: *text_properties_40_chars
+        smart_engine:
+          properties:
+            smart_engine_sony_po: *text_properties_40_chars
+        inter_plan_release_info:
+          properties:
+            inter_plan_gpms_id: *text_properties_40_chars
+            inter_plan_module_name: *text_properties_40_chars
+            inter_plan_release_id: *text_properties_40_chars
+            inter_plan_title_id: *text_properties_40_chars
+        legacy_info:
+          properties:
+            1_sheet_subtype: *text_properties_40_chars
+            1_sheet_version: *text_properties_40_chars
+            3_d_attribute: *text_properties_40_chars
+            acorn_territory: *text_properties_40_chars
+            ad_sales_client: *text_properties_40_chars
+            ad_subtype: *text_properties_40_chars
+            added_value_title: *text_properties_40_chars
+            ads_barcode: *text_properties_40_chars
+            ads_description: *text_properties_40_chars
+            airdate: *date_properties
+            angle: *text_properties_40_chars
+            animated_graphics_subtype: *text_properties_40_chars
+            app_subtype: *text_properties_40_chars
+            application_info: *text_properties_40_chars
+            approval_level: *text_properties_40_chars
+            artwork_file_type: *text_properties_40_chars
+            aspect_ratio: *text_properties_40_chars
+            aspect_ratio_type: *text_properties_40_chars
+            asset_subtype: *text_properties_40_chars
+            asset_type: *text_properties_40_chars
+            audio_asset_type: *text_properties_40_chars
+            audio_bit_depth: *text_properties_40_chars
+            audio_channel_1_content: *text_properties_40_chars
+            audio_channel_1_layout: *text_properties_40_chars
+            audio_channel_2_content: *text_properties_40_chars
+            audio_channel_2_layout: *text_properties_40_chars
+            audio_channel_3_content: *text_properties_40_chars
+            audio_channel_3_layout: *text_properties_40_chars
+            audio_channel_4_content: *text_properties_40_chars
+            audio_channel_4_layout: *text_properties_40_chars
+            audio_channel_5_content: *text_properties_40_chars
+            audio_channel_5_layout: *text_properties_40_chars
+            audio_channel_6_content: *text_properties_40_chars
+            audio_channel_6_layout: *text_properties_40_chars
+            audio_channel_7_content: *text_properties_40_chars
+            audio_channel_7_layout: *text_properties_40_chars
+            audio_channel_8_content: *text_properties_40_chars
+            audio_channel_8_layout: *text_properties_40_chars
+            audio_configuration: *text_properties_40_chars
+            audio_conform_replacement: *text_properties_40_chars
+            audio_dub_audio_config: *text_properties_40_chars
+            audio_dub_element_type: *text_properties_40_chars
+            audio_dub_file_creation_date: *text_properties_40_chars
+            audio_dub_file_type: *text_properties_40_chars
+            audio_dub_forced_subtitles_required: *text_properties_40_chars
+            audio_dub_language: *text_properties_40_chars
+            audio_dub_replacement: *text_properties_40_chars
+            audio_dub_resolution_bit_depth: *text_properties_40_chars
+            audio_dub_sample_rate_data_rate: *text_properties_40_chars
+            audio_dub_standard: *text_properties_40_chars
+            audio_dub_vendor: *text_properties_40_chars
+            audio_dub_version: *text_properties_40_chars
+            audio_file_standard: *text_properties_40_chars
+            audio_file_timecode: *text_properties_40_chars
+            audio_language: *text_properties_40_chars
+            audio_po: *text_properties_40_chars
+            audio_resolution: *text_properties_40_chars
+            audio_stream_content: *text_properties_40_chars
+            audio_type: *text_properties_40_chars
+            audio_watermarked: *text_properties_40_chars
+            av_vendor: *text_properties_40_chars
+            av_video_aspect_ratio: *text_properties_40_chars
+            av_video_audio_1: *text_properties_40_chars
+            av_video_audio_2: *text_properties_40_chars
+            av_video_comments: *text_properties_40_chars
+            av_video_contact: *text_properties_40_chars
+            av_video_encoding_bitrate: *text_properties_40_chars
+            av_video_encoding_format: *text_properties_40_chars
+            av_video_episode: *text_properties_40_chars
+            av_video_frame_rate: *text_properties_40_chars
+            av_video_length: *text_properties_40_chars
+            av_video_part: *text_properties_40_chars
+            av_video_source_format: *text_properties_40_chars
+            av_video_source_id: *text_properties_40_chars
+            av_video_standard: *text_properties_40_chars
+            av_video_summary_description: *text_properties_40_chars
+            av_video_time_code_comment: *text_properties_40_chars
+            av_video_title: *text_properties_40_chars
+            b_roll_subtype: *text_properties_40_chars
+            barcode: *text_properties_40_chars
+            behind_the_scenes_subtype: *text_properties_40_chars
+            bible_subtype: *text_properties_40_chars
+            billboard_size: *text_properties_40_chars
+            billboard_subtype: *text_properties_40_chars
+            billing_block_date_approved: *date_properties
+            billing_block_subtype: *text_properties_40_chars
+            binder_subtype: *text_properties_40_chars
+            bio_subtype: *text_properties_40_chars
+            broadcast_standard: *text_properties_40_chars
+            business_unit: *text_properties_40_chars
+            calendar_year: *text_properties_40_chars
+            cc_spot: *text_properties_40_chars
+            channel: *text_properties_40_chars
+            clip_subtype: *text_properties_40_chars
+            clip_title: *text_properties_40_chars
+            closed_caption_file_type: *text_properties_40_chars
+            closed_caption_vendor: *text_properties_40_chars
+            color: *text_properties_40_chars
+            color_mode: *text_properties_40_chars
+            color_space: *text_properties_40_chars
+            comments: *text_properties_40_chars
+            commercial_time: *text_properties_40_chars
+            comp: *text_properties_40_chars
+            competitive: *text_properties_40_chars
+            composer: *text_properties_40_chars
+            conformed_status: *text_properties_40_chars
+            contact_list_subtype: *text_properties_40_chars
+            content_hierarchy_subtype: *text_properties_40_chars
+            content_profile: *text_properties_40_chars
+            content_type: *text_properties_40_chars
+            content_use_type: *text_properties_40_chars
+            continuity_list: *text_properties_40_chars
+            convention: *text_properties_40_chars
+            copy_subtype: *text_properties_40_chars
+            copyright: *text_properties_40_chars
+            corporate_ad_subtype: *text_properties_40_chars
+            country: *text_properties_40_chars
+            creation: *text_properties_40_chars
+            creation_date: *date_properties
+            creative_vendor: *text_properties_40_chars
+            csr: *text_properties_40_chars
+            custom_edit_description: *text_properties_40_chars
+            cview_document_source_department: *text_properties_40_chars
+            cview_file_transfer_asset_expiration_date: *text_properties_40_chars
+            cview_file_transfer_dpt_id: *text_properties_40_chars
+            cview_image_color: *text_properties_40_chars
+            cview_image_country_of_origin: *text_properties_40_chars
+            cview_image_description: *text_properties_40_chars
+            cview_image_dpt_id: *text_properties_40_chars
+            cview_image_last_update_date: *text_properties_40_chars
+            cview_image_received_date: *text_properties_40_chars
+            cview_image_source_department: *text_properties_40_chars
+            cview_image_talent_names: *text_properties_40_chars
+            cview_video_description: *text_properties_40_chars
+            cview_video_files_to_be_created: *text_properties_40_chars
+            cview_video_metadata_status: *text_properties_40_chars
+            date_posted: *text_properties_40_chars
+            dbb_kit_id: *text_properties_40_chars
+            dbb_spec_id: *text_properties_40_chars
+            department: *text_properties_40_chars
+            description: *text_properties_40_chars
+            display_in_ama: *text_properties_40_chars
+            display_order: *text_properties_40_chars
+            dmi_product_title_id: *text_properties_40_chars
+            document_asset_type: *text_properties_40_chars
+            dub_language: *text_properties_40_chars
+            element_type: *text_properties_40_chars
+            email_subtype: *text_properties_40_chars
+            encode_date: *date_properties
+            encode_master_available: *text_properties_40_chars
+            encoding_rate: *text_properties_40_chars
+            episode_name: *text_properties_40_chars
+            episode_number: *text_properties_40_chars
+            episode_number_notes: *text_properties_40_chars
+            event_description: *text_properties_40_chars
+            exclusive_to: *text_properties_40_chars
+            exhibitor: *text_properties_40_chars
+            expire_on: *date_properties
+            exploration: *text_properties_40_chars
+            exposed_aspect_ratio: *text_properties_40_chars
+            external_asset_id: *text_properties_40_chars
+            external_composite_id: *text_properties_40_chars
+            featurette_subtype: *text_properties_40_chars
+            fee_spot: *text_properties_40_chars
+            file_creation_date: *text_properties_40_chars
+            file_type: *text_properties_40_chars
+            flagged_for_air: *text_properties_40_chars
+            folders: *text_properties_40_chars
+            forced_subtitles_required: *text_properties_40_chars
+            format: *text_properties_40_chars
+            format_sheet_location: *text_properties_40_chars
+            format_type: *text_properties_40_chars
+            frame_count: *text_properties_40_chars
+            frame_rate: *text_properties_40_chars
+            framerate: *text_properties_40_chars
+            full_length_or_parts: *text_properties_40_chars
+            genre: *text_properties_40_chars
+            gpms_alpha_name: *text_properties_40_chars
+            graphics_pass_subtype: *text_properties_40_chars
+            group_name: *text_properties_40_chars
+            grouping: *text_properties_40_chars
+            house_number: *text_properties_40_chars
+            id_video_subtype: *text_properties_40_chars
+            image_subtype: *text_properties_40_chars
+            intended_use: *text_properties_40_chars
+            international_production: *text_properties_40_chars
+            international_title: *text_properties_40_chars
+            interview_subtype: *text_properties_40_chars
+            intl_networks_episode_air_date: *text_properties_40_chars
+            invitation_subtype: *text_properties_40_chars
+            isci_code: *text_properties_40_chars
+            job_number: *text_properties_40_chars
+            key_art_descriptor: *text_properties_40_chars
+            key_art_subtype: *text_properties_40_chars
+            keywords: *text_properties_40_chars
+            lab_file_id: *text_properties_40_chars
+            lab_name: *text_properties_40_chars
+            label_subtype: *text_properties_40_chars
+            language: *text_properties_40_chars
+            language_audio: *text_properties_40_chars
+            language_captive_audio: *text_properties_40_chars
+            language_original: *text_properties_40_chars
+            language_subtitled: *text_properties_40_chars
+            language_text: *text_properties_40_chars
+            languages: *text_properties_40_chars
+            legal_notes: *text_properties_40_chars
+            legal_subtype: *text_properties_40_chars
+            location_of_video_master: *text_properties_40_chars
+            logo_format: *text_properties_40_chars
+            logo_subtype: *text_properties_40_chars
+            logo_video_subtype: *text_properties_40_chars
+            lot_location: *text_properties_40_chars
+            making_of_subtype: *text_properties_40_chars
+            manuf_date: *text_properties_40_chars
+            manufacture_date: *text_properties_40_chars
+            marketing_campaign: *text_properties_40_chars
+            master_barcode: *text_properties_40_chars
+            master_tape_format: *text_properties_40_chars
+            media_classification: *text_properties_40_chars
+            media_source: *text_properties_40_chars
+            media_type: *text_properties_40_chars
+            mobile_game_name: *text_properties_40_chars
+            mp_creative_asset_type: *text_properties_40_chars
+            mp_creative_presentation_date: *text_properties_40_chars
+            mp_creative_status: *text_properties_40_chars
+            mp_creative_vendor: *text_properties_40_chars
+            mp_digital_mktg_intl_vendor: *text_properties_40_chars
+            mp_photo_edit_type: *text_properties_40_chars
+            mp_print_vendor: *text_properties_40_chars
+            mp_spri_av_trailer_subtype: *text_properties_40_chars
+            mp_territory: *text_properties_40_chars
+            mpg_av_vendor: *text_properties_40_chars
+            mpm: *text_properties_40_chars
+            music_title: *text_properties_40_chars
+            narrative: *text_properties_40_chars
+            newspaper_subtype: *text_properties_40_chars
+            number_of_episodes_length: *text_properties_40_chars
+            number_of_parts: *text_properties_40_chars
+            number_of_reels_parts: *text_properties_40_chars
+            original_asset_name: *text_properties_40_chars
+            original_title: *text_properties_40_chars
+            original_upload_date: *date_properties
+            other_description: *text_properties_40_chars
+            other_title: *text_properties_40_chars
+            overview_subtype: *text_properties_40_chars
+            package_number: *text_properties_40_chars
+            package_type: *text_properties_40_chars
+            packshot_subtype: *text_properties_40_chars
+            paper_size: *text_properties_40_chars
+            partner_artwork_type: *text_properties_40_chars
+            pass_10_run_time: *text_properties_40_chars
+            pass_1_run_time: *text_properties_40_chars
+            pass_2_run_time: *text_properties_40_chars
+            pass_3_run_time: *text_properties_40_chars
+            pass_4_run_time: *text_properties_40_chars
+            pass_5_run_time: *text_properties_40_chars
+            pass_6_run_time: *text_properties_40_chars
+            pass_7_run_time: *text_properties_40_chars
+            pass_8_run_time: *text_properties_40_chars
+            pass_9_run_time: *text_properties_40_chars
+            pass_length: *text_properties_40_chars
+            photo_approval: *text_properties_40_chars
+            photo_source: *text_properties_40_chars
+            photo_subtype: *text_properties_40_chars
+            picture_file_type: *text_properties_40_chars
+            picture_reference_id: *text_properties_40_chars
+            picture_resolution: *text_properties_40_chars
+            picture_source_bc: *text_properties_40_chars
+            picture_status: *text_properties_40_chars
+            pixel_aspect_ratio: *text_properties_40_chars
+            pixel_dimensions: *text_properties_40_chars
+            po: *text_properties_40_chars
+            pre_post_street_version: *text_properties_40_chars
+            premiere_description: *text_properties_40_chars
+            presentation_aspect_ratio: *text_properties_40_chars
+            presentation_document_subtype: *text_properties_40_chars
+            presentation_video_subtype: *text_properties_40_chars
+            press_clipping_subtype: *text_properties_40_chars
+            print_copy_subtype: *text_properties_40_chars
+            print_rating: *text_properties_40_chars
+            prism_alpha_id: *text_properties_40_chars
+            prism_title_id: *text_properties_40_chars
+            prize_list_subtype: *text_properties_40_chars
+            product_title: *text_properties_40_chars
+            product_type: *text_properties_40_chars
+            product_version: *text_properties_40_chars
+            production_company: *text_properties_40_chars
+            promo_art_subtype: *text_properties_40_chars
+            promo_subtype: *text_properties_40_chars
+            promotional_product_subtype: *text_properties_40_chars
+            protection_master_barcode: *text_properties_40_chars
+            publication: *text_properties_40_chars
+            publicity_video_subtype: *text_properties_40_chars
+            publish_on: *date_properties
+            publish_to: *text_properties_40_chars
+            publish_to_cine_sony: *text_properties_40_chars
+            publish_to_exhibitor_relations: *text_properties_40_chars
+            publish_to_mp_int_sales: *text_properties_40_chars
+            publish_to_mp_publicity: *text_properties_40_chars
+            publish_to_sphe_connect: *text_properties_40_chars
+            publish_to_sphe_sro: *text_properties_40_chars
+            publish_to_sphe_sro_mobile: *text_properties_40_chars
+            publish_to_spt_b2b: *text_properties_40_chars
+            publish_to_spt_b2b_playlist: *text_properties_40_chars
+            publish_to_spt_site: *text_properties_40_chars
+            publish_to_spt_sro: *text_properties_40_chars
+            publisher: *text_properties_40_chars
+            quarter_number: *text_properties_40_chars
+            recap_subtype: *text_properties_40_chars
+            reel: *text_properties_40_chars
+            reel_subtype: *text_properties_40_chars
+            region: *text_properties_40_chars
+            replacement: *text_properties_40_chars
+            requests: *text_properties_40_chars
+            resolution_bit_depth: *text_properties_40_chars
+            restored_audio_replacement: *text_properties_40_chars
+            retail_channel: *text_properties_40_chars
+            revision_number: *text_properties_40_chars
+            ringtone_subtype: *text_properties_40_chars
+            run_number: *text_properties_40_chars
+            running_time: *text_properties_40_chars
+            sample_rate_data_rate: *text_properties_40_chars
+            sampling_rate: *text_properties_40_chars
+            scan_type: *text_properties_40_chars
+            scene: *text_properties_40_chars
+            screener_subtype: *text_properties_40_chars
+            script_subtype: *text_properties_40_chars
+            script_vendor: *text_properties_40_chars
+            season_number: *text_properties_40_chars
+            sequence: *text_properties_40_chars
+            set_no: *text_properties_40_chars
+            setting: *text_properties_40_chars
+            share_download: *text_properties_40_chars
+            share_preview: *text_properties_40_chars
+            shoot_date: *date_properties
+            shot: *text_properties_40_chars
+            shot_description: *text_properties_40_chars
+            show_art_subtype: *text_properties_40_chars
+            show_highlights: *text_properties_40_chars
+            show_name: *text_properties_40_chars
+            show_notes: *text_properties_40_chars
+            show_number: *text_properties_40_chars
+            show_rating: *text_properties_40_chars
+            sku_code: *text_properties_40_chars
+            sku_id: *text_properties_40_chars
+            sku_territory: *text_properties_40_chars
+            sku_version_code: *text_properties_40_chars
+            smart_engine_sony_po: *text_properties_40_chars
+            soundbite_subtype: *text_properties_40_chars
+            source_file_type: *text_properties_40_chars
+            source_format: *text_properties_40_chars
+            source_media: *text_properties_40_chars
+            spc_photo_subtype: *text_properties_40_chars
+            special_instruction: *text_properties_40_chars
+            spot_length: *text_properties_40_chars
+            spot_name: *text_properties_40_chars
+            spt_b2b_content_data: *text_properties_40_chars
+            spt_b2b_content_id: *text_properties_40_chars
+            spt_b2b_content_title: *text_properties_40_chars
+            spt_b2b_description: *text_properties_40_chars
+            spt_b2b_talent_in_image: *text_properties_40_chars
+            spt_distribution_type: *text_properties_40_chars
+            spt_event: *text_properties_40_chars
+            spt_ifa_broadcaster: *text_properties_40_chars
+            spt_ifa_distributor: *text_properties_40_chars
+            spt_ifa_genre: *text_properties_40_chars
+            spt_ifa_production_company: *text_properties_40_chars
+            spt_intl_networks_brand: *text_properties_40_chars
+            spt_intl_production_broadcast_quality: *text_properties_40_chars
+            spt_intl_production_entity: *text_properties_40_chars
+            spt_intl_production_territory: *text_properties_40_chars
+            spt_key_art_source: *text_properties_40_chars
+            spt_partner_client: *text_properties_40_chars
+            spt_photo_marketing_use: *text_properties_40_chars
+            spt_photo_subtype: *text_properties_40_chars
+            spt_radio_spot_subtype: *text_properties_40_chars
+            spt_share: *text_properties_40_chars
+            spt_site_promo_subtype: *text_properties_40_chars
+            spt_social_media_subtype: *text_properties_40_chars
+            spt_sro_special_event: *text_properties_40_chars
+            sptn_promo_subtype: *text_properties_40_chars
+            stage: *text_properties_40_chars
+            standard: *text_properties_40_chars
+            start_time: *text_properties_40_chars
+            status: *text_properties_40_chars
+            still_subtype: *text_properties_40_chars
+            storyline_show_moment: *text_properties_40_chars
+            studio: *text_properties_40_chars
+            support_file_audio_subtype: *text_properties_40_chars
+            support_file_video_subtype: *text_properties_40_chars
+            synopsis_subtype: *text_properties_40_chars
+            talent_id: *text_properties_40_chars
+            talent_in_content: *text_properties_40_chars
+            tape_barcode: *text_properties_40_chars
+            tape_id: *text_properties_40_chars
+            territories: *text_properties_40_chars
+            territory: *text_properties_40_chars
+            theater_name: *text_properties_40_chars
+            theater_short_name: *text_properties_40_chars
+            theme_music_subtype: *text_properties_40_chars
+            timecode: *text_properties_40_chars
+            timeslot: *text_properties_40_chars
+            title2: *text_properties_40_chars
+            title_sequence_subtype: *text_properties_40_chars
+            title_type: *text_properties_40_chars
+            title_year: *text_properties_40_chars
+            toolkit_video_subtype: *text_properties_40_chars
+            total_run_time: *text_properties_40_chars
+            track_layout: *text_properties_40_chars
+            trailer_subtype: *text_properties_40_chars
+            transmitted: *text_properties_40_chars
+            tv_rating: *text_properties_40_chars
+            upload_group: *text_properties_40_chars
+            upload_vendor: *text_properties_40_chars
+            value_added_material_subtype: *text_properties_40_chars
+            vendor: *text_properties_40_chars
+            version: *text_properties_40_chars
+            video_bit_rate: *text_properties_40_chars
+            video_content: *text_properties_40_chars
+            video_dub_file_type: *text_properties_40_chars
+            video_dub_frame_rate: *text_properties_40_chars
+            video_dub_number_of_reels_parts: *text_properties_40_chars
+            video_dub_picture_status: *text_properties_40_chars
+            video_dub_standard: *text_properties_40_chars
+            video_dub_time_code: *text_properties_40_chars
+            video_dub_vendor: *text_properties_40_chars
+            video_dub_version: *text_properties_40_chars
+            video_dub_video_file_creation_date: *text_properties_40_chars
+            video_frame_rate: *text_properties_40_chars
+            video_name: *text_properties_40_chars
+            video_scan_mode: *text_properties_40_chars
+            video_standard: *text_properties_40_chars
+            video_subtype: *text_properties_40_chars
+            vignette_subtype: *text_properties_40_chars
+            visible_time_code: *text_properties_40_chars
+            website_subtype: *text_properties_40_chars
+            wof_location: *text_properties_40_chars
+            wof_photo_subtype: *text_properties_40_chars
+            wof_theme_week: *text_properties_40_chars
+            work_order_number: *text_properties_40_chars
+            work_picture_po: *text_properties_40_chars
+            workflow: *text_properties_40_chars
+            wpf_do_cc_vendor: *text_properties_40_chars
+            wpf_do_credits: *text_properties_40_chars
+            wpf_do_editing_vendor: *text_properties_40_chars
+            wpf_do_version: *text_properties_40_chars
+            wpf_dvd_images_aspect_ratio: *text_properties_40_chars
+            wpf_dvd_images_asset_type: *text_properties_40_chars
+            wpf_dvd_images_video_standard: *text_properties_40_chars
+        migration_info:
+          properties:
+            account_key: *text_properties_40_chars
+            business_owner: *text_properties_40_chars
+            checksum: *text_properties_40_chars
+            derived_from: *text_properties_40_chars
+            external_asset_id: *text_properties_40_chars
+            external_file_id: *text_properties_40_chars
+            file_path: *text_properties_40_chars
+            global_asset_id: *text_properties_40_chars
+            global_file_id: *text_properties_40_chars
+            migrated_from_system: *text_properties_40_chars
+            original_upload_date: *date_properties
+            original_uploaded_by: *text_properties_40_chars
+        mpg:
+          properties:
+            competitive: *text_properties_40_chars
+            mpaa_band: *text_properties_40_chars
+            mpg_av_vendor: *text_properties_40_chars
+            mpg_print_vendor: *text_properties_40_chars
+            script_vendor: *text_properties_40_chars
+        pages:
+          properties:
+            pages: *text_properties_40_chars
+        photo:
+          properties:
+            caption: *text_properties_40_chars
+            copyright: *text_properties_40_chars
+            custom_edit_description: *text_properties_40_chars
+            event_description: *text_properties_40_chars
+            photo_approval: *text_properties_40_chars
+            photo_credit: *text_properties_40_chars
+            photo_edit_type: *text_properties_40_chars
+            photo_request: *text_properties_40_chars
+            photographer: *text_properties_40_chars
+            premiere_description: *text_properties_40_chars
+            requests: *text_properties_40_chars
+            retouched: *text_properties_40_chars
+            shoot_date: *date_properties
+            talent_in_image: *text_properties_40_chars
+        physical_video_asset_information:
+          properties:
+            description: *text_properties_40_chars
+            fto_ny_barcode: *text_properties_40_chars
+            location_of_master: *text_properties_40_chars
+            mastered_on: *text_properties_40_chars
+            shot_on: *text_properties_40_chars
+            technicolor_barcode: *text_properties_40_chars
+            video_tape_format: *text_properties_40_chars
+        prism:
+          properties:
+            alpha_id: *text_properties_40_chars
+            asset_type: *text_properties_40_chars
+            delivery_format: *text_properties_40_chars
+            mpm: *text_properties_40_chars
+            prism_alpha_id: *text_properties_40_chars
+            prism_format: *text_properties_40_chars
+            prism_id: *text_properties_40_chars
+            prism_language: *text_properties_40_chars
+            prism_sku_type_descr: *text_properties_40_chars
+            prism_territory: *text_properties_40_chars
+            prism_type: *text_properties_40_chars
+            subtitle_format: *text_properties_40_chars
+            subtitle_type: *text_properties_40_chars
+            subtypes: *text_properties_40_chars
+            title_type: *text_properties_40_chars
+            username: *text_properties_40_chars
+        security:
+          properties:
+            rights_approved_uses: *text_properties_40_chars
+        soar:
+          properties:
+            username: *text_properties_40_chars
+        sphe:
+          properties:
+            pages: *text_properties_40_chars
+            sales_channel: *text_properties_40_chars
+            sphe_added_value: *text_properties_40_chars
+        spt:
+          properties:
+            job_number: *text_properties_40_chars
+            network_or_channel: *text_properties_40_chars
+            qc_status: *text_properties_40_chars
+            spoiler: *text_properties_40_chars
+            spt_dam_source: *text_properties_40_chars
+            spt_event: *text_properties_40_chars
+        spti_marketing:
+          properties:
+            client: *text_properties_40_chars
+            client_location: *text_properties_40_chars
+            created_for: *text_properties_40_chars
+            event: *text_properties_40_chars
+            project_type: *text_properties_40_chars
+        tech_info:
+          properties:
+            audio_channel_count: *text_properties_40_chars
+            audio_streams:
+              properties:
+                bitrate: *text_properties_unsortable
+                channel_count: *text_properties_unsortable
+                codec: *text_properties_unsortable
+                index: *text_properties_unsortable
+                layout: *text_properties_unsortable
+                sample_rate: *text_properties_unsortable
+            display_aspect_ratio: *text_properties_40_chars
+            duration_in_ms: *text_properties_40_chars
+            frame_count: *text_properties_40_chars
+            frame_rate: *text_properties_40_chars
+            height: *text_properties_40_chars
+            iptc_file_name: *text_properties_40_chars
+            pixel_aspect_ratio: *text_properties_40_chars
+            resolution_unit: *text_properties_40_chars
+            start_time_code: *text_properties_40_chars
+            total_bitrate: *text_properties_40_chars
+            video_bitrate: *text_properties_40_chars
+            video_codec: *text_properties_40_chars
+            video_four_cc: *text_properties_40_chars
+            width: *text_properties_40_chars
+            x_resolution: *text_properties_40_chars
+            y_resolution: *text_properties_40_chars
+        usage:
+          properties:
+            approval_status: *text_properties_40_chars
+            audio_replacement: *text_properties_40_chars
+            replacement_date: *date_properties
+            replacement_reason: *text_properties_40_chars
+            restriction: *text_properties_40_chars
+            status: *text_properties_40_chars
+            usage_restriction: *text_properties_40_chars
+        video:
+          properties:
+            aspect_ratio: *text_properties_40_chars
+            color_space: *text_properties_40_chars
+            scan_mode: *text_properties_40_chars
+            video_bit_rate: *text_properties_40_chars
+            video_codec: *text_properties_40_chars
+            video_container: *text_properties_40_chars
+            video_dimension: *text_properties_40_chars
+            video_frame_rate: *text_properties_40_chars
+            video_mode: *text_properties_40_chars
+            video_standard: *text_properties_40_chars
+    file_extension: *keyword_properties
+    folder_ids: *long_properties
+    height: *long_properties
+    id: *long_properties
+    ingest_batch_id: *long_properties
+    linked_asset_group_ids: *long_properties
+    managed_by: *keyword_properties
+    mcs_asset_id: *text_properties_40_chars
+    name: *file_part_properties
+    original_file_name: *file_part_properties
+    pixel_dimensions: *keyword_properties
+    primary_title: *text_properties
+    requested_by: *text_properties_40_chars
+    restore_status: *keyword_properties
+    root_title: *text_properties
+    scene:
+      properties:
+        timecode: *text_properties_unsortable
+        title_name: *text_properties_40_chars
+        timeline: *text_properties_unsortable
+        short_description: *text_properties_unsortable
+        keyframe: *text_properties_40_chars
+        metadata:
+          properties:
+            actors:
+              properties:
+                imdb_id: *long_properties
+                actor_name: *text_properties_40_chars
+                character_name: *text_properties_40_chars
+                character_notes: *text_properties_40_chars
+            description:
+              properties:
+                interior_exterior: *keyword_properties
+                keywords: *keyword_properties
+                location: *keyword_properties
+                memorable: *keyword_properties
+                setting: *keyword_properties
+                theme: *keyword_properties
+                time_of_day: *keyword_properties
+                time_period: *keyword_properties
+                tone: *keyword_properties
+            music:
+              properties:
+                title: *text_properties_40_chars
+                cue_number: *text_properties_40_chars
+    season:
+      properties:
+        gpms_id: *long_properties
+        gpms_id_and_name: *keyword_properties
+        id: *long_properties
+        name: *text_properties_40_chars
+    series:
+      properties:
+        gpms_id: *long_properties
+        gpms_id_and_name: *keyword_properties
+        id: *long_properties
+        name: *text_properties_40_chars
+    size: *long_properties
+    status: *keyword_properties
+    titles:
+      properties:
+        alpha:
+          properties:
+            alpha_id: *long_properties
+            alpha_name: *text_properties_40_chars
+            alpha_owner: *text_properties_40_chars
+            alpha_search_name: *text_properties_40_chars
+            gpms_alpha_id: *long_properties
+            gpms_id: *long_properties
+            mcm_op_unit_lookup_value: *text_properties_40_chars
+            ods_id: *long_properties
+            source_system: *text_properties_40_chars
+        eidr: *text_properties_40_chars
+        full_name: *text_properties_40_chars
+        gmdm_id: *text_properties_40_chars
+        gpms_id: *long_properties
+        gpms_id_and_name: *keyword_properties
+        id: *long_properties
+        metadata:
+          properties:
+            air_date: *date_properties
+            airdate: *date_properties
+            alternate_ids:
+              properties:
+                id: *text_properties_40_chars
+                type: *text_properties_40_chars
+            alternate_names:
+              properties:
+                language: *text_properties_40_chars
+                name: *text_properties_40_chars
+                type_description: *text_properties_40_chars
+            bonus_prize:
+              properties:
+                name: *text_properties_40_chars
+                player: *text_properties_40_chars
+                type: *text_properties_40_chars
+                was_won: *text_properties_40_chars
+            celebrity_show: *text_properties_40_chars
+            copyright_year: *date_properties
+            episode_number: *text_properties_40_chars
+            full_title: *text_properties_40_chars
+            genre:
+              properties:
+                description: *text_properties_40_chars
+                type: *text_properties_40_chars
+            initial_release_dates:
+              properties:
+                release_date: *date_properties
+            level_1_title: *text_properties_40_chars
+            players:
+              properties:
+                affiliate: *text_properties_40_chars
+                appearance: *text_properties_40_chars
+                city: *text_properties_40_chars
+                cumulative_total: *text_properties_40_chars
+                cumulative_winnings: *text_properties_40_chars
+                description: *text_properties_40_chars
+                display_seq_no: *long_properties
+                game_score: *text_properties_40_chars
+                interview: *text_properties_40_chars
+                name: *text_properties_40_chars
+                player_description: *text_properties_40_chars
+                previous_carry_over: *text_properties_40_chars
+                score: *text_properties_40_chars
+                state: *text_properties_40_chars
+                total_amount_won: *text_properties_40_chars
+                winner: *text_properties_40_chars
+            prizes:
+              properties:
+                name: *text_properties_40_chars
+                order: *text_properties_40_chars
+                type: *text_properties_40_chars
+                winner: *text_properties_40_chars
+            product_companies:
+              properties:
+                activity_description: *text_properties_40_chars
+                name: *text_properties_40_chars
+            puzzles:
+              properties:
+                amountwon: *text_properties_40_chars
+                category: *text_properties_40_chars
+                display_seq_no: *long_properties
+                puzzle: *text_properties_40_chars
+                solved_by: *text_properties_40_chars
+                winner: *text_properties_40_chars
+            rounds:
+              properties:
+                categories:
+                  properties:
+                    display_seq_no: *long_properties
+                    game_data:
+                      properties:
+                        celebrity_name: *text_properties_40_chars
+                        clue: *text_properties_40_chars
+                        clue_type: *text_properties_40_chars
+                        dollars: *text_properties_40_chars
+                        keywords: *text_properties_40_chars
+                        order: *text_properties_40_chars
+                        response: *text_properties_40_chars
+                    metadata_label: *text_properties_40_chars
+                    name: *text_properties_40_chars
+                display_seq_no: *long_properties
+                game_data:
+                  properties:
+                    clue: *text_properties_40_chars
+                    keywords: *text_properties_40_chars
+                    response: *text_properties_40_chars
+                metadata_label: *text_properties_40_chars
+                name: *text_properties_40_chars
+            show_notes:
+              properties:
+                bonus_round:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+                close:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+                highlights:
+                  properties:
+                    show_category: *text_properties_40_chars
+                    show_comments: *text_properties_40_chars
+                    show_segment: *text_properties_40_chars
+                interviews:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+                misc:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+                open:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+                rounds:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                speed_up:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                toss_ups:
+                  properties:
+                    category: *text_properties_40_chars
+                    comment: *text_properties_40_chars
+                    sub_category: *text_properties_40_chars
+            show_number: *text_properties
+            show_number_long: *long_properties
+            show_winner:
+              properties:
+                name: *text_properties_40_chars
+                winnings: *text_properties_40_chars
+            status: *text_properties_40_chars
+            talent: *text_properties_40_chars
+            tape_date: *date_properties
+            theme_week: *text_properties_40_chars
+            us_release_year: *text_properties_40_chars
+            wardrobe:
+              properties:
+                colors: *text_properties_40_chars
+                designer: *text_properties_40_chars
+                dress: *text_properties_40_chars
+                hair: *text_properties_40_chars
+                style: *text_properties_40_chars
+            week_number: *text_properties_40_chars
+        name: *text_properties
+        parent:
+          properties:
+            metadata:
+              properties:
+                copyright_year: *date_properties
+                full_title: *text_properties_40_chars
+                initial_release_dates:
+                  properties:
+                    release_date: *date_properties
+                level_1_title: *text_properties_40_chars
+                show_number_long: *text_properties_40_chars
+                us_release_year: *text_properties_40_chars
+            parent:
+              properties:
+                metadata:
+                  properties:
+                    copyright_year: *date_properties
+                    full_title: *text_properties_40_chars
+                    initial_release_dates:
+                      properties:
+                        release_date: *date_properties
+                    level_1_title: *text_properties_40_chars
+                    show_number_long: *text_properties_40_chars
+                    us_release_year: *text_properties_40_chars
+        season_number: *text_properties_unsortable
+        season_number_integer:
+          type: integer
+          fields:
+            sortable:
+              type: integer
+          copy_to:
+            - all
+        season_number_prefix: *text_properties
+        season_number_suffix: *text_properties
+        title_level: *text_properties_40_chars
+        title_type: *text_properties_40_chars
+        walker_id: *text_properties_40_chars
+    updated_at: *date_properties
+    uploaded_at: *date_properties
+    uploaded_by: *text_properties_40_chars
+    usage_classification: *keyword_properties
+    usage_restriction: *text_properties_40_chars
+    usage_status: *keyword_properties
+    width: *long_properties

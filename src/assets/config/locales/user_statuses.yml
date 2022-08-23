@@ -1,0 +1,7 @@
+---
+:en:
+  :user_statuses:
+  - :key: Active
+    :value: true
+  - :key: Inactive
+    :value: false

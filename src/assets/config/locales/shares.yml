@@ -1,0 +1,59 @@
+en:
+  shares:
+    loading_assets: LOADING ASSETS FOR SHARE
+    about_aspera: About Aspera
+    aspera_download: Download Selected
+    aspera_warning: "The Aspera plug-in is REQUIRED for all %{domain} downloads:"
+    asset_id: Asset ID
+    asset_item_count: 'Asset Items:'
+    checksum: 'MD5 Checksum'
+    click_to_download: Click here to Download
+    created_by: This media kit was created by
+    deleted: This asset has been deleted.
+    details: Asset Details
+    download_asset_item: Download
+    download_aspera: 'If prompted, select "Run" to install the client on your computer.'
+    download_error: "Whoops! Something went wrong. Please try again!"
+    download_limit: "This share has %{downloads} downloads per asset."
+    download_limit_reached: Download limit reached
+    download_single: "Click on documents below to download:"
+    export_contact_sheet: Export Contact Sheet
+    limits: "This share has %{previews} previews and %{downloads} downloads per asset."
+    no_preview: No preview available
+    no_title: NO TITLE
+    preview: Preview
+    restoring: Restore in progress
+    select_all:
+      button:
+        select: 'SELECT'
+        deselect: 'DESELECT'
+      menu:
+        select:
+          all: 'SELECT ALL IN THIS SHARE'
+          on_page: 'SELECT ALL ON THIS PAGE'
+        deselect:
+          all: 'DESELECT ALL IN THIS SHARE'
+          on_page: 'DESELECT ALL ON THIS PAGE'
+    share_message: "Message from %{sender}:"
+    sp_connect_page_title: Sony Pictures Connect
+    spt_page_title: Sony Pictures Television
+    view_limit: "This share has %{previews} previews per asset."
+    view_limit_reached: Preview limit reached
+    view_in_runner: View in Runner
+    expiration:
+      media_kit: "This media kit expires on %{day} at %{time} local time."
+      runner: "This share expires on %{day} at %{time} local time."
+    welcome:
+      media_kit:
+        spt_b2b: SPT Media Kit Delivery
+        spe_connect: Sony Pictures Connect Media Kit Delivery
+      runner: 'Hello! Runner assets have been shared with you!'
+    protected:
+      expiration: "Hurry! Your link will expire in"
+      five_minutes: "5 minutes."
+      message: "Your protected link has been sent, and you will receive an email shortly!"
+      title: "Woo-hoo!"
+    protected_expired:
+      title: 'UH-OH!'
+      message: 'This protected link has expired. Please click below to request a new link that will be sent to your email.'
+      button: 'REQUEST NEW LINK'

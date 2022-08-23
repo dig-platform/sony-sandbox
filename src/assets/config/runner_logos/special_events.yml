@@ -1,0 +1,363 @@
+---
+#############################################################################
+#       SPECIAL EVENTS                                                      #
+#############################################################################
+
+special_events:
+  # Academy Awards: varies (late Feb) annually
+  oscars:
+    login:        oscars_login.gif
+    header:       oscars.svg
+    header_hover: oscars_hover.svg
+    tooltip:      Academy Awards
+    dates:
+      default:
+        - start: 2021-04-22
+          end:   2021-04-26
+        - start: 2022-02-25
+          end:   2022-02-28
+
+  # March Madness
+  march_madness:
+    login:         march_madness_login.gif
+    header:        march_madness.svg
+    header_hover:  march_madness_hover.svg
+    tooltip:       NCAA March Madness
+    strict_height: true
+    dates:
+      default:
+        - start: 2021-03-16
+          end:   2021-04-05
+
+  # Cannes Film Festival
+  cannes_film_festival:
+    login:        cannes_film_festival.svg
+    header:       cannes_film_festival.svg
+    header_hover: cannes_film_festival_hover.svg
+    tooltip:      Cannes Film Festival
+    dates:
+      default: []
+        # - start: 2020-05-09
+        #   end:   2020-05-20
+
+  # ComicCon: varies (mid July) annually
+  comic_con:
+    login:         comic_con_login.gif
+    header:        comic_con.svg
+    header_hover:  comic_con_hover.svg
+    strict_height: false
+    tooltip:       Comic-Con
+    dates:
+      default:
+        - start: 2021-07-21
+          end:   2021-07-26
+
+  # Tour de France
+  tour_de_france:
+    login:         tour_de_france.gif
+    header:        tour_de_france.svg
+    header_hover:  tour_de_france_hover.svg
+    strict_height: false
+    tooltip:       Tour de France 🚲
+    dates:
+      default: []
+        # - start: 2020-06-27
+        #   end:   2020-07-19
+
+  # Emmy Awards: varies (mid Sept) annually
+  emmys:
+    login:        emmys.svg
+    header:       emmys.svg
+    header_hover: emmys_hover.svg
+    tooltip:      Emmy Awards 2020
+    dates:
+      default:
+        - start: 2020-09-18
+          end:   2020-09-22
+
+  # FIFA World Cup: varies quadannually
+  world_cup:
+    login:        world_cup.svg
+    header:       world_cup.svg
+    header_hover: world_cup_hover.svg
+    tooltip:      World Cup! ⚽️
+    dates:
+      default:
+        - start: 2022-11-21
+          end:   2022-12-19
+
+  # FIFA Women's World Cup
+  womens_world_cup:
+    login:         fifa_womens_world_cup.gif
+    header:        fifa_womens_world_cup.svg
+    header_hover:  fifa_womens_world_cup_hover.svg
+    strict_height: false
+    tooltip:       Women's World Cup ⚽
+    dates:
+      default:
+        - start: 2023-07-10
+          end:   2023-08-21
+
+  # FIFA U-20 World Cup: varies biannually
+  fifa_u_20_world_cup:
+    login:        fifa_u_20_world_cup_login.gif
+    header:       fifa_u_20_world_cup_1.png
+    header_hover: fifa_u_20_world_cup_1_hover.png
+    tooltip:      FIFA U-20 World Cup
+    dates:
+      default:
+        # NOTE: 2021 Date TBD
+        - start: 2021-07-23
+          end:   2021-07-24
+
+  # World Series (MLB)
+  world_series:
+    login:        world_series.svg
+    header:       world_series.svg
+    header_hover: world_series_hover.svg
+    tooltip:      World Series
+    dates:
+      default:
+        - start: 2020-10-20
+          end:   2020-10-28
+
+  # FIBA World Cup (Basketball)
+  fiba_world_cup:
+    login:        fiba_world_cup.svg
+    header:       fiba_world_cup.svg
+    header_hover: fiba_world_cup_hover.svg
+    tooltip:      FIBA World Cup
+    dates:
+      default: []
+        # - start: 2019-08-31
+        #   end:   2019-09-16
+
+  # World Boxing Championship
+  world_boxing_championships:
+    login:        world_boxing_championships.svg
+    header:       world_boxing_championships.svg
+    header_hover: world_boxing_championships_hover.svg
+    tooltip:      World Boxing Championship
+    dates:
+      default: []
+        # - start: 2019-10-03
+        #   end:   2019-10-14
+
+  # ICC World Twenty20 (Cricket)
+  icc_world_twenty20:
+    login:        icc_world_twenty20.svg
+    header:       icc_world_twenty20.svg
+    header_hover: icc_world_twenty20_hover.svg
+    tooltip:      ICC World Twenty20
+    dates:
+      default: []
+        # - start: 2020-10-18
+        #   end:   2020-11-16
+
+  # FEI World Equestrian Games
+  fei_world_equestrian_games:
+    login:        fei_world_equestrian_games.svg
+    header:       fei_world_equestrian_games.svg
+    header_hover: fei_world_equestrian_games_hover.svg
+    tooltip:      FEI World Equestrian Games
+    dates:
+      default: []
+        # NOTE: 2022 Date TBD
+        # - start: 2022-01-01
+        #   end:   2022-01-02
+
+  # World Rhythmic Gymnastics Championships
+  world_rhythmic_gymnastics_championships:
+    login:        world_rhythmic_gymnastics_championships.svg
+    header:       world_rhythmic_gymnastics_championships.svg
+    header_hover: world_rhythmic_gymnastics_championships_hover.svg
+    tooltip:      World Rhythmic Gymnastics Championships
+    dates:
+      default: []
+        # - start: 2019-09-16
+        #   end:   2019-09-23
+
+  # Artistic Gymnastics World Championship
+  artistic_gymnastics_world_championships:
+    login:        artistic_gymnastics_world_championships.svg
+    header:       artistic_gymnastics_world_championships.svg
+    header_hover: artistic_gymnastics_world_championships_hover.svg
+    tooltip:      Artistic Gymnastics World Championship
+    dates:
+      default: []
+        # - start: 2019-10-04
+        #   end:   2019-10-13
+
+  # World Handball Championships
+  world_handball_championships:
+    login:        world_handball_championships.svg
+    header:       world_handball_championships.svg
+    header_hover: world_handball_championships_hover.svg
+    tooltip:      World Handball Championships
+    dates:
+      default: []
+        # - start: 2020-01-10
+        #   end:   2020-01-26
+
+  # Ice Hockey World Championships
+  ice_hockey_world_championships:
+    login:        ice_hockey_world_championships.svg
+    header:       ice_hockey_world_championships.svg
+    header_hover: ice_hockey_world_championships_hover.svg
+    tooltip:      Ice Hockey World Championships
+    dates:
+      default: []
+        # - start: 2020-05-08
+        #   end:   2020-05-24
+
+  # World Rowing Championships
+  world_rowing_championships:
+    login:        world_rowing_championships.svg
+    header:       world_rowing_championships.svg
+    header_hover: world_rowing_championships_hover.svg
+    tooltip:      World Rowing Championships
+    dates:
+      default: []
+        # - start: 2019-08-25
+        #   end:   2019-09-01
+
+  # World Cup of Rugby
+  world_cup_of_rugby:
+    login:        world_cup_of_rugby.svg
+    header:       world_cup_of_rugby.svg
+    header_hover: world_cup_of_rugby_hover.svg
+    tooltip:      World Cup of Rugby
+    dates:
+      default: []
+        # - start: 2019-09-20
+        #   end:   2019-11-02
+
+  # FINA World Swimming Championships
+  fina_world_swimming_championships:
+    login:        fina_world_swimming_championships.svg
+    header:       fina_world_swimming_championships.svg
+    header_hover: fina_world_swimming_championships_hover_1.svg
+    tooltip:      FINA World Swimming Championships
+    dates:
+      default: []
+        # - start: 2019-07-12
+        #   end:   2019-07-28
+
+  # World Surfing Games
+  world_surfing_games:
+    login:        world_surfing_games.svg
+    header:       world_surfing_games.svg
+    header_hover: world_surfing_games_hover.svg
+    tooltip:      World Surfing Games
+    dates:
+      default: []
+        # - start: 2019-09-07
+        #   end:   2019-09-15
+
+  # World Table Tennis Championships
+  world_table_tennis_championships:
+    login:        world_table_tennis_championships.svg
+    header:       world_table_tennis_championships.svg
+    header_hover: world_table_tennis_championships_hover.svg
+    tooltip:      World Table Tennis Championships
+    dates:
+      default: []
+
+  # Volleyball World Championships
+  world_volleyball_championships:
+    login:        world_volleyball_championships.svg
+    header:       world_volleyball_championships.svg
+    header_hover: world_volleyball_championships_hover.svg
+    tooltip:      Volleyball World Championships
+    dates:
+      default: []
+        # - start: 2019-10-01
+        #   end:   2019-10-15
+
+  # World Weightlifting Championships
+  world_weightlifting_championships:
+    login:        world_weightlifting_championships.svg
+    header:       world_weightlifting_championships.svg
+    header_hover: world_weightlifting_championships_hover.svg
+    tooltip:      World Weightlifting Championships
+    dates:
+      default: []
+        # TBA 2021
+
+  # Special Olympics
+  special_olympics:
+    login:        special_olympics.svg
+    header:       special_olympics.svg
+    header_hover: special_olympics_hover.svg
+    tooltip:      Special Olympics
+    dates:
+      default:
+        - start: 2023-06-16
+          end:   2023-06-25
+
+  # Summer Olympics
+  summer_olympics:
+    login:        summer_olympics.svg
+    header:       summer_olympics.svg
+    header_hover: summer_olympics_hover.svg
+    tooltip:      Summer Olympics
+    dates:
+      default: []
+        # - start: 2020-07-24
+        #   end:   2020-08-09
+
+  # Winter Olympics
+  winter_olympics:
+    login:        winter_olympics.svg
+    header:       winter_olympics.svg
+    header_hover: winter_olympics_hover.svg
+    tooltip:      Winter Olympics
+    dates:
+      default:
+        - start: 2022-02-04
+          end:   2022-02-20
+
+  # Winter Paralympics
+  winter_paralympics:
+    login:        winter_paralympics.svg
+    header:       winter_paralympics.svg
+    header_hover: winter_paralympics_hover.svg
+    tooltip:      Winter Paralympics
+    dates:
+      default:
+        - start: 2022-03-04
+          end:   2022-03-13
+
+  # NBA Finals
+  nba_finals:
+    login:         nba_finals.gif
+    header:        nba_finals.svg
+    header_hover:  nba_finals_hover.svg
+    tooltip:       NBA Finals
+    dates:
+      default:
+        - start:   2020-10-06
+          end:     2020-10-10
+
+  # Presidential Election
+  presidential_election:
+    login:         presidential_election.gif
+    header:        presidential_election.svg
+    header_hover:  presidential_election_hover.svg
+    tooltip:       Election 2020
+    dates:
+      default:
+        - start:   2020-10-19
+          end:     2020-11-03
+
+  # Super Bowl
+  super_bowl:
+    login:         super_bowl_login.png
+    header:        super_bowl.png
+    header_hover:  super_bowl_hover.png
+    tooltip:       Super Bowl LV
+    strict_height: true
+    dates:
+      default:
+        - start:   2021-02-05
+          end:     2021-02-08

@@ -1,0 +1,107 @@
+en:
+  feedback:
+    admin:
+      delete_policy_updated:
+        title: Delete policy updated!
+      archive_policy_updated:
+        title: Archive policy updated!
+      proxy_settings_updated:
+        title: Proxy settings updated!
+      proxy_settings_failed:
+        title: Proxy settings update failed!
+    asset:
+      add_to_cart: Assets added to Cart!
+      asset_unlinked:
+        counting:
+          one: Asset Unlinked!
+          other: Assets Unlinked!
+      all_assets_unlinked: All Assets Unlinked!
+      assets_linked: Assets Linked!
+      canceled_actions: Successfully Canceled!
+      copy: Assets Copied!
+      delete: Assets Deleted!
+      move: Assets Moved!
+      single_move: Asset Moved!
+      oops: Oops! Something went wrong while %{action}. Please try again.
+      removed_from_cart: Assets removed from Cart!
+      renamed: Asset Renamed!
+      scheduled_copy: Copy Scheduled!
+      scheduled_move: Move Scheduled!
+      scheduled_delete: Delete Scheduled!
+      trim_submitted: Request Submitted!
+      trim_failed:
+        title: Video Trim Failed. Please try again.
+      stitch_clips_submitted: Request Submitted!
+      stitch_clips_failed:
+        title: Stitch Clips Failed. Please try again.
+    cart:
+      created: Cart Created!
+      deleted: Cart Deleted!
+      deleted_multiple: Carts Deleted!
+      delete_failed:
+        title: Delete Failed
+      renamed: Cart Renamed!
+      asset_moved: Asset(s) moved
+      asset_copied: Asset(s) copied
+    customer_satisfaction:
+      submitted: Thanks for your feedback!
+    download:
+      failed: Download Failed
+    favorite_filters:
+      added: Filter pinned to top favorites
+      removed: Filter removed from favorites
+    file_request_not_sent: Request failed
+    file_request_sent: File Request Sent
+    file_request:
+      edit_failed:
+        title: File request edit failed
+      upload_failed: Uh oh! Something went wrong with your upload. Please try again.
+    folder:
+      asset_added: Asset Added!
+      asset_add_failed: Failed to save asset. Please try again.
+      created: Folder Created!
+      deleted: Folder Deleted!
+      favorited: Folder Added To Favorites!
+      renamed: Folder Renamed!
+      unfavorited: Folder Removed From Favorites!
+    metadata:
+      favorited:
+        title: Template Added To Favorites!
+      unfavorited:
+        title: Template Removed From Favorites!
+      applied:
+        title: Metadata Applied
+      error:
+        title: Metadata Edit Failed
+    qc_reports:
+      error: Failed to create QC results. Check your information and try again.
+      success: QC Results Applied!
+    generate_report:
+      success: Report Requested!
+      error:
+        title: Oops! Something went wrong. Please try again.
+    http:
+      server_error: &server_error
+        title: "UH-OH!"
+        message: "Something went wrong. Please try again."
+      403:
+        title: "UH-OH!"
+        message: "This page cannot be found or you do not have permission to view it."
+      404:
+        title: "UH-OH!"
+        message: "This page cannot be found or you do not have permission to view it."
+      500: *server_error
+      undefined: *server_error
+    search_subscriptions:
+      created: Subscription Created!
+      unsubscribed: Unsubscribed!
+      updated: Subscription Updated!
+    share_sent: Share sent!
+    share_recipient_error: Please input recipients
+    subscribed: Subscribed!
+    unsubscribed: Unsubscribed!
+    retrieve_submitted:
+      success: Retrieve submitted!
+    thumbnail_updated: Thumbnail Updated!
+    thumbnail_not_updated:
+      title: Update Failed

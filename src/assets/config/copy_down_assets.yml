@@ -1,0 +1,69 @@
+# WARNING:
+# these IDs may no longer be correct and will likely need to be updated on the next copy-down
+# use the mcs:assets:update_gold_assets rake task to update this file.
+---
+development:
+  video:
+    mcs_id: 0a49620351ce4852b381147d1ddd4c15
+integration:
+  archive:
+    mcs_id: 3451b6c7c78443fb8df5517f698cf5b2
+    checksum: d6c827b83b831ae70338da48e0686336
+    thumbnail_url: 
+  audio:
+    mcs_id: 7d45757357b0447a9b3d43853e7b92eb
+    checksum: 56c6347dcbaee956303d146cdb026399
+    thumbnail_url: 
+  binary:
+    mcs_id: cdca923e07bd4173b455ff5e9e50fd5f
+    checksum: c818bae57dcc8d29ab3ebdfd0ad6fc87
+    thumbnail_url: 
+  document:
+    mcs_id: e82093d4f2804ab6b52c0524db3fe452
+    checksum: 55a731cb88455c26fa314d3c3e9a879e
+    thumbnail_url: 
+  image:
+    mcs_id: b95691f510ce46ab862d6621a7857693
+    checksum: 926bca9c3e30794c93bb25f3ba4d462c
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/6fe9a7a925944b63a269aa0b205f3fbf/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy82ZmU5YTdhOTI1OTQ0YjYzYTI2OWFhMGIyMDVmM2ZiZi90aHVtYm5haWwtbGFyZ2UuanBnIiwiQ29uZGl0aW9uIjp7IklwQWRkcmVzcyI6eyJBV1M6U291cmNlSXAiOiIwLjAuMC4wLzAifSwiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQ0MzM0NTZ9fX1dfQ__&Signature=Nh1BKTARpP~A5CTPRtx08qmcp3s1r~nRXAOEegYSIrnTxUazebd-dFLExQqW-qTvyukxDJggD-glm0skJ9~ee1aP6En1XAIvm8sdAkpoptWLhVO9FLLCxJr5Ugy96I85CY5ZA3A9Usbyf5czvKYSYK1nBFpRTalOuHaUH-ZwJ0Y_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  pdf:
+    mcs_id: 265b52e1aca6463d8f343c312e58eb25
+    checksum: 634d40cf45b52157cf2960b233ebb554
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/01a008879816412c9f24072da5bd0b40/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy8wMWEwMDg4Nzk4MTY0MTJjOWYyNDA3MmRhNWJkMGI0MC90aHVtYm5haWwtbGFyZ2UuanBnIiwiQ29uZGl0aW9uIjp7IklwQWRkcmVzcyI6eyJBV1M6U291cmNlSXAiOiIwLjAuMC4wLzAifSwiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQ0MzM0NTZ9fX1dfQ__&Signature=cA6dvlU7XATwv~4j~PmaOH3SZvgLtBcsVmKmXviVJGahrDzoAFDiDQTwO7frbFs8scKD8I-ovpxLvEBi9-3yuk3cmxG2sfaIIfkp71if2Ry5J5K2rGyFCcG0u7Wm-l2uSc~lPKKB3muSOraM40g4pFXf~wzMgUJpBI3IXkWt1tU_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  video:
+    mcs_id: 95a7756fab61456bb16a652b1a0c771a
+    checksum: ce6567c5353f96e32f87acf455f57be0
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/3b0ae7245e9f4addbe2d8314ef5c8f22/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy8zYjBhZTcyNDVlOWY0YWRkYmUyZDgzMTRlZjVjOGYyMi90aHVtYm5haWwtbGFyZ2UuanBnIiwiQ29uZGl0aW9uIjp7IklwQWRkcmVzcyI6eyJBV1M6U291cmNlSXAiOiIwLjAuMC4wLzAifSwiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQ0MzM0NTZ9fX1dfQ__&Signature=B3qcdPEdzgIItj9DhjUOk1ekg3VgCPEamk8Fx27KhrGj7O5l-tsnC5Tbs6BZA2Z09b5NOInTpkbrHgM6pmIazDwn25kCL0DIMK3550iJKzW7y5F3kGuiFIDDB7o5V1xY5o2kDESZqG~86CFaZlb1aUXv6022C~MdjuKXBkMEub4_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  package:
+    mcs_id: d6a4fb5d508e4cc59e7bdbde12e63d09
+staging:
+  archive:
+    mcs_id: 716b997b7f1a47bd82d0dcc13fc8c832
+    checksum: d6c827b83b831ae70338da48e0686336
+    thumbnail_url: 
+  audio:
+    mcs_id: 7922d87799604cf0b46ec8e516702986
+    checksum: 56c6347dcbaee956303d146cdb026399
+    thumbnail_url: 
+  binary:
+    mcs_id: ae68a02ea48b4b71b2a02480fe00f947
+    checksum: c818bae57dcc8d29ab3ebdfd0ad6fc87
+    thumbnail_url: 
+  document:
+    mcs_id: 173de000069d4d2289b96ef4d805a93e
+    checksum: 55a731cb88455c26fa314d3c3e9a879e
+    thumbnail_url: 
+  image:
+    mcs_id: d35b425b4b4a45219f34c2938cb42206
+    checksum: 926bca9c3e30794c93bb25f3ba4d462c
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/d35b425b4b4a45219f34c2938cb42206/renditions/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy9kMzViNDI1YjRiNGE0NTIxOWYzNGMyOTM4Y2I0MjIwNi9yZW5kaXRpb25zL3RodW1ibmFpbC1sYXJnZS5qcGciLCJDb25kaXRpb24iOnsiSXBBZGRyZXNzIjp7IkFXUzpTb3VyY2VJcCI6IjAuMC4wLjAvMCJ9LCJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTYzNDQzMzU0OX19fV19&Signature=eJVsC3HZKFUKc0NRiquQWLKtgtfIy7D~Q9-6wZn5Ivi8H2oLdKWW-by3BxFwdB6KDt-a9LY-cd1LEADJMjAxc3HdlIQKI~6-tmUeUigKBWqK~f4hB3FPNiNdqZTaNpoKqGo6tVY~SRgkY3LoxtQwIdQSzQggO-zwc5KgxIu-56M_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  pdf:
+    mcs_id: 7e4d97079aa74348acdac30bd8a7830d
+    checksum: 634d40cf45b52157cf2960b233ebb554
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/01a008879816412c9f24072da5bd0b40/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy8wMWEwMDg4Nzk4MTY0MTJjOWYyNDA3MmRhNWJkMGI0MC90aHVtYm5haWwtbGFyZ2UuanBnIiwiQ29uZGl0aW9uIjp7IklwQWRkcmVzcyI6eyJBV1M6U291cmNlSXAiOiIwLjAuMC4wLzAifSwiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQ0MzM1NDl9fX1dfQ__&Signature=Cjdl3HMAOLoSHHtd2zHEnlq~2otiN4JIBhqGqM5xetLZ48W~LC4kT-xsL36xM5fvQTP8ojX75VCQT2ySjk2orTzeMEYkFfddUL8L~NPP626o~HOiBmJUv~hZ9ObTYa7ba~O6TlUTJzTCC4jjFIIcKs0fDFfJXfIZlWhmS~Aq2hg_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  video:
+    mcs_id: 0f9cc63b5e3e4a209ad125b8f538588d
+    checksum: ce6567c5353f96e32f87acf455f57be0
+    thumbnail_url: https://cdn01.cimediacloud.com/cifiles/3b0ae7245e9f4addbe2d8314ef5c8f22/thumbnail-large.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NkbjAxLmNpbWVkaWFjbG91ZC5jb20vY2lmaWxlcy8zYjBhZTcyNDVlOWY0YWRkYmUyZDgzMTRlZjVjOGYyMi90aHVtYm5haWwtbGFyZ2UuanBnIiwiQ29uZGl0aW9uIjp7IklwQWRkcmVzcyI6eyJBV1M6U291cmNlSXAiOiIwLjAuMC4wLzAifSwiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQ0MzM1NDl9fX1dfQ__&Signature=QGAP71xKOmFzbz3BMGGs6UWLvPq7vArnbetbVoMQkUNwHbplT8oQjnsfwneXEKSPdIir4JL4-6FQgTWWN2lIg7C2HxTaxyI6E~tVpU0JMG3H8eBiltky9GBXQuBia5h6enVbPfGnDdHZfaVTosDpn~EcIIm~dxrtqZq8EtUVQBI_&Key-Pair-Id=APKAJNUSFH4IKQRZ44WA
+  package:
+    mcs_id: f86461a2b9de4cb19075755bcafbccb5

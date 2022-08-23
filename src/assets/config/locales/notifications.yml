@@ -1,0 +1,47 @@
+---
+en:
+  notifications:
+    snackbar:
+      delayed_share_sent:
+        title: 'Delayed Share Sent'
+      scheduled_action_completed:
+        title: 'Test completed scheduled action'
+    menu:
+      clear: 'CLEAR ALL'
+      notifications: 'NOTIFICATIONS'
+      empty: "YOU DON'T HAVE ANY NOTIFICATIONS AT THE MOMENT"
+      remove: 'Remove'
+
+    actions:
+      view: 'View'
+      download: 'Download'
+      refresh: 'Refresh'
+
+    expired: '[EXPIRED]'
+
+    messages:
+      report_complete:
+        title: Report Complete
+        body: 'on %{date}'
+
+      ingest_complete:
+        title:
+          success:
+              default: 'Upload Complete'
+              file_request: 'File Request Upload'
+              replacement: Asset Replaced Successfully
+              revision: Asset Revised Successfully
+              video_transcode: Trimmed Asset Generated
+          failed:
+              default: 'Failed Upload'
+              file_request: 'Failed File Request Upload'
+              replacement: Asset Replace Failed
+              revision: Asset Revision Failed
+              video_transcode: Trimmed Asset Failed
+        body:
+          non_batch: '%{asset_item_name}<br>%{uploader_name} on %{date}'
+          batch: '%{count} Asset(s) on %{date}'
+
+      deploy:
+        title: Runner Has Been Updated
+        body: Refresh this page to see the improvements!

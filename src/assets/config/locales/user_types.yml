@@ -1,0 +1,7 @@
+---
+:en:
+  :user_types:
+  - :key: Gameshow
+    :value: gameshow
+  - :key: Standard
+    :value: standard

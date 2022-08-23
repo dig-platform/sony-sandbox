@@ -1,0 +1,35 @@
+---
+en:
+  folder_management:
+    heading: "Folder Administration"
+    columns:
+      access: Access
+      standard_archive_policy: Glacier
+      deep_archive_policy: Deep Glacier
+      delete_policy: Delete
+      proxy_setting: Proxy Setting
+      name: Name
+      subscription: Subscription
+      notification: "Notification List"
+    buttons:
+      with_users: "%{numUsers} Users"
+      without_users: "Edit List"
+    subscription_modal:
+      section_heading: "Folder Subscription List"
+      folder_name_label: "Folder Name"
+      notification_message: "The following subscribers will be notified"
+      subscribers_label: "Subscribers"
+      close_button_text: "Close"
+      error: "Oops, some email addresses don't look right."
+      topics:
+        asset_replaced: Replaced
+        asset_restored: Restored
+        asset_added: Added
+        asset_removed: Removed
+  folder_access:
+    back_to_folders: 'Back to Folders'
+    close: 'CLOSE'
+    sub_heading: 'Folder Access, %{count} Assigned Users'
+    search:
+      placeholder: 'Search for Runner users to add to this folder'
+

@@ -1,0 +1,51 @@
+en:
+  account_request:
+    header: Request Access to Runner
+    registration_subheader: Please fill out all fields.
+    access_form_subheader: Please select the content you would like to access. An approver will review your request.
+    navigation_buttons:
+      next: NEXT
+      previous: PREVIOUS
+      submit: SUBMIT
+    progress_headers:
+      registration: REGISTRATION
+      access_form: ACCESS FORM
+      confirmation: CONFIRMATION
+    form:
+      first_name: 'First Name:'
+      last_name: 'Last Name:'
+      email: 'Email:'
+      company: 'Your Company:'
+      territory: 'Territory:'
+      job_title: 'Job Title:'
+      company_name: 'Company Name:'
+      department: 'Department:'
+      division: 'Division:'
+      reporting_group: 'Reporting Group:'
+      supervisor_email: "Supervisor's Email:"
+      contact_email: "Contact Persion at Sony Pictures Entertainment's Email:"
+      justification: 'Business Justification for Runner Access:'
+    confirmation_title: 'Almost There!'
+    confirmation_message: Your request has been sent for approvals. You will be notified via email on the progress of your requests.
+    footer:
+      message: "Don't see the content you're looking for?"
+    request_approved_text: "Request Approved!"
+    request_approved_subtext: "You have successfully approved this request!"
+    user_profile: "VIEW USER PROFILE"
+    request_rejection:
+      header_text: 'DECLINE RUNNER ACCESS'
+      subtext: 'Please provide an explanation for declining this request.'
+      to: 'To:'
+      to_note: 'Please note this message will be sent to the original requester'
+      reasons:
+        label: 'Reason for Declining Request:'
+        insufficient_justification: 'Insufficient business justification.'
+        internal_use_only: 'Content is intended for internal use only.'
+        other: 'Other'
+    request_declined:
+      header_text: 'Request Declined'
+      subtext: 'You have successfully declined this request. Your response has been sent to the requester and DMG Support.'
+    request_submitted:
+      header_text: 'Response Submitted!'
+      subtext_1: '%{other_reviewer} %{result} this request on %{date}.'
+      subtext_2: 'If you wish to make changes to this request, please contact DMG Support. If this request is accurate, no further action is required.'

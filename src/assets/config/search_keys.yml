@@ -1,0 +1,154 @@
+---
+alternate_id_config: &alternate_id_config
+  type: titles.metadata.alternate_ids.type.sortable
+  id: titles.metadata.alternate_ids.id
+mappings:
+  mcsid: mcs_id
+  duplicateid: mcs_id
+  title: root_title
+  titleid: titles.id
+  seasonid: season.id
+  seriesid: series.id
+  season: titles.season_number
+  shownumber: titles.metadata.show_number_long
+  show: titles.metadata.show_number_long
+  episode: titles.metadata.episode_number
+  episodenumber: titles.metadata.episode_number
+  weeknumber: titles.metadata.week_number
+  gpmsid: titles.gpms_id
+  classification: custom_metadata.usage_classification
+  type: asset_type
+  assettype: asset_type
+  businessowner: custom_metadata.migration_info.business_owner
+  createdat: created_at
+  creationdate: custom_metadata.content_details.creation_date
+  airdate: titles.metadata.airdate
+  vtrdate: titles.metadata.tape_date
+  tapedate: titles.metadata.tape_date
+  shootdate: custom_metadata.photo.shoot_date
+  replacementdate: custom_metadata.usage.replacement_date
+  updatedat: updated_at
+  uploadedby: uploaded_by
+  uploaddate: uploaded_at
+  barcode: custom_metadata.legacy_info.master_barcode
+  celebrityshow: titles.metadata.celebrity_show
+  ingestbatchid: ingest_batch_id
+  alphaid: titles.alpha.gpms_alpha_id
+  kitid: custom_metadata.dbb.kit_id
+  isci: custom_metadata.content_details.isci
+  orientation: custom_metadata.content_details.orientation
+  derivedfrom: custom_metadata.migration_info.derived_from
+  catalognumber:
+    name: catalog
+    <<: *alternate_id_config
+  catalogno:
+    name: catalog
+    <<: *alternate_id_config
+  mpm: titles.walker_id.sortable
+  walker: titles.walker_id.sortable
+  walkerid: titles.walker_id.sortable
+  gmdmid: titles.gmdm_id.sortable
+  eidr: titles.eidr.sortable
+  upload_date: uploaded_at
+  filename:
+    - file_name
+    - file_name_components
+    - name
+  title_id:
+    - titles.id
+    - season.id
+    - series.id
+
+  alternateid: titles.metadata.alternate_ids.id
+  alternatename:
+    - titles.metadata.domestic_names
+    - titles.metadata.foreign_names
+  genre: titles.metadata.genres.name
+
+  name: titles.metadata.players.name
+  playername: titles.metadata.players.name
+  playerdescription: titles.metadata.players.player_description
+  interview: titles.metadata.players.interview
+  totalamountwon: titles.metadata.players.total_amount_won
+  city: titles.metadata.players.city
+  state: titles.metadata.players.state
+  affiliate: titles.metadata.players.affiliate
+  affiliatestation: titles.metadata.players.affiliate
+  carryover: titles.metadata.players.previous_carry_over
+  score: titles.metadata.players.score
+  multidaytotal: titles.metadata.players.cumulative_total
+  cumulativetotal: titles.metadata.players.cumulative_total
+
+  showwinner: titles.metadata.show_winner.name
+  totalwinnings: titles.metadata.show_winner.winnings
+
+  round: titles.metadata.rounds.name
+  dollar: titles.metadata.rounds.categories.game_data.dollars
+  clue: titles.metadata.rounds.categories.game_data.clue
+  response: titles.metadata.rounds.categories.game_data.response
+  keyword: titles.metadata.rounds.categories.game_data.keywords
+  keywords: titles.metadata.rounds.categories.game_data.keywords
+  cluetype: titles.metadata.rounds.categories.game_data.clue_type
+  celebrity: titles.metadata.rounds.categories.game_data.celebrity_name
+  celebrityname: titles.metadata.rounds.categories.game_data.celebrity_name
+
+  dressdesigner: titles.metadata.wardrobe.designer
+  dresscolor: titles.metadata.wardrobe.colors
+  dressstyle: titles.metadata.wardrobe.dress
+  dresscomments: titles.metadata.wardrobe.style
+  hairstyle: titles.metadata.wardrobe.hair
+
+  themeweek: titles.metadata.theme_week
+  puzzle: titles.metadata.puzzles.puzzle
+  category:
+    - titles.metadata.puzzles.category
+    - titles.metadata.rounds.categories.name
+  puzzlecategory: titles.metadata.puzzles.category
+  winner:
+    - titles.metadata.puzzles.solved_by
+    - titles.metadata.show_winner.name
+  puzzlewinner: titles.metadata.puzzles.solved_by
+
+  showsegment:
+    - titles.metadata.show_notes.open.category
+    - titles.metadata.show_notes.interviews.category
+    - titles.metadata.show_notes.rounds.category
+    - titles.metadata.show_notes.misc.category
+    - titles.metadata.show_notes.toss_ups.category
+    - titles.metadata.show_notes.speed_up.category
+    - titles.metadata.show_notes.bonus_round.category
+    - titles.metadata.show_notes.close.category
+  showcategory:
+    - titles.metadata.show_notes.open.sub_category
+    - titles.metadata.show_notes.interviews.sub_category
+    - titles.metadata.show_notes.rounds.sub_category
+    - titles.metadata.show_notes.misc.sub_category
+    - titles.metadata.show_notes.toss_ups.sub_category
+    - titles.metadata.show_notes.speed_up.sub_category
+    - titles.metadata.show_notes.bonus_round.sub_category
+    - titles.metadata.show_notes.close.sub_category
+  showcomments:
+    - titles.metadata.show_notes.open.comment
+    - titles.metadata.show_notes.interviews.comment
+    - titles.metadata.show_notes.rounds.comment
+    - titles.metadata.show_notes.misc.comment
+    - titles.metadata.show_notes.toss_ups.comment
+    - titles.metadata.show_notes.speed_up.comment
+    - titles.metadata.show_notes.bonus_round.comment
+    - titles.metadata.show_notes.close.comment
+    - titles.metadata.show_notes.highlights.show_comments
+  highlights: titles.metadata.show_notes.highlights.show_comments
+
+  prizetype: titles.metadata.prizes.type
+  prizename: titles.metadata.prizes.name
+  prizewinner: titles.metadata.prizes.winner
+  prizeorder: titles.metadata.prizes.order
+
+  bonusname: titles.metadata.bonus_prize.name
+  bonusprizename: titles.metadata.bonus_prize.name
+  bonustype: titles.metadata.bonus_prize.type
+  bonusprizetype: titles.metadata.bonus_prize.type
+  bonusplayer: titles.metadata.bonus_prize.player
+  bonusprizeplayer: titles.metadata.bonus_prize.player
+  bonuswon: titles.metadata.bonus_prize.was_won
+  bonusprizewon: titles.metadata.bonus_prize.was_won

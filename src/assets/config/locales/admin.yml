@@ -1,0 +1,113 @@
+---
+en:
+  admin:
+    users:
+      heading: 'User Administration'
+      search_placeholder: 'e.g. name, username, email address, department'
+      initial_empty_list: 'SEARCH FOR A USER'
+      empty_list: 'NO USERS FOUND'
+      sub_heading: '%{count} users'
+      first_name: 'First Name'
+      last_name: 'Last Name'
+      email: 'Email'
+      username: 'Username'
+      source: 'Source'
+      last_sign_in_at: 'Last Login'
+      existing_runner_account: 'Active'
+      create_in_runner: 'Enable'
+      see_email: 'See Email'
+      actions:
+        create: 'CREATE USER'
+      modal:
+        header:
+          heading: 'USER LOOKUP'
+          sub_heading: 'Please search to see if user has an existing SPE ID.'
+        results: '%{count} Users'
+        idm_free_button: 'Create IDM-free user'
+        search_button: 'Search'
+        user_not_found: "Didn't find who you were looking for?"
+        create_user_button: "Create New User"
+      existing_runner_account: 'ACTIVE'
+      create_in_runner: 'ENABLE'
+      does_not_exist: 'Does Not Exist'
+      sources:
+        runner: 'Runner'
+        idm: 'IDM'
+        gigya: 'Gigya'
+    user:
+      create_success_modal:
+        heading: 'NEW RUNNER USER CREATED!'
+        sub_heading: 'New user details:'
+        visit_profile_button: 'VIEW USER PROFILE'
+        close_button: 'CLOSE'
+      header:
+        heading: "%{firstName} %{lastName}'s Profile"
+        edit_button: "EDIT PROFILE"
+        back_to_search_results: 'Back to Search Results'
+      modal:
+        header:
+          edit: "EDIT PROFILE"
+          create: "CREATE RUNNER USER"
+        save_button:
+          edit: "SAVE AND CLOSE"
+          create: "CREATE NEW USER"
+        sub_heading: "Please enter new user details:"
+        yes_option: "Yes"
+        no_option: "No"
+        error: "Invalid %{keys}"
+        email_error: "Invalid Email"
+      sections:
+        general_info:
+          heading: 'GENERAL INFO'
+          keys:
+            admin_access: 'Admin Access'
+            company: 'Company'
+            created: 'Created'
+            created_by: 'Created By'
+            department: 'Department'
+            division: 'Division'
+            last_updated: 'Last Updated'
+            last_updated_by: 'Last Updated By'
+            email: 'Email'
+            first_name: 'First Name'
+            middle_name: 'Middle Name'
+            last_name: 'Last Name'
+            username: 'Username'
+            miis_id: 'MIIS ID'
+            gigya_id: 'Gigya ID'
+            reporting_group: 'Reporting Group'
+            status: 'Status'
+            territory: 'Territory'
+            user_type: 'User Type'
+        permissions:
+          heading: 'PERMISSIONS'
+          instructions: 'You can give permissions to this user by selecting a cell.'
+          error: 'Update did not complete. Please try again.'
+          column_headers:
+            admin: 'ADMIN'
+            assets: 'ASSETS'
+            email: 'EMAIL'
+            folders: 'FOLDERS'
+            name: 'NAME'
+            select_all: 'SELECT ALL'
+            view: 'VIEW'
+          sub_headers:
+            download: 'DOWNLOAD'
+            delete: 'DELETE'
+            manage: 'MANAGE'
+            share: 'SHARE'
+            upload: 'UPLOAD'
+            watermark: 'WATERMARK'
+          tooltips:
+            go_to_folder: 'Go To Folder'
+          apply_permissions_modal:
+            button:
+              single: 'THIS FOLDER ONLY'
+              all: 'INCLUDE SUBFOLDERS'
+            error: 'An error occurred. Please try again.'
+            header:
+              apply: 'APPLY ASSET PERMISSIONS'
+              remove: 'REMOVE PERMISSIONS'
+            message:
+              apply: 'Do you want to apply this permission to this folder and its sub-folders?'
+              remove: 'Do you want to remove this permission to this folder and its sub-folders?'

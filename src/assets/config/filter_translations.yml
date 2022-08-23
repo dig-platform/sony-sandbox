@@ -1,0 +1,102 @@
+# This is used in the AssetItemAggregationService to prepare the aggregations
+# object returned by elasticsearch
+---
+:aggregation_overrides:
+  :keys:
+    titles.alpha.alpha_name: alphas
+
+  :fields:
+    titles.gpms_id: titles.gpms_id_and_name
+    series.gpms_id: series.gpms_id_and_name
+    season.gpms_id: season.gpms_id_and_name
+
+:mappings:
+  titles: titles.gpms_id
+  series: series.gpms_id
+  season: season.gpms_id
+
+  #-- the following mappings are for backwards compatability as the front end was not using 'sortable' on these fields --
+  custom_metadata.usage.approval_status: custom_metadata.usage.approval_status.sortable
+  titles.alpha.alpha_name: titles.alpha.alpha_name.sortable
+  #----------------------------------------------------------------------------------------------------------------------
+
+:keywords:
+  :unnested:
+    - archive_status
+    - asset_class
+    - asset_owner
+    - asset_subtype
+    - asset_type
+    - file_extension
+    - folder_ids
+    - managed_by
+    - pixel_dimensions
+    - usage_classification
+    - usage_status
+:sortable:
+  :unnested:
+    - uploaded_by
+  :nested:
+    titles:
+      alpha:
+        -
+          :key: alphas
+          :value: alpha_name
+    custom_metadata:
+      architectural_services:
+        - building_number_and_name
+        - project_type
+        - plan_type
+        - building_year
+      asset_management:
+        - am_vendor
+      content_details:
+        - call_to_action
+        - city
+        - curation_group
+        - language_audio
+        - language_text
+        - language_subtitled
+        - language_dubbed
+        - language_original
+        - media_type
+        - orientation
+        - region
+        - setting
+        - social_media_type
+        - territory
+        - year
+      dbb:
+        - assembly
+        - dbb_spec_id
+      format_details:
+        - aspect_ratio_type
+        - audio_configuration
+        - broadcast_standard
+        - color_space
+        - content_aspect_ratio
+        - format
+        - presentation_aspect_ratio
+        - video_content
+        - image_content
+      dcs:
+        - dcs_vendor
+      photo:
+        - photo_approval
+        - photo_edit_type
+        - retouched
+      prism:
+        - title_type
+        - subtitle_type
+      spt:
+        - spt_dam_source
+        - spt_event
+        - qc_status
+        - network_or_channel
+        - pass_length
+      tech_info:
+        - frame_rate
+      usage:
+        - approval_status
+        - subtype
+

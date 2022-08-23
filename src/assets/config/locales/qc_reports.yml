@@ -1,0 +1,112 @@
+---
+en:
+  qc_reports:
+    heading: Enter QC Results
+    subheading: '*Indicates a required field'
+    form_heading: QC RESULTS
+    multiple_selected: Multiple assets selected
+    none_selected: No assets selected
+    all_not_entered: All Not Entered
+    multiple_values: Multiple Values
+    invalid_error: Please make sure all assets are tagged with a QC Result
+    business_groups:
+      dcs_localization: DCS Localization
+      sony_dam: Sony DAM
+    buttons:
+      cancel: CANCEL
+      done: DONE
+    fields:
+      comments: Additional Comments
+      delivery_date: Date of Delivery
+      failure_reason: Rejection Reason
+      group: Group
+      replacement_due_date: Replacement Due Date
+      status: QC Status
+      submitted_by: QC Submitted By
+      vendor_name: Vendor Name
+    vendors:
+      sony_dam:
+        -
+          value: Ammo Creative
+        -
+          value: Create Advertising
+        -
+          value: Creative Center
+        -
+          value: Creative Center Lat Am
+        -
+          value: Deluxe
+        -
+          value: Digital Media Management
+        -
+          value: Fresh Cut Creative
+        -
+          value: Fullscreen
+        -
+          value: The Grossmyth Company
+        -
+          value: Ignition Creative
+        -
+          value: Midnight Oil
+        -
+          value: Mob Scene
+        -
+          value: N/A
+        -
+          value: The Refinery
+        -
+          value: Revolver Creative Post Production
+        -
+          value: Rubber Sole
+        -
+          value: Sachs Creative
+        -
+          value: Sony's Global Marketing & Creative Content Team
+        -
+          value: Stampede Studios
+        -
+          value: Studio City
+        -
+          value: Trailer Park
+        -
+          value: Think Jam
+        -
+          value: TVGla
+        -
+          value: Viking Social Agency
+        -
+          value: William Leeman
+        -
+          value: YJY Designs
+        -
+          value: Zealot
+      dcs_localization: []
+    status:
+      - Pass
+      - Fail
+      - Not Requested
+    failure_reason:
+      dcs_localization:
+        - 'Asset Archiving - Redelivery to Runner'
+        - 'Asset Archiving - Incorrect Filenames'
+        - 'Asset Archiving - Documentation Errors'
+        - 'Audio Non-Compliance - Drop-outs, Glitches, Compression Issues'
+        - 'Audio Non-Compliance - Incorrect Audio Levels'
+        - 'Audio Non-Compliance - Out of sync'
+        - 'Creative/Linguistic - Mistranslation or adaptation'
+        - 'Creative/Linguistic - Talent Performance'
+        - 'Creative/Linguistic - Missing Dialogue'
+      sony_dam:
+        - Audio Formatting or Technical Issues
+        - Video Formatting or Technical Issues
+        - Image Formatting or Technical Issues
+        - Document Formatting or Technical Issues
+        - Slate & Audio Configuration Discrepancies
+        - Slate & Video Specification Discrepancies
+        - GPMS Title Error
+        - Slating Error
+        - Spelling or Grammar Error
+        - File Naming Convention Issues
+        - Misidentified Metadata
+        - 'File: Mis-delivery/Update/Recall'
+        - Miscellaneous

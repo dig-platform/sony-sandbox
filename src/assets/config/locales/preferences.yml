@@ -1,0 +1,101 @@
+en:
+  preferences:
+    heading: 'User Preferences'
+    navigation:
+      general: 'GENERAL'
+      subscriptions: 'SUBSCRIPTIONS'
+    message: 'These preferences will be loaded when you login. Updating these settings elsewhere in Runner will not change these default user preferences.'
+    labels:
+      additional_options: 'Additional Options (select all that apply):'
+      allow_uploader_edit: 'Default Allow Uploader to Edit Metadata'
+      assets_per_page: 'Assets Per Page:'
+      cart_options: 'Preferred Cart Options:'
+      cart_order: 'Cart Order:'
+      display_options: 'Display Options:'
+      email_branding: 'Default Email Branding:'
+      expiration_interval: 'Default Expiration Interval:'
+      maintain_asset_selection: 'Asset Selection After Performed Action:'
+      metadata_type: 'Default Edit Metadata Type'
+      notify_recipients: 'Default Notify All Recipients'
+      notify_uploader: 'Default Notify Uploader'
+      search_type: 'Default Search Type'
+      share_permissions: 'Default Share Permissions:'
+      share_type: 'Default Share Type'
+      sort: 'Default Sort Options:'
+      upload_type: 'Default Upload Type:'
+      view: 'Default View:'
+    headers:
+      view: 'VIEW'
+      upload: 'UPLOAD'
+      share: 'SHARE'
+      metadata: 'METADATA'
+      cart: 'CART'
+      file_request: 'FILE REQUEST'
+    buttons:
+      hybrid: 'HYBRID VIEW'
+      list: 'LIST VIEW'
+      grid: 'GRID VIEW'
+      fifty: '50 ASSETS'
+      hundred: '100 ASSETS'
+      asc: 'ASCENDING'
+      desc: 'DESCENDING'
+      http: 'HTTP'
+      aspera: 'ASPERA'
+      preview: 'PREVIEW ONLY'
+      download: 'DOWNLOAD'
+      protected: 'PROTECTED'
+      include_metadata: 'INCLUDE METADATA'
+      auto_preview: 'AUTO PREVIEW'
+      share_url: 'SHARE URL'
+      email_share: 'EMAIL SHARE'
+      replace: 'REPLACE'
+      append: 'APPEND'
+      unselect_assets: 'UNSELECT ASSETS'
+      keep_selected: 'KEEP SELECTED'
+      title_search: 'TITLE SEARCH'
+      search: 'SEARCH'
+      light: 'LIGHT'
+      dark: 'DARK'
+      newest: 'NEWEST'
+      oldest: 'OLDEST'
+      recently_updated: 'RECENTLY UPDATED'
+      notify_recipients: 'NOTIFY RECIPIENTS'
+      notify_uploader: 'NOTIFY UPLOADER'
+      allow_uploader_edit: 'ALLOW UPLOADER'
+      do_not_notify: 'DO NOT NOTIFY'
+      do_not_allow: 'DO NOT ALLOW'
+    dropdowns:
+      columns:
+        - name: 'Name'
+        - type: 'Type'
+        - title: 'Title'
+        - size: 'Size'
+        - uploaded: 'Uploaded'
+      expiration_interval:
+        - 7: '7 Days'
+        - 30: '30 Days'
+        - 60: '60 Days'
+        - 90: '90 Days'
+        - 180: '180 Days'
+      email_branding:
+        - bell: 'Bell'
+        - corus: 'Corus'
+        - rogers: 'Rogers'
+        - runner: 'Runner'
+        - sony_pictures_television: 'Sony Pictures Television'
+      default_cart:
+        none: 'No Preferred Cart'
+    search_subscriptions:
+      header: "SEARCH SUBSCRIPTIONS"
+      message: "Manage your search subscriptions by editing their names and frequency or by unsubscribing."
+      frequencies:
+        immediately: 'Immediately'
+        hourly: 'Hourly'
+        daily: 'Daily'
+      empty_list: "You have zero search subscriptions"
+    folder_subscriptions:
+      header: "FOLDER SUBSCRIPTIONS SETTINGS"
+      message: "Subscribe to instant email notifications for key asset events from any of the following folders."
+      review_message: "Review and / or edit your current individual folder subscriptions."
+      empty_list_line_one: "You have zero folder subscriptions"
+      empty_list_line_two: "You can subscribe to folders in the section below"

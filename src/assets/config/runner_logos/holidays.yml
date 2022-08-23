@@ -1,0 +1,431 @@
+---
+#############################################################################
+#       HOLIDAYS                                                            #
+#############################################################################
+
+holidays:
+  # New Year's Day: 1/1 annually
+  new_year:
+    login:         new_year_2018_login.gif
+    header:        new_year.svg
+    header_hover:  new_year_hover.svg
+    strict_height: true
+    tooltip:       Happy New Year! 🎆
+    dates:
+      default:
+        - start: 2020-01-01
+          end:   2020-01-05
+
+  # Three Kings Day, annually 1/4-1/6
+  three_kings_day:
+    login:         three_kings_day.svg
+    header:        three_kings_day.svg
+    header_hover:  three_kings_day_hover.svg
+    tooltip:       Three Kings' Day
+    dates:
+      default:
+        - start: 2020-01-04
+          end:   2020-01-06
+        - start: 2021-01-04
+          end:   2021-01-06
+        - start: 2022-01-04
+          end:   2022-01-06
+
+  # Lunar New Year: varies (Jan-Feb) annually
+  lunar_new_year:
+    login:        lunar_new_year_login.gif
+    header:       lunar_new_year.svg
+    header_hover: lunar_new_year_hover.svg
+    tooltip:      Lunar New Year 🏮
+    dates:
+      default:
+        - start: 2020-01-25
+          end:   2020-01-31
+        - start: 2021-02-11
+          end:   2021-02-17
+        - start: 2022-01-31
+          end:   2022-02-06
+
+  # Valentine's Day: 2/14 annually
+  valentines_day:
+    login:        valentines_login.svg
+    header:       valentines.svg
+    header_hover: valentines_hover.svg
+    tooltip:      Happy Valentine's Day! 💕
+    dates:
+      default:
+        - start: 2020-02-14
+          end:   2020-02-15
+        - start: 2021-02-14
+          end:   2021-02-15
+        - start: 2022-02-14
+          end:   2022-02-15
+
+  # Mardi Gras: Changes annually
+  mardi_gras:
+    login:        mardi_gras.svg
+    header:       mardi_gras.svg
+    header_hover: mardi_gras_hover.svg
+    tooltip:      Mardi Gras
+    dates:
+      default:
+        - start: 2020-02-25
+          end:   2020-02-26
+        - start: 2021-02-16
+          end:   2021-02-17
+
+  # Holi (3/6-11, 2020)
+  holi:
+    login:         holi.gif
+    header:        holi.svg
+    header_hover:  holi_hover.svg
+    strict_height: false
+    tooltip:       Holi
+    dates:
+      default:
+        - start: 2020-03-06
+          end:   2020-03-12
+
+  # St. Patty's Day: 3/17 annually
+  st_patricks_day:
+    login:        st_patricks_day_login.gif
+    header:       st_patricks_day.svg
+    header_hover: st_patricks_day_hover.svg
+    tooltip:      Happy St. Patrick's Day! 🍀
+    dates:
+      default:
+        - start: 2020-03-17
+          end:   2020-03-18
+        - start: 2021-03-17
+          end:   2021-03-18
+        - start: 2022-03-17
+          end:   2022-03-18
+
+  # Earth Day: 4/22 annually
+  earth_day:
+    login:        earth_day_login.gif
+    header:       earth_day.svg
+    header_hover: earth_day_hover.svg
+    tooltip:      Happy Earth Day! 🌎🌍🌏
+    dates:
+      default:
+        - start: 2020-04-22
+          end:   2020-04-23
+        - start: 2021-04-22
+          end:   2021-04-23
+        - start: 2022-04-22
+          end:   2022-04-23
+
+  # Arbor Day: late April, changes annually
+  arbor_day:
+    login:        arbor_day_login.gif
+    header:       arbor_day.svg
+    header_hover: arbor_day_hover.svg
+    tooltip:      Happy Arbor Day! 🌳
+    dates:
+      default:
+        - start: 2020-04-24
+          end:   2020-04-25
+        - start: 2021-04-30
+          end:   2021-05-01
+        - start: 2022-04-29
+          end:   2022-04-30
+
+  # Easter: varies annually
+  easter:
+    login:        easter.svg
+    header:       easter.svg
+    header_hover: easter_hover.svg
+    tooltip:      Happy Easter! 🐰
+    dates:
+      default:
+        - start: 2020-04-10
+          end:   2020-04-13
+        - start: 2021-04-02
+          end:   2021-04-05
+        - start: 2022-04-15
+          end:   2022-04-18
+
+  # Cinco de Mayo: 5/5 annually
+  cinco_de_mayo:
+    login:        cinco_de_mayo.svg
+    header:       cinco_de_mayo.svg
+    header_hover: cinco_de_mayo_hover.svg
+    tooltip:      Happy Cinco de Mayo!
+    dates:
+      default:
+        - start: 2020-05-05
+          end:   2020-05-06
+        - start: 2021-05-05
+          end:   2021-05-06
+        - start: 2022-05-05
+          end:   2022-05-06
+
+  # Ramadan, changes annually
+  ramadan:
+    login:        ramadan.svg
+    header:       ramadan.svg
+    header_hover: ramadan_hover.svg
+    tooltip:      Ramadan Mubarak
+    dates:
+      default:
+        - start: 2020-04-23
+          end:   2020-05-23
+
+  # Mother's Day: Second Sunday of May annually
+  mothers_day:
+    login:        mothers_day.svg
+    header:       mothers_day.svg
+    header_hover: mothers_day_hover.svg
+    tooltip:      Happy Mother's Day!
+    dates:
+      default:
+        - start: 2020-05-10
+          end:   2020-05-11
+        - start: 2021-05-09
+          end:   2021-05-10
+        - start: 2022-05-08
+          end:   2022-05-09
+
+  # Father's Day: Third Sunday of June annually
+  fathers_day:
+    login:        fathers_day.svg
+    header:       fathers_day.svg
+    header_hover: fathers_day_hover.svg
+    tooltip:      Happy Father's Day!
+    dates:
+      default:
+        - start: 2020-06-21
+          end:   2020-06-22
+        - start: 2021-06-20
+          end:   2021-06-21
+        - start: 2022-06-19
+          end:   2022-05-20
+
+  # US Independence Day: 7/4 annually
+  us_independence_day:
+    login:        july_4_login.gif
+    header:       july_4.svg
+    header_hover: july_4_hover.svg
+    tooltip:      Happy Independence Day! 🇺🇸
+    dates:
+      default:
+        - start: 2020-07-03
+          end:   2020-07-05
+        - start: 2021-07-03
+          end:   2021-07-05
+        - start: 2022-07-03
+          end:   2022-07-05
+
+  # Mid-Autumn Festival: Changes yearly (Late Sept / Early Oct)
+  mid_autumn_festival:
+    login:         mid_autumn_festival.svg
+    header:        mid_autumn_festival.svg
+    header_hover:  mid_autumn_festival_hover.svg
+    strict_height: false
+    tooltip:       Mid-Autumn Festival 🏮
+    dates:
+      default:
+        - start: 2020-10-01
+          end:   2020-10-02
+        - start: 2021-09-21
+          end:   2021-09-22
+        - start: 2022-09-10
+          end:   2022-09-11
+
+  # Yom Kippur: Changes yearly (Late Sept / Early Oct)
+  yom_kippur:
+    login:         yom_kippur_new.svg
+    header:        yom_kippur_new.svg
+    header_hover:  yom_kippur_new_hover.svg
+    strict_height: false
+    tooltip:       Yom Kippur
+    dates:
+      default:
+        - start: 2020-09-27
+          end:   2020-09-29
+        - start: 2021-09-15
+          end:   2021-09-17
+        - start: 2022-10-04
+          end:   2022-10-06
+
+  # Halloween: 10/31 annually
+  halloween:
+    login:         halloween.svg
+    header:        halloween.svg
+    header_hover:  halloween_hover.svg
+    strict_height: false
+    tooltip:       Happy Halloween! 🎃
+    dates:
+      default:
+        - start: 2020-10-27
+          end:   2020-11-03
+        - start: 2021-10-27
+          end:   2021-11-03
+        - start: 2022-10-27
+          end:   2022-11-03
+
+  # Dia de los Muertos: 10/31-11/2 annually
+  dia_de_los_muertos:
+    login:         dia_de_los_muertos.gif
+    header:        dia_de_los_muertos.svg
+    header_hover:  dia_de_los_muertos_hover.svg
+    strict_height: false
+    tooltip:       Dia de los Muertos
+    dates:
+      default:
+        - start: 2020-10-31
+          end:   2020-11-02
+        - start: 2021-10-31
+          end:   2021-11-02
+        - start: 2022-10-31
+          end:   2022-11-02
+
+  # Diwali changes annually (Late October/Early November)
+  diwali:
+    login:         diwali.gif
+    tooltip:       Happy Diwali
+    header:        diwali.svg
+    header_hover:  diwali_hover.svg
+    strict_height: false
+    dates:
+      default:
+        - start: 2020-11-13
+          end:   2020-11-15
+        - start: 2021-11-04
+          end:   2021-11-05
+        - start: 2022-10-24
+          end:   2022-10-25
+
+  # Christmas: 12/25 annually
+  christmas:
+    login:         christmas_login.gif
+    header:        christmas.svg
+    header_hover:  christmas_hover.svg
+    tooltip:       Merry Christmas! 🎄
+    strict_height: false
+    dates:
+      default:
+        - start: 2020-12-20
+          end:   2020-12-26
+        - start: 2021-12-20
+          end:   2021-12-26
+        - start: 2022-12-20
+          end:   2022-12-26
+
+  # Kwanzaa: 12/25-1/2 annually
+  kwanzaa:
+    login:         kwanzaa.svg
+    tooltip:       Happy Kwanzaa
+    header:        kwanzaa.svg
+    header_hover:  kwanzaa_hover.svg
+    strict_height: false
+    dates:
+      default:
+        - start: 2020-12-25
+          end:   2021-01-02
+        - start: 2021-12-25
+          end:   2022-01-02
+        - start: 2022-12-25
+          end:   2023-01-02
+
+  # Hannukah: varies (Dec) annually
+  # NOTE: there are 8 logos for Hannukah (see below)
+  hanukkah_1: &hanukkah
+    login:         hanukkah/hanukkah_1.svg
+    tooltip:       Happy Hannukah! 🕎
+    header:        hanukkah/hanukkah_logo.svg
+    header_hover:  hanukkah/hanukkah_logo_hover.svg
+    strict_height: false
+    dates:
+      default:
+        - start: 2020-12-11
+          end:   2020-12-12
+        - start: 2021-11-28
+          end:   2021-11-29
+        - start: 2022-12-18
+          end:   2022-12-19
+
+  hanukkah_2:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_2.svg
+    dates:
+      default:
+        - start: 2020-12-12
+          end:   2020-12-13
+        - start: 2021-11-29
+          end:   2021-11-30
+        - start: 2022-12-19
+          end:   2022-12-20
+
+  hanukkah_3:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_3.svg
+    dates:
+      default:
+        - start: 2020-12-13
+          end:   2020-12-14
+        - start: 2021-11-30
+          end:   2021-12-01
+        - start: 2022-12-20
+          end:   2022-12-21
+
+  hanukkah_4:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_4.svg
+    dates:
+      default:
+        - start: 2020-12-14
+          end:   2020-12-15
+        - start: 2021-12-01
+          end:   2021-12-02
+        - start: 2022-12-21
+          end:   2022-12-22
+
+  hanukkah_5:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_5.svg
+    dates:
+      default:
+        - start: 2020-12-15
+          end:   2020-12-16
+        - start: 2021-12-02
+          end:   2021-12-03
+        - start: 2022-12-22
+          end:   2022-12-23
+
+  hanukkah_6:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_6.svg
+    dates:
+      default:
+        - start: 2020-12-16
+          end:   2020-12-17
+        - start: 2021-12-03
+          end:   2021-12-04
+        - start: 2022-12-23
+          end:   2022-12-24
+
+  hanukkah_7:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_7.svg
+    dates:
+      default:
+        - start: 2020-12-17
+          end:   2020-12-18
+        - start: 2021-12-04
+          end:   2021-12-05
+        - start: 2022-12-24
+          end:   2022-12-25
+
+  hanukkah_8:
+    <<: *hanukkah
+    login: hanukkah/hanukkah_8.svg
+    dates:
+      default:
+        - start: 2020-12-18
+          end:   2020-12-19
+        - start: 2021-12-05
+          end:   2021-12-06
+        - start: 2022-12-25
+          end:   2022-12-26

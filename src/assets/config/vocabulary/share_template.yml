@@ -1,0 +1,69 @@
+---
+runner: &runner
+  media_kit: false
+  metadata: false
+  header: '/templates/open/shares/runner/header.html'
+  view: '/templates/open/shares/runner/standard.html'
+runner_metadata:
+  <<: *runner
+  metadata: true
+mpg_exhibitor_relations:
+  media_kit: false
+  metadata: false
+  header: '/templates/open/shares/mpg_exhibitor_relations/header.html'
+  view: '/templates/open/shares/runner/standard.html'
+spe_connect:
+  media_kit: true
+  metadata: false
+  domain: 'connect.sonypictures.com'
+  domain_name: 'Sony Pictures Connect'
+  header: '/templates/open/shares/spe_connect/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+spe_connect_metadata:
+  media_kit: true
+  metadata: true
+  domain: 'connect.sonypictures.com'
+  domain_name: 'Sony Pictures Connect'
+  header: '/templates/open/shares/spe_connect/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+sphe_added_value:
+  media_kit: false
+  metadata: false
+  header: '/templates/open/shares/sphe_added_value/header.html'
+  view: '/templates/open/shares/runner/standard.html'
+spt_b2b:
+  media_kit: true
+  metadata: false
+  domain: 'sonypicturestelevision.com'
+  domain_name: 'sonypicturestelevision.com'
+  header: '/templates/open/shares/spt_b2b/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+spt_b2b_metadata:
+  media_kit: true
+  metadata: true
+  domain: 'sonypicturestelevision.com'
+  domain_name: 'sonypicturestelevision.com'
+  header: '/templates/open/shares/spt_b2b/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+spt_media:
+  media_kit: true
+  metadata: false
+  domain: 'sonypicturestelevision.com'
+  header: '/templates/open/shares/spt_b2b/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+mpg_publicity_au: &mpg_publicity
+  media_kit: true
+  metadata: false
+  domain: 'sonypicturespublicity.com.au'
+  header: '/templates/open/shares/mpg_publicity/header.html'
+  view: '/templates/open/shares/spt_b2b/standard.html'
+mpg_publicity_dom:
+  <<: *mpg_publicity
+  domain: 'sonypicturespublicity.com'
+mpg_publicity_intl:
+  <<: *mpg_publicity
+  domain: 'sonypicturespublicity.net'
+mpg_publicity_nz:
+  <<: *mpg_publicity
+  domain: 'sonypicturespublicity.co.nz'
+

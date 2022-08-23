@@ -1,0 +1,41 @@
+---
+en:
+  activity:
+    buttons:
+      manage: "MANAGE"
+    heading: "Activity"
+    empty_list: 'There are zero items for this activity type'
+    navigation:
+      upload_status: "Upload Status"
+      share_history: "Share History"
+      files_requested: "Files Requested"
+    upload_status:
+      tab:
+        in_progress: "In Progress"
+        completed: "Completed"
+        failed: "Failed"
+      count: "Assets: %{asset_count}"
+      reupload: "Re-upload"
+    share_history:
+      tab:
+        active: "Active"
+        expired: "Expired"
+        pending: "Pending"
+      tooltips:
+        preview: Preview Only
+        download: Download
+        download_proxy: Proxy Only Download
+        failed: Share Failed
+        pending: Processing
+        watermark_failed: Asset Watermarking Failed
+    file_request:
+      tab:
+        active: "Active"
+        expired: "Expired"
+      view_assets: "VIEW ASSETS"
+    tooltips:
+      edit_metadata: "Edit Metadata"
+      view_assets: "View Assets"
+      refresh: "Refresh"
+      transfer_failed: "Transfer failed. Unresolved items will be deleted 7 days after upload."
+      processing_failed: "Processing failed. Please contact runner_help@spe.sony.com to resolve."

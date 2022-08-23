@@ -1,0 +1,33 @@
+---
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  port: 5432
+  reconnect: true
+  pool: 10
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: compass
+  host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
+
+development:
+  <<: *default
+  database: phoenix_development
+  username: <%= ENV['DB_USERNAME'] || `whoami` %>
+
+test:
+  <<: *default
+  database: phoenix_test<%= Rails.application.secrets.test_env_number %>
+  username: <%= ENV['DB_USERNAME'] || `whoami` %>
+
+integration:
+  <<: *default
+  host: <%= ENV['DATABASE_HOSTNAME'] || 'integration.rds.sonypicturesrunner.com' %>
+
+staging:
+  <<: *default
+  host: <%= ENV['DATABASE_HOSTNAME'] || 'staging.rds.sonypicturesrunner.com' %>
+
+production:
+  <<: *default
+  host: <%= ENV['DATABASE_HOSTNAME'] || 'production.rds.sonypicturesrunner.com' %>

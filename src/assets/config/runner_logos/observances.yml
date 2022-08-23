@@ -1,0 +1,347 @@
+---
+#############################################################################
+#       ANNUAL CELEBRATIONS / OBSERVANCES                                   #
+#############################################################################
+
+observances:
+  # World Wildlife Day: 3/3 annually
+  world_wildlife_day:
+    login:        world_wildlife_day_login.svg
+    header:       world_wildlife_day.svg
+    header_hover: world_wildlife_day_hover.svg
+    tooltip:      World Wildlife Day
+    dates:
+      default:
+        - start: 2021-03-03
+          end:   2021-03-04
+        - start: 2022-03-03
+          end:   2022-03-04
+
+  # International Women's Day 3/8 annually
+  international_womens_day:
+    login:        international_womens_day.svg
+    header:       international_womens_day.svg
+    header_hover: international_womens_day_hover.svg
+    tooltip:      International Women's Day
+    dates:
+      default:
+        - start: 2021-03-08
+          end:   2021-03-09
+        - start: 2022-03-08
+          end:   2022-03-09
+
+  # Beginning of Daylight Savings Time (US): changes annually
+  spring_forward:
+    login:         spring_forward.svg
+    header:        spring_forward.svg
+    header_hover:  spring_forward_hover.svg
+    strict_height: false
+    tooltip:       Daylight Savings Time Begins
+    dates:
+      default:
+        - start: 2021-03-14
+          end:   2021-03-15
+
+  # Pi Day: 3/14 annually
+  pi_day:
+    login:        pi_day.svg
+    tooltip:      '3.141592653589793'
+    header:       pi_day.svg
+    header_hover: pi_day_hover.svg
+    dates:
+      default:
+        - start: 2021-03-14
+          end:   2021-03-15
+        - start: 2022-03-14
+          end:   2022-03-15
+
+  # World Water Day: 3/22 annually
+  world_water_day:
+    login:        world_water_day_login.gif
+    tooltip:      World Water Day 💧
+    header:       world_water_day.svg
+    header_hover: world_water_day_hover.svg
+    dates:
+      default:
+        - start: 2021-03-22
+          end:   2021-03-23
+        - start: 2022-03-22
+          end:   2022-03-23
+
+  # April Fools Day: 4/1 annually
+  april_fools_day:
+    login:        april_fools.svg
+    header:       april_fools.svg
+    header_hover: april_fools_hover.svg
+    tooltip:      Happy April Fool's Day!
+    dates:
+      default:
+        - start: 2021-04-01
+          end:   2021-04-02
+        - start: 2022-04-01
+          end:   2022-04-02
+
+  # International Jazz Day: 4/30 annually
+  international_jazz_day:
+    login:        international_jazz_day_login.gif
+    header:       international_jazz_day.svg
+    header_hover: international_jazz_day_hover.svg
+    tooltip:      International Jazz Day 🎷
+    dates:
+      default:
+        - start: 2021-04-30
+          end:   2021-05-01
+        - start: 2022-04-30
+          end:   2022-05-01
+
+  # International Day for Biological Diversity 5/22
+  biodiversity:
+    login:        international_day_of_biological_diversity.png
+    header:       international_day_of_biological_diversity.png
+    header_hover: international_day_of_biological_diversity_hover.png
+    tooltip:      International Day for Biological Diversity
+    dates:
+      default:
+        - start: 2021-05-22
+          end:   2021-05-23
+        - start: 2022-05-22
+          end:   2022-05-23
+
+  # Pride Month
+  pride_month:
+    login:         pride.svg
+    header:        pride.svg
+    header_hover:  pride_hover.svg
+    strict_height: false
+    tooltip:       Happy Pride! 🏳️‍🌈
+    dates:
+      default:
+        - start: 2020-06-01
+          end:   2020-07-01
+        - start: 2021-06-01
+          end:   2021-07-01
+        - start: 2022-06-01
+          end:   2022-07-01
+
+  # National Doughnut Day: First Friday of June anually
+  donut_day:
+    login:         donut_day_login.gif
+    header:        donut_day.svg
+    header_hover:  donut_day_hover.svg
+    strict_height: false
+    tooltip:       National Donut Day 🍩
+    dates:
+      default:
+        - start: 2021-06-04
+          end:   2021-06-05
+        - start: 2022-06-03
+          end:   2022-06-04
+
+  # World Oceans Day 6/8
+  world_oceans_day:
+    login:        world_oceans_day.gif
+    header:       world_oceans_day_1.svg
+    header_hover: world_oceans_day_1_hover.svg
+    tooltip:      World Oceans Day
+    dates:
+      default:
+        - start: 2021-06-08
+          end:   2021-06-09
+        - start: 2022-06-08
+          end:   2022-06-09
+
+  # World Emoji Day: 7/17 anually
+  world_emoji_day:
+    login:         world_emoji_day.svg
+    header:        world_emoji_day.svg
+    header_hover:  world_emoji_day_hover.svg
+    strict_height: false
+    tooltip:       World Emoji Day 😎🏃🏃🦄
+    dates:
+      default:
+        - start: 2020-07-17
+          end:   2020-07-18
+        - start: 2021-07-17
+          end:   2021-07-18
+        - start: 2022-07-17
+          end:   2022-07-18
+
+  # Ice Cream Day: Third Sunday of July annually
+  ice_cream_day:
+    login:         ice_cream_day_login.gif
+    header:        ice_cream_day.svg
+    header_hover:  ice_cream_day_hover.svg
+    strict_height: false
+    tooltip:       Ice Cream Day 🍦
+    dates:
+      default:
+        - start: 2020-07-19
+          end:   2020-07-20
+        - start: 2021-07-18
+          end:   2021-07-19
+        - start: 2022-07-17
+          end:   2022-07-18
+
+  # National Avocado Day: 7/31 annually???
+  avocado_day:
+    login:         avocado_day_login.gif
+    header:        avocado_day.svg
+    header_hover:  avocado_day_hover.svg
+    strict_height: false
+    tooltip:       National Avocado Day 🥑
+    dates:
+      default:
+        - start: 2020-07-31
+          end:   2020-08-01
+        - start: 2021-07-31
+          end:   2021-08-01
+        - start: 2022-07-31
+          end:   2022-08-01
+
+  # International Day of Friendship: First Sunday of August annually
+  friendship_day:
+    login:         friendship_day_1.svg
+    header:        friendship_day_1.svg
+    header_hover:  friendship_day_1_hover.svg
+    strict_height: false
+    tooltip:       International Day of Friendship 🤝
+    dates:
+      default:
+        - start: 2021-07-30
+          end:   2021-08-02
+        - start: 2022-08-05
+          end:   2022-08-08
+
+  # Book Lover's Day: 8/9 annually
+  book_lovers_day:
+    login:         book_lovers_day_login.gif
+    header:        book_lovers_day.svg
+    header_hover:  book_lovers_day_hover.svg
+    strict_height: false
+    tooltip:       Book Lover's Day 📚
+    dates:
+      default:
+        - start: 2020-08-09
+          end:   2020-08-10
+        - start: 2021-08-09
+          end:   2021-08-10
+        - start: 2022-08-09
+          end:   2022-08-10
+
+  # Women's Equality Day: 8/26 annually
+  womens_equality_day:
+    login:         womens_equality_day.svg
+    header:        womens_equality_day.svg
+    header_hover:  womens_equality_day_hover.svg
+    strict_height: false
+    tooltip:       Women's Equality Day
+    dates:
+      default:
+        - start: 2021-08-26
+          end:   2021-08-27
+        - start: 2022-08-26
+          end:   2022-08-27
+
+  # International Coastal Cleanup Day: varies, late Sept.
+  international_coastal_cleanup_day:
+    login:         coastal_clean_up_day.svg
+    header:        coastal_clean_up_day.svg
+    header_hover:  coastal_clean_up_day_hover.svg
+    strict_height: false
+    tooltip:       International Coastal Cleanup Day 🌊
+    dates:
+      default:
+        - start: 2020-09-26
+          end:   2020-09-27
+
+  # Talk Like a Pirate Day: 9/19 annually
+  talk_like_a_pirate_day:
+    login:         talk_like_a_pirate_day_login.gif
+    header:        talk_like_a_pirate_day.svg
+    header_hover:  talk_like_a_pirate_day_hover.svg
+    strict_height: false
+    tooltip:       Talk like a pirate day! ☠
+    dates:
+      default:
+        - start: 2020-09-19
+          end:   2020-09-20
+        - start: 2021-09-19
+          end:   2021-09-20
+        - start: 2022-09-19
+          end:   2022-09-20
+
+  # International Day of Peace: 9/21 annually
+  international_day_of_peace:
+    login:         international_day_of_peace_login.gif
+    header:        international_day_of_peace.svg
+    header_hover:  international_day_of_peace_hover.svg
+    strict_height: false
+    tooltip:       International Day of Peace 🕊🇺🇳
+    dates:
+      default:
+        - start: 2020-09-21
+          end:   2020-09-22
+        - start: 2021-09-21
+          end:   2021-09-22
+        - start: 2022-09-21
+          end:   2022-09-22
+
+  # International Coffee Day: 9/29 annually
+  coffee_day:
+    login:         coffee_day_login.gif
+    header:        coffee_day.svg
+    header_hover:  coffee_day_hover.svg
+    strict_height: false
+    tooltip:       International Coffee Day ☕
+    dates:
+      default:
+        - start: 2020-09-29
+          end:   2020-09-30
+        - start: 2021-09-29
+          end:   2021-09-30
+        - start: 2022-09-29
+          end:   2022-09-30
+
+  # World Vegetarian day: 10/1 annually
+  veggie_day:
+    login:         veggie_day.svg
+    header:        veggie_day.svg
+    header_hover:  veggie_day_hover.svg
+    strict_height: false
+    tooltip:       World Vegetarian Day 🥕🍅
+    dates:
+      default:
+        - start: 2020-10-01
+          end:   2020-10-02
+        - start: 2021-10-01
+          end:   2021-10-02
+
+  # Breast Cancer Awareness Month: October
+  breast_cancer_awareness:
+    login:         breast_cancer_awareness.svg
+    header:        breast_cancer_awareness.svg
+    header_hover:  breast_cancer_awareness_hover.svg
+    strict_height: false
+    tooltip:       Breast Cancer Awareness Month
+    dates:
+      default: # End a couple of days early b/c halloween
+        - start: 2020-10-01
+          end:   2020-10-27
+        - start: 2021-10-01
+          end:   2021-10-27
+        - start: 2022-10-01
+          end:   2022-10-27
+
+  # End of Daylight Savings Time (US): changes annually
+  fall_back:
+    login:         fall_backwards.png
+    header:        fall_backwards.png
+    header_hover:  fall_backwards_hover.png
+    strict_height: false
+    tooltip:       Daylight Savings Time Ends
+    dates:
+      default:
+        - start: 2020-11-01
+          end:   2020-11-02
+        - start: 2021-11-07
+          end:   2021-11-08

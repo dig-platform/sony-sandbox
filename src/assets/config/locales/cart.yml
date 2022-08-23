@@ -1,0 +1,28 @@
+en:
+  cart:
+    heading: 'Cart'
+    sub_heading: 'Assets'
+    empty_list: 'There are zero items in this cart'
+    thumbnail:
+      loading_overlay: 'LOADING ASSETS'
+    share:
+      heading: Email Share
+    drawer:
+      header: 'CARTS'
+      create_cart: 'CREATE CART'
+      delete_cart: 'DELETE CART'
+      delete_carts: 'DELETE CARTS'
+    create_cart_modal:
+      create: "Create"
+      heading: "Create New Cart"
+      max_length: "40 characters max"
+      message: "Please enter a name for the new cart"
+      placeholder: "Enter cart name"
+    select_all:
+      menu:
+        select:
+          all: 'SELECT ALL IN THIS CART'
+          on_page: 'SELECT ALL ON THIS PAGE'
+        deselect:
+          all: 'DESELECT ALL IN THIS CART'
+          on_page: 'DESELECT ALL ON THIS PAGE'

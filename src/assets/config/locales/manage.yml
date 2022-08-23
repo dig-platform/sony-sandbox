@@ -1,0 +1,20 @@
+en:
+  manage:
+    progress_labels:
+      manage: "MANAGE"
+      metadata: "METADATA"
+      thumbnail: "UPDATE THUMBNAIL"
+      share: SHARE
+    thumbnail:
+      subheader:
+        heading: 'Update Thumbnail'
+        subheading: 'Assets: %{count}'
+      column: "UPDATE THUMBNAIL"
+      add_file: "ADD FILE"
+      drag_image: "DRAG AN IMAGE"
+      use_add_files: "or use the ADD FILE button"
+      restrictions: "JPEG or PNG (less than 20MB)\nIf necessary, image orientation will be adjusted after upload."
+    share:
+      subheader:
+        heading: Prepare Email Share
+        subheading: (will be sent upon upload completion)

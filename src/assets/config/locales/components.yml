@@ -1,0 +1,94 @@
+en:
+  add_to_cart_list:
+    create_a_cart: Create A New Cart
+    name_your_new_cart: Name your new cart (40 characters max)
+  asset_carousel:
+    empty_message: NO RECENTLY VIEWED ASSET ITEMS
+  copy_icon:
+    copy: Copy
+    copied: Copied!
+  email_share_sticky_footer:
+    back: BACK
+    close: CLOSE
+    generate_link: GENERATE LINK
+    share: SHARE
+    feedback:
+      delayed_success: Email share has been prepared!
+  email_share_form:
+    additional_options: Additional Options
+    archived_assets: The greyed out assets are archived and cannot be shared until they are retrieved.
+    download: Download
+    brands:
+      default: Runner
+    display_recipients: Display recipients?
+    display_recipient_email_on_overlay: Display recipient's email address?
+    distribution_lists: Distribution Lists
+    schedule_options:
+      now:
+        text: Send Now
+      later:
+        text: Send Later
+        description: (If watermarked options are applied, email will be sent once process is finished)
+    fields:
+      schedule_options: Schedule Options
+      brand: Email Branding
+      download_limit: Download Limit
+      expiration: Expiration
+      message: Message
+      permissions: Permissions
+      view_limit: Preview Limit
+      subject: Subject
+      to: To
+      to_note: '*A copy of this email will be sent to you.'
+    limits:
+      none: No Limit
+      custom: Custom
+    header_email: EMAIL SHARE
+    header_share: SHARE URL
+    auto_preview: Auto-Preview
+    password_protected: Password Protected
+    include_metadata: Include Metadata
+    preview_only: Preview Only
+    proxy_only_download: Proxy Only Download
+    protected: Protected
+    select_one: (select one)
+    send_another: SEND ANOTHER
+    share_sent: Share has been sent!
+    share_type: Share Type
+    subject_to_eligibility: '*Subject to asset eligibility'
+    toggle_buttons:
+      share_url: SHARE URL
+      email_share: EMAIL SHARE
+    watermark:
+      burn_in: Burn-in
+      forensic: Forensic
+      heading: Watermark
+      invisible_label: Invisible Watermark Options
+      overlay: Overlay
+      video_proxies: (Video Proxies)
+      prores_videos: (ProRes Videos)
+      visible_label: Visible Watermark Options
+    overlay:
+      label: 'Visible Watermark:'
+      text_placeholder: i.e. Copyright Sony Pictures Entertainment
+      preview: Preview
+    image_resize:
+      heading: Resize Image
+      format: Share Resized Image As
+      scale: Scale
+      width: Width
+      height: Height
+
+  runner_append_replace:
+    tooltip:
+      append: Append Metadata
+      replace: Replace Metadata
+  share_url_form:
+    header: SHARE DETAILS
+    heading: Share URL
+    url_with_password: "%{url} | Password: %{password}"
+    copy: COPY
+  share_header:
+    standard: Create Share
+    delayed: Prepare Email Share
+    delayed_secondary: (will be sent upon upload completion)

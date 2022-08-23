@@ -1,4 +1,4 @@
-<mat-stepper #stepper [ngrxStepper]="stepper" ngrxId="accountRequest" [linear]="true">
+<mat-stepper #stepper [ngrxStepper]="stepper" ngrxId="accountRequest" [linear]="false">
   <mat-step [stepControl]="registration.form" label="Registration">
     <app-registration #registration></app-registration>
   </mat-step>

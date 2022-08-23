@@ -1,0 +1,303 @@
+---
+production: &default
+  # DCS
+  - line_of_business: &DCS 'DCS'
+    content_type: 'Approved Clips'
+    folder_id: 54325 # CMDG Approved Clips
+    additional_folder_ids:
+      - 54328 # CMDG/CMDG Trailers/Clips/CMDG Approved Clips (through legal)/Previously-Approved
+    reviewer_ids:
+      - &dfroning 484 # Dorothy Froning
+      - &dgarttiette 1594 # Delwyn Garriette
+    include_subfolders: false
+
+  - line_of_business: *DCS
+    content_type: 'Public Trailers'
+    folder_id: 54309 # DCS Public Trailers
+    additional_folder_ids:
+      - 58963 # Motion Pictures Public (Off Embargo - DCS Trailers)
+    reviewer_ids:
+      - *dfroning
+      - *dgarttiette
+    include_subfolders: true
+
+  # MPG
+  - line_of_business: &MPG 'Motion Pictures Group'
+    content_type: 'Exhibitor Relations'
+    folder_id: 45224 # Motion Pictures Marketing > MPG Exhibitor Relations
+    reviewer_ids:
+      - &nruvalcaba 4192 # Nancy Ruvalcaba
+      - &hcravens 2669 # Hiede Cravens
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'International Digital Marketing Assets'
+    folder_id: 16230 # Motion Pictures Marketing > MPG Intl Digital Marketing
+    reviewer_ids:
+      - &jlawson 2836
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'MPG Photos'
+    folder_id: 17907 # Motion Pictures Marketing > MPG Photo
+    additional_folder_ids:
+      - 52900 # MP Theatrical Photo
+    reviewer_ids:
+      - &rcampos3 1207 # Roxy Campos
+    include_subfolders: false
+
+  - line_of_business: &MPG 'Motion Pictures Group'
+    content_type: 'Print - Domestic'
+    folder_id: 56668 # Motion Pictures Marketing > MPG Print
+    reviewer_ids:
+      - &rshrestha 2783 # Robert Shrestha
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'Print - International'
+    folder_id: 62579 # Motion Pictures Marketing > MPG Print > MPG Print - International Only
+    reviewer_ids:
+      - *rshrestha
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'SPWA Photos'
+    folder_id: 48537 # Motion Pictures Marketing > MPG Intl Digital Marketing
+    reviewer_ids:
+      - &scoker 2469 # Sarah Coker
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'Trailers'
+    folder_id: 16021 # Motion Pictures Marketing > MPG AV Marketing Post Production > Final Trailers
+    additional_folder_ids:
+      - 12859 # MPG AV Marketing Post Production
+    reviewer_ids:
+      - &shapiroa 1157 # Art Shapiro
+    include_subfolders: false
+
+  - line_of_business: *MPG
+    content_type: 'TV Spots'
+    folder_id: 35489 # Motion Pictures Marketing > MPG TV Spot Delivery
+    additional_folder_ids:
+      - 57176 # Motion Pictures Marketing > MPG TV Spot Delivery > Localized TV Spots
+      - 56889 # Motion Pictures Marketing > MPG TV Spot Delivery > MPG SPRI AV
+      - 96551 # Motion Pictures Marketing > MPG TV Spot Delivery > OV Spots from Pixwell
+    reviewer_ids:
+      - &ntajudin 1120 # Norm Tajudin
+    include_subfolders: false
+
+  # SPHE
+  - line_of_business: &SPHE 'Sony Pictures Home Entertainment'
+    content_type: 'Digital Marketing'
+    folder_id: 39818 # SPHE > SPHE Digital Marketing
+    reviewer_ids:
+      - &cgalloway 348 # Christine Galloway
+    include_subfolders: false
+
+  - line_of_business: *SPHE
+    content_type: 'Digital Packshots'
+    folder_id: 43143 # SPHE > SPHE Digital Packshots
+    additional_folder_ids:
+      - 63370 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc/Digital - PreOrder
+      - 71224 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc/Digital - EST/ Promotional
+      - 63372 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc/Digital - RVOD/ Promotional
+      - 63371 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc/Digital - Bundles
+      - 63368 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc
+      - 63373 # /SPHE/SPHE Digital Packshots/SPHE Digital - adhoc/Digital - 4K Assets
+      - 74869 # /SPHE/SPHE Digital Packshots/SPHE TV Digital Packshots - Temp
+    reviewer_ids:
+      - &jpott 325 # Jessica Lefebvre
+      - &tpatten 380 # Tianne Patten
+      - &mwoolley 293 # Mark Woolley
+    include_subfolders: false
+
+  - line_of_business: *SPHE
+    content_type: 'Photos'
+    folder_id: 44883 # SPHE > SPHE Photo
+    additional_folder_ids:
+      - 62189 # SPHE > SPHE Photo > SPHE 3rd Party
+    reviewer_ids:
+      - *jpott
+      - *tpatten
+      - *mwoolley
+    include_subfolders: false
+
+  - line_of_business: *SPHE
+    content_type: 'Print'
+    folder_id: 49617 # SPHE > SPHE Print
+    reviewer_ids:
+      - *jpott
+      - *tpatten
+      - *mwoolley
+
+  - line_of_business: *SPHE
+    content_type: 'TV Spots, Trailers, EPK'
+    folder_id: 48488 # SPHE > SPHE Creative Advertising
+    reviewer_ids:
+      - &prserrano 326 # Patrick Sorrano
+      - &jpott 325 # Jessica Pott
+    include_subfolders: false
+
+  # SPT
+  - line_of_business: &SPT 'Sony Pictures Television'
+    content_type: 'SPT International Production Marketing Materials'
+    folder_id: 40602 # /SPT Intl Production/DMG Structure - SPTIP Asset Mgmt./Marketing Materials (SPT Intl Prod)
+    additional_folder_ids:
+      - 73568	# Archive - General
+      - 52814	# Region - Asia Pac
+      - 80169	# Region - Canada
+      - 52813	# Region - EMEA
+      - 52815	# Region - Latin America
+    reviewer_ids:
+      - &cgreg 2295 # Cole Greg
+    include_subfolders: true
+
+  - line_of_business: *SPT
+    content_type: 'SPT Marketing Released Materials'
+    folder_id: 39576 # /SPT Marketing/Released
+    reviewer_ids:
+      - *cgreg
+    include_subfolders: false
+
+  - line_of_business: *SPT
+    content_type: 'SPT Worldwide Distribution Files'
+    folder_id: 69486 # /SPT Marketing/Worldwide Distribution
+    additional_folder_ids:
+      - 136592 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Decks (Pinned)/MOW
+      - 74103 # SPT Marketing/Worldwide Distribution/MOWs
+      - 74104 # SPT Marketing/Worldwide Distribution/MOWs/Sales Sheets, Decks and Trailers
+      - 120727 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2020/Internal Meetings
+      - 98586 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Trailers/Reels
+      - 136469 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Pilot Cards
+      - 79289 # SPT Marketing/Worldwide Distribution/Formats/Unscripted Formats
+      - 114038 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2020
+      - 97857 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Presentations/Video Recordings
+      - 134428 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Decks (Pinned)
+      - 70257 # SPT Marketing/Worldwide Distribution/Feature Films
+      - 79288 # SPT Marketing/Worldwide Distribution/Formats/Scripted Formats
+      - 130885 # SPT Marketing/Worldwide Distribution/Formats/Eblasts/Finished Programming Highlights Eblast
+      - 130886 # SPT Marketing/Worldwide Distribution/Formats/Eblasts/Finished Programming Genre Eblasts
+      - 83541 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2018
+      - 110719 # SPT Marketing/Worldwide Distribution/Feature Films/Film Slate Decks
+      - 116915 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2020/Series-Specific
+      - 98277 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Presentations/Video Recordings/Industry Speakers
+      - 106855 # SPT Marketing/Worldwide Distribution/Feature Films/Anniversaries
+      - 106857 # SPT Marketing/Worldwide Distribution/Feature Films/M-Z
+      - 97517 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Study Guides
+      - 134435 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Decks (Pinned)/TV
+      - 134429 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Decks (Pinned)/Features
+      - 134432 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/TV Updates (pinned)
+      - 129107 # SPT Marketing/Worldwide Distribution/Formats/Presentations
+      - 116914 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2020/LAS General Information
+      - 84506 # SPT Marketing/Worldwide Distribution/Formats/Unscripted Formats Compilation Reels
+      - 85473 # SPT Marketing/Worldwide Distribution/Formats/Formats Catalogues
+      - 97279 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Research Materials
+      - 107110 # SPT Marketing/Worldwide Distribution/Localized Decks
+      - 85019 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2018/Research Materials
+      - 97280 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Research Materials/International Performance Summaries
+      - 75800 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2017
+      - 126723 # SPT Marketing/Worldwide Distribution/Formats/Eblasts
+      - 116913 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2020/Market Landscape
+      - 75794 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2014
+      - 134427 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page
+      - 106856 # SPT Marketing/Worldwide Distribution/Feature Films/A-L
+      - 106858 # SPT Marketing/Worldwide Distribution/Feature Films/SVOD First Release
+      - 97282 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Research Materials/Other Research Materials
+      - 76581 # SPT Marketing/Worldwide Distribution/Formats
+      - 98275 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Presentations/Video Recordings/EP Day
+      - 97281 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Research Materials/Research Sales Sheets
+      - 92526 # SPT Marketing/Worldwide Distribution/MOWs/Physical Print Material
+      - 110721 # SPT Marketing/Worldwide Distribution/Feature Films/Film Slate Decks/Archive
+      - 75792 # SPT Marketing/Worldwide Distribution/Markets
+      - 85196 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2018/Research Materials/Research Sales Sheets
+      - 85197 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2018/Research Materials/International Performance Summaries
+      - 76577 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018
+      - 78826 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018/Research Materials/International Performance Summaries
+      - 78827 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018/Research Materials/Other Research Reports
+      - 134433 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Features Updates (pinned)
+      - 134442 # SPT Marketing/Worldwide Distribution/CONNECT - Internal Page/Decks (Pinned)/Formats
+      - 75793 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2014
+      - 75796 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2015
+      - 75797 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2016
+      - 75799 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2017
+      - 134466 # SPT Marketing/Worldwide Distribution/Feature Films/SPIP
+      - 97516 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Sales Decks / Sales Sheets
+      - 98276 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Presentations/Video Recordings/Sony Speakers
+      - 98386 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019/Presentations/Video Recordings/LA Screenings Event
+      - 75791 # SPT Marketing/Worldwide Distribution/Television
+      - 75798 # SPT Marketing/Worldwide Distribution/Markets/MIPCOM 2016
+      - 76578 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018/Event Information
+      - 78824 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018/Research Materials
+      - 78825 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2018/Research Materials/Research Sales Sheets
+      - 84443 # SPT Marketing/Worldwide Distribution/Formats/Unscripted Prints
+      - 92615 # SPT Marketing/Worldwide Distribution/Formats/Email Signatures
+      - 92931 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2019
+      - 75795 # SPT Marketing/Worldwide Distribution/Markets/LA Screenings 2015
+    reviewer_ids:
+      - *cgreg
+    include_subfolders: true
+
+staging: &qa
+  - *default
+  # Test
+  - line_of_business: &runner 'Runner'
+    content_type: 'Runner Test Folders'
+    folder_id: 1198 # DMG
+    reviewer_ids:
+      - &cwong1 133 # Catherine Fung
+      - &kstevens 128 # Keith Stevens
+      - &cblanchard 739 # Craig Blanchard
+    include_subfolders: false
+
+  - line_of_business: *runner
+    content_type: 'Craig Test'
+    folder_id: 17819 # DMG/Craig test
+    reviewer_ids:
+      - *cwong1
+      - *kstevens
+      - *cblanchard
+    include_subfolders: false
+
+  - line_of_business: *runner
+    content_type: 'Catherine Test'
+    folder_id: 1549 # DMG/Catherine Test
+    reviewer_ids:
+      - *cwong1
+    include_subfolders: false
+
+integration:
+  - *qa
+
+development:
+  - *qa
+  - line_of_business: *runner
+    content_type: 'Test'
+    folder_id: 2 # Folder A
+    additional_folder_ids:
+      - 4
+      - 5
+    reviewer_ids:
+      - 1
+      - 2
+    include_subfolders: false
+  - line_of_business: 'Reapproval testing'
+    content_type: 'Test 2'
+    folder_id: 4 # Folder B
+    reviewer_ids:
+      - 3
+    include_subfolders: false
+
+test:
+  - line_of_business: *runner
+    content_type: 'Test Foo'
+    folder_id: 2 # Folder A
+    reviewer_ids:
+      - 1
+    include_subfolders: false
+  - line_of_business: *runner
+    content_type: 'Test Bar'
+    folder_id: 3 # Folder B
+    reviewer_ids:
+      - 1
+    include_subfolders: false

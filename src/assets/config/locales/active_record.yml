@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    errors:
+      models:
+        asset_item:
+          attributes:
+            base:
+              date_extend_failure: 'Failed to extend archive date'
+        asset_item_group:
+          attributes:
+            asset_items:
+              max_count_exceeded: 'Maximum number of asset items exceeded'
+        cart:
+          attributes:
+            asset_items:
+              invalid_access: 'Invalid access for at least one asset item'
+              invalid_params: 'Invalid parameters'
+              maximum_exceeded: 'exceeds number allowed for a cart'
+        external_asset:
+          attributes:
+            external_system:
+              missing: 'Missing or invalid external system'
+        share:
+          attributes:
+            expiration:
+              invalid: 'Expiration must be iso8601 format'
+            asset_items:
+              not_downloadable: 'Asset items are not all downloadable'
+              not_shareable: 'Asset items are not all shareable'
+            share_type:
+              unrecognized: 'Unrecognized share_type'
+            share_template:
+              missing: 'Missing or invalid share template'

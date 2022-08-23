@@ -1,0 +1,74 @@
+en:
+  upload:
+    add_files:
+      subheader:
+        heading: "%{number_of_files} files added. %{aspera_limit} files maximum."
+        subheading-warn: "Whoa! You're trying to upload more than %{aspera_limit} files. We can only do %{aspera_limit} at a time."
+      from_basic_upload_note_part_one: "Your files will be uploaded to"
+      from_basic_upload_note_part_two: ". You can modify the folder destination(s) in the next step."
+    footer: "Please do not exit your browser while your files are uploading"
+    select_folders:
+      subheader:
+        heading: "%{number_of_folders} folders selected."
+      headings:
+        favorite_folders: "Favorite Folders"
+        preselected_folders: "Preselected Folders"
+        folders: "Folders"
+    upload_status:
+      invalid_file:
+        bad_characters: ": / \\ \" ; ' ? ! > < & * | @ Are Unsupported Characters"
+        no_extension: "Folders not allowed in HTTP Transfers. Retry with Aspera"
+        bad_extension: "Unsupported File Type"
+        invalid_package: "Unable to read folder contents, please use Chrome, Firefox, or Safari."
+        invalid_package_item_count: "Please upload a package with fewer than 20,000 items"
+      subheader:
+        heading: "%{number_of_files} files uploading."
+      processing: "Please don't navigate out of Runner or you may lose your upload"
+      complete: "Complete"
+      upload_completed: "Upload Completed"
+      uploading: "Uploading"
+      queued: Upload Queued
+      uploading_with_percentage: "Uploading %{percentage}%"
+      uploading_with_file_and_percentage: "Uploading (%{file}) %{percentage}%"
+      failed: "Failed"
+      started: "Upload Started"
+      starting: "Starting Upload..."
+      too_many_files: "Whoa! You're trying to upload more than 500 files. We can only do 500 at a time."
+      back_to_folder: "BACK TO FOLDER"
+    upload_metadata_template:
+      subheader:
+        heading: "How do you want to enter metadata?"
+    upload_metadata:
+      subheader:
+        heading: "Enter metadata information"
+      feedback: "Metadata Applied"
+      assets_column_header: "ASSETS"
+      asset_type_label: "Asset Type"
+      asset_subtype_label: "Asset Sub-Type"
+      title_column_header: "TITLE"
+      content_details_section_header: "CONTENT DETAILS"
+      description_label: "Description"
+      version_label: "Version"
+      usage_section_header: "USAGE"
+      asset_type_column_header: "ASSET TYPE"
+      classification_label: "Classification"
+      status_label: "Status"
+      usage_restrictions_label: "Usage Restriction"
+      selected_titles: "Selected Titles"
+      no_results_found: "No Results Found"
+    buttons:
+      add_files: "ADD FILES"
+      apply: "APPLY"
+      cancel: "CANCEL"
+      close: "CLOSE"
+      next: "NEXT"
+      previous: "PREVIOUS"
+      upload: "UPLOAD"
+      done: "DONE"
+    progress_labels:
+      add_files: "ADD FILES"
+      select_folders: "SELECT FOLDERS"
+      submitted: "SUBMITTED"
+      manage: "MANAGE"
+    window_close_warning: >-
+      Hold on! You're currently uploading files. If you close this browser window your upload will fail.

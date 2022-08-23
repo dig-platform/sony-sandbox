@@ -1,0 +1,186 @@
+---
+en:
+  mobile:
+    launchpad:
+      recent_searches: RECENT SEARCHES
+      title_search: Title Search
+      search: Search
+      welcome: Welcome, %{name}
+    logout:
+      title: Hold on!
+      prompt: Are you sure you want to log out?
+      actions:
+        cancel: CANCEL
+        logout: LOG OUT
+    searches:
+      results: Results
+      no_results: THERE ARE NO SEARCH RESULTS
+      filters:
+        apply: APPLY
+      sort_options:
+        relevance: RELEVANCE
+        name: NAME
+        type: TYPE
+        title: TITLE
+        size: SIZE
+        upload_date: UPLOAD DATE
+    share:
+      header: CREATE SHARE
+      asset_count: 'Assets: %{count}'
+      steps:
+        recipients: RECIPIENTS
+        permissions: PERMISSIONS
+        generate_url: GENERATE URL
+        actions:
+          next: NEXT
+          share: SHARE
+          generate: GENERATE LINK
+          copy: COPY LINK
+      feedback:
+        link_copied: LINK COPIED
+      validation:
+        title: Hold on!
+        description: At the moment, you are unable to share some of the selected assets.
+        prompt: Do you want to continue without these assets?
+        non_shareable: Asset Permissions
+        actions:
+          cancel: CANCEL
+          continue: CONTINUE
+    custom_metadata:
+      cmdg:
+        header_name: CMDG
+        cmdg_vendor: CMDG Vendor
+        source_identifier: Source Identifier
+      content_details:
+        header_name: Content Details
+        angle: Angle
+        call_to_action: Call to Action
+        city: City
+        closed_caption: Closed Caption
+        continuity_list: Continuity List
+        creation_date: Creation Date
+        description: Description
+        forced_subtitles: Forced Subtitles
+        isci: ISCI
+        keywords: Keywords
+        language_audio: Language - Audio
+        language_dubbed: Language - Dubbed
+        language_original: Language - Original
+        language_subtitled: Language - Subtitled
+        language_text: Language - Text
+        media_type: Media Type
+        one_sheet_version: 1-Sheet Version
+        orientation: Orientation
+        package_type: Package Type
+        picture_version: Picture Version
+        region: Region
+        setting: Setting
+        social_media_type: Social Media Type
+        source_media: Source Media
+        spot_length: Spot Length
+        spot_name: Spot Name
+        territory: Territory
+        translator_name: "Translator Name"
+        version: Version
+        year: Year
+      gold:
+        header_name: Gold
+        sony_gold_po: Sony/Gold PO# (xxxxxx-x)
+      spt:
+        header_name: SPT
+        spt_event: SPT Event
+        network_or_channel: Network Or Channel
+        spt_dam_source: SPT DAM Source
+        qc_status: QC Status
+        spoiler: Spoilder?
+        job_number: Job Number
+        pass_length: Passes
+      mpg:
+        header_name: MPG
+        mpaa_band: MPAA Band
+        script_vendor: Script Vendor
+      photo:
+        header_name: Photo
+        photo_edit_type: Photo Edit Type
+        photo_approval: Photo Approval
+        caption: Caption
+        talent_in_image: Talent In Image
+        copyright: Copyright
+        photo_credit: Photo Credit
+        photographer: Photographer
+        shoot_date: Shoot Date
+        retouched: Reoutched
+        event_description: Event Description
+        premiere_description: Premiere Description
+        custom_edit_description: Custom Edit Description
+        photo_request: Photo Request
+      architectural_services:
+        header_name: Architectural Services
+        building_floor: Building Floor
+        building_number_and_name: Building Number and Name
+        building_year: Building Year
+        project_type: Project Type
+        plan_type: Plan Type
+      dbb:
+        header_name: DBB
+        assembly: Assembly
+        dbb_spec_id: DBB Spec ID
+        kit_id: Kit ID
+        line_item_id: Line Item ID
+      prism:
+        header_name: Prism
+        alpha_id: Alpha ID
+      usage:
+        header_name: Usage
+        approval_status: Approval Status
+        asset_owner: Asset Owner
+        audio_replacement: Audio Replacement
+        classification: Classification
+        managed_by: Managed By
+        replacement_date: Replacement Date
+        replacement_reason: Replacement Reason
+        restriction: Restriction
+        status: Status
+        subtype: Subtype
+      asset_management:
+        header_name: Asset Management
+        am_vendor: AM Vendor
+        picture_reference_barcode: Picture Reference Barcode
+        picture_source_barcode: Picture Source Barcode
+        audio_source_barcod: Audio Source Barcode
+      format_details:
+        header_name: Format Details
+        application_info: Application Info
+        aspect_ratio_type: Aspect Ratio Type
+        audio_configuration: Audio Configuration
+        audio_replacement: Audio Replacement
+        audio_stream_content: Audio Stream Content
+        broadcast_standard: Broadcast Standard
+        color_space: Color Space
+        conform_type: Conform Type
+        content_aspect_ratio: Content Aspect Ratio
+        format: Format
+        image_content: Image Content
+        number_of_reels_parts: Number of Reels/Parts
+        passes: Passes
+        presentation_aspect_ratio: Presentation Aspect Ratio
+        bit_depth: Bit Depth
+        scan_type: Scan Type
+        tape_id: Tape ID
+        timecode: Timecode
+        three_dimensional_attribute: 3D Attribute
+        uhd_dynamic_range: UHD Dynamic Range
+        version: Version
+        video_content: Video Content
+        program_start: Program Start
+        program_end: Program End
+      tech_info:
+        header_name: Technical Info
+        audio_streams:
+          header_name: Audio Streams
+          bitrate: Bitrate
+          channel_count: Channel Count
+          codec: Codec
+          layout: Layout
+          sample_rate: Sample Rate
+        frame_rate: Frame Rate

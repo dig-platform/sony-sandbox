@@ -1,0 +1,9 @@
+---
+:en:
+  :admin_types:
+  - :key: Non Admin
+    :value: non admin
+  - :key: System Admin
+    :value: system admin
+  - :key: Delegated Admin
+    :value: delegated admin

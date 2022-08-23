@@ -1,0 +1,21 @@
+en:
+  asset_items:
+    replace_asset_modal:
+      heading: "Replace Asset"
+    update_thumbnail:
+      heading: "Update Thumbnail"
+      close: "Close"
+    navigation:
+      back_to_cart: "Back to Cart"
+      back_to_folder: "Back to Folder"
+      back_to_search: "Back to Search Results"
+    scheduled_actions:
+      table_caption:
+        copy: 'Asset Copy'
+        move: 'Asset Move'
+        delete: 'Asset Deletion'
+      scheduled_for: 'Scheduled For'
+      scheduled_by: 'Scheduled By'
+      source_folder: 'Source Folder'
+      folder_destination: 'Folder Destination'
+      folder: 'Folder'

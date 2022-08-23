@@ -1,0 +1,8 @@
+en:
+  lists:
+    linked_assets_tooltip: "Linked Assets"
+    metadata_viewer_tooltip: "Metadata"
+    rejected: "Rejected"
+    restricted_approval: "Restricted Approval Status"
+    split_approval: "Split Approval"
+    secret_asset_tooltip: "Classification: Secret"

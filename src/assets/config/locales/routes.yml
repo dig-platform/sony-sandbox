@@ -1,0 +1,20 @@
+---
+en:
+  routes:
+    default: Runner
+    assetItems:
+      default: Runner - Asset Details
+    cart:
+      default: Runner - Cart
+    fileRequests:
+      default: Runner - File Requests
+    folders:
+      default: Runner - Folders
+      requestFiles:
+        default: Runner - Request Files
+    searchResultsList:
+      default: Runner - Search
+    shares:
+      default: Runner - Share
+    upload:
+      default: Runner - Upload

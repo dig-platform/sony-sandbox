@@ -1,0 +1,354 @@
+---
+- Abu Dhabi
+- Abu Dhabi/English-speaking
+- Abu Dhabi/French-speaking
+- Afghanistan
+- Albania
+- Algeria/English-speaking
+- Algeria/French-speaking
+- Andorra
+- Andorra/French
+- Andorra/Spanish
+- Angola/English-speaking
+- Angola/Portuguese-speaking
+- Anguilla
+- Antigua & Barbuda
+- Argentina
+- Armenia
+- Aruba
+- Australia
+- Austria
+- Azerbaijan
+- Bahamas/English-speaking
+- Bahamas/Spanish-speaking
+- Bahrain
+- Bangladesh
+- Barbados
+- Belarus
+- Belgium/Dutch-speaking
+- Belgium/French-speaking
+- Belize
+- Benin/English-speaking
+- Benin/French-speaking
+- Bermuda
+- Bhutan
+- Bolivia
+- Bonaire
+- Bophuthatswana
+- Bosnia/Herzegovina
+- Botswana/English-speaking
+- Brazil
+- British Virgin Islands
+- Brunei
+- Bulgaria
+- Burkina Faso/English-speaking
+- Burkina Faso/French-speaking
+- Burundi
+- Burundi/English-speaking
+- Cambodia
+- Cameroon/English-speaking
+- Canada
+- Canada/English-speaking
+- Canada/French-speaking
+- Canary Islands
+- Cape Verde/English-speaking
+- Cape Verde/Portuguese-speaking
+- Cayman Islands
+- Central African Republic
+- Central African Republic/English-speaking
+- Chad/Arabic-speaking
+- Chad/English-speaking
+- Chad/French-speaking
+- Chile
+- China
+- Ciskei
+- Colombia
+- Comoros/English-speaking
+- Congo/English-speaking
+- Congo/French-speaking
+- Costa Rica
+- Croatia
+- Cuba
+- Curacao
+- Cyprus
+- Cyprus/Greek-speaking
+- Czech Republic
+- Denmark
+- Djibouti
+- Djibouti/English-speaking
+- Dominica
+- Dominican Republic/Spanish-speaking
+- Dubai/English-speaking
+- Dubai/French-speaking
+- East Germany
+- Ecuador
+- Egypt
+- Egypt/Arabic-speaking
+- Egypt/English-speaking
+- Egypt/French-speaking
+- El Salvador
+- Equatorial Guinea
+- Equatorial Guinea/English-speaking
+- Eritrea
+- Eritrea/English-speaking
+- Estonia
+- Ethiopia
+- Ethiopia/English-speaking
+- Fiji
+- Finland
+- France
+- French Guiana
+- French Guiana/French-speaking
+- French Guiana/Spanish-speaking
+- French Polynesia
+- Futuna
+- Gabon/English-speaking
+- Gambia
+- Gambia/English-speaking
+- Georgia
+- Germany
+- Ghana/English-speaking
+- Gibraltar
+- Greece
+- Greenland
+- Grenada
+- Guadeloupe/French-speaking
+- Guadeloupe/Spanish-speaking
+- Guatemala
+- Guayana
+- Guinea
+- Guinea-Bissau/English-speaking
+- Guinea-Bissau/Portuguese-speaking
+- Guinea/English-speaking
+- Guinea/French-speaking
+- Haiti/Spanish-speaking
+- Honduras
+- Hong Kong
+- Hungary
+- Iceland
+- India
+- India/Assamese-speaking
+- India/Bengali-speaking
+- India/Bhojpuri-speaking
+- India/English-speaking
+- India/Gujarati-speaking
+- India/Hindi-speaking
+- India/Kannada-speaking
+- India/Malayalam-speaking
+- India/Marathi-speaking
+- India/Oriya-speaking
+- India/Punjabi-speaking
+- India/Tamil-speaking
+- India/Telugu-speaking
+- India/Urdu-speaking
+- Indonesia
+- Iran
+- Iraq
+- Iraq/English-speaking
+- Iraq/French-speaking
+- Ireland
+- Israel
+- Italy
+- Italy/German-speaking
+- Italy/Italian-speaking
+- Ivory Coast
+- Ivory Coast/English-speaking
+- Ivory Coast/French-speaking
+- Jamaica
+- Jamaica/English-speaking
+- Japan
+- Japan-Osaka
+- Jordan
+- Jordan/Arabic-speaking
+- Jordan/English-speaking
+- Jordan/French-speaking
+- Kazakhstan
+- Kenya
+- Kenya/English-speaking
+- Kiribati
+- Kosovo
+- Kuwait
+- Kyrgyzstan
+- Laos
+- Latvia
+- Lebanon
+- Lebanon/Arabic-speaking
+- Lebanon/English-speaking
+- Lesotho
+- Liberia/English-speaking
+- Libya
+- Libya/English-speaking
+- Liechtenstein
+- Liechtenstein/German-speaking
+- Lithuania
+- Luxembourg/Dutch-speaking
+- Luxembourg/French
+- Luxembourg/German
+- Macau
+- Macedonia
+- Madagascar/English-speaking
+- Madagascar/French-speaking
+- Madeira
+- Malawi/English-speaking
+- Malaysia
+- Maldives
+- Mali/English-speaking
+- Mali/French-speaking
+- Malta/English-speaking
+- Malta/Italian-speaking
+- Martinique/French-speaking
+- Martinique/Spanish-speaking
+- Mauritania/English-speaking
+- Mauritius/English-speaking
+- Mauritius/French-speaking
+- Mayotte
+- Mexico
+- Moldova
+- Monaco/French-speaking
+- Monaco/Italian-speaking
+- Mongolia
+- Montenegro
+- Montserrat
+- Morocco/English-speaking
+- Morocco/French-speaking
+- Mozambique/English-speaking
+- Mozambique/Portuguese-speaking
+- Myanmar
+- Namibia/English-speaking
+- Nauru
+- Nepal
+- Netherlands
+- New Caledonia
+- New Caledonia/French-speaking
+- New Zealand
+- Nicaragua
+- Niger/English-speaking
+- Niger/French-speaking
+- Nigeria
+- Nigeria/English-speaking
+- North Korea
+- Northern Ireland
+- Norway
+- Oman
+- Pakistan
+- Palau
+- Panama
+- Papua New Guinea
+- Paraguay
+- Peru
+- Philippines
+- Poland
+- Portugal
+- Portugal/English-speaking
+- Portugal/Portuguese-speaking
+- Puerto Rico/English-speaking
+- Puerto Rico/Spanish-speaking
+- Qatar
+- Quebec/English-speaking
+- Quebec/French-speaking
+- Reunion
+- Reunion/English-speaking
+- Reunion/French-speaking
+- Romania
+- Russia
+- Rwanda/English-speaking
+- Saba
+- San Marino
+- Sao Tome & Principe/English-speaking
+- Sao Tome & Principe/Portuguese-speaking
+- Saudi Arabia
+- Saudi Arabia/English-speaking
+- Saudi Arabia/French-speaking
+- Senegal/English-speaking
+- Senegal/French-speaking
+- Serbia
+- Serbia & Montenegro
+- Serbia/English-speaking
+- Seychelles/English-speaking
+- Seychelles/French-speaking
+- Sierra Leone/English-speaking
+- Singapore
+- Slovakia
+- Slovenia
+- Solomon Islands
+- Somalia
+- Somalia/English-speaking
+- South Africa
+- South Korea
+- Spain
+- 'Spain [including Canary Islands, Andorra]'
+- Sri Lanka
+- St. Croix
+- St. Eustatius
+- St. Helena
+- St. John
+- St. Kitts-Nevis/English-speaking
+- St. Kitts-Nevis/French-speaking
+- St. Kitts-Nevis/Spanish-speaking
+- St. Lucia
+- St. Maarten
+- St. Martin
+- St. Martin/French-speaking
+- St. Martin/Spanish-speaking
+- St. Pierre & Miquelon
+- St. Thomas
+- St. Vincent & Grenadines
+- Sudan
+- Sudan/English-speaking
+- Surinam/Spanish-speaking
+- Swaziland/English-speaking
+- Sweden
+- Switzerland
+- Switzerland/French
+- Switzerland/German
+- Switzerland/Italian
+- Syria/Arabic-speaking
+- Syria/English-speaking
+- Syria/French-speaking
+- Tahiti
+- Tahiti/French-speaking
+- Taiwan
+- Tajikistan
+- Tanzania
+- Thailand
+- Togo/English-speaking
+- Tonga
+- Transkei
+- Trinidad & Tobago
+- Tunisia/English-speaking
+- Tunisia/French-speaking
+- Turkey
+- Turkmenistan
+- Turks & Caicos
+- Tuvalu
+- U.S. Virgin Islands
+- U.S./English
+- U.S./Spanish
+- "U.S.A.[excl t's & p's]"
+- Uganda
+- Uganda/English-speaking
+- Ukraine
+- United Arab Emirates
+- United Kingdom
+- Uruguay
+- Uzbekistan
+- Vanuatu
+- Vatican City
+- Venda
+- Venezuela
+- Vietnam
+- Wallis
+- Wallis & Futuna
+- Western Sahara
+- Western Samoa
+- World
+- Worldwide
+- 'World(SPHE)'
+- 'World [excluding USA]'
+- Yemen/Arabic-speaking
+- Yemen/English-speaking
+- Yemen/French-speaking
+- Zaire/English-speaking
+- Zambia/English-speaking
+- Zanzibar/English-speaking
+- Zimbabwe/English-speaking

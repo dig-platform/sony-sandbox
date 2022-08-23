@@ -1,0 +1,206 @@
+en:
+  search:
+    advanced:
+      heading: Advanced Search
+      results_heading: Advanced Search Results
+      subheading: Fill in specific criteria to narrow down results.
+      clear_all: CLEAR ALL
+      form:
+        more_options: MORE OPTIONS
+        date_range:
+          between: Between
+          and: and
+        dropdown:
+          empty: THERE ARE NO TITLE RESULTS
+        alpha_id: ALPHA ID
+        asset_type: ASSET TYPE
+        asset_class: ASSET CLASS
+        creation_date: CREATION DATE
+        file_extension: FILE EXTENSION
+        language_audio: LANGUAGE AUDIO
+        language_dubbed: LANGUAGE DUBBED
+        language_original: LANGUAGE ORIGINAL
+        language_subtitled: LANGUAGE SUBTITLED
+        language_text: LANGUAGE TEXT
+        orientation: ORIENTATION
+        presentation_aspect_ratio: PRESENTATION ASPECT RATIO
+        pixel_dimensions: PIXEL DIMENSIONS
+        search_terms: SEARCH TERMS
+        shoot_date: SHOOT DATE
+        territory: TERRITORY
+        titles: TITLE
+        upload_date: UPLOAD DATE
+        buttons:
+          submit: SEARCH
+    bar:
+      global: SEARCH
+      search_title: SEARCH BY TITLE
+      search_folder: SEARCH IN FOLDER
+      placeholder:
+        global: i.e. trailer, "Breaking Bad", season:30, etc.
+        search_folder: Search in current folder and sub-folders
+        search_title: i.e. "Spider-Man 2", "Blacklist 201", "Seinfeld 08"
+      include_folders: Include folders in search results
+    error_occured: Sorry, we dont understand this search entry. Please refer to the Search Help section for search guidelines.
+    filters:
+      aggregations:
+        titles: Title
+        series: Series
+        season: Season
+        episode: Episode
+        alphas: Alpha
+        asset_class: Asset Class
+        asset_type: Asset Type
+        asset_subtype: Asset Sub-type
+        social_media_type: Social Media Type
+        subtype: Usage Subtype
+        file_extension: File Extension
+        folder_ids: Folders
+        title_type: Title Type
+        asset_owner: Asset Owner
+        managed_by: Managed By
+        usage_classification: Classification
+        usage_status: Status
+        approval_status: Approval Status
+        region: Region
+        territory: Territory
+        language_original: Language - Original
+        language_audio: Language - Audio
+        language_text: Language - Text
+        language_subtitled: Language - Subtitled
+        language_dubbed: Language - Dubbed
+        media_type: Media Type
+        orientation: Orientation
+        call_to_action: Call to Action
+        setting: Setting
+        format: Format
+        video_content: Video Content
+        image_content: Image Content
+        photo_edit_type: Photo Edit Type
+        photo_approval: Photo Approval
+        retouched: Retouched
+        qc_status: QC Status
+        network_or_channel: Network Or Channel
+        spt_event: SPT Event
+        spt_dam_source: SPT DAM Source
+        pass_length: Pass Length
+        year: Year
+        subtitle_type: Subtitle Type
+        dcs_vendor: DCS Vendor
+        am_vendor: AM Vendor
+        building_number_and_name: Building Number and Name
+        city: City
+        project_type: Project Type
+        plan_type: Plan Type
+        building_year: Building Year
+        pixel_dimensions: Pixel Dimensions
+        broadcast_standard: Broadcast Standard
+        frame_rate: Frame Rate
+        aspect_ratio_type: Aspect Ratio Type
+        presentation_aspect_ratio: Presentation Aspect Ratio
+        content_aspect_ratio: Content Aspect Ratio
+        dbb_spec_id: DBB Spec ID
+        assembly: Assembly
+        audio_configuration: Audio Configuration
+        color_space: Color Space
+        uploaded_by: Uploaded By
+        curation_group: Curation Group
+        archive_status: Archive Status
+      ordered_aggregations:
+        - folder_ids
+        - titles
+        - series
+        - season
+        - episode
+        - alphas
+        - asset_class
+        - asset_type
+        - asset_subtype
+        - social_media_type
+        - media_type
+        - archive_status
+        - subtype
+        - subtitle_type
+        - region
+        - territory
+        - video_content
+        - image_content
+        - file_extension
+        - orientation
+        - pixel_dimensions
+        - language_audio
+        - language_dubbed
+        - language_text
+        - language_subtitled
+        - language_original
+        - call_to_action
+        - setting
+        - format
+        - audio_configuration
+        - broadcast_standard
+        - frame_rate
+        - aspect_ratio_type
+        - presentation_aspect_ratio
+        - content_aspect_ratio
+        - dbb_spec_id
+        - assembly
+        - color_space
+        - title_type
+        - uploaded_by
+        - am_vendor
+        - dcs_vendor
+        - approval_status
+        - photo_approval
+        - photo_edit_type
+        - retouched
+        - qc_status
+        - network_or_channel
+        - spt_event
+        - spt_dam_source
+        - pass_length
+        - year
+        - curation_group
+        - asset_owner
+        - managed_by
+        - usage_classification
+        - usage_status
+        - city
+        - building_number_and_name
+        - building_year
+        - project_type
+        - plan_type
+      active_metadata_toggle: Asset details
+      add_to_favorites: Add To Favorites
+      clear_all: CLEAR ALL
+      disabled_metadata_toggle: Make a selection to view asset details
+      keep_filters_selected: Keep Filters Selected
+      label: Filters
+      less: less
+      more: more
+      no_assets: No assets to filter.
+      remove_from_favorites: Remove From Favorites
+      selected: Selected Filters
+      subscribe: SUBSCRIBE
+      unsubscribe: UNSUBSCRIBE
+    folders:
+        selected: Selected Folders
+    form_placeholder: i.e. trailer, "Breaking Bad", season:30, etc.
+    grid:
+      item:
+        sub_heading: Season %{season}, %{title_name}
+        assets: 'Assets: %{asset_count}'
+    heading: 'Search: %{query}'
+    linked_assets: Linked Assets
+    mcs_import_id: Imported from Ci
+    shared_assets: Duplicate Assets
+    title_id:  'Title Search: %{query}'
+    logout: logout
+    no_matches: THERE ARE NO RESULTS
+    result: Result
+    results: Results
+    sub_heading: Results
+    sub_heading_folder: Folder Results
+    tooltips:
+      expand: "Expand"
+      shrink: "Shrink"
+

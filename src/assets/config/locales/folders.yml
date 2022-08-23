@@ -1,0 +1,152 @@
+en:
+  folders:
+    folder: "FOLDER"
+    create_folder_modal:
+      create: "Create"
+      heading: "Create New Folder"
+      max_length: "80 characters max"
+      message: "Please enter a name for the new folder"
+      placeholder: "Enter folder name"
+      inherit_permissions: "Apply parent folder user permissions"
+      inherit_folder_actions: "Apply parent folder actions"
+    empty_list: "There are zero items in this folder"
+    file_request_badge: "Active File Request"
+    file_delete_modal:
+      buttons:
+        cancel: "Cancel"
+        confirm: "Confirm"
+      error: "Something went wrong. Please try again."
+      heading: "Confirm Asset Deletion"
+      message: "Are you sure you want to delete this asset?"
+      message_plural: "Are you sure you want to delete these assets?"
+    folder_delete_modal:
+      buttons:
+        cancel: 'CANCEL'
+        confirm: 'CONFIRM'
+      error: "Something went wrong. Please try again."
+      heading: 'CONFIRM FOLDER DELETION'
+      message: 'Are you sure you want to delete this folder?'
+    folder_delete_validation_modal:
+      buttons:
+        close: 'CLOSE'
+      heading: 'HOLD ON...'
+      message: 'The folder you want to delete contains at least one folder or asset. Please delete them all before deleting this folder.'
+      note: '* NOTE: If you feel you have deleted everything but are still seeing this message, please contact '
+    folder_note:
+      tooltip: Folder Note
+      edit: Edit
+      close: Close
+      delete: Delete Note
+      save: Save
+      updated: Folder Updated
+      failed: Update Failed
+    heading: "Folders"
+    navigate_up: 'Go up one folder'
+    sub_heading:
+      folders: "Folders"
+      files: "Files"
+      online: Online
+      archived: Archived
+      asset_delete: "Asset Delete Policy"
+      delete_policy: "%{delete_policy} days"
+    tools:
+      add_selected_to_cart: "Add Selected to Cart"
+      copy_to_folders: "Copy To Folders"
+      create_folder: "Create Folder"
+      delete_selected: "Delete Selected"
+      edit_metadata: "Edit Metadata"
+      link_assets: "Link Assets"
+      move_to_folders: "Move To Folders"
+      request_files: "Request Files"
+      upload_asset: "Upload Files"
+    rename_folder_modal:
+      confirm: "Confirm"
+      heading: "Rename Folder"
+      max_length: "80 characters max"
+      message: "Please enter a new name for the folder."
+      placeholder: "Enter folder name"
+    request_files:
+      metadata: "Metadata"
+      request_details: "Request Details"
+      summary_and_send: "Summary & Send"
+      skip: 'SKIP'
+      previous: 'PREVIOUS'
+      next: 'NEXT'
+      cancel: 'CANCEL'
+      send: 'SEND'
+      generate_link: 'GENERATE LINK'
+      choose_type_state:
+        sub_heading: 'Request Files'
+        email:
+          header: REQUEST EMAIL
+          subheader: Create, configure and send a request email
+        link:
+          header: REQUEST LINK URL
+          subheader: Generate a quick request link to upload assets.
+      link_state:
+        sub_heading: 'File Request Upload Link URL'
+        default_request_name: "Files for %{folder} Folder"
+        form_header: 'REQUEST LINK'
+        allow_add_metadata: 'Allow Uploaders To Add metadata'
+        notify_all_recipients: 'Notify All Recipients When Files Are Uploaded'
+        require_contributors_email: 'Require Contributors Email'
+        name: 'Request Name'
+        label: 'Request URL'
+      metadata_state:
+        sub_heading: "Choose a template if you'd like to assign metadata to your requested files."
+      details_state:
+        sub_heading: 'Enter delivery request information'
+        email_note: "*A copy of this email will be sent to you."
+        default_message: "Hello! Please deliver files when they become available. Thank you!"
+        default_subject: "%{first_name} %{last_name} is requesting files from you!"
+        notify_all_recipients: 'Include all recipients on upload notifications'
+        notify_uploader: Notify uploader when files are uploaded
+      confirmation_state:
+        sub_heading: "Review summary"
+        folder_label: "Folder"
+        recipients_label: "Recipients"
+        subject_label: "Subject"
+        message_label: "Message"
+        expiration_label: "Expiration"
+        no_metadata: "There is no metadata applied"
+        note: "Notes:"
+        notify_all_recipients_note: 'All recipients will receive share upload notifications.'
+        notify_uploader_note: 'Uploader will receive share upload notifications.'
+        irregular_labels:
+          asset_subtype: "Asset Sub-Type"
+          one_sheet_version: "1-Sheet Version"
+          language_original: "Language-Original"
+          language_audio: "Language-Audio"
+          language_subtitled: "Language-Subtitled"
+          cmdg_vendor: "CMDG Vendor"
+          am_vendor: "AM Vendor"
+          sony_gold_po: "Sony/Gold PO#"
+          spt_event: "SPT Event"
+          spt_dam_source: "SPT DAM Source"
+          qc_status: "QC Status"
+          spoiler: "Spoiler?"
+          mpaa_band: "MPAA Band"
+          dbb_spec_id: "DBB Spec ID"
+          audio_replacement: "Audio Replacement?"
+          tape_id: "Tape ID"
+          number_of_reels_parts: "Number of Reels/Parts"
+          three_dimensional_attribute: "3D Attribute"
+          uhd_dynamic_range: "UHD Dynamic Range"
+      validations:
+        recipients: "Recipients"
+        subject: "Subject"
+        message: "Message"
+        expiration: "Expiration"
+    add_asset:
+      back: 'Back'
+      cancel: 'CANCEL'
+      previous: 'PREVIOUS'
+      save: 'SAVE NEW ASSET'
+      skip: 'SKIP'
+      header:
+        step1: Choose a metadata template
+        step2: Name the asset and provide metadata
+      metadata_state:
+        sub_heading: "Choose a template if you'd like to assign metadata to your new assets."
+      enter_metadata:
+        sub_heading: Enter metadata

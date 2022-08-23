@@ -1,0 +1,607 @@
+---
+en:
+  activerecord:
+    attributes:
+      asset_item:
+        asset_file:
+          empty: "No file linked to this asset."
+        type: "Asset Type:"
+      user:
+        email: "Username"
+        password: "Password"
+    errors:
+      models:
+        folder:
+          duplicate_folder: "Duplicate folder name."
+          invalid_permission: "You do not have permission for this action"
+    model:
+      asset_item:
+        errors:
+          asset_file: "Oops. We couldn't save your file. Try again later."
+        update:
+          asset_file: "New file uploaded."
+  advanced_usage_restriction:
+    asset_class:
+      video: Video
+    usage:
+      ww: Worldwide
+      int: International (Not U.S.)
+      dom: Domestic (U.S.)
+      online: Online-Only
+      channel: Channel or Territory
+      limited: Limited Usage Restriction
+    options:
+      video: Video
+      music: Music
+      vo: Voice Over
+      channel: Specified Channel
+      territory: Specified Territory
+      internal: Reference and Internal
+      sales: Sales
+      warning: Very Limited Clearances
+  drop:
+    empty_button_text: "ADD FILES"
+    empty_heading_text: "DRAG FILES HERE"
+    empty_info_text: ""
+    incoming_heading_text: "INCOMING!"
+  aspera:
+    drop:
+      empty_heading_text: "DRAG FILES AND FOLDERS HERE"
+      edge_browser:
+        empty_heading_text: "USE THE ADD FILES BUTTON"
+        empty_subheading_text: "If you want to upload folders please use Chrome, Firefox or Safari"
+    errors:
+      thumbnail:
+        multiple: "Whoops! Please select only one file."
+        size: "Whoops! Please upload an image less than 20MB."
+        type: "Whoops! The file type is not supported. Please try again."
+        characters: "Whoops! The file name contains invalid characters. Please try again."
+    validations:
+      thumbnail:
+        extensions:
+          - ".jpg"
+          - ".jpeg"
+          - ".png"
+  asset_details:
+    copy_name: 'COPY'
+    view_assets: "VIEW ASSETS"
+    secret_indicator: "Classification: Secret"
+    not_yet_uploaded: "Not Yet Uploaded"
+    headers:
+      jeopardy:
+        game_material: "Game Material"
+        highlights: "Highlights"
+        player_info: "Player Information"
+      wheel_of_fortune:
+        player_info: "Player Information"
+        player_label: "Player"
+        prizes: "Prize Selection"
+        puzzle_label: "Puzzle"
+        puzzles: "Puzzle Information"
+        show_notes: "Show Notes"
+        wardrobe: "Vanna Wardrobe"
+    nav:
+      description: "Description"
+      media: "Media"
+      metadata: "Metadata"
+    sections:
+      linked_assets_label: "%{count} Linked Assets"
+      duplicates_label: "%{count} Duplicate Assets"
+      qc_reports_label: "%{count} Reports Available"
+      qc_reports:
+        comments: "Additional Comments"
+        delivery_date: "Date of Delivery"
+        failure_reason: "Rejection Reason"
+        original_filename: "Original Filename"
+        replacement_due_date: "Replacement Due Date"
+        status: "QC Status"
+        vendor_name: "Vendor Name"
+      package_contents:
+        folders:
+          one: "1 Folder"
+          other: "%{count} Folders"
+        files:
+          one: "1 File"
+          other: "%{count} Files"
+      media:
+        title: "Media"
+      metadata:
+        airdate: "Airdate"
+        amountwon: "Amount Won"
+        appearance: "Appearance"
+        asset_class: "Asset Class"
+        asset_type: "Asset Type"
+        category: "Category"
+        description: "Description"
+        display_seq_no: "Display Seq No"
+        game_score: "Game Score"
+        gpms_id: "GPMS ID"
+        metadata_label: "Metadata Label"
+        name: "Name"
+        order: "Order"
+        player: "Player"
+        puzzle: "Puzzle %{index}"
+        round: "Round"
+        show_number: "Show Number"
+        status: "Status"
+        title: "Metadata"
+        total_amount_won: "Total Amount Won"
+        week_nuber: "Week Number"
+        week_number: "Week Number"
+        winner: "Winner"
+        winning_pot: "Winning Pot"
+    shared_details:
+      airdate: "Airdate"
+      barcode: "Barcode"
+      business_owner: "Business Owner"
+      celebrity_show: "Celebrity Show"
+      checksum: "MD5 Checksum"
+      classification: "Classification"
+      filesize: "Filesize"
+      gpms_id: "GPMS ID"
+      id: "ID"
+      last_modified_date: "Last Modified Date"
+      original_filename: "Original Filename"
+      requested_by: "Requested By"
+      runner_id: "Runner ID"
+      season_number: "Season"
+      show_number: "Show Number"
+      status: "Status"
+      tape_date: "Tape Date"
+      theme_week: "Theme Week"
+      title: "Title"
+      type: "Type"
+      type_id: "Type ID"
+      upload_date: "Uploaded Date"
+      uploaded_by: "Uploaded By"
+      user_folder: "Folders"
+      week_number: "Week Number"
+    shows:
+      jeopardy:
+        affiliate: "Affiliate"
+        appearance: "Appearance"
+        celebrity_name: "Celebrity Name"
+        city: "City"
+        clue: "Clue"
+        clue_type: "Clue Type"
+        cumulative_total: "Total Score"
+        highlights:
+          show_category: "Show Category"
+          show_comments: "Show Comments"
+          show_segment: "Show Segment"
+        interview: "Interview"
+        keywords: "Keywords"
+        name: "Name"
+        player_description: "Description"
+        response: "Response"
+        score: "Game Score"
+        show_winner: "Show Winner"
+        state: "State"
+      wheel_of_fortune:
+        player_info:
+          affiliate: "Affiliate Station"
+          city: "City"
+          name: "Name"
+          state: "State"
+          total_amount_won: "Total Amount Won"
+        prizes:
+          bonus:
+            name: "Bonus Name"
+            player: "Bonus Winner"
+            type: "Bonus Type"
+            was_won: "Bonus Won"
+          normal:
+            name: "Prize Name"
+            type: "Prize Type"
+            winner: "Prize Winner"
+        puzzles:
+          category: "Category"
+          puzzle: "Puzzle"
+          solved_by: "Winner"
+          theme_week: "Theme Week"
+        show_notes:
+          category: "Show Segment"
+          comment: "Show Comments"
+          sub_category: "Show Category"
+        show_winner:
+          name: "Show Winner"
+          winnings: "Total Winnings"
+        wardrobe:
+          colors: "Dress Color"
+          designer: "Dress Designer"
+          dress: "Comments"
+          hair: "Hair Style"
+          style: "Dress Style"
+    tooltips:
+      asset_number: "Asset %{index} of %{length}"
+      expand: Expand
+  asset_items:
+    create:
+      success_message: "New asset has been created!"
+    new:
+      enter_required_fields: "Create an Asset Placeholder"
+      file_upload_later: "Create an asset placeholder here. You can always upload a file later."
+      heading: "Create New Asset"
+      or: "or"
+      recently_created:
+        edit: "Edit"
+        title: "Recently Created"
+      upload_header: "From Your Computer"
+  asset_title:
+    unspecified: "No Title"
+  asset_type:
+    unspecified: "unspecified"
+  copy_assets_modal:
+    asset_exists_tooltip: "Asset exists"
+    asset_name: "Asset Name:"
+    assets_to_copy: "Assets to copy:"
+    buttons:
+      cancel: "CANCEL"
+      submit: "CONFIRM"
+    destination_folders: "Destination folders selected:"
+    error: "This didn't go through. Please try again."
+    existing_assets: "Asset in existing folders:"
+    instructions: "Select folders to create additional copies. You must select at least one."
+    selected_folders: "Folders selected:"
+    title: "COPY TO FOLDERS"
+  copy_assets_validation_modal:
+    buttons:
+      cancel: "CANCEL"
+      continue: "CONTINUE"
+    none_message: "You have selected a file that you don't have permission to copy."
+    note: "*Contact your Delegated Admin if you need this issue resolved."
+    some_message: "You have selected a file that you don't have permission to copy. Do you want to continue?"
+    title: "HOLD ON..."
+  email_attributes:
+    expiration: "Expiration"
+    message: "Message"
+    subject: "Subject"
+    to: "To"
+    allow_uploader: "Allow uploader to edit metadata"
+  email_share:
+    defaults:
+      message:
+        multiple: "Hello! %{asset_count} assets have been shared with you!"
+        single: "%{asset_name} has been shared with you!"
+      subject:
+        multiple: "%{asset_count} assets have been shared with you!"
+        single: "%{asset_name} has been shared with you!"
+    validations:
+      bad_email: Double check the email addresses.
+      no_email: Who do you want to send this to?
+      no_message: Write a little message.
+      no_subject: Please enter a subject.
+      required: "Please make sure all highlighted fields have been filled."
+      bad_date_format: "Oops! We're looking for this expiration format: MM/DD/YYYY HH:MM AM/PM"
+      bad_limit_format: "Opps! Limit must be a number."
+      date_in_past: Oops, the selected date and time is in the past. Please select a date and time in the future.
+      date_out_of_range: Whoa there! Please enter a date/time that expires within a year.
+  errors:
+    server_error: &server_error
+      message: "Something went wrong. Please try again."
+    user_folders:
+      message: "Folders could not be loaded."
+  error_modal:
+    button: "TAKE ME BACK TO RUNNER"
+    header: "UH-OH!"
+    status_403:
+      message: "This page cannot be found or you do not have permission to view it."
+    status_404:
+      message: "This page cannot be found or you do not have permission to view it."
+    status_500: *server_error
+    status_undefined: *server_error
+    status_missing_flash:
+      message: "Your browser doesn't support streaming video. Please install the Adobe Flash plugin to preview video."
+  file_requests:
+    add_files: Add Files
+    confirmation: Confirmation
+    confirmation_text: You will receive an email confirmation when your upload completes.
+    email: "*Enter your email:"
+    email_placeholder: Enter your email
+    invalid_email: VALID EMAIL IS REQUIRED
+    expiration: This request expires on %{day} at
+    file_request_confirmation: File Request Confirmation
+    image_source: https://s3.amazonaws.com/runner_public/file_requests/cloud_upload.gif
+    local_time: local time.
+    metadata: Metadata
+    message: "Message:"
+    message_placeholder: If there's information you'd like to add to your files, write it here!
+    please_wait: Please don't navigate away from this page or you may lose your upload.
+    requester_label: "Message from"
+    thank_you: Thank You! Your upload is in progress.
+    upload_more: Upload More
+    upload_in_progress: Upload In Progress. %{completed}/%{total} Completed.
+    upload_complete: Upload Completed.
+  form:
+    errors:
+      date: "Oops! We're looking for this expiration format: MM/DD/YYYY"
+      date_mmddyyyy: "Oops! We're looking for this format: MM/DD/YYYY"
+      date_time: "Oops! We're looking for this expiration format: MM/DD/YYYY HH:MM AM|PM"
+      max_length: "is too long."
+      pattern: "is formatted incorrectly"
+      required: "Please make sure all highlighted fields have been filled"
+      spe_email: "Oops! Invalid email address(es)"
+      spe_titles_selected: "Titles cannot be blank"
+      spe_within_valid_date_range: "Whoa there! Please enter a date/time that expires within 180 days"
+  global:
+    browser:
+      chrome:
+        link: 'https://www.google.com/chrome'
+        img_src: 'https://d1ydz1qjprdqm4.cloudfront.net/logos/chrome.svg'
+        text: 'Chrome (Mac & Win)'
+        new_text: 'Chrome'
+        for_watermark: true
+      firefox:
+        link: 'https://www.mozilla.org/en-US/firefox/new/'
+        img_src: 'https://d1ydz1qjprdqm4.cloudfront.net/logos/firefox.svg'
+        text: 'Firefox (Mac & Win)'
+        new_text: 'Firefox'
+        for_watermark: true
+      edge:
+        link: 'https://www.microsoft.com/en-us/windows/microsoft-edge'
+        img_src: 'https://d1ydz1qjprdqm4.cloudfront.net/logos/edge.svg'
+        text: 'Edge (Win)'
+        new_text: 'Edge'
+        for_watermark: 'false'
+      ie:
+        link: 'http://windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages'
+        text: 'Edge (Win)'
+        for_watermark: false
+      safari:
+        link: 'http://support.apple.com/downloads/#safari'
+        img_src: 'https://d1ydz1qjprdqm4.cloudfront.net/logos/safari.svg'
+        text: 'Safari (Mac)'
+        for_watermark: false
+    experience_warning: "For the best experience, please upgrade your browser to the latest version."
+    forensic_watermark_warning: "For the best experience, please use the latest version of Chrome or Firefox."
+    privacy_policy: "Privacy Policy"
+    sony_copyright: "© %{year} Sony Pictures Entertainment Inc. All Rights Reserved"
+    terms_of_service: "Terms of Use"
+    contact: 'Contact'
+    mobile:
+      privacy_policy: "Privacy"
+      sony_copyright: "© %{year} Sony Pictures Entertainment Inc.<br> All Rights Reserved"
+      terms_of_service: "Terms"
+      contact: 'Contact'
+  helpers:
+    label:
+      file_uploader:
+        asset_file: "Select File"
+        no_file: "Add File Here"
+    submit:
+      asset_item:
+        create: "Create Asset"
+  launchpad:
+    carts: "CARTS"
+    favorite_folders: "FAVORITE FOLDERS"
+    favorite_folders_empty: "NO FAVORITE FOLDERS"
+    learn_how: "LEARN HOW"
+    my_shows: "My Shows"
+    recent_folders:
+      heading: "RECENT FOLDERS"
+      empty_message: "NO RECENT FOLDERS"
+    recent_searches: "RECENT SEARCHES"
+    recent_searches_empty: "NO RECENT SEARCHES"
+    recent_uploads:
+      empty_message: "NO RECENT UPLOADS"
+      heading: "RECENT UPLOADS"
+      no_title: 'NO TITLE'
+    subscriptions:
+      heading: "SUBSCRIPTIONS"
+      empty_message: "NO SUBSCRIPTIONS"
+    welcome: "Welcome, %{name}"
+  link_assets_validation_modal:
+    buttons:
+      cancel: "CANCEL"
+      continue: "CONTINUE"
+    message: "You don't have the necessary permissions to link all of the selected assets."
+    note: "Do you want to continue without the following assets?"
+    title: "HOLD ON..."
+  list_items:
+    columns:
+      default:
+        date: "UPLOAD DATE"
+        name: "NAME"
+        size: "SIZE"
+        title: "TITLE"
+        type: "TYPE"
+      gameshow:
+        air_date: "AIR DATE"
+        name: "SHOW NAME"
+        number: "SHOW NO."
+        season: "SEASON"
+        type: "TYPE"
+        vtr_date: "VTR DATE"
+    hybrid:
+      air_date: "Air Date"
+      asset_id: "Asset ID"
+      folder_id: "Folder ID"
+      ingest_in_progress: "Ingest in progress"
+      modified: "Modified"
+      name: "Show Name"
+      not_yet_uploaded: "Not Yet Uploaded"
+      number: "Show No."
+      season: "Season"
+      size: "Size"
+      subtype: "Subtype"
+      asset_item_count: "Assets"
+      type: "Type"
+      upload_failed: "Upload failed"
+      uploaded: "Uploaded"
+      vtr_date: "VTR Date"
+    messages:
+      title:
+        multiple: 'Multiple Titles'
+  move_assets_modal:
+    action_time_label: "Schedule for Later"
+    asset_exists_tooltip: "Asset exists"
+    asset_name: "Asset Name:"
+    assets_to_move: "Assets to move:"
+    buttons:
+      cancel: "CANCEL"
+      close: "CLOSE"
+      next: "NEXT"
+      previous: "PREVIOUS"
+      submit: "CONFIRM"
+    confirmation: "CONFIRMATION"
+    destination_folders: "Destination folders selected:"
+    error: "This didn't go through. Please try again."
+    existing_assets: "Asset in existing folders:"
+    favorite_folders: "FAVORITE FOLDERS"
+    folders: "FOLDERS"
+    instructions: "Select destination folders. You must select at least one."
+    invalid_scheduled_date: "Whoops. The selected date and time is in the past. Please select a date and time in the future."
+    moving_from: "MOVING FROM"
+    moving_to: "MOVING TO"
+    multiple_folders_warning: "Your selected asset lives in multiple folders. Please select the folders you would like to move your asset from."
+    review_and_confirm: "Review your selections and then confirm to complete this move."
+    move_scheduled_for: "Move Scheduled For:"
+    scheduled_action_note: "An action is already scheduled from this folder"
+    select_destination_folder: "SELECT DESTINATION FOLDER"
+    select_destination_folders_message: "Please select the folders you would like to move your asset to. You must select at least one folder."
+    select_source_folder: "SELECT SOURCE FOLDER"
+    selected_folders: "Folders selected:"
+    title: "MOVE TO FOLDERS"
+  navigation:
+    activity: "Activity"
+    admin: "Admin"
+    advanced_search: "Advanced Search"
+    cart: "cart"
+    create: "Create"
+    feedback: "Contact Support"
+    folders: "folders"
+    howto: "How To..."
+    launchpad: "Launchpad"
+    logout: "logout"
+    preferences: "User Preferences"
+    product_updates: "Product Updates"
+    runner: "Runner"
+    search: "Search"
+    email_subject: "Runner Support Request - %{email} - %{date}"
+    email_body: "Page URL: %{url}"
+    upload: "upload"
+    users: "Users"
+  profile:
+    heading: "%{name}'s Profile"
+    subheading: "Edit Your User Details"
+  share:
+    permissions:
+      download: Download
+      preview_only: Preview Only
+      proxy_only_download: Proxy Only Download
+    download:
+      aspera: "Download Selected"
+      aspera_warning: "The Aspera plug-in is REQUIRED for all %{domain} downloads:"
+      click_to_download: "Click here to Download"
+      created: "This media kit was created by"
+      deleted: "This asset has been deleted"
+      details: "Asset Details"
+      download_aspera: 'If prompted, select "Run" to install the client on your computer.'
+      download_single: "Click on documents below to download:"
+      error: "Whoops! Something went wrong. Please try again!"
+      http: "Download"
+      local_time: "local time."
+      mediakit:
+        expiration: "This media kit expires on %{day} at"
+        welcome: "SPT Media Kit Delivery"
+      restoring: "Restore in progress"
+      runner:
+        expiration: "This share expires on %{day} at"
+        limits: "This share has %{previews} previews and %{downloads} downloads per asset."
+        download_limit: "This share has %{downloads} downloads per asset."
+        view_limit: "This share has %{previews} previews per asset."
+        metadata:
+          asset_id_label: "Asset ID"
+        welcome: "Hello! Runner assets have been shared with you!"
+      select:
+        all: "SELECT ALL"
+        none: "DESELECT ALL"
+      share_message: "Message from %{sender}:"
+    open:
+      heading: Share URL
+    protected:
+      expiration: "Hurry! Your link will expire in"
+      five_minutes: "5 minutes."
+      message: "Your protected link has been sent, and you will receive an email shortly!"
+      title: "Woo-hoo!"
+    view_in_runner: "View in Runner"
+  share_history_modal:
+    assets: "Assets"
+    expire:
+      example: "(mm-dd-yyyy)"
+      label: "Expire on"
+    heading: "SHARE HISTORY"
+    links:
+      - "SHARED INFO"
+      - "STATS"
+    message: "Message"
+    recipients: "To"
+    subheading: "This share was created on"
+    subject: "Subject"
+  sign_in:
+    disabled: "Your account has been disabled."
+    error: 'Invalid username or password.'
+    locked: "Account locked. Retry after 5 minutes."
+    invalid_authenticator_token: "Invalid Authenticator Token"
+    submit_button: "Sign in"
+    welcome: "Welcome to RUNNER"
+    welcome_to: "Welcome to"
+  spe:
+    add_files:
+      button_text: "ADD FILES"
+    add_folders:
+      button_text: "ADD FOLDERS"
+  subheading:
+    delimiter: ': '
+    selected: 'Selected'
+    separator: ', '
+  title: "Runner"
+  titles:
+    no_asset_items: "Sorry, there are no assets for this title."
+    results_text: "Results"
+    sort_options:
+      asset_group_name: "Season"
+      asset_item_created_at: "Date"
+      asset_item_name: "Name"
+      asset_type: "Type"
+      show_identifier: "Show ID"
+  top_level_buttons:
+    add_to_cart: 'Add to Cart'
+    context_menu: 'More Actions'
+    grid_view: 'Grid View'
+    hybrid_view: 'Hybrid View'
+    list_view: 'List View'
+    list_view_toggle: 'View'
+    share: 'Share'
+    sort: 'Sort'
+    upload: 'Upload'
+  password_reset:
+    title: 'RESET PASSWORD'
+    subheader:
+      expired: 'Your password has expired. Please reset your password.'
+    email: 'Email'
+    password: 'New Password'
+    password_confirmation: 'Confirm Password'
+    reset: 'SIGN IN'
+    reset_button: Submit
+    reset_email_sent: Reset Password Email Sent!
+    reset_instructions: Enter your email below to receive a link to reset your password.
+    password_validation_message: 'Password must be at least 12 characters long and contain: one uppercase, lowercase, numeral, and a special character.'
+    validation_popover:
+      title: 'PASSWORD POLICY'
+      note: 'Please create a new password that will be valid for 90 days.'
+      must_message: 'Password Must:'
+      must_1: 'Be at least 12 characters long'
+      must_2: 'Have at least 1 uppercase letter'
+      must_3: 'Have at least 1 lowercase letter'
+      must_4: 'Have at least 1 special character:'
+      must_4b: '~ ! @ # $ } { % ^ * + - = ] [ \ : ; ? , . &'
+      cannot_message: 'Password Cannot:'
+      cannot_1: 'Substitute only one character in a previously used password'
+      cannot_2: 'Be a previous password, backward'
+      cannot_3: 'Include your first and/or last name'
+      cannot_4: 'Include your email address'
+      cannot_5: 'Include any words on the restricted words list. Click'
+      cannot_5b: 'here'
+      cannot_5c: 'to view the list.'
+    confirmation_validation_message: 'The passwords do not match.'

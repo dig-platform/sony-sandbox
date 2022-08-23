@@ -1,0 +1,22 @@
+---
+development:
+  adapter: redis
+  url: <%= "redis://#{ENV['REDIS_HOST'] || 'localhost'}:6379" %>
+
+test:
+  adapter: async
+
+integration:
+  adapter: redis
+  url: redis://rer14fkdfu58lolw.reblvy.ng.0001.use1.cache.amazonaws.com:6379
+  channel_prefix: notification_integration
+
+staging:
+  adapter: redis
+  url: redis://rerf58yjr81wjky.reblvy.ng.0001.use1.cache.amazonaws.com:6379
+  channel_prefix: notification_staging
+
+production:
+  adapter: redis
+  url: redis://rer1x40d4byw2cgy.reblvy.ng.0001.use1.cache.amazonaws.com:6379
+  channel_prefix: notification

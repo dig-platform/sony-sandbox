@@ -1,0 +1,15 @@
+---
+en:
+  time:
+    formats:
+      created_on: 'Date of Creation: %m.%d.%y'
+      copyright: '© Copyright %Y'
+  contact_sheets:
+    show:
+      header: CONTACT SHEETS
+      created_by: 'Created By: %{user}'
+      no_thumbnail: No Thumbnail Available
+      asset_id: 'Asset ID: %{id}'
+      checksum: 'MD5 Checksum: %{checksum}'
+      notes: 'Notes:'
+

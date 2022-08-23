@@ -1,0 +1,22 @@
+en:
+  tooltips:
+    scheduled_actions:
+      folder:
+        move:
+          singular:
+            'Moving to folder'
+          plural:
+            'Moving to folders'
+        copy:
+          singular:
+            'Copying to folder'
+          plural:
+            'Copying to folders'
+        delete:
+          singular: 'Deleting from folder'
+          plural: 'Deleting from folders'
+        message:
+          '%{action} %{folder_names} on %{date} at %{time}. Scheduled by %{user}'
+    folders:
+      go_to_folder: Go To Folder
+

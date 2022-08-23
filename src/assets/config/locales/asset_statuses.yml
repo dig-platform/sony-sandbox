@@ -1,0 +1,8 @@
+en:
+  asset_item_statuses:
+    available: "Available"
+    archived: "Glacier Archived"
+    deep-archived: "Deep Glacier Archived"
+    replacement: "Asset Replacement In Progress"
+    restoring: "Restoring"
+    soulless: "Not Uploaded Yet"

@@ -1,0 +1,12 @@
+en:
+  announcements:
+    header: 'PRODUCT UPDATES'
+    campaigns:
+      headers:
+        net_promoter: 'How likely are you to recommend Runner?'
+      notes:
+        not_likely: 'Not likely at all'
+        extremely_likely: 'Extremely likely'
+      buttons:
+        submit: 'Submit'
+      response_message: 'Thanks for your response!'

@@ -1,0 +1,37 @@
+# JSON Schema for qc reports
+---
+title: QC Report
+description: QC Reports enable the SPE DAM team to track vendors' failure rates for delivering correct file specs.
+type: object
+required:
+  - vendor_name
+  - delivery_date
+  - status
+if:
+  properties:
+    status:
+      enum:
+        - Fail
+then:
+  required:
+    - failure_reason
+additionalProperties: false
+properties:
+  vendor_name:
+    type: string
+  delivery_date:
+    type: string
+    format: date-time
+  replacement_due_date:
+    type: string
+    format: date-time
+  status:
+    type: string
+    enum: <%= I18n.t('qc_reports.status').to_json %>
+  failure_reason:
+    type: array
+    items:
+      type: string
+      enum: <%= (I18n.t('qc_reports.failure_reason.sony_dam') + I18n.t('qc_reports.failure_reason.dcs_localization')).to_json %>
+  comments:
+    type: string

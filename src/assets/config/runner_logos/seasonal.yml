@@ -1,0 +1,240 @@
+---
+seasonal:
+  autumn: &autumn
+    login: autumn_login.gif
+    dates:
+      regional:
+        northern:
+          - start: 2020-09-22
+            end:   2020-12-21
+          - start: 2021-09-22
+            end:   2021-12-21
+          - start: 2022-09-23
+            end:   2022-12-21
+          - start: 2023-09-23
+            end:   2023-12-22
+          - start: 2024-09-22
+            end:   2024-12-21
+        southern:
+          - start: 2021-03-20
+            end:   2021-06-21
+          - start: 2022-03-20
+            end:   2022-06-21
+          - start: 2023-03-20
+            end:   2023-06-21
+          - start: 2024-03-20
+            end:   2024-06-20
+          - start: 2025-03-21
+            end:   2025-06-21
+
+  autumn_alt_1:
+    <<: *autumn
+    login:        fall_alt_1.svg
+    header:       fall_alt_1.svg
+    header_hover: fall_alt_1_hover.svg
+
+  autumn_alt_2:
+    <<: *autumn
+    login:        fall_alt_2.svg
+    header:       fall_alt_2.svg
+    header_hover: fall_alt_2_hover.svg
+
+  autumn_alt_3:
+    <<: *autumn
+    login:        fall_alt_3.svg
+    header:       fall_alt_3.svg
+    header_hover: fall_alt_3_hover.svg
+
+  spring: &spring
+    login:        spring_login.gif
+    header:       spring.svg
+    header_hover: spring_hover.svg
+    tooltip:      Spring has sprung! 🌼
+    dates:
+      regional:
+        northern:
+          - start: 2021-03-20
+            end:   2021-06-21
+          - start: 2022-03-20
+            end:   2022-06-21
+          - start: 2023-03-20
+            end:   2023-06-21
+          - start: 2024-03-20
+            end:   2024-06-20
+          - start: 2025-03-21
+            end:   2025-06-21
+        southern:
+          - start: 2020-09-22
+            end:   2020-12-21
+          - start: 2021-09-22
+            end:   2021-12-21
+          - start: 2022-09-23
+            end:   2022-12-21
+          - start: 2023-09-23
+            end:   2023-12-22
+          - start: 2024-09-22
+            end:   2024-12-21
+
+  spring_alt_1:
+    <<: *spring
+    login:        spring_alt_1.svg
+    header:       spring_alt_1.svg
+    header_hover: spring_alt_1_hover.svg
+
+  spring_alt_2:
+    <<: *spring
+    login:        spring_alt_2.svg
+    header:       spring_alt_2.svg
+    header_hover: spring_alt_2_hover.svg
+
+  spring_alt_3:
+    <<: *spring
+    login:        spring_alt_3.svg
+    header:       spring_alt_3.svg
+    header_hover: spring_alt_3_hover.svg
+
+  summer: &summer
+    login:        summer_login.gif
+    header:       summer.svg
+    header_hover: summer_hover.svg
+    dates:
+      regional:
+        northern:
+          - start: 2020-06-20
+            end:   2020-09-22
+          - start: 2021-06-21
+            end:   2021-09-22
+          - start: 2022-06-21
+            end:   2022-09-23
+          - start: 2023-06-21
+            end:   2023-09-23
+          - start: 2024-06-20
+            end:   2024-09-22
+        southern:
+          - start: 2020-12-21
+            end:   2021-03-20
+          - start: 2022-12-21
+            end:   2023-03-20
+          - start: 2023-12-21
+            end:   2024-03-20
+          - start: 2033-12-22
+            end:   2034-03-20
+          - start: 2034-12-21
+            end:   2035-03-20
+
+  summer_alt_1:
+    <<: *summer
+    login:        summer_alt_1.svg
+    header:       summer_alt_1.svg
+    header_hover: summer_alt_1_hover.svg
+
+  summer_alt_2:
+    <<: *summer
+    login:        summer_alt_2.svg
+    header:       summer_alt_2.svg
+    header_hover: summer_alt_2_hover.svg
+
+  summer_alt_3:
+    <<: *summer
+    login:        summer_alt_3.svg
+    header:       summer_alt_3.svg
+    header_hover: summer_alt_3_hover.svg
+
+  winter: &winter
+    login: winter_login.gif
+    header: winter_sm.svg
+    header_hover: winter_sm_hover.svg
+    strict_height: true
+    dates:
+      regional:
+        northern:
+          - start: 2020-12-21
+            end:   2021-03-20
+          - start: 2022-12-21
+            end:   2023-03-20
+          - start: 2023-12-21
+            end:   2024-03-20
+          - start: 2033-12-22
+            end:   2034-03-20
+          - start: 2034-12-21
+            end:   2035-03-20
+        southern:
+          - start: 2020-06-20
+            end:   2020-09-22
+          - start: 2021-06-21
+            end:   2021-09-22
+          - start: 2022-06-21
+            end:   2022-09-23
+          - start: 2023-06-21
+            end:   2023-09-23
+          - start: 2024-06-20
+            end:   2024-09-22
+
+  winter_alt_1:
+    <<: *winter
+    login:        winter_alt_1.svg
+    header:       winter_alt_1.svg
+    header_hover: winter_alt_1_hover.svg
+    strict_height: false
+
+  winter_alt_2:
+    <<: *winter
+    login:        winter_alt_2.svg
+    header:       winter_alt_2.svg
+    header_hover: winter_alt_2_hover.svg
+
+  # Scorpio
+  scorpio:
+    login:         scorpio.gif
+    header:        scorpio.svg
+    header_hover:  scorpio_hover.svg
+    strict_height: false
+    tooltip:       Scorpio
+    dates:
+      default:
+        - start: 2020-10-24
+          end:   2020-11-21
+        - start: 2021-10-24
+          end:   2021-11-21
+
+  # Libra
+  libra:
+    login:         libra.gif
+    header:        libra.svg
+    header_hover:  libra_hover.svg
+    strict_height: false
+    tooltip:       Libra
+    dates:
+      default:
+        - start: 2020-09-23
+          end:   2020-11-21
+        - start: 2021-09-23
+          end:   2021-11-21
+
+  # Capricorn
+  capricorn:
+    login:         capricorn.gif
+    header:        capricorn.png
+    header_hover:  capricorn_hover.png
+    strict_height: true
+    tooltip:       Capricorn
+    dates:
+      default:
+        - start: 2020-12-22
+          end:   2021-01-20
+        - start: 2021-12-22
+          end:   2022-01-20
+
+  # Aquarius
+  Aquarius:
+    login:         aquarius.gif
+    header:        aquarius.png
+    header_hover:  aquarius_hover.png
+    strict_height: true
+    tooltip:       Aquarius
+    dates:
+      default:
+        - start: 2021-01-21
+          end:   2021-02-10
+        - start: 2022-01-21
+          end:   2022-02-10

@@ -1,0 +1,17 @@
+staging:
+  _dbb:
+    eagl_id: 5651
+  _mpintsales:
+    eagl_id: 225
+  _sptbb2:
+    eagl_id: 19554
+  _spheconnec2:
+    eagl_id: 35753
+
+integration:
+  _dbb:
+    eagl_id: 897
+  _sptbb2:
+    eagl_id: 196
+  _spheconnec2:
+    eagl_id: 1194

@@ -1,0 +1,65 @@
+---
+options:
+  video:
+    ww: &regional_options # Worldwide
+      approved: &media_types
+        - video
+        - music
+        - vo # Voice Over
+      denied: *media_types
+      default:
+        approved:
+          - video
+    int: # International (Not U.S.)
+      <<: *regional_options
+    dom: # Doemstic (U.S.)
+      <<: *regional_options
+    online: {} # Online-Only
+    channel: # Channel or Territory
+      approved:
+        - channel # Specified Channel
+        - territory # Specified Territory
+    limited: # Limited Usage Restriction
+      approved:
+        - internal # Reference and Internal
+        - sales # Sales
+        - warning # Very Limited Clearances
+classifications:
+  ##
+  # KEY FORMAT:
+  # [Asset Class]_[Usage]+[Sorted, Comma-separated approved]-[Sorted, comma-separated denied]
+  video_int+video: Video Is Cleared For International Use In All Media, For In-Context Promotional Purposes only.
+  video_int+video-music: Video Is Cleared For International Use In All Media, For In-Context Promotional Purposes only. Music Is NOT Cleared
+  video_int+video-music,vo: Video Is Cleared For International Use In All Media, For In-Context Promotional Purposes only. Music & VO Are NOT Cleared
+  video_int+music,video: Video & Music Are Cleared for International Use In All Media, For In-Context Promotional Purposes Only.
+  video_int+music,video-vo: Video & Music Are Cleared for International Use In All Media, For In-Context Promotional Purposes Only. VO Is NOT Cleared.
+  video_int+music,video,vo: Video, Music & VO Are All Cleared For International Use In All Media, For In-Context Promotional Purposes Only.
+  video_int+video,vo: Video & VO Are Cleared for International Use In All Media, For In-Context Promotional Purposes Only.
+  video_int+video,vo-music: Video & VO Are Cleared for International Use In All Media, For In-Context Promotional Purposes Only. Music Is NOT Cleared.
+
+  video_ww+video: Video is Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only.
+  video_ww+video-music: Video is Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only. Music Is NOT Cleared.
+  video_ww+video-music,vo: Video is Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only. Music & VO Are NOT Cleared
+  video_ww+music,video: Video & Music Are Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only.
+  video_ww+music,video-vo: Video & Music Are Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only. VO Is NOT Cleared.
+  video_ww+music,video,vo: Video, Music & VO Are All Cleared For Worldwide Use In All Media, For In-Context Promotional Purposes Only.
+  video_ww+video,vo: Video & VO Are Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only.
+  video_ww+video,vo-music: Video & VO Are Cleared for Worldwide Use In All Media, For In-Context Promotional Purposes Only. Music Is NOT Cleared.
+
+  video_dom+video: Video is Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only.
+  video_dom+video-music: Video is Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only. Music Is NOT Cleared.
+  video_dom+video-music,vo: Video is Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only. Music & VO Are NOT Cleared
+  video_dom+music,video: Video & Music Are Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only.
+  video_dom+music,video-vo: Video & Music Are Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only. VO Is NOT Cleared.
+  video_dom+music,video,vo: Video, Music & VO Are All Cleared For Domestic Use In All Media, For In-Context Promotional Purposes Only.
+  video_dom+video,vo: Video & VO Are Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only.
+  video_dom+video,vo-music: Video & VO Are Cleared for Domestic Use In All Media, For In-Context Promotional Purposes Only. Music Is NOT Cleared.
+
+  video_online: Cleared For On-Line Use Only, For In-Context Promotional Purposes Only.
+
+  video_channel+channel: Cleared For Specified Channel Use Only & For In-Context Promotional Purposes Only. No Other Channel May Use.
+  video_channel+territory: Cleared For Specified Territory Use Only & For In-Context Promotional Purposes Only. No Other Territory May Use.
+
+  video_limited+internal: For Reference & Internal Use Only.
+  video_limited+sales: For Sales Purposes Only.
+  video_limited+warning: Warning! Very Limited Clearances!!! Please speak with SPT Marketing Team before using this asset.

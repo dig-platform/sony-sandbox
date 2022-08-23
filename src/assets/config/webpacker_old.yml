@@ -1,0 +1,115 @@
+# Note: You must restart bin/webpack-dev-server for changes to take effect
+
+---
+default: &default
+  source_path: app/javascript
+  source_entry_path: /
+  public_root_path: public
+  public_output_path: packs
+  cache_path: tmp/cache/webpacker
+  check_yarn_integrity: false
+  webpack_compile_output: false
+
+  # Additional paths webpack should lookup modules
+  # ['app/assets', 'engine/foo/app/assets']
+  additional_paths:
+    - app/templates
+    - app/assets
+    - vendor/assets/javascripts
+    - vendor/assets/stylesheets
+    - vendor/assets/images
+    - spec/features/support/javascript_overrides
+    - spec/javascripts/support
+
+  # Reload manifest.json on all requests so we reload latest compiled packs
+  cache_manifest: false
+
+  # Extract and emit a css file
+  extract_css: true
+
+  static_assets_extensions:
+    - .jpg
+    - .jpeg
+    - .png
+    - .gif
+    - .tiff
+    - .ico
+    - .svg
+    - .eot
+    - .otf
+    - .ttf
+    - .woff
+    - .woff2
+
+  extensions:
+    - .css
+    - .gif
+    - .html
+    - .jpeg
+    - .jpg
+    - .js
+    - .jsx
+    - .module.css
+    - .module.sass
+    - .module.scss
+    - .png
+    - .sass
+    - .scss
+    - .svg
+    - .ts
+    - .tsx
+
+development:
+  <<: *default
+  compile: true
+
+  # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
+  check_yarn_integrity: true
+
+  # Reference: https://webpack.js.org/configuration/dev-server/
+  dev_server:
+    https: false
+    host: localhost
+    port: 3035
+    public: localhost:3035
+    hmr: true
+    lazy: true
+    # Inline should be set to true if using HMR
+    inline: true
+    overlay: true
+    disable_host_check: true
+    use_local_ip: false
+    quiet: false
+    headers:
+      'Access-Control-Allow-Origin': '*'
+    watch_options:
+      ignored: '**/node_modules/**'
+
+test: &test
+  <<: *default
+  compile: false
+  cache_manifest: true
+
+  # Compile test packs to a separate directory
+  public_output_path: packs-test
+
+karma:
+  <<: *test
+
+production: &production
+  <<: *default
+
+  # Production depends on precompilation of packs prior to booting for performance.
+  compile: false
+
+  # Extract and emit a css file
+  extract_css: true
+
+  # Cache manifest.json for performance
+  cache_manifest: true
+
+staging:
+  <<: *production
+
+integration:
+  <<: *production

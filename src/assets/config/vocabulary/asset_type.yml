@@ -1,0 +1,1015 @@
+---
+- name: 1-Sheet
+  subtypes:
+  - Digital
+  - Final
+  - Final Rated
+  - Teaser
+- name: 30-Sheet
+  subtypes: []
+- name: Ad
+  subtypes:
+  - 40k
+  - Custom
+  - Flash
+  - Rich Media
+- name: Alphabet
+  subtypes: []
+- name: Animated Graphics
+  subtypes:
+  - Bumper
+  - Full Screen
+  - Lower Thirds
+  - Title Treatment
+- name: App
+  subtypes: []
+- name: Asset List
+  subtypes: []
+- name: Audio Stem
+  subtypes:
+  - Trailer
+- name: B-Roll
+  subtypes:
+  - Event
+  - Tour
+- name: Banner
+  subtypes:
+  - 5x8
+  - 10x15
+  - Digital
+  - XL
+  - Dated
+  - Dated Tickets
+  - Tomorrow
+  - Tonight
+  - Now Showing
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday
+  - No Date
+  - Early Screenings
+- name: Behind the Scenes
+  subtypes: []
+- name: Bible
+  subtypes:
+  - Marketing
+- name: Billboard
+  subtypes:
+  - Digital
+  - Lot Board
+  - Studio
+- name: Billing Block
+  subtypes:
+  - 1-Sheet
+  - Book
+  - Pub/Promo
+  - Soundtrack
+- name: Biography
+  subtypes:
+  - Character
+  - Talent
+  - Crew
+  - Executive
+- name: Blueprint
+  subtypes: []
+- name: Book Cover
+  subtypes: []
+- name: Booklet
+  subtypes: []
+- name: Brand Manual
+  subtypes: []
+- name: Branded Editorial Content
+  subtypes:
+  - All Ages
+  - Activity Sheets
+  - For Pet Lovers
+  - Cooking Ideas
+  - Character Features
+  - For Parents
+  - Local Angles
+  - In Restaurants
+  - In Doctors' Offices
+  - Sustainability
+- name: Brochure
+  subtypes: []
+- name: Building Document
+  subtypes: []
+- name: Bug
+  subtypes: []
+- name: Bulletin
+  subtypes: []
+- name: Bumper
+  subtypes: []
+- name: Bus Back
+  subtypes: []
+- name: Bus Bench
+  subtypes: []
+- name: Bus Shelter
+  subtypes: []
+- name: Bus Wrap
+  subtypes: []
+- name: C-Card
+  subtypes: []
+- name: Calendar
+  subtypes: []
+- name: Call Sheet
+  subtypes: []
+- name: Cartoon
+  subtypes:
+  - Reference
+- name: Casting
+  subtypes: []
+- name: Chapter Still
+  subtypes: []
+- name: Character Art
+  subtypes: []
+- name: Character Description
+  subtypes: []
+- name: Clip
+  subtypes:
+  - Online Premiere
+  - Premiere
+  - Sneak Peek
+  - Social Media
+  - TV
+  - Theatrical
+- name: Closed Caption File
+  subtypes:
+  - SFX
+- name: Co-Promotion
+  subtypes: []
+- name: Composer Agreement
+  subtypes: []
+- name: Contact List
+  subtypes: []
+- name: Contact Sheet
+  subtypes: []
+- name: Conformed Audio
+  subtypes:
+  - Alert
+  - Alternate Scenes
+  - APK-Audio Press Kit
+  - Artwork
+  - Aud & Vid Commentary
+  - Cartoon
+  - Clips
+  - Deleted Scenes
+  - EDL
+  - End Title
+  - Episodic
+  - EPK
+  - Feature
+  - Featurette
+  - Franchise Tags
+  - Full Length
+  - Insert
+  - Instruction Card
+  - Intermission
+  - Isolated Score
+  - Logo
+  - M & E Title
+  - Main Title
+  - Making Of
+  - Music Replacement
+  - Narration
+  - Opt Com / Multi-Angle
+  - Preview
+  - Printmaster
+  - Promo
+  - Recap
+  - Selected Scenes
+  - Short
+  - Teaser
+  - Test Reel
+  - Trailer
+  - Value Added Material
+  - Visual Description Narration
+- name: Copyright
+  subtypes: []
+- name: Corporate Ad
+  subtypes: []
+- name: Corrugate
+  subtypes: []
+- name: Credits
+  subtypes: []
+- name: Dailies
+  subtypes: []
+- name: DCP
+  subtypes:
+  - Trailer
+- name: DCP Audio
+  subtypes:
+  - Alert
+  - Alternate Scenes
+  - APK-Audio Press Kit
+  - Artwork
+  - Aud & Vid Commentary
+  - Cartoon
+  - Clips
+  - Commentary
+  - Deleted Scenes
+  - EDL
+  - End Title
+  - EPK
+  - Featurette
+  - Franchise Tags
+  - Full Length
+  - Insert
+  - Instruction Card
+  - Intermission
+  - Isolated Score
+  - Logo
+  - M & E Title
+  - Main Title
+  - Making Of
+  - Music Replacement
+  - Narration
+  - Opt Com / Multi-Angle
+  - Preview
+  - Printmaster
+  - Promo
+  - Recap
+  - Selected Scenes
+  - Short
+  - Teaser
+  - Test Reel
+  - Trailer
+  - Visual Description Narration
+- name: Design Project
+  subtypes: []
+- name: Digital Marketing Video
+  subtypes: []
+- name: Disc Art
+  subtypes: []
+- name: Digipack
+  subtypes:
+  - Foil
+  - Slipcase
+  - Slipcase Foil
+- name: Double Decker Bus Wrap
+  subtypes: []
+- name: Drawing
+  subtypes: []
+- name: Dub Kit
+  subtypes:
+  - Trailer
+- name: Dubbed Audio
+  subtypes: &dubbed_audio_subtypes
+  - Alert
+  - Alternate Scenes
+  - APK-Audio Press Kit
+  - Artwork
+  - Aud & Vid Commentary
+  - Cartoon
+  - Clips
+  - Commentary
+  - Deleted Scenes
+  - EDL
+  - End Title
+  - Episodic
+  - EPK
+  - Feature
+  - Featurette
+  - Franchise Tags
+  - Full Length
+  - Insert
+  - Instruction Card
+  - Intermission
+  - Isolated Score
+  - Logo
+  - M & E Title
+  - Main Title
+  - Making Of
+  - Narration
+  - Opt Com / Multi-Angle
+  - Preview
+  - Printmaster
+  - Promo
+  - Recap
+  - Selected Scenes
+  - Short
+  - Teaser
+  - Test Reel
+  - Trailer
+  - Visual Description Narration
+- name: Dubbing Card
+  subtypes: []
+- name: Email
+  subtypes:
+  - Eblast
+- name: Email Signature
+  subtypes: []
+- name: End Card
+  subtypes:
+  - Exhibitor
+  - Trailer
+- name: EPK
+  subtypes:
+  - Behind the Scenes
+  - Featurette
+  - Film Clips
+  - Premiere
+  - Talent Interviews
+- name: Episode
+  subtypes:
+  - MOW
+  - Pilot
+  - Reality
+  - Reference
+- name: Episode Guide
+  subtypes: []
+- name: Events
+  subtypes:
+  - Premiere
+- name: Feature
+  subtypes:
+  - Reference
+- name: Featurette
+  subtypes:
+  - Sales
+- name: Feature Selects
+  subtypes: []
+- name: Final Mix
+  subtypes: []
+- name: Font
+  subtypes:
+  - Custom
+- name: Form
+  subtypes: []
+- name: Game
+  subtypes: []
+- name: Graphic Panel
+  subtypes:
+  - Front
+  - Left
+  - Right
+- name: Graphics
+  subtypes:
+  - Interface
+  - Trailer
+- name: Graphics Collect
+  subtypes:
+  - Trailer
+- name: Graphics Kit
+  subtypes: []
+- name: Greeting
+  subtypes: []
+- name: Header
+  subtypes: []
+- name: Hook Card
+  subtypes: []
+- name: ID
+  subtypes:
+  - Anniversary/Birthday
+  - Beauty Shot
+  - Channel
+  - Custom
+  - Event
+  - Public Service Announcement
+  - Region
+- name: Insert
+  subtypes: []
+- name: Insurance
+  subtypes: []
+- name: Integration
+  subtypes: []
+- name: Insert
+  subtypes: []
+- name: Insert Report
+  subtypes:
+  - Feature
+  - Featurette
+  - ID
+  - Interview
+  - Promo
+  - Radio Spot
+  - Recap
+  - Reel
+  - Trailer
+  - Vignette
+- name: Interview
+  subtypes:
+  - Channel
+  - Event
+  - Panel
+  - Press Junket
+  - Q&A
+- name: J-Card
+  subtypes: []
+- name: Key Art
+  subtypes:
+  - Alternate
+  - Alternate – Digital Adaption
+  - Campaign-Specific
+  - Campaign-Specific – Digital Adaption
+  - Final
+  - Final – Digital Adaption
+  - Interface
+  - Preliminary
+  - Preliminary – Digital Adaption
+  - Primary
+  - Primary – Digital Adaption
+  - Secondary
+  - Secondary – Digital Adaption
+  - Teaser
+  - Teaser – Digital Adaption
+- name: King Bus Side
+  subtypes: []
+- name: Launch Kit
+  subtypes: []
+- name: Legal
+  subtypes: []
+- name: Legal Lines
+  subtypes: []
+- name: Litho
+  subtypes:
+  - 3-Copy
+  - Foil
+  - Slim
+  - Standard
+  - Thick
+- name: Lobby Card
+  subtypes: []
+- name: Logline
+  subtypes: []
+- name: Logo
+  subtypes:
+  - Show
+  - Production
+  - Video
+- name: Magazine Ad
+  subtypes: []
+- name: Mailer Ad
+  subtypes: []
+- name: Marketing Kit
+  subtypes: []
+- name: Marketing Strategy
+  subtypes: []
+- name: Media Kit
+  subtypes: []
+- name: Media Promo
+  subtypes: []
+- name: Menu
+  subtypes: []
+- name: Metadata Notes
+  subtypes: []
+- name: Mobiles
+  subtypes: []
+- name: Motion 1-Sheet
+  subtypes:
+  - Date
+  - Now Showing
+- name: Music
+  subtypes:
+  - Original Soundtrack
+- name: Music Cue Sheet
+  subtypes:
+  - Featurette
+  - ID
+  - Promo
+  - Radio Spot
+  - Recap
+  - Reel
+  - Trailer
+  - Vignette
+- name: Music License
+  subtypes: []
+- name: Music Video
+  subtypes: []
+- name: Newspaper Ad
+  subtypes:
+  - Campaign
+  - Date
+  - Double Truck
+  - Full Page
+  - In Cinemas Thursday
+  - Non Full Page
+  - Now Showing
+  - Quote Look
+  - Sample Ad
+  - Special Ad
+- name: Notes
+  subtypes:
+  - M&E
+  - Creative
+- name: Onsert
+  subtypes: []
+- name: Original Content
+  subtypes: []
+- name: Overview
+  subtypes: []
+- name: OV Audio
+  subtypes: *dubbed_audio_subtypes
+- name: O-Ring
+  subtypes:
+  - Embossed
+  - Embossed Foil
+  - Foil
+  - Thick
+- name: Packaging
+  subtypes: []
+- name: Packshot
+  subtypes:
+  - Advertising
+  - Beauty
+  - Early Trade
+  - Full Sleeve
+  - Non-standard
+  - Outersleeve
+  - Plano
+  - Pre-Press
+  - Title
+- name: Performance
+  subtypes: []
+- name: Phone Kiosk
+  subtypes: []
+- name: Photo
+  subtypes:
+  - Behind the Scenes
+  - Events
+  - Frame Capture
+  - Gallery
+  - Headshot
+  - Other
+  - Plate
+  - Premiere
+  - Unit
+  - Caption
+- name: Policy Trailer
+  subtypes: []
+- name: Postcard
+  subtypes: []
+- name: Poster
+  subtypes:
+  - Alternate
+  - Primary
+  - Teaser
+  - Trade
+- name: Presentation
+  subtypes:
+  - Brand
+  - Brand Partnership
+  - Pitch
+  - Presentation Board
+  - Ratings
+  - Sales
+  - Speech
+  - Sponsorship
+- name: Press Clipping
+  subtypes: []
+- name: Press Kit
+  subtypes: []
+- name: Press Material
+  subtypes: []
+- name: Press Release
+  subtypes: []
+- name: Print
+  subtypes: []
+- name: Prize List
+  subtypes: []
+- name: Production Notes
+  subtypes: []
+- name: Production Report
+  subtypes: []
+- name: Production Schedule
+  subtypes: []
+- name: Project Plan
+  subtypes: []
+- name: Promo
+  subtypes:
+  - Contest
+  - Format
+  - Tune In
+- name: Promotional Product
+  subtypes:
+  - Brochure
+  - Concession
+  - Popcorn Box
+  - Postcard
+  - T-shirts
+  - Trading Card
+- name: PSA
+  subtypes: []
+- name: Publicity Campaign
+  subtypes: []
+- name: Publicity Video
+  subtypes:
+  - Coverage
+- name: QC Report
+  subtypes:
+  - Episodic
+- name: Quad
+  subtypes:
+  - Final
+  - Teaser
+- name: Questions
+  subtypes: []
+- name: Radio Spot
+  subtypes:
+  - Date
+  - In Cinemas Thursday
+  - Now Showing
+- name: Rating
+  subtypes: []
+- name: Recap
+  subtypes:
+  - Episode
+  - Season
+  - Series
+- name: Recommended Episode List
+  subtypes: []
+- name: Reel
+  subtypes:
+  - Advance Marketing
+  - Blooper
+  - Gag
+  - Campaign
+  - Clip
+  - Compilation
+  - Exhibitors
+  - Executive Producer
+  - Promotional
+  - Sales
+  - Sizzle
+- name: Rendering
+  subtypes: []
+- name: Research Book
+  subtypes: []
+- name: Restored Audio
+  subtypes:
+  - Alert
+  - Alternate Scenes
+  - APK-Audio Press Kit
+  - Artwork
+  - Aud & Vid Commentary
+  - Cartoon
+  - Clips
+  - Commentary
+  - EDL
+  - End Title
+  - Episodic
+  - EPK
+  - Deleted Scenes
+  - Feature
+  - Featurette
+  - Franchise Tags
+  - Full Length
+  - Insert
+  - Instruction Card
+  - Intermission
+  - Isolated Score
+  - Logo
+  - M & E Title
+  - Making Of
+  - Main Title
+  - Music Replacement
+  - Narration
+  - Opt Com / Multi-Angle
+  - Preview
+  - Printmaster
+  - Promo
+  - Recap
+  - Selected Scenes
+  - Short
+  - Teaser
+  - Test Reel
+  - Trailer
+  - Visual Description Narration
+- name: Rough Cut
+  subtypes: []
+- name: Sales Package
+  subtypes: []
+- name: Sales Sheet
+  subtypes: []
+- name: Scene
+  subtypes: []
+- name: Schedule
+  subtypes:
+  - Reference
+- name: Screen Fill
+  subtypes: []
+- name: Screener
+  subtypes:
+  - Episode
+  - Feature
+  - Pilot
+- name: Screensaver
+  subtypes: []
+- name: Script
+  subtypes:
+  - Episodic
+  - Feature
+  - Featurette
+  - ID
+  - Interview
+  - Promo
+  - Radio Spot
+  - Recap
+  - Reel
+  - Trailer
+  - Vignette
+- name: SDH
+  subtypes: []
+- name: Sell Sheet
+  subtypes: []
+- name: Set Plan
+  subtypes: []
+- name: Short
+  subtypes:
+  - Reference
+- name: Signage
+  subtypes: []
+- name: Sleeve
+  subtypes:
+  - Full
+  - Morrisons
+  - Sample
+  - Simple
+  - Simple Oversized
+  - SWOP Blockbuster
+- name: Slip
+  subtypes:
+  - Outer
+- name: Social Graphics
+  subtypes:
+  - Printable
+- name: Social Media
+  subtypes:
+  - Advance Tickets
+  - Awards
+  - Background
+  - Book Tickets
+  - Character Poster
+  - Character Quotes
+  - Cinemagraph
+  - Conceptual / Misc
+  - Countdown
+  - Dated
+  - Downloadable
+  - Memes
+  - Motion
+  - Now Playing
+  - Out Now
+  - Poster
+  - Previews
+  - Publicity Shot
+  - Reference
+  - Review
+  - Social Component
+  - Social Cover
+  - Static
+  - Trailer
+  - Vertical Video
+  - Video Blog
+- name: Soundbite
+  subtypes:
+  - Cast
+  - Crew
+  - Corporate
+- name: Sound Effects
+  subtypes: []
+- name: Source Audio
+  subtypes:
+  - Alert
+  - Alternate Scenes
+  - APK-Audio Press Kit
+  - Artwork
+  - Aud & Vid Commentary
+  - Cartoon
+  - Clips
+  - Commentary
+  - Deleted Scenes
+  - EDL
+  - End Title
+  - EPK
+  - Feature
+  - Featurette
+  - Franchise Tags
+  - Full Length
+  - Insert
+  - Instruction Card
+  - Intermission
+  - Isolated Score
+  - Logo
+  - M & E Title
+  - Main Title
+  - Making Of
+  - Music Replacement
+  - Narration
+  - Opt Com / Multi-Angle
+  - Preview
+  - Printmaster
+  - Promo
+  - Recap
+  - Selected Scenes
+  - Short
+  - Teaser
+  - Test Reel
+  - Trailer
+  - Visual Description Narration
+- name: Source Guide
+  subtypes:
+  - Key Art
+- name: Specialty Item
+  subtypes:
+  - Clamshell
+  - Digibook
+  - Gift Box
+  - Handle Pack
+  - Lenticular Embedded
+  - Lenticular Onsert
+  - Lenticular O-ring
+  - Lenticular tip-on
+  - Lunchbox
+  - Metalpack
+  - Metrolite
+  - Outer Box
+  - Premium
+  - Print on Wrap
+  - Promotional Item
+  - Scrapbook
+  - Specialty
+  - Spindle Packaging
+  - Steelbook
+  - Window Box
+  - Window Cling
+- name: Split Track
+  subtypes: []
+- name: Spotter's Guide
+  subtypes: []
+- name: Square Panel
+  subtypes: []
+- name: Standee
+  subtypes:
+  - Flatcard
+  - Photo Op
+  - Review Board
+  - Spectacular
+- name: Static Cling
+  subtypes: []
+- name: Sticker
+  subtypes:
+  - Label
+  - Tray
+- name: Storyline
+  subtypes: []
+- name: Strategy Report
+  subtypes: []
+- name: Study Guide
+  subtypes: []
+- name: Style Guide
+  subtypes: []
+- name: Subtitle
+  subtypes:
+  - Episodic
+  - Feature
+  - Featurette
+  - Forced Narrative
+  - Full
+  - ID
+  - Interview
+  - Promo
+  - Recap
+  - Reel
+  - Trailer
+  - Vignette
+- name: Support File
+  subtypes:
+  - Animated Background
+  - Animated Logo
+  - Animated Logo Build
+  - Animated Transition
+  - Audio Project File
+  - Audio Project File with Media
+  - End Card
+  - Graphics Package
+  - Information Slate
+  - Lower Third
+  - Shot Build
+  - Video Project File
+  - Video Project File with Media
+  - VO/Animation Matchup
+- name: Subway 2-Sheet
+  subtypes: []
+- name: Synopsis
+  subtypes:
+  - Episodic
+  - Series
+  - Summary
+- name: Taxi Top
+  subtypes: []
+- name: Template
+  subtypes:
+  - Ad
+  - Background
+  - Presentation
+- name: Thumbnail
+  subtypes:
+  - Trailer
+- name: Timing Sheet
+  subtypes: []
+- name: Title Sequence
+  subtypes:
+  - Closing
+  - Opening
+- name: Title Treatment
+  subtypes: []
+- name: Toolkit
+  subtypes:
+  - Alpha
+  - Background
+  - Example File
+  - Execution
+  - Layer
+  - Logo
+  - Project
+- name: Trade Ad
+  subtypes: []
+- name: Trailer
+  subtypes:
+  - Compilation
+  - Cutdown
+  - Digital Launch
+  - Digital Teaser
+  - Online
+  - ProRes
+  - Reference
+  - Sales
+  - Swipe Up
+  - Teaser
+  - Theatrical
+  - Theatrical Launch
+  - Theatrical Teaser
+  - Topper
+  - Tune In
+  - TV
+- name: Train Wrap
+  subtypes: []
+- name: Transcript
+  subtypes:
+  - Interview
+  - ID
+  - Soundbite
+- name: Trivia
+  subtypes: []
+- name: TV Special
+  subtypes: []
+- name: TV Spot
+  subtypes:
+  - Date
+  - Digital
+  - In Cinemas Thursday
+  - Now Showing
+- name: Value Added Material
+  subtypes:
+  - Alternate Ending
+  - Animatics
+  - Audio Introduction
+  - Blooper Reel
+  - Commentary
+  - Deleted Scenes
+  - Digital Promotion
+  - Documentary
+  - Easter Egg
+  - Extended & Alternate Scenes
+  - Isolated Score
+  - Look Live
+  - Multi-Angle
+  - Musical Performance
+  - Post Op
+  - Q&A
+  - Reference
+  - Rehearsal Footage
+  - Storyboard Comparisons
+  - Storyboards
+  - Trivia
+  - Video Introduction
+- name: VFX Package
+  subtypes: []
+- name: Vignette
+  subtypes: []
+- name: Virtual Reality Immersive
+  subtypes: []
+- name: Voice Over
+  subtypes: []
+- name: Wall Mural
+  subtypes: []
+- name: Wallpaper
+  subtypes: []
+- name: Widget
+  subtypes: []
+- name: Webisode
+  subtypes: []
+- name: Website
+  subtypes:
+  - Blog
+  - Date
+  - In Cinemas Thursday
+  - Landing Page
+  - Now Showing
+  - Skin
+  - Title
+- name: Wild Posting
+  subtypes: []

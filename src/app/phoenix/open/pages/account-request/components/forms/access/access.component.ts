@@ -1,5 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {
+  MockVocabularyService,
+  Vocabularies
+} from '../../../../../../lib/services/mock-vocabulary.service';
+import {Observable} from 'rxjs';
+
+export interface LineOfBusiness {
+
+}
 
 @Component({
   selector: 'app-access',
@@ -7,6 +16,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./access.component.scss']
 })
 export class AccessComponent implements OnInit {
+  public linesOfBusiness$!: Observable<LineOfBusiness>;
 
   public form = new FormGroup({
     firstName: new FormControl(null, [Validators.required]),
@@ -17,7 +27,10 @@ export class AccessComponent implements OnInit {
     jobTitle: new FormControl(),
   })
 
-  constructor() { }
+  constructor(private vocab: MockVocabularyService) {
+    this.linesOfBusiness$ = vocab.getVocabFor(Vocabularies.reporting_group);
+    this.linesOfBusiness$.subscribe(console.log);
+  }
 
   ngOnInit(): void {
   }
