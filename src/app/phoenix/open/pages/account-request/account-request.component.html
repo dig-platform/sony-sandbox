@@ -1,9 +1,9 @@
-<mat-stepper #stepper [ngrxStepper]="stepper" ngrxId="accountRequest" [linear]="false">
+<mat-stepper #stepper [ngrxStepper]="stepper" ngrxId="accountRequest" [linear]="true">
   <mat-step [stepControl]="registration.form" label="Registration">
     <app-registration #registration></app-registration>
   </mat-step>
   <mat-step [stepControl]="access.form" label="Access Form">
-    <app-access #access></app-access>
+    <app-access #access (submit)="save()"></app-access>
   </mat-step>
   <mat-step label="Confirmation">
     <app-confirmation></app-confirmation>

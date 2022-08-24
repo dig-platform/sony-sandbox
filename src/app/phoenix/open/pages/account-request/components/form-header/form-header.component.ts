@@ -6,8 +6,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./form-header.component.scss']
 })
 export class FormHeaderComponent implements OnInit {
-  @Input() next: 'hide' | 'disable' | 'active' = 'active';
-  @Input() previous: 'hide' | 'disable' | 'active' = 'active';
   constructor() { }
 
   ngOnInit(): void {

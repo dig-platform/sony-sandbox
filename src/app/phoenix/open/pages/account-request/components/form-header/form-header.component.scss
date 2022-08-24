@@ -12,9 +12,7 @@
 }
 
 .form-header-actions{
-  display: flex;
-  flex-direction: column;
-  button{
-    margin-bottom: 4px;
+  ::ng-deep button{
+    margin-left: 4px;
   }
 }

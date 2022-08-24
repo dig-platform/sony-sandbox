@@ -1,8 +1,25 @@
 form{
 }
+section{
+  display: flex;
+  mat-form-field {
+    &.column{
+      width: 50%;
+    }
+  }
+}
 .row{
   display: flex;
   border-bottom: #f5f5f5 1px solid;
+  padding: 1rem;
+  flex-wrap: wrap;
+  &.columns{
+    mat-form-field{
+      width: 48%;
+      box-sizing: border-box;
+      margin:1rem 1% -1rem 1%;
+    }
+  }
 }
 .column{
   flex: 1;

@@ -1,44 +1,46 @@
-<app-form-header [next]="form.valid ? 'active' : 'disable'" previous="hide">
+<app-form-header>
   <h1>Request access to Runner</h1>
   <p>Please fill out all of the fields</p>
+
+  <button
+    slot="end"
+    color="primary"
+    [disabled]="! form.valid"
+    mat-flat-button
+    matStepperNext="">
+    Next
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </app-form-header>
 <form [formGroup]="form">
-  <div class="row">
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstName">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-    </div>
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastName">
-      </mat-form-field>
-    </div>
+  <div class="row columns">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
   </div>
 
 
-  <div class="row">
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Territory</mat-label>
-        <input matInput formControlName="territory">
-      </mat-form-field>
-    </div>
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Job Title</mat-label>
-        <input matInput formControlName="jobTitle">
-      </mat-form-field>
-    </div>
+  <div class="row columns">
+    <mat-form-field appearance="outline">
+      <mat-label>Territory</mat-label>
+      <input matInput formControlName="territory">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Job Title</mat-label>
+      <input matInput formControlName="jobTitle">
+    </mat-form-field>
   </div>
 
-  <div class="row" tabindex="5">
+  <div class="row">
     <section>
       <mat-label>Your Company:</mat-label>
       <mat-radio-group formControlName="company" (change)="validateCompanyDetails($event.value)">
@@ -48,54 +50,46 @@
     </section>
   </div>
 
-  <div class="row" *ngIf="currentCompany === 'other'">
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Company Name</mat-label>
-        <input matInput formControlName="companyName">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Contact person at Sony</mat-label>
-        <input matInput formControlName="sonyContact">
-      </mat-form-field>
-    </div>
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Reporting Group</mat-label>
-        <mat-select formControlName="reportingGroup">
-          <mat-option *ngFor="let group of reportingGroups$ | async" [value]="group">
-            {{group}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+  <div class="row columns" *ngIf="currentCompany === 'other'">
+    <mat-form-field appearance="outline">
+      <mat-label>Company Name</mat-label>
+      <input matInput formControlName="companyName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contact person at Sony</mat-label>
+      <input matInput formControlName="sonyContact">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Reporting Group</mat-label>
+      <mat-select formControlName="reportingGroup">
+        <mat-option *ngFor="let group of reportingGroups$ | async" [value]="group">
+          {{group}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
-  <div class="row" *ngIf="currentCompany === 'sony'">
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Department</mat-label>
-        <input matInput formControlName="department">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Reporting Group</mat-label>
-        <mat-select formControlName="reportingGroup">
-          <mat-option *ngFor="let group of reportingGroups$ | async" [value]="group">
-            {{group}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="column">
-      <mat-form-field appearance="outline">
-        <mat-label>Division</mat-label>
-        <input  matInput formControlName="division">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Supervisor's Email</mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-    </div>
+  <div class="row columns" *ngIf="currentCompany === 'sony'">
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Reporting Group</mat-label>
+      <mat-select formControlName="reportingGroup">
+        <mat-option *ngFor="let group of reportingGroups$ | async" [value]="group">
+          {{group}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Division</mat-label>
+      <input  matInput formControlName="division">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Supervisor's Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
   </div>
 
   <div class="row" *ngIf="currentCompany && currentCompany > ''">

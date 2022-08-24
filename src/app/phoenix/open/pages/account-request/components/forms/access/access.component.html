@@ -1,1 +1,43 @@
-<p>access works!</p>
+<app-form-header next="hide" previous="active">
+  <h1>Request access to Runner</h1>
+  <p>Please select the content you would like to access. An approver will review your request.</p>
+  <div class="search">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Search our content" [formControl]="filter">
+      <mat-icon matPrefix>search</mat-icon>
+      <button mat-icon-button matSuffix (click)="filter.reset()" [disabled]="! filter.value">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <button
+    slot="end"
+    color="light"
+    mat-flat-button
+    matStepperPrevious>
+    <mat-icon>chevron_left</mat-icon>
+    Previous
+  </button>
+  <button
+    (click)="submit.emit()"
+    slot="end"
+    color="primary"
+    mat-flat-button>Submit</button>
+</app-form-header>
+<div class="access-form" *ngIf="loaded && form">
+  <form [formGroup]="form">
+    <mat-selection-list formControlName="linesOfBusiness">
+      <ng-container *ngFor="let section of sections">
+        <mat-list-item>
+          <h2>{{section.name}}</h2>
+        </mat-list-item>
+        <ng-container *ngFor="let row of section.rows">
+          <mat-list-option [value]="row" *ngIf="isVisible(row)">
+            {{row.content_type}}
+          </mat-list-option>
+        </ng-container>
+      </ng-container>
+    </mat-selection-list>
+    <button mat-flat-button (click)="form.get('linesOfBusiness')?.reset()">Reset List</button>
+  </form>
+</div>

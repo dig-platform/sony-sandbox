@@ -19,6 +19,9 @@ import { ConfirmationComponent } from './components/forms/confirmation/confirmat
 import {MatRadioModule} from '@angular/material/radio';
 import {ConfigModule} from '../../../lib/modules/config/config.module';
 import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {SlotDirective} from '../../../lib/directives/slot.directive';
 
 
 @NgModule({
@@ -38,10 +41,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    NgrxStepperModule
+    MatListModule,
+    NgrxStepperModule,
+    SlotDirective
   ]
 })
 export class AccountRequestModule { }
